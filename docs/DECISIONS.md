@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-09-20 — Initialize Web Analytics from the global browser entry
+
+Use the framework-neutral `inject()` API from `@vercel/analytics` once in `src/main.tsx`. Most Temporary123 routes are prerendered and enhanced without React hydration, so placing a React-only `<Analytics />` component in the dashboard hydration tree would miss ordinary pages. The global entry is loaded by every generated route and preserves the current rendering architecture.
+
 ## 2026-09-19 — Require crawl links only for indexable pages
 
 Treat a page as an SEO orphan only when it is approved for indexing and has no incoming internal link. Intentionally `noindex` utilities such as `/seo-dashboard/` and staged content may remain outside the public crawl graph. This does not suppress missing-link findings for any `index,follow` route.

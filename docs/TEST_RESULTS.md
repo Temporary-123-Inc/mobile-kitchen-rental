@@ -1,5 +1,13 @@
 # Temporary123 Test Results
 
+## Vercel Web Analytics — 2026-09-20 (LOCAL PASS)
+
+- Installed `@vercel/analytics` 2.0.1 and invoked `inject()` once from the global browser entry point.
+- `npm ci` completed from the updated lockfile. `npm run build` passed TypeScript and generated 745 production pages plus 404.
+- `npm test` passed all 62 application tests. `npm run check:secrets` scanned 1,110 files with zero findings.
+- Headless Chromium loaded `/`, `/contact-us/`, and `/service-areas/kansas/western-kansas/`; all three returned HTTP 200, initialized the Vercel analytics client, requested `/_vercel/insights/script.js`, and had zero page or console errors.
+- Vercel production deployment, a live analytics-script response, and the first dashboard visit/page-view event remain unverified at this stage.
+
 ## Whole-site QA continuation — 2026-09-19 (LIVE PASS; SECURITY EVIDENCE PARTIAL)
 
 - Isolation: all source changes and builds used `C:\Users\Charles\.codex\worktrees\whole-site-qa-origin\Temporary 123`; the dirty primary checkout and its unfinished 1,000-city draft were not changed or published.

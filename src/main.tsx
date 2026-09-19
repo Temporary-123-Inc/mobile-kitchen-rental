@@ -1,4 +1,5 @@
 import { applyCityRentalView } from "./cityRentalView";
+import { inject } from "@vercel/analytics";
 import calculatorCities from "./calculatorCities.json" with { type: "json" };
 import "./style.css";
 import "./redesign.css";
@@ -19,6 +20,11 @@ import {
   equipmentPrices,
 } from "./calculatorData";
 import { appCheckToken } from "./appCheck";
+
+// This entry point runs on every prerendered route. Inject once here so Vercel
+// records page views across the whole site, including pages that are not
+// hydrated as React applications in the browser.
+inject();
 
 // Most routes use prerendered HTML plus targeted DOM enhancements. The SEO
 // dashboard is the exception because its live evidence table is stateful.
