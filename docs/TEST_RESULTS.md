@@ -1,12 +1,14 @@
 # Temporary123 Test Results
 
-## Vercel Web Analytics — 2026-09-20 (LOCAL PASS)
+## Vercel Web Analytics — 2026-09-20 (LIVE PASS)
 
 - Installed `@vercel/analytics` 2.0.1 and invoked `inject()` once from the global browser entry point.
 - `npm ci` completed from the updated lockfile. `npm run build` passed TypeScript and generated 745 production pages plus 404.
 - `npm test` passed all 62 application tests. `npm run check:secrets` scanned 1,110 files with zero findings.
 - Headless Chromium loaded `/`, `/contact-us/`, and `/service-areas/kansas/western-kansas/`; all three returned HTTP 200, initialized the Vercel analytics client, requested `/_vercel/insights/script.js`, and had zero page or console errors.
-- Vercel production deployment, a live analytics-script response, and the first dashboard visit/page-view event remain unverified at this stage.
+- Release: commit `a0d896b` was pushed to `Temporary-123-Inc/Temporary-123` main. Production deployment `dpl_BoFRyqBBpq92dXKqc4CirqswhRye` reached READY and was aliased to `temporary123.com`.
+- Live Chromium loaded `/`, `/contact-us/`, and `/service-areas/kansas/western-kansas/`; all three returned HTTP 200, initialized `window.va`, loaded `https://temporary123.com/_vercel/insights/script.js` with HTTP 200, and produced zero page or console errors.
+- Boundary: the integration and live collection script are verified, but the Vercel dashboard's aggregated visitor/page-view counters may update asynchronously and were not represented as populated during this release check.
 
 ## Whole-site QA continuation — 2026-09-19 (LIVE PASS; SECURITY EVIDENCE PARTIAL)
 
