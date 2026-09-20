@@ -20,6 +20,7 @@ import {
   equipmentPrices,
 } from "./calculatorData";
 import { appCheckToken } from "./appCheck";
+import { trackSavedConversion } from "./conversionAnalytics";
 
 // This entry point runs on every prerendered route. Inject once here so Vercel
 // records page views across the whole site, including pages that are not
@@ -255,6 +256,7 @@ if (calculatorForm) {
           throw new Error(
             "We could not confirm your quote request. Please retry with the same details.",
           );
+        trackSavedConversion("Calculator Quote Submitted", idempotencyKey);
         if (submitStatus) {
           submitStatus.classList.add("success");
           submitStatus.textContent =

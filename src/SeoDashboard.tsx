@@ -39,6 +39,34 @@ type GoogleInspectionResult = {
   error: string | null;
 };
 
+type SearchPerformanceMetrics = {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+};
+
+type SearchPerformanceSnapshot = {
+  state: ProviderState;
+  checkedAt: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  source: string;
+  totals: SearchPerformanceMetrics | null;
+  knownNonBranded: SearchPerformanceMetrics | null;
+  pageRows: Array<SearchPerformanceMetrics & { page: string }>;
+  pageRowsAvailable?: number;
+  pageRowsLimited?: boolean;
+  prioritizationStartDate?: string | null;
+  prioritizationEndDate?: string | null;
+  prioritizationPageRows?: Array<SearchPerformanceMetrics & { page: string }>;
+  prioritizationPageRowsAvailable?: number;
+  prioritizationPageRowsLimited?: boolean;
+  queryRowsReturned: number;
+  queryRowLimitReached: boolean;
+  error?: string;
+};
+
 type LiveSnapshot = {
   generatedAt: string;
   refreshSeconds: number;
@@ -53,6 +81,7 @@ type LiveSnapshot = {
       checkedAt: string | null;
       siteUrl: string | null;
       urls: GoogleInspectionResult[];
+      performance?: SearchPerformanceSnapshot;
       error?: string;
     };
   };
@@ -163,6 +192,16 @@ function formatProviderDate(value: string | null | undefined) {
   return value ? new Date(value).toLocaleString("en-US") : "Not checked";
 }
 
+function formatMetric(value: number | null | undefined, maximumFractionDigits = 0) {
+  return value == null
+    ? "—"
+    : new Intl.NumberFormat("en-US", { maximumFractionDigits }).format(value);
+}
+
+function formatPercent(value: number | null | undefined) {
+  return value == null ? "—" : `${(value * 100).toFixed(1)}%`;
+}
+
 function checkerUrl(provider: "Ahrefs" | "Moz", domain: string) {
   return provider === "Ahrefs"
     ? `https://ahrefs.com/website-authority-checker?target=${encodeURIComponent(domain)}`
@@ -245,6 +284,11 @@ export function SeoDashboard() {
   const googleByUrl = useMemo(
     () => new Map(live?.providers?.searchConsole.urls.map((row) => [row.url, row]) || []),
     [live],
+  );
+  const searchPerformance = live?.providers?.searchConsole.performance;
+  const performanceByUrl = useMemo(
+    () => new Map(searchPerformance?.pageRows.map((row) => [row.page, row]) || []),
+    [searchPerformance],
   );
   const staticMissingExactUrls = authorityTop25.filter(
     (row) => row.exactSlugStatus === "Missing",
@@ -826,6 +870,54 @@ export function SeoDashboard() {
               </p>
             </div>
           </article>
+          <div className="section-heading">
+            <div>
+              <span className="seo-eyebrow">FINALIZED SEARCH PERFORMANCE</span>
+              <h2>Organic visibility and traffic</h2>
+            </div>
+            <span className="data-chip">
+              {searchPerformance?.startDate && searchPerformance?.endDate
+                ? `${searchPerformance.startDate} TO ${searchPerformance.endDate}`
+                : "28-DAY WINDOW AWAITING CONNECTION"}
+            </span>
+          </div>
+          <div className="seo-kpis">
+            <article>
+              <span>Organic clicks</span>
+              <strong>{formatMetric(searchPerformance?.totals?.clicks)}</strong>
+              <small>Google web search</small>
+            </article>
+            <article>
+              <span>Organic impressions</span>
+              <strong>{formatMetric(searchPerformance?.totals?.impressions)}</strong>
+              <small>Finalized property total</small>
+            </article>
+            <article>
+              <span>Organic CTR</span>
+              <strong>{formatPercent(searchPerformance?.totals?.ctr)}</strong>
+              <small>Clicks divided by impressions</small>
+            </article>
+            <article>
+              <span>Average position</span>
+              <strong>{formatMetric(searchPerformance?.totals?.position, 1)}</strong>
+              <small>Impression-weighted Google position</small>
+            </article>
+            <article>
+              <span>Known non-branded clicks</span>
+              <strong>{formatMetric(searchPerformance?.knownNonBranded?.clicks)}</strong>
+              <small>Returned queries only; raw queries are never exposed</small>
+            </article>
+            <article>
+              <span>Pages with search activity</span>
+              <strong>{searchPerformance?.pageRowsAvailable ?? searchPerformance?.pageRows.length ?? "—"}</strong>
+              <small>{searchPerformance?.pageRowsLimited ? `${searchPerformance.pageRows.length} strongest rows loaded` : providerLabel(searchPerformance?.state)}</small>
+            </article>
+          </div>
+          <p className="seo-note">
+            {searchPerformance?.state === "connected"
+              ? `${searchPerformance.source}. Non-branded totals exclude Temporary123 brand variants from returned query rows and may be lower than the full total because Google can omit anonymized or lower-volume query rows.${searchPerformance.queryRowLimitReached ? " The 25,000-row query limit was reached." : ""}${searchPerformance.pageRowsLimited ? ` The dashboard returns the strongest ${searchPerformance.pageRows.length.toLocaleString()} of ${searchPerformance.pageRowsAvailable?.toLocaleString() ?? "available"} 28-day page rows to keep the response bounded.` : ""}${searchPerformance.prioritizationStartDate && searchPerformance.prioritizationEndDate ? ` Candidate prioritization retains the strongest ${searchPerformance.prioritizationPageRows?.length.toLocaleString() ?? 0} of ${searchPerformance.prioritizationPageRowsAvailable?.toLocaleString() ?? "available"} page rows from ${searchPerformance.prioritizationStartDate} through ${searchPerformance.prioritizationEndDate}.` : ""}`
+              : searchPerformance?.error || "Search Analytics is not connected yet. URL Inspection can still remain available independently."}
+          </p>
           <div className="seo-table-wrap compact-table">
             <table>
               <thead>
@@ -833,6 +925,7 @@ export function SeoDashboard() {
                   <th>#</th>
                   <th>Exact production URL</th>
                   <th>Google status</th>
+                  <th>28-day organic performance</th>
                   <th>Verification source</th>
                   <th>Search Console request</th>
                   <th>Evidence needed</th>
@@ -841,6 +934,7 @@ export function SeoDashboard() {
               <tbody>
                 {authorityTop25.map((row) => {
                   const inspection = googleByUrl.get(row.exactUrl);
+                  const performance = performanceByUrl.get(row.exactUrl);
                   const status = inspection?.indexed === true
                     ? "Indexed"
                     : inspection?.indexed === false
@@ -852,6 +946,11 @@ export function SeoDashboard() {
                       <a href={row.exactUrl} target="_blank" rel="noreferrer">
                         {row.exactUrl}
                       </a>
+                    </td>
+                    <td>
+                      {performance
+                        ? `${formatMetric(performance.clicks)} clicks · ${formatMetric(performance.impressions)} impressions · ${formatPercent(performance.ctr)} CTR · position ${formatMetric(performance.position, 1)}`
+                        : "No returned page row"}
                     </td>
                     <td>
                       <span className={`status ${inspection?.indexed === true ? "preserved" : inspection?.indexed === false ? "missing" : "unknown"}`}>

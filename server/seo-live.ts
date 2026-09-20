@@ -44,6 +44,34 @@ type GoogleInspectionResult = {
   error: string | null;
 };
 
+export type SearchPerformanceMetrics = {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+};
+
+export type SearchPerformanceSnapshot = {
+  state: ProviderState;
+  checkedAt: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  source: string;
+  totals: SearchPerformanceMetrics | null;
+  knownNonBranded: SearchPerformanceMetrics | null;
+  pageRows: Array<SearchPerformanceMetrics & { page: string }>;
+  pageRowsAvailable: number;
+  pageRowsLimited: boolean;
+  prioritizationStartDate: string | null;
+  prioritizationEndDate: string | null;
+  prioritizationPageRows: Array<SearchPerformanceMetrics & { page: string }>;
+  prioritizationPageRowsAvailable: number;
+  prioritizationPageRowsLimited: boolean;
+  queryRowsReturned: number;
+  queryRowLimitReached: boolean;
+  error?: string;
+};
+
 type ProviderSnapshot = {
   ahrefs: AuthorityProviderResult;
   moz: AuthorityProviderResult;
@@ -52,6 +80,7 @@ type ProviderSnapshot = {
     checkedAt: string | null;
     siteUrl: string | null;
     urls: GoogleInspectionResult[];
+    performance: SearchPerformanceSnapshot;
     error?: string;
   };
 };
@@ -73,8 +102,11 @@ export async function providerJson(url: string, init: RequestInit) {
     ...init,
     signal: AbortSignal.timeout(20_000),
   });
-  const text = (await response.text()).slice(0, 2_000_000);
+  const text = await response.text();
   if (!response.ok) throw new Error(`Provider returned ${response.status}`);
+  if (text.length > 12_000_000) {
+    throw new Error("Provider response exceeded 12 MB safety limit");
+  }
   try {
     return JSON.parse(text) as Record<string, unknown>;
   } catch {
@@ -209,7 +241,7 @@ export async function getGoogleAccessToken() {
   return getGoogleServiceAccountToken(email, privateKey, "https://www.googleapis.com/auth/webmasters.readonly");
 }
 
-async function inspectGoogleUrl(token: string, siteUrl: string, url: string): Promise<GoogleInspectionResult> {
+export async function inspectGoogleUrl(token: string, siteUrl: string, url: string): Promise<GoogleInspectionResult> {
   try {
     const json = await providerJson(
       "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect",
@@ -255,6 +287,213 @@ async function inspectGoogleUrl(token: string, siteUrl: string, url: string): Pr
   }
 }
 
+type SearchAnalyticsApiRow = {
+  keys?: unknown;
+  clicks?: unknown;
+  impressions?: unknown;
+  ctr?: unknown;
+  position?: unknown;
+};
+
+const SEARCH_ANALYTICS_ROW_LIMIT = 25_000;
+const SEARCH_PERFORMANCE_PAGE_OUTPUT_LIMIT = 500;
+const SEARCH_PERFORMANCE_PRIORITY_OUTPUT_LIMIT = 1_000;
+
+function dateOnly(date: Date) {
+  return date.toISOString().slice(0, 10);
+}
+
+export function finalizedSearchPerformanceRange(now = new Date(), days = 28) {
+  if (!Number.isInteger(days) || days < 1) {
+    throw new Error("Search performance range must contain at least one day");
+  }
+  const end = new Date(now);
+  end.setUTCDate(end.getUTCDate() - 3);
+  const start = new Date(end);
+  start.setUTCDate(start.getUTCDate() - (days - 1));
+  return { startDate: dateOnly(start), endDate: dateOnly(end) };
+}
+
+export function isTemporary123BrandedQuery(query: string) {
+  return /\btemporary[\s._-]*123\b/i.test(query);
+}
+
+function finiteMetric(value: unknown) {
+  const number = Number(value);
+  return Number.isFinite(number) && number >= 0 ? number : 0;
+}
+
+function apiRowMetrics(row: SearchAnalyticsApiRow): SearchPerformanceMetrics {
+  return {
+    clicks: finiteMetric(row.clicks),
+    impressions: finiteMetric(row.impressions),
+    ctr: finiteMetric(row.ctr),
+    position: finiteMetric(row.position),
+  };
+}
+
+export function aggregateSearchPerformance(rows: SearchAnalyticsApiRow[]) {
+  const totals = rows.reduce<{ clicks: number; impressions: number; weightedPosition: number }>(
+    (result, row) => {
+      const metrics = apiRowMetrics(row);
+      result.clicks += metrics.clicks;
+      result.impressions += metrics.impressions;
+      result.weightedPosition += metrics.position * metrics.impressions;
+      return result;
+    },
+    { clicks: 0, impressions: 0, weightedPosition: 0 },
+  );
+  return {
+    clicks: totals.clicks,
+    impressions: totals.impressions,
+    ctr: totals.impressions > 0 ? totals.clicks / totals.impressions : 0,
+    position: totals.impressions > 0 ? totals.weightedPosition / totals.impressions : 0,
+  };
+}
+
+export function rankSearchPerformancePages(
+  rows: Array<SearchPerformanceMetrics & { page: string }>,
+) {
+  return [...rows].sort((left, right) =>
+    right.clicks - left.clicks
+    || right.impressions - left.impressions
+    || left.position - right.position
+    || left.page.localeCompare(right.page));
+}
+
+async function querySearchAnalytics(
+  token: string,
+  siteUrl: string,
+  startDate: string,
+  endDate: string,
+  dimensions: string[],
+) {
+  const json = await providerJson(
+    `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        startDate,
+        endDate,
+        dimensions,
+        type: "web",
+        dataState: "final",
+        aggregationType: dimensions.includes("page") ? "auto" : "byProperty",
+        rowLimit: dimensions.length ? SEARCH_ANALYTICS_ROW_LIMIT : 1,
+      }),
+    },
+  );
+  return Array.isArray(json.rows) ? json.rows as SearchAnalyticsApiRow[] : [];
+}
+
+function emptySearchPerformance(
+  state: ProviderState,
+  source: string,
+  error?: string,
+): SearchPerformanceSnapshot {
+  return {
+    state,
+    checkedAt: state === "not_configured" ? null : new Date().toISOString(),
+    startDate: null,
+    endDate: null,
+    source,
+    totals: null,
+    knownNonBranded: null,
+    pageRows: [],
+    pageRowsAvailable: 0,
+    pageRowsLimited: false,
+    prioritizationStartDate: null,
+    prioritizationEndDate: null,
+    prioritizationPageRows: [],
+    prioritizationPageRowsAvailable: 0,
+    prioritizationPageRowsLimited: false,
+    queryRowsReturned: 0,
+    queryRowLimitReached: false,
+    ...(error ? { error } : {}),
+  };
+}
+
+export async function fetchSearchPerformance(
+  token: string,
+  siteUrl: string,
+): Promise<SearchPerformanceSnapshot> {
+  const now = new Date();
+  const { startDate, endDate } = finalizedSearchPerformanceRange(now);
+  const {
+    startDate: prioritizationStartDate,
+    endDate: prioritizationEndDate,
+  } = finalizedSearchPerformanceRange(now, 90);
+  try {
+    const [totalRows, pageRows, queryRows, prioritizationRows] = await Promise.all([
+      querySearchAnalytics(token, siteUrl, startDate, endDate, []),
+      querySearchAnalytics(token, siteUrl, startDate, endDate, ["page"]),
+      querySearchAnalytics(token, siteUrl, startDate, endDate, ["query"]),
+      querySearchAnalytics(
+        token,
+        siteUrl,
+        prioritizationStartDate,
+        prioritizationEndDate,
+        ["page"],
+      ),
+    ]);
+    const knownNonBrandedRows = queryRows.filter((row) => {
+      const query = Array.isArray(row.keys) && typeof row.keys[0] === "string" ? row.keys[0] : "";
+      return query.length > 0 && !isTemporary123BrandedQuery(query);
+    });
+    const pages = pageRows.flatMap((row) => {
+      const page = Array.isArray(row.keys) && typeof row.keys[0] === "string" ? row.keys[0] : null;
+      if (!page) return [];
+      return [{ page, ...apiRowMetrics(row) }];
+    });
+    const prioritizationPages = prioritizationRows.flatMap((row) => {
+      const page = Array.isArray(row.keys) && typeof row.keys[0] === "string" ? row.keys[0] : null;
+      if (!page) return [];
+      return [{ page, ...apiRowMetrics(row) }];
+    });
+    const rankedPages = rankSearchPerformancePages(pages);
+    const rankedPrioritizationPages = rankSearchPerformancePages(prioritizationPages);
+    return {
+      state: "connected",
+      checkedAt: new Date().toISOString(),
+      startDate,
+      endDate,
+      source: "Google Search Console Search Analytics API (finalized web data)",
+      totals: totalRows[0] ? apiRowMetrics(totalRows[0]) : { clicks: 0, impressions: 0, ctr: 0, position: 0 },
+      knownNonBranded: aggregateSearchPerformance(knownNonBrandedRows),
+      pageRows: rankedPages.slice(0, SEARCH_PERFORMANCE_PAGE_OUTPUT_LIMIT),
+      pageRowsAvailable: rankedPages.length,
+      pageRowsLimited: rankedPages.length > SEARCH_PERFORMANCE_PAGE_OUTPUT_LIMIT,
+      prioritizationStartDate,
+      prioritizationEndDate,
+      prioritizationPageRows: rankedPrioritizationPages.slice(
+        0,
+        SEARCH_PERFORMANCE_PRIORITY_OUTPUT_LIMIT,
+      ),
+      prioritizationPageRowsAvailable: rankedPrioritizationPages.length,
+      prioritizationPageRowsLimited:
+        rankedPrioritizationPages.length > SEARCH_PERFORMANCE_PRIORITY_OUTPUT_LIMIT,
+      queryRowsReturned: queryRows.length,
+      queryRowLimitReached: queryRows.length === SEARCH_ANALYTICS_ROW_LIMIT,
+    };
+  } catch (error) {
+    return {
+      ...emptySearchPerformance(
+        "error",
+        "Google Search Console Search Analytics API",
+        safeError(error),
+      ),
+      startDate,
+      endDate,
+      prioritizationStartDate,
+      prioritizationEndDate,
+    };
+  }
+}
+
 async function fetchSearchConsole(): Promise<ProviderSnapshot["searchConsole"]> {
   const siteUrl = process.env.GOOGLE_SEARCH_CONSOLE_SITE_URL?.trim() || null;
   const hasCredential = Boolean(
@@ -262,20 +501,31 @@ async function fetchSearchConsole(): Promise<ProviderSnapshot["searchConsole"]> 
     (process.env.GOOGLE_SEARCH_CONSOLE_CLIENT_EMAIL?.trim() && process.env.GOOGLE_SEARCH_CONSOLE_PRIVATE_KEY?.trim()),
   );
   if (!siteUrl || !hasCredential) {
-    return { state: "not_configured", checkedAt: null, siteUrl, urls: [] };
+    return {
+      state: "not_configured",
+      checkedAt: null,
+      siteUrl,
+      urls: [],
+      performance: emptySearchPerformance(
+        "not_configured",
+        "Google Search Console Search Analytics API is not configured",
+      ),
+    };
   }
   try {
     const token = await getGoogleAccessToken();
     if (!token) throw new Error("Google Search Console credentials are incomplete");
-    const urls = await Promise.all(
-      authorityTop25.map((row) => inspectGoogleUrl(token, siteUrl, row.exactUrl)),
-    );
+    const [urls, performance] = await Promise.all([
+      Promise.all(authorityTop25.map((row) => inspectGoogleUrl(token, siteUrl, row.exactUrl))),
+      fetchSearchPerformance(token, siteUrl),
+    ]);
     const allFailed = urls.length > 0 && urls.every((row) => row.error);
     return {
       state: allFailed ? "error" : "connected",
       checkedAt: new Date().toISOString(),
       siteUrl,
       urls,
+      performance,
       ...(allFailed ? { error: "All URL Inspection requests failed" } : {}),
     };
   } catch (error) {
@@ -284,6 +534,11 @@ async function fetchSearchConsole(): Promise<ProviderSnapshot["searchConsole"]> 
       checkedAt: new Date().toISOString(),
       siteUrl,
       urls: [],
+      performance: emptySearchPerformance(
+        "error",
+        "Google Search Console Search Analytics API",
+        safeError(error),
+      ),
       error: safeError(error),
     };
   }

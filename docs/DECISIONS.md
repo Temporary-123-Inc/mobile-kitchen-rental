@@ -370,3 +370,11 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 - Decision: Use physical `.json` Vercel functions for browser POST and scheduled API traffic. Do not depend on extensionless API routes while the site-wide trailing-slash rule is enabled.
 - Decision: Accept `FIREBASE_PRIVATE_KEY_BASE64` only when it decodes to a complete PEM, including both boundary lines. A missing closing boundary is invalid and must fail with an actionable server configuration error.
 - Reason: This removes the production dependency on unavailable `VITE_*` build variables, prevents POST redirects, and avoids exposing private credentials in the browser bundle.
+
+## 2026-09-20 — Measure confirmed inquiries and bound Search Console evidence
+
+- Fire `Contact Form Submitted` and `Calculator Quote Submitted` only after the server confirms the inquiry was saved. Deduplicate by the existing idempotency key and send no customer data as analytics properties.
+- Keep Vercel Analytics as measurement only; it must not affect inquiry persistence, email delivery, user success states or retries.
+- Use finalized Search Console data for 28-day performance reporting and 90-day page prioritization. Return aggregate non-branded metrics without exposing raw queries.
+- Rank page evidence by clicks, impressions and position, then bound API output to 500 current-window rows and 1,000 prioritization rows. Always expose the full available counts and whether each set was limited.
+- Reason: this creates measurable qualified-visitor and inquiry baselines without leaking search terms or customer information, and keeps the serverless response safely below Vercel's response-size boundary.

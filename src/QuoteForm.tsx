@@ -3,6 +3,7 @@ import site from "../site.json" with { type: "json" };
 import { services } from "./content";
 import { leadSchema } from "../server/schema";
 import { appCheckToken } from "./appCheck";
+import { trackSavedConversion } from "./conversionAnalytics";
 
 const contactServiceLabels: Partial<
   Record<(typeof services)[number]["slug"], string>
@@ -125,6 +126,7 @@ export function QuoteForm() {
             throw new Error(
               "We could not confirm your inquiry. Please retry with the same details.",
             );
+          trackSavedConversion("Contact Form Submitted", key.current);
           setState("success");
           setMessage(
             "Your inquiry has been saved. Thank you for sharing your project details.",
