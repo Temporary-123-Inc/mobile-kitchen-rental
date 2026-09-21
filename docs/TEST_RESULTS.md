@@ -1,5 +1,13 @@
 # Temporary123 Test Results
 
+## State-contained regional links — 2026-09-22 (LOCAL PASS; RELEASE PENDING)
+
+- Removed the explicit Arizona, Delaware and Indiana cross-state related-region fallbacks; every returned related region must now match the source page's state.
+- `npx vitest run tests/seasonal.test.ts` passed 8/8 assertions, including all-region same-state coverage; the full configured `npm test` suite passed 71/71.
+- `npm run typecheck` passed. `npm run build` passed and generated 745 pages plus 404.
+- Generated HTML samples for California Bay Area, Northern Arizona and Northern Delaware contain only same-state links inside `nav.region-nearby`.
+- Preserved route inventory, HTTP behavior, H1s, canonicals, robots directives and sitemap policy. Production verification remains pending.
+
 ## Vercel Web Analytics — 2026-09-20 (LIVE PASS)
 
 - Installed `@vercel/analytics` 2.0.1 and invoked `inject()` once from the global browser entry point.

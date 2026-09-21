@@ -249,27 +249,6 @@ export const regionPageByPath = Object.fromEntries(
   regionPages.map((page) => [page.path, page]),
 ) as Record<string, RegionGuide | undefined>;
 
-const crossBorderRegionPaths: Record<string, string> = {
-  "/service-areas/arizona/northern-arizona/":
-    "/service-areas/utah/southwestern-utah/",
-  "/service-areas/arizona/phoenix-area/":
-    "/service-areas/nevada/las-vegas-valley/",
-  "/service-areas/arizona/southern-arizona/":
-    "/service-areas/new-mexico/southwest-new-mexico/",
-  "/service-areas/delaware/northern-delaware/":
-    "/service-areas/pennsylvania/philadelphia-and-southeast/",
-  "/service-areas/delaware/central-delaware/":
-    "/service-areas/maryland/eastern-shore/",
-  "/service-areas/delaware/delaware-beaches/":
-    "/service-areas/maryland/eastern-shore/",
-  "/service-areas/indiana/northern-indiana/":
-    "/service-areas/illinois/chicago-area/",
-  "/service-areas/indiana/central-indiana/":
-    "/service-areas/ohio/southwest-ohio/",
-  "/service-areas/indiana/southern-indiana/":
-    "/service-areas/kentucky/south-central-kentucky/",
-};
-
 export const relatedRegionPages = (guide: RegionGuide): RegionGuide[] => {
   const allStatePages = regionPages.filter(
     (page) => page.state === guide.state,
@@ -286,8 +265,6 @@ export const relatedRegionPages = (guide: RegionGuide): RegionGuide[] => {
   const unique = [
     ...new Map(orderedStatePages.map((page) => [page.path, page])).values(),
   ];
-  const crossBorder = regionPageByPath[crossBorderRegionPaths[guide.path]];
-  if (unique.length < 3 && crossBorder) unique.push(crossBorder);
   for (const page of allStatePages) {
     if (unique.length >= 3) break;
     if (

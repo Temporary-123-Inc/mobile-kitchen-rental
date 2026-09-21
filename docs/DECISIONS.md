@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-09-22 — Keep regional related links inside the current state
+
+Choose up to three other regions from the same state and do not fill a short list with a neighboring-state fallback. For states with only three configured regions, two truthful same-state alternatives are preferable to a third geographically plausible but state-inconsistent link. This changes only internal-link context; it does not authorize URL, canonical, robots or sitemap changes.
+
 ## 2026-09-20 — Initialize Web Analytics from the global browser entry
 
 Use the framework-neutral `inject()` API from `@vercel/analytics` once in `src/main.tsx`. Most Temporary123 routes are prerendered and enhanced without React hydration, so placing a React-only `<Analytics />` component in the dashboard hydration tree would miss ordinary pages. The global entry is loaded by every generated route and preserves the current rendering architecture.

@@ -153,9 +153,14 @@ describe("state and regional planning content", () => {
         expect(validServicePaths.has(link.href), link.href).toBe(true);
       }
       const related = relatedRegionPages(guide);
-      expect(related, guide.path).toHaveLength(3);
+      const stateRegionCount = regionPages.filter(
+        (page) => page.state === guide.state,
+      ).length;
+      expect(related, guide.path).toHaveLength(
+        Math.min(3, stateRegionCount - 1),
+      );
       expect(new Set(related.map((page) => page.path)).size, guide.path).toBe(
-        3,
+        related.length,
       );
       expect(
         related.some((page) => page.path === guide.path),
@@ -163,10 +168,11 @@ describe("state and regional planning content", () => {
       ).toBe(false);
       for (const page of related) {
         expect(regionPaths.has(page.path), page.path).toBe(true);
+        expect(page.state, `${guide.path} -> ${page.path}`).toBe(guide.state);
       }
       const contextualLinkCount =
         guide.cityLinks.length + guide.serviceLinks.length + related.length + 1;
-      expect(contextualLinkCount, guide.path).toBeGreaterThanOrEqual(12);
+      expect(contextualLinkCount, guide.path).toBeGreaterThanOrEqual(11);
       expect(contextualLinkCount, guide.path).toBeLessThanOrEqual(16);
     }
   });
