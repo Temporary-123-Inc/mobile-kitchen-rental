@@ -1,12 +1,15 @@
 # Temporary123 Test Results
 
-## State-contained regional links — 2026-09-22 (LOCAL PASS; RELEASE PENDING)
+## State-contained regional links — 2026-09-22 (LIVE PASS)
 
 - Removed the explicit Arizona, Delaware and Indiana cross-state related-region fallbacks; every returned related region must now match the source page's state.
 - `npx vitest run tests/seasonal.test.ts` passed 8/8 assertions, including all-region same-state coverage; the full configured `npm test` suite passed 71/71.
 - `npm run typecheck` passed. `npm run build` passed and generated 745 pages plus 404.
 - Generated HTML samples for California Bay Area, Northern Arizona and Northern Delaware contain only same-state links inside `nav.region-nearby`.
-- Preserved route inventory, HTTP behavior, H1s, canonicals, robots directives and sitemap policy. Production verification remains pending.
+- Commit `3c217c5` deployed through READY production deployment `dpl_EMP4nJGnZnwtqHDXnmNZYdgjXw2y`, aliased to `temporary123.com`.
+- Live California Bay Area, Northern Arizona and Northern Delaware pages returned HTTP 200; their `nav.region-nearby` links stayed inside California, Arizona and Delaware respectively. The staged pages retained `noindex,follow` without canonicals.
+- Live `sitemap.xml` returned HTTP 200 with 25 URLs. Command Center Trailers and the historical Houston mobile-kitchen URL both remained HTTP 200, `index,follow`, self-canonical and included in the sitemap.
+- Preserved route inventory, HTTP behavior, H1s, canonicals, robots directives and sitemap policy.
 
 ## Vercel Web Analytics — 2026-09-20 (LIVE PASS)
 
