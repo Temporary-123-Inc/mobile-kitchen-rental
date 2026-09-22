@@ -390,3 +390,6 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 - Use finalized Search Console data for 28-day performance reporting and 90-day page prioritization. Return aggregate non-branded metrics without exposing raw queries.
 - Rank page evidence by clicks, impressions and position, then bound API output to 500 current-window rows and 1,000 prioritization rows. Always expose the full available counts and whether each set was limited.
 - Reason: this creates measurable qualified-visitor and inquiry baselines without leaking search terms or customer information, and keeps the serverless response safely below Vercel's response-size boundary.
+# 2026-09-22 public indexability release boundary
+
+A verified Git bundle protects the committed public-indexability source and prior production baseline but does not include Firebase data or secrets. The SEO-only release may proceed from the isolated, tested commit because it does not alter inquiry persistence, authentication, authorization, rate limiting or recovery behavior. Indexability may be reported only after live-route, robots, canonical and sitemap verification; it must not be described as guaranteed Google indexing or ranking.

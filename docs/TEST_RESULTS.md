@@ -694,3 +694,15 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Production: commit `2c29a33` was pushed without force to official `main`; Git-triggered deployment `dpl_Bg5RKozoqu6SHLkLCGkrPDcexG2D` reached READY and owns `temporary123.com` and `www.temporary123.com`.
 - Live verification: homepage, `/seo-dashboard/` and `/api/seo-live.json` returned HTTP 200. The live API was 286,226 bytes with the same connected metrics and no raw-query test phrase. Chromium rendered the organic visibility heading and the 803-click, 207,857-impression and 53-known-non-brand-click values with zero console or page errors.
 - Boundary: no inquiry was submitted. Unit tests verify post-save event calls, but receipt in Vercel Analytics requires a later real or explicitly authorized QA submission.
+# 2026-09-22 source backup checkpoint
+
+`git bundle verify`, isolated `git clone --no-checkout`, and `git fsck --full` passed for candidate f702c63. Restored HEAD matched exactly. Bundle SHA256 and current production deployment recorded in `D:\Temporary123-backups\20260922-indexability\README.md`. `git ls-remote origin refs/heads/main` remained 4d05061. `vercel inspect https://temporary123.com --scope temporary-124` reported existing READY dpl_9FTCs4vGPZCd2nfDRAbabsK1N3oZ. `npm run check:release` failed with unresolved release controls. No Firebase restore, deployment, or live indexability change claimed. C: free space was zero; Cloud SDK logging failed. No cleanup performed.
+
+# 2026-09-22 public indexability production release
+
+- Source: official `main` fast-forwarded from `4d05061` to `f702c63`; no unrelated primary-checkout changes were included.
+- Local verification: 74/74 application tests passed; the production build generated 745 registered pages plus 404; `npm run check:seo` reported `launchReady: true` with zero problems; 6/6 focused browser/HTTP tests passed; `npm run check:secrets` scanned 1,120 files with zero findings.
+- Preview: deployment `dpl_CsudTUvPgNJcQPaih3apfERSWQD3` reached READY and returned preview-only `X-Robots-Tag: noindex`.
+- Production: deployment `dpl_4pRgqMMvTgogKNM7VUSK7PZh1MHx` reached READY and owns `temporary123.com`, `www.temporary123.com` and the Vercel production aliases.
+- Live verification: 6/6 browser/HTTP tests passed against `https://temporary123.com`, including direct HTTP 200 and indexability checks for all 744 public routes. Homepage, contact, calculator, Command Center, Houston legacy and Western Kansas samples returned HTTP 200 with `index,follow` and exact self-canonicals. The sitemap contains 744 URLs and includes the Houston and Command Center routes. `/seo-dashboard/` remains HTTP 200 with `noindex,follow` and no sitemap entry; a synthetic missing URL returned HTTP 404 with `noindex,nofollow`. `www` redirects once with HTTP 308 to the exact apex path.
+- Boundary: no inquiry was submitted and no Google indexing request was sent. This proves technical crawl/index eligibility, not Google index inclusion or ranking.
