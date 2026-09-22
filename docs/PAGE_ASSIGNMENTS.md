@@ -1,6 +1,6 @@
 # Page and File Assignments
 
-**2026-09-22 public indexability release — COMPLETE; LIVE VERIFIED, root:** Commit f702c63 was fast-forwarded to official main and released through READY production deployment dpl_4pRgqMMvTgogKNM7VUSK7PZh1MHx. All 744 registered public routes passed a fresh live crawl as direct HTTP 200, `index,follow`, self-canonical pages and are present in the 744-URL sitemap. `/seo-dashboard/`, genuine 404s and preview deployments retain their intentional exclusions. No URLs, content, images, inquiry implementation or unrelated primary-checkout drafts were changed.
+**2026-09-22 public indexability release — COMPLETE; LIVE VERIFIED, root:** Runtime commit f702c63 and evidence commit cae81f1 were fast-forwarded to official main. Final Git-triggered production deployment dpl_6tR8a6kQFDZra2k7abE9GBrrBkxU is READY and owns the production domains. All 744 registered public routes passed fresh live crawls as direct HTTP 200, `index,follow`, self-canonical pages and are present in the 744-URL sitemap. `/seo-dashboard/`, genuine 404s and preview deployments retain their intentional exclusions. No URLs, content, images, inquiry implementation or unrelated primary-checkout drafts were changed.
 
 **2026-09-22 indexing QA support — COMPLETE; LOCAL VERIFIED, root:** Corrected host-condition handling in `scripts/serve.mjs` so localhost verification does not apply production-only `www` redirects. The 6/6 focused browser/HTTP regressions passed. This is the local preview server; `vercel.json` and deployed routing are unchanged.
 
