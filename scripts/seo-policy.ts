@@ -1,7 +1,20 @@
 export const publicOrigin = "https://temporary123.com";
 
 export type IndexingScope =
-  "full" | "homepage-and-service-areas" | "locations-and-priority-services";
+  | "full"
+  | "homepage-and-service-areas"
+  | "locations-and-priority-services"
+  | "existing-public-pages";
+
+// Indexing approval never includes operational, private or error routes.
+// This is an indexing safeguard, not a substitute for server authorization.
+export function protectedIndexingPath(path: string) {
+  return (
+    /^\/(?:seo-dashboard|api|admin|wp-admin|account|login|private|preview|draft)(?:\/|$)/i.test(
+      path,
+    ) || /^\/404(?:\.html)?\/?$/i.test(path)
+  );
+}
 
 // The first controlled production batch protects the canonical destinations
 // behind the 153 externally linked URLs in the 2026-09-18 backlink export.
@@ -35,7 +48,8 @@ export const authorityReleaseRoutes = [
 ] as const;
 
 export function routeInIndexingScope(path: string, scope: IndexingScope) {
-  if (scope === "full") return true;
+  if (protectedIndexingPath(path)) return false;
+  if (scope === "full" || scope === "existing-public-pages") return true;
   if (
     scope === "locations-and-priority-services" &&
     (authorityReleaseRoutes as readonly string[]).includes(path)
@@ -60,6 +74,29 @@ export function routesForIndexingBatch(
   return paths.slice(0, activeBatch * batchSize);
 }
 
+export function indexingPlan(
+  registeredPaths: string[],
+  scope: IndexingScope,
+  activeBatch: number,
+  batchSize: number,
+  editorialHolds: ReadonlySet<string> = new Set(),
+) {
+  const allPublicPages = scope === "existing-public-pages";
+  const eligibleRoutes = [...new Set(registeredPaths)].filter(
+    (path) =>
+      routeInIndexingScope(path, scope) &&
+      (allPublicPages || !editorialHolds.has(path)),
+  );
+  return {
+    eligibleRoutes,
+    indexableRoutes: allPublicPages
+      ? eligibleRoutes
+      : routesForIndexingBatch(eligibleRoutes, activeBatch, batchSize),
+    batchSize: allPublicPages ? Math.max(eligibleRoutes.length, 1) : batchSize,
+    activeBatch: allPublicPages ? 1 : activeBatch,
+  };
+}
+
 export function productionBuild(mode: string, environment?: string) {
   return (
     mode === "production" && (!environment || environment === "production")
@@ -71,7 +108,8 @@ export function canonicalFor(
   indexable: boolean,
   production: boolean,
 ) {
-  if (!production || !indexable || path === "/404/") return undefined;
+  if (!production || !indexable || protectedIndexingPath(path))
+    return undefined;
   if (!path.startsWith("/") || path.startsWith("//") || /[?#]/.test(path))
     throw new Error(`Invalid canonical path: ${path}`);
   return new URL(path, publicOrigin).href;

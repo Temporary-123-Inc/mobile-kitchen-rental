@@ -16,9 +16,9 @@ import { releaseErrors } from "./release";
 import {
   authorityReleaseRoutes,
   canonicalFor,
+  indexingPlan,
   productionBuild,
   routeInIndexingScope,
-  routesForIndexingBatch,
   sitemapXml,
   type IndexingScope,
 } from "./seo-policy";
@@ -138,17 +138,17 @@ const orderedIndexingRoutes = [
     ...allRoutes,
   ]),
 ];
-const scopedIndexingRoutes = orderedIndexingRoutes.filter(
-  (path) =>
-    allRoutes.includes(path) &&
-    !editorialNoindex.has(path) &&
-    routeInIndexingScope(path, indexingScope),
-);
-const indexableRoutes = routesForIndexingBatch(
-  scopedIndexingRoutes,
+// The owner approved the existing public site, not unrecovered historical URLs.
+// Only registered, nonredirecting routes can enter this release's sitemap.
+const plan = indexingPlan(
+  orderedIndexingRoutes.filter((path) => allRoutes.includes(path)),
+  indexingScope,
   site.activeIndexingBatch,
   site.indexingBatchSize,
+  editorialNoindex,
 );
+const scopedIndexingRoutes = plan.eligibleRoutes;
+const indexableRoutes = plan.indexableRoutes;
 const compact = (value: string, maximum: number) => {
   const clean = value.replace(/\s+/g, " ").trim();
   if (clean.length <= maximum) return clean;
@@ -549,8 +549,8 @@ await writeFile(
       generatedAt: new Date().toISOString(),
       mode: release ? "production" : "preview",
       indexingScope,
-      indexingBatchSize: site.indexingBatchSize,
-      activeIndexingBatch: site.activeIndexingBatch,
+      indexingBatchSize: plan.batchSize,
+      activeIndexingBatch: plan.activeBatch,
       eligibleIndexingRoutes: scopedIndexingRoutes.length,
       activeIndexingRoutes: release ? indexableRoutes.length : 0,
       domainRoutingReady: domainReady,
@@ -564,17 +564,17 @@ await writeFile(
 );
 const rolloutStart = new Date(`${site.indexingStartDate}T00:00:00Z`);
 const rolloutBatches = Array.from(
-  { length: Math.ceil(scopedIndexingRoutes.length / site.indexingBatchSize) },
+  { length: Math.ceil(scopedIndexingRoutes.length / plan.batchSize) },
   (_, index) => {
     const date = new Date(rolloutStart);
     date.setUTCDate(date.getUTCDate() + index);
     return {
       batch: index + 1,
       plannedDate: date.toISOString().slice(0, 10),
-      active: index + 1 <= site.activeIndexingBatch,
+      active: index + 1 <= plan.activeBatch,
       routes: scopedIndexingRoutes.slice(
-        index * site.indexingBatchSize,
-        (index + 1) * site.indexingBatchSize,
+        index * plan.batchSize,
+        (index + 1) * plan.batchSize,
       ),
     };
   },
@@ -586,8 +586,8 @@ await writeFile(
       generatedAt: new Date().toISOString(),
       origin: site.origin,
       indexingScope,
-      batchSize: site.indexingBatchSize,
-      activeBatch: site.activeIndexingBatch,
+      batchSize: plan.batchSize,
+      activeBatch: plan.activeBatch,
       totalRoutes: scopedIndexingRoutes.length,
       totalBatches: rolloutBatches.length,
       batches: rolloutBatches,

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   authorityReleaseRoutes,
   canonicalFor,
+  indexingPlan,
   modificationDate,
   productionBuild,
   routeInIndexingScope,
@@ -10,6 +11,7 @@ import {
 } from "../scripts/seo-policy";
 import { renderSourceContent } from "../scripts/source-content";
 import vercel from "../vercel.json";
+import site from "../site.json";
 import consolidation from "../content/location-consolidation.json";
 import { readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -68,7 +70,7 @@ describe("migration indexing separation", () => {
     expect(canonicalFor("/video/", false, true)).toBeUndefined();
     expect(() => canonicalFor("//evil.example/", true, true)).toThrow();
   });
-  it("limits this release to backlink-ranked exact paths and service-area routes", () => {
+  it("retains the optional controlled scopes for backlink and service-area batches", () => {
     const scope = "homepage-and-service-areas";
     expect(routeInIndexingScope("/", scope)).toBe(true);
     expect(routeInIndexingScope("/service-areas/", scope)).toBe(true);
@@ -91,6 +93,90 @@ describe("migration indexing separation", () => {
     expect(routesForIndexingBatch(routes, 1, 25)).toEqual(routes.slice(0, 25));
     expect(routesForIndexingBatch(routes, 2, 25)).toEqual(routes.slice(0, 50));
     expect(routesForIndexingBatch(routes, 3, 25)).toEqual(routes);
+  });
+  it("releases all existing public routes without the old batch or editorial holds", () => {
+    expect(site.indexingScope).toBe("existing-public-pages");
+    const routes = [
+      "/",
+      "/contact-us/",
+      "/rental-calculator/",
+      "/video/",
+      "/government/hospitals/",
+      "/modular-kitchen-facilities/",
+      "/houston-texas-mobile-kitchen-rental/",
+      "/service-areas/california/southern-california/cities/",
+      ...Array.from({ length: 40 }, (_, i) => `/public-${i}/`),
+    ];
+    const holds = new Set(["/video/", "/government/hospitals/"]);
+    const plan = indexingPlan(
+      [...routes, "/seo-dashboard/", "/404/", "/api/contact/"],
+      "existing-public-pages",
+      1,
+      25,
+      holds,
+    );
+    expect(plan.indexableRoutes).toEqual(routes);
+    expect(plan.eligibleRoutes).toEqual(routes);
+    expect(plan.batchSize).toBe(routes.length);
+    expect(plan.activeBatch).toBe(1);
+    for (const path of routes)
+      expect(canonicalFor(path, true, true)).toBe(
+        `https://temporary123.com${path}`,
+      );
+    const xml = sitemapXml(
+      routes.map((path) => ({ path, indexable: true })),
+      true,
+    );
+    expect((xml.match(/<loc>/g) || []).length).toBe(routes.length);
+  });
+  it("never indexes tools, private routes or error pages even with blanket approval", () => {
+    const excluded = [
+      "/seo-dashboard/",
+      "/seo-dashboard/indexing/",
+      "/api/contact.json",
+      "/admin/",
+      "/wp-admin/",
+      "/account/",
+      "/login/",
+      "/private/",
+      "/preview/",
+      "/draft/",
+      "/404/",
+      "/404.html",
+    ];
+    for (const path of excluded) {
+      expect(routeInIndexingScope(path, "existing-public-pages"), path).toBe(
+        false,
+      );
+      expect(routeInIndexingScope(path, "full"), path).toBe(false);
+      expect(canonicalFor(path, true, true), path).toBeUndefined();
+    }
+    expect(
+      sitemapXml(
+        excluded.map((path) => ({ path, indexable: true })),
+        true,
+      ),
+    ).not.toContain("<url>");
+    expect(
+      sitemapXml([{ path: "/contact-us/", indexable: true }], false),
+    ).not.toContain("<url>");
+  });
+  it("preserves holds and the 25-page ceiling when a controlled scope is selected", () => {
+    const routes = Array.from(
+      { length: 40 },
+      (_, i) => `/service-areas/state-${i}/`,
+    );
+    const plan = indexingPlan(
+      routes,
+      "homepage-and-service-areas",
+      1,
+      25,
+      new Set([routes[0]]),
+    );
+    expect(plan.eligibleRoutes).toEqual(routes.slice(1));
+    expect(plan.indexableRoutes).toEqual(routes.slice(1, 26));
+    expect(plan.batchSize).toBe(25);
+    expect(plan.activeBatch).toBe(1);
   });
   it("protects nonproduction hostnames, including static downloads", () => {
     const rule = vercel.headers.find((rule) => "missing" in rule);

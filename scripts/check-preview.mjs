@@ -82,6 +82,17 @@ for (const file of htmlFiles) {
     problems.push({ file, issue: "boilerplate-description" });
 
   if (/^\/service-areas\/[^/]+\/[^/]+\/$/.test(route)) {
+    const statePath = route.split("/").slice(0, 3).join("/") + "/";
+    const sameStateRegions = new Set(
+      [...registeredPages.keys()].filter(
+        (path) =>
+          /^\/service-areas\/[^/]+\/[^/]+\/$/.test(path) &&
+          path.startsWith(statePath) &&
+          path !== route,
+      ),
+    );
+    // Three-region states have only two truthful same-state alternatives.
+    const expectedRelated = Math.min(3, sameStateRegions.size);
     const cityLinks = $(".region-city-link-grid a[href]").toArray();
     const serviceLinks = $(".region-service-links a[href]").toArray();
     const relatedLinks = $(".region-nearby-links a[href]").toArray();
@@ -104,21 +115,41 @@ for (const file of htmlFiles) {
         value: serviceLinks.length,
       });
     if (
-      relatedLinks.length !== 3 ||
-      new Set(relatedLinks.map((link) => $(link).attr("href"))).size !== 3
+      relatedLinks.length !== expectedRelated ||
+      new Set(relatedLinks.map((link) => $(link).attr("href"))).size !==
+        expectedRelated
     )
       problems.push({
         file,
         issue: "regional-related-link-count",
         value: relatedLinks.length,
+        expected: expectedRelated,
       });
+    for (const link of relatedLinks) {
+      const href = $(link).attr("href") || "";
+      const url = new URL(href, site.origin);
+      if (
+        url.origin !== site.origin ||
+        !sameStateRegions.has(url.pathname) ||
+        url.search ||
+        url.hash
+      )
+        problems.push({
+          file,
+          issue: "regional-related-link-destination",
+          href,
+        });
+    }
     if (parentLinks.length !== 1)
       problems.push({
         file,
         issue: "regional-parent-link-count",
         value: parentLinks.length,
       });
-    if (contextualLinks < 12 || contextualLinks > 16)
+    if (
+      contextualLinks < 9 + expectedRelated ||
+      contextualLinks > 13 + expectedRelated
+    )
       problems.push({
         file,
         issue: "regional-contextual-link-count",
@@ -149,9 +180,10 @@ for (const file of htmlFiles) {
         : "noindex,follow";
   if (robots !== expectedRobots)
     problems.push({ file, issue: "robots", value: robots, expectedRobots });
-  const expectedCanonical = indexable || route === "/service-areas/oklahoma/panhandle/"
-    ? new URL(route, site.origin).href
-    : undefined;
+  const expectedCanonical =
+    indexable || route === "/service-areas/oklahoma/panhandle/"
+      ? new URL(route, site.origin).href
+      : undefined;
   if (canonical !== expectedCanonical)
     problems.push({
       file,

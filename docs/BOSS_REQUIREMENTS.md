@@ -2,6 +2,16 @@
 
 This file consolidates current instructions so all tasks work from the same interpretation. Add dated clarifications rather than silently replacing earlier requirements.
 
+## 2026-09-22 clarification — Index the existing public website
+
+Charles explicitly requested that every existing public page be eligible for Google indexing, including pages previously held by the 25-page rollout and editorial noindex lists. This supersedes those indexing holds for the existing production inventory only: 744 public pages out of 745 registered routes. It does not approve publishing unfinished city drafts, recovering retired or unrelated legacy URLs, or indexing operational/private pages.
+
+- Preserve every existing public path, content, image, form, and permanent redirect.
+- Emit `index,follow`, an exact production self-canonical, and sitemap membership for every registered public production page.
+- Keep `/seo-dashboard/`, API/private/administrative routes, preview deployments, and real error pages excluded. Noindex is not access control.
+- Preserve genuine 404/410 behavior for retired URLs. Do not redirect them to the homepage.
+- Verify generated output and production separately. Eligibility does not prove or guarantee Google indexing or ranking.
+
 ## Location-page subject matter
 
 - Location pages must describe temporary base-camp and commercial/institutional deployment needs, not generic tourism or residential content.

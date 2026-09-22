@@ -4,10 +4,10 @@
   "phoneDisplay": "+1 (800) 443 - 5212",
   "phoneE164": "+18004435212",
   "mode": "production",
-  "indexingScope": "locations-and-priority-services",
+  "indexingScope": "existing-public-pages",
   "indexingBatchSize": 25,
   "activeIndexingBatch": 1,
-  "indexingStartDate": "2026-09-14",
+  "indexingStartDate": "2026-09-22",
   "inquiriesEnabled": true,
   "domainRoutingReady": true
 }

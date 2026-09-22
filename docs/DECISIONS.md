@@ -1,5 +1,13 @@
 # Temporary123 Decision Log
 
+## 2026-09-22 — Separate existing-public indexing from legacy recovery
+
+Use the explicit `existing-public-pages` scope to remove the active-batch and editorial indexing holds from registered, nonredirecting public routes. Do not select the old `full` migration scope: it refers to recovery of the much larger historical WordPress inventory, which the owner did not request. The registered production inventory remains 745 routes, with 744 public routes eligible and the SEO dashboard excluded. Keep controlled scopes available for a deliberate rollback; their settings do not limit the new scope. Build-registry and rollout metadata must reflect the effective 744-page scope, not the retained 25-page rollback configuration.
+
+Protected tool, API, private, preview, and error paths are excluded at both scope selection and canonical/sitemap generation. Preview builds remain noindex even when production content is approved. Do not change security controls, deployment routing, or the unfinished city-content lane as part of this SEO-only change.
+
+Local QA must respect host-scoped Vercel redirects instead of applying `www` redirects to localhost. Regional-link checks must use the number of available same-state alternatives, retaining destination and uniqueness checks. These verification corrections do not change production URLs or redirect configuration. The existing security release gate remains a separate unresolved prerequisite: keep this indexing change local until required provider/runtime evidence is refreshed; do not treat an SEO pass as a security or deployment pass.
+
 ## 2026-09-22 — Keep regional related links inside the current state
 
 Choose up to three other regions from the same state and do not fill a short list with a neighboring-state fallback. For states with only three configured regions, two truthful same-state alternatives are preferable to a third geographically plausible but state-inconsistent link. This changes only internal-link context; it does not authorize URL, canonical, robots or sitemap changes.

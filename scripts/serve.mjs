@@ -5,26 +5,23 @@ const root = resolve("dist");
 const { redirects = [], headers = [] } = JSON.parse(
   await readFile("vercel.json", "utf8"),
 );
+function matchesHost(rule, host) {
+  const matches = (condition) =>
+    new RegExp(`^${condition.value}$`, "i").test(host);
+  return (
+    !rule.has?.some(
+      (condition) => condition.type === "host" && !matches(condition),
+    ) &&
+    !rule.missing?.some(
+      (condition) => condition.type === "host" && matches(condition),
+    )
+  );
+}
 http
   .createServer(async (req, res) => {
+    const host = (req.headers.host || "").split(":")[0];
     for (const rule of headers.filter((rule) => rule.source === "/(.*)")) {
-      const host = (req.headers.host || "").split(":")[0];
-      if (
-        rule.has?.some(
-          (condition) =>
-            condition.type === "host" &&
-            !new RegExp(`^${condition.value}$`, "i").test(host),
-        )
-      )
-        continue;
-      if (
-        rule.missing?.some(
-          (condition) =>
-            condition.type === "host" &&
-            new RegExp(`^${condition.value}$`, "i").test(host),
-        )
-      )
-        continue;
+      if (!matchesHost(rule, host)) continue;
       for (const header of rule.headers)
         res.setHeader(header.key, header.value);
     }
@@ -36,6 +33,7 @@ http
       return;
     }
     const redirect = redirects.find((rule) => {
+      if (!matchesHost(rule, host)) return false;
       const pattern = rule.source
         .split("/")
         .map((segment) =>
