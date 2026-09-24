@@ -566,9 +566,8 @@ const servicePhotoReferences: Readonly<Record<string, ServicePhotoReference>> = 
       "Reviewed exterior reference for the 30 ft eight-stall shower and restroom combination trailer. Interior layout and current availability are confirmed with your quote.",
   },
   "/services/shower-restroom-combination-trailers/3-stall-1-ada/": {
-    sourceTitle: "ADA Shower and Restroom Combination Trailer",
     caption:
-      "Reviewed ADA shower and restroom combination reference photography. The images do not establish the separate three-stall-plus-one-ADA floor plan; confirm its access layout and available unit with your quote.",
+      "Reviewed photography from the supplied 3-stall + 1 ADA shower and restroom combination trailer set. Confirm the available unit, ramp, dimensions, accessibility requirements and utility plan with your quote.",
   },
   "/services/shower-restroom-combination-trailers/8-stall-1-ada/": {
     sourceTitle: "ADA Shower and Restroom Combination Trailer",

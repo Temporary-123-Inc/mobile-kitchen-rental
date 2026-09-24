@@ -1,5 +1,11 @@
 # Temporary123 Decision Log
 
+## 2026-09-24 — Use only the supplied exact-model gallery for the 3-stall + 1 ADA route
+
+Map `/services/shower-restroom-combination-trailers/3-stall-1-ada/` to the eight photos in the owner-supplied `Luxury Shower-Restroom Combination Trailer (3 Stalls + 1 ADA)` folder and classify them as a dedicated manifest model. Do not reuse the 22 ft six-stall set or the generic ADA reference on this route. Keep all four interior views before the four exterior views in the carousel.
+
+Photography supports identification of this supplied configuration but does not by itself certify dimensions, ramp availability, accessibility compliance, utilities, or the exact unit available for a quote. Preserve that boundary in the customer-facing caption and existing planning copy. Do not alter the H1, URL, equipment facts, indexing policy, or other service galleries as part of this correction.
+
 ## 2026-09-22 — Separate existing-public indexing from legacy recovery
 
 Use the explicit `existing-public-pages` scope to remove the active-batch and editorial indexing holds from registered, nonredirecting public routes. Do not select the old `full` migration scope: it refers to recovery of the much larger historical WordPress inventory, which the owner did not request. The registered production inventory remains 745 routes, with 744 public routes eligible and the SEO dashboard excluded. Keep controlled scopes available for a deliberate rollback; their settings do not limit the new scope. Build-registry and rollout metadata must reflect the effective 744-page scope, not the retained 25-page rollback configuration.

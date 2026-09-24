@@ -1,5 +1,17 @@
 # Temporary123 Test Results
 
+## 3-stall + 1 ADA service-gallery correction — 2026-09-24 (LOCAL PASS; RELEASE IN PROGRESS)
+
+- Source isolation: clean clone of official `Temporary-123-Inc/Temporary-123` main at `106e54fe79229648229e57c4a377d9a533beaf1b` on branch `codex/fix-3-stall-ada-images`; unrelated changes in the primary checkout were excluded.
+- Visual source review: all eight owner-supplied PNGs in `D:\Temporary123 Equipment Media\Luxury Shower-Restroom Combination Trailers\Luxury Shower-Restroom Combination Trailer (3 Stalls + 1 ADA)` were opened and inspected. The four interiors and four exteriors are recorded under the dedicated `client-supplied-3-stall-1-ada-combination` model; no accessibility certification is inferred from photography.
+- Focused regression: `npx vitest run tests/serviceHeroImages.test.ts` passed **8/8** and proves the exact route receives only the eight dedicated images in the intended interior/exterior order, excludes the known six-stall image set, and uses the revised caption.
+- Static checks: `npm run typecheck`, `git diff --check`, `npm run check:secrets`, and the manifest builder passed. The secret scan found zero findings. The generated model has eight source images and all 16 responsive derivatives exist.
+- Production build: `npm run build` passed TypeScript, Vite, and prerendering for **745 pages plus 404**. `npm run check:links` passed **745 pages** with zero missing or case-mismatched targets.
+- Generated-page audit: the exact prerendered page retained the H1 `3-Stall + 1 ADA Shower and Restroom Combination Trailer Rental`, contained all eight new image hashes and the revised caption, and contained none of the prior six-stall hashes.
+- Browser QA: the local production preview rendered the exact H1, an eight-item carousel using the new responsive assets, and the revised caption. The visible active image decoded successfully; the page had no framework error overlay and emitted zero browser warnings/errors.
+- Broad-suite note: the concurrent configured run passed **73/74** and one archive-heavy migration assertion exceeded its existing 5-second timeout. A clean isolated rerun of `tests/migration.test.ts` passed **14/14** in 6.10 seconds without changing code or timeout settings.
+- Release boundary: no production claim is made in this entry until the commit is pushed, the Vercel deployment is READY, and `temporary123.com` is rechecked.
+
 ## Existing public-page indexability — 2026-09-22 (LOCAL PASS; RELEASE BLOCKED)
 
 - Source isolation: official `origin/main` revision `4d05061` on branch `codex/public-page-indexability`, workspace `D:\Temporary123-public-indexing-20260922`. The dirty primary checkout and its unfinished city/photo work were not included. Official remote `main` still pointed to `4d05061` at the final remote check.
