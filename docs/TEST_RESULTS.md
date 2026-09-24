@@ -1,6 +1,6 @@
 # Temporary123 Test Results
 
-## 3-stall + 1 ADA selected production photography — 2026-09-24 (LOCAL PASS; RELEASE PENDING)
+## 3-stall + 1 ADA selected production photography — 2026-09-24 (LIVE PASS)
 
 - Visual selection: reviewed all eight owner-supplied files at original detail. Retained seven compatible views: four interiors and three exteriors, including the exterior with three standard side entrances and the rear larger entrance. Excluded review ID `28.08`, whose exterior visibly shows four standard side doors.
 - Runtime: restored only the seven selected originals and fourteen responsive WebP derivatives; regenerated the verified manifest and exact-route gallery mapping. The caption identifies selected owner-supplied photography and asks customers to confirm the available unit, ramp, dimensions, accessibility requirements and utility plan with the quote.
@@ -8,7 +8,9 @@
 - Unit verification: `npx vitest run tests/serviceHeroImages.test.ts tests/ownerImageRollout.test.tsx tests/locationCarouselImages.test.ts` passed 89/89 assertions, including exact seven-image order, byte integrity, the generic ADA grouping and absence of the excluded image/hash.
 - Build verification: `npm run build` passed TypeScript and Vite and generated 745 static pages plus 404.
 - Browser verification: an initial attempt correctly failed after Playwright reused an unrelated server already occupying port 4173. A fresh isolated preview on port 4174 passed the exact-route test 1/1: HTTP 200, visible carousel, seven slides, no pending-verification panel, no `28.08`, selected-photo caption and a decoded lead image.
-- Release boundary: official-main push, Vercel production deployment and live production verification are pending.
+- Release: runtime commit `d8c4b97` was pushed to official `main`; Vercel production deployment `dpl_Dmre4VmNBL32hdh3B5dp8By7tAmx` reached Ready.
+- Live browser verification: the exact-route Playwright test passed 1/1 against `https://temporary123.com`, confirming HTTP 200, seven slides, no pending-verification panel, no excluded `28.08` image, the selected-photo caption and a decoded lead image.
+- Live visual verification: a fresh cache-busted production tab visibly rendered the owner-supplied interior photography, seven thumbnails and the `2 of 7` carousel counter. The preserved H1 remained `3-Stall + 1 ADA Shower and Restroom Combination Trailer Rental`.
 
 ## 3-stall + 1 ADA disputed-gallery withdrawal — 2026-09-24 (LOCAL PASS; DEPLOYED AND LIVE VERIFIED)
 
