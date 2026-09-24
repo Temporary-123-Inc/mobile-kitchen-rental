@@ -261,6 +261,6 @@ view_rank = {'interior': 0, 'detail': 1, 'exterior': 2, 'plan': 3, 'diagram': 3}
 images.sort(key=lambda image: (model_order.get(image['model'], len(models)),
                               image['model'], view_rank[image['view']],
                               image.get('displayOrder', 99), image['id']))
-manifest=dict(version=6,reviewedAt='2026-09-24',selectionPolicy='At least one suitable photo is sufficient. Client-named visually reviewed references and specific April approvals are recorded in equipment-photo-policy.json; later reviewed sources in equipment-photo-additions.json. Single-family/model carousels; broad titles use separately labelled options, not mixed galleries.',models=models,images=images)
+manifest=dict(version=5,reviewedAt='2026-09-16',selectionPolicy='At least one suitable photo is sufficient. Client-named visually reviewed references and specific April approvals are recorded in equipment-photo-policy.json; later reviewed sources in equipment-photo-additions.json. Single-family/model carousels; broad titles use separately labelled options, not mixed galleries.',models=models,images=images)
 (ROOT/'content/verified-equipment-images.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
 print(json.dumps(dict(classified=len(images),localSourceImages=len(rows)+len(additions['images']),newSourceImages=len(additions['images']),supplemental=len(supplemental),approved=sum(i['status']=='approved' for i in images),withheld=sum(i['status']=='withheld' for i in images),models=len(models)),indent=2))

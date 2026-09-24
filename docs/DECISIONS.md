@@ -1,10 +1,8 @@
 # Temporary123 Decision Log
 
-## 2026-09-24 — Use only the supplied exact-model gallery for the 3-stall + 1 ADA route
+## 2026-09-24 — Withhold disputed 3-stall + 1 ADA photography
 
-Map `/services/shower-restroom-combination-trailers/3-stall-1-ada/` to the eight photos in the owner-supplied `Luxury Shower-Restroom Combination Trailer (3 Stalls + 1 ADA)` folder and classify them as a dedicated manifest model. Do not reuse the 22 ft six-stall set or the generic ADA reference on this route. Keep all four interior views before the four exterior views in the carousel.
-
-Photography supports identification of this supplied configuration but does not by itself certify dimensions, ramp availability, accessibility compliance, utilities, or the exact unit available for a quote. Preserve that boundary in the customer-facing caption and existing planning copy. Do not alter the H1, URL, equipment facts, indexing policy, or other service galleries as part of this correction.
+Do not use the folder label as proof that its contents depict the 3-stall + 1 ADA model. Visual comparison found inconsistent exterior door counts, and SHA-256 comparison found four files duplicated exactly in the 8-stall + 1 ADA folder. Remove the disputed gallery and render the existing exact-photography-pending-verification state until the owner supplies or identifies an approved exact-model set. This supersedes the earlier same-day decision to treat all eight folder images as exact-model evidence.
 
 ## 2026-09-22 — Separate existing-public indexing from legacy recovery
 

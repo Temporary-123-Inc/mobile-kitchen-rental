@@ -71,17 +71,23 @@ test("new named references appear on their matching service pages without changi
   }
 });
 
-test("generic ADA catalogue reference remains disclosed on specific ADA variants", async ({ page }) => {
+test("unverified 3+1 photography is withheld while the generic 8+1 reference remains disclosed", async ({ page }) => {
   await page.goto("/service-areas/alaska/");
   await expect(page.locator('[data-image-review-id="catalog-restroom"]')).toBeVisible();
   await expect(page.locator("[data-carousel-caption]").first()).toContainText("catalogue shows a combined unit");
-  for (const [route, layout] of [["/services/shower-restroom-combination-trailers/3-stall-1-ada/", "three-stall-plus-one-ADA"], ["/services/shower-restroom-combination-trailers/8-stall-1-ada/", "eight-stall-plus-one-ADA"]] as const) {
-    await page.goto(route);
-    const carousel = page.locator("main [data-service-carousel]").first();
-    await expect(carousel).toBeVisible();
-    await expect(page.locator(".service-hero-unverified")).toHaveCount(0);
-    await expect(carousel.locator("[data-carousel-caption]").first()).toContainText("do not establish");
-    await expect(carousel.locator("[data-carousel-caption]").first()).toContainText(layout);
-    await expect(carousel.locator('[data-image-review-id="catalog-restroom"]')).toHaveCount(1);
-  }
+
+  await page.goto("/services/shower-restroom-combination-trailers/3-stall-1-ada/");
+  await expect(page.locator("main [data-service-carousel]")).toHaveCount(0);
+  await expect(page.locator(".service-hero-unverified")).toBeVisible();
+  await expect(page.locator(".service-hero-unverified")).toContainText(
+    "Exact equipment photography is pending verification",
+  );
+
+  await page.goto("/services/shower-restroom-combination-trailers/8-stall-1-ada/");
+  const carousel = page.locator("main [data-service-carousel]").first();
+  await expect(carousel).toBeVisible();
+  await expect(page.locator(".service-hero-unverified")).toHaveCount(0);
+  await expect(carousel.locator("[data-carousel-caption]").first()).toContainText("do not establish");
+  await expect(carousel.locator("[data-carousel-caption]").first()).toContainText("eight-stall-plus-one-ADA");
+  await expect(carousel.locator('[data-image-review-id="catalog-restroom"]')).toHaveCount(1);
 });

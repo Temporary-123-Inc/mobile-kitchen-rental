@@ -1,18 +1,15 @@
 # Temporary123 Test Results
 
-## 3-stall + 1 ADA service-gallery correction — 2026-09-24 (LIVE PASS)
+## 3-stall + 1 ADA disputed-gallery withdrawal — 2026-09-24 (LOCAL PASS; RELEASE IN PROGRESS)
 
-- Source isolation: clean clone of official `Temporary-123-Inc/Temporary-123` main at `106e54fe79229648229e57c4a377d9a533beaf1b` on branch `codex/fix-3-stall-ada-images`; unrelated changes in the primary checkout were excluded.
-- Visual source review: all eight owner-supplied PNGs in `D:\Temporary123 Equipment Media\Luxury Shower-Restroom Combination Trailers\Luxury Shower-Restroom Combination Trailer (3 Stalls + 1 ADA)` were opened and inspected. The four interiors and four exteriors are recorded under the dedicated `client-supplied-3-stall-1-ada-combination` model; no accessibility certification is inferred from photography.
-- Focused regression: `npx vitest run tests/serviceHeroImages.test.ts` passed **8/8** and proves the exact route receives only the eight dedicated images in the intended interior/exterior order, excludes the known six-stall image set, and uses the revised caption.
-- Static checks: `npm run typecheck`, `git diff --check`, `npm run check:secrets`, and the manifest builder passed. The secret scan found zero findings. The generated model has eight source images and all 16 responsive derivatives exist.
-- Production build: `npm run build` passed TypeScript, Vite, and prerendering for **745 pages plus 404**. `npm run check:links` passed **745 pages** with zero missing or case-mismatched targets.
-- Generated-page audit: the exact prerendered page retained the H1 `3-Stall + 1 ADA Shower and Restroom Combination Trailer Rental`, contained all eight new image hashes and the revised caption, and contained none of the prior six-stall hashes.
-- Browser QA: the local production preview rendered the exact H1, an eight-item carousel using the new responsive assets, and the revised caption. The visible active image decoded successfully; the page had no framework error overlay and emitted zero browser warnings/errors.
-- Broad-suite note: the concurrent configured run passed **73/74** and one archive-heavy migration assertion exceeded its existing 5-second timeout. A clean isolated rerun of `tests/migration.test.ts` passed **14/14** in 6.10 seconds without changing code or timeout settings.
-- Release: runtime commit `4fea4be17f562b9d2fb8605f4d54b4fe51fb5170` was fast-forwarded to official `Temporary-123-Inc/Temporary-123` main. Git-triggered Vercel production deployment `dpl_DVtT3PdThw9CK7ZGTuZZEpQATeDZ` reached READY and is aliased to `temporary123.com`, `www.temporary123.com`, and the project production aliases.
-- Live HTTP: the exact production route returned HTTP 200 with the unchanged H1, all eight new exact-model hashes, the revised caption, and none of the former six-stall hashes. All 16 responsive assets returned HTTP 200 with `image/webp` content type.
-- Live browser: Chromium rendered the eight-item production carousel, exercised all eight thumbnail selections, and decoded all eight 960-pixel gallery images plus their thumbnails. The page showed no framework error overlay and emitted zero browser warnings/errors.
+- Root cause: the earlier review treated the source folder name as authoritative. Cross-folder SHA-256 comparison subsequently proved that four of its eight files are exact duplicates of files in the `8 Stalls + 1 ADA` folder, while visual inspection found an exterior with four standard doors plus a larger room.
+- Correction: remove the disputed originals, responsive derivatives and manifest classification; do not substitute another unverified model. The route must render `Exact equipment photography is pending verification.` with no service carousel.
+- Preserved scope: H1, URL, equipment copy, metadata/indexing, forms and unrelated galleries are unchanged.
+- Unit verification: `npx vitest run tests/serviceHeroImages.test.ts tests/ownerImageRollout.test.tsx` passed 18/18 tests across two files.
+- Build verification: `npm run build` passed TypeScript and Vite and generated 745 static pages plus 404.
+- Clean-preview HTTP verification on isolated port 4317 returned HTTP 200, included `Exact equipment photography is pending verification`, omitted `data-service-carousel`, and omitted the disputed asset reference.
+- Browser verification: the exact 3+1 correction test and the neighboring 8+1 disclosure test passed in `tests/browser/owner-image-rollout.spec.ts`. One unrelated broad-options test timed out attempting to scroll a hidden element; no failure occurred on the corrected route.
+- Production push and live verification remain pending.
 
 ## Existing public-page indexability — 2026-09-22 (LOCAL PASS; RELEASE BLOCKED)
 

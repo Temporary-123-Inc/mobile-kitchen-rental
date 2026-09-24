@@ -114,37 +114,30 @@ describe("service hero image ordering", () => {
     );
   });
 
-  it("provides reviewed imagery for every published service-model route", () => {
+  it("provides reviewed imagery or an explicit verification hold for every published service-model route", () => {
     const routes = [...new Set(serviceOptions.map(({ href }) => href))];
     expect(routes).toHaveLength(28);
     routes.forEach((path) => {
+      if (
+        path ===
+        "/services/shower-restroom-combination-trailers/3-stall-1-ada/"
+      ) {
+        expect(imagesForServicePath(path), path).toBeUndefined();
+        expect(servicePhotoCaption(path), path).toContain(
+          "pending verification",
+        );
+        return;
+      }
       expect(imagesForServicePath(path)?.length, path).toBeGreaterThan(0);
     });
   });
 
-  it("uses only the supplied 3-stall plus 1 ADA gallery on its exact route", () => {
+  it("withholds the disputed 3-stall plus 1 ADA image set", () => {
     const path =
       "/services/shower-restroom-combination-trailers/3-stall-1-ada/";
-    const images = imagesForServicePath(path) ?? [];
 
-    expect(images).toHaveLength(8);
-    expect(images.map(({ model }) => model)).toEqual(
-      Array(8).fill("client-supplied-3-stall-1-ada-combination"),
-    );
-    expect(images.slice(0, 4).every(({ view }) => view === "interior")).toBe(
-      true,
-    );
-    expect(images.slice(4).every(({ view }) => view === "exterior")).toBe(
-      true,
-    );
-    expect(images.every(({ src }) => src.includes("location-verified"))).toBe(
-      true,
-    );
-    expect(images.map(({ sha256 }) => sha256)).not.toContain(
-      "ee85c5176470af5e87fc10a0918d2a0e24be5a73eb645573733c80a5c89d969b",
-    );
-    expect(servicePhotoCaption(path)).toContain("supplied 3-stall + 1 ADA");
-    expect(servicePhotoCaption(path)).not.toContain("do not establish");
+    expect(imagesForServicePath(path)).toBeUndefined();
+    expect(servicePhotoCaption(path)).toContain("pending verification");
   });
 
   it("labels non-exact reference galleries with their material difference", () => {
