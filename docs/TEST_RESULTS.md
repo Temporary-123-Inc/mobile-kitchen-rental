@@ -1,6 +1,6 @@
 # Temporary123 Test Results
 
-## 3-stall + 1 ADA disputed-gallery withdrawal — 2026-09-24 (LOCAL PASS; RELEASE IN PROGRESS)
+## 3-stall + 1 ADA disputed-gallery withdrawal — 2026-09-24 (LOCAL PASS; DEPLOYED AND LIVE VERIFIED)
 
 - Root cause: the earlier review treated the source folder name as authoritative. Cross-folder SHA-256 comparison subsequently proved that four of its eight files are exact duplicates of files in the `8 Stalls + 1 ADA` folder, while visual inspection found an exterior with four standard doors plus a larger room.
 - Correction: remove the disputed originals, responsive derivatives and manifest classification; do not substitute another unverified model. The route must render `Exact equipment photography is pending verification.` with no service carousel.
@@ -9,7 +9,9 @@
 - Build verification: `npm run build` passed TypeScript and Vite and generated 745 static pages plus 404.
 - Clean-preview HTTP verification on isolated port 4317 returned HTTP 200, included `Exact equipment photography is pending verification`, omitted `data-service-carousel`, and omitted the disputed asset reference.
 - Browser verification: the exact 3+1 correction test and the neighboring 8+1 disclosure test passed in `tests/browser/owner-image-rollout.spec.ts`. One unrelated broad-options test timed out attempting to scroll a hidden element; no failure occurred on the corrected route.
-- Production push and live verification remain pending.
+- Release: runtime commit `5fb9942` was pushed to official `main`; Vercel production deployment `dpl_BMunCtXzfmz5vPgbEm8qoetXVV9B` reached Ready after building that exact revision.
+- Live HTTP verification: the canonical production URL returned HTTP 200, retained the exact `3-Stall + 1 ADA Shower and Restroom Combination Trailer Rental` H1, included the pending-verification notice, omitted `data-service-carousel`, and omitted the disputed asset hash.
+- Live browser verification: a fresh cache-busted production load rendered `PHOTO REVIEW IN PROGRESS` and no gallery. An already-open browser tab initially retained the superseded cached DOM; the fresh load and HTTP response both confirmed the deployed state.
 
 ## Existing public-page indexability — 2026-09-22 (LOCAL PASS; RELEASE BLOCKED)
 
