@@ -567,7 +567,7 @@ const servicePhotoReferences: Readonly<Record<string, ServicePhotoReference>> = 
   },
   "/services/shower-restroom-combination-trailers/3-stall-1-ada/": {
     caption:
-      "Exact 3-stall + 1 ADA equipment photography is pending verification. Confirm the available unit, access layout and floor plan with your quote.",
+      "Selected owner-supplied photography for the 3-stall + 1 ADA shower and restroom combination trailer. Confirm the available unit, ramp, dimensions, accessibility requirements and utility plan with your quote.",
   },
   "/services/shower-restroom-combination-trailers/8-stall-1-ada/": {
     sourceTitle: "ADA Shower and Restroom Combination Trailer",

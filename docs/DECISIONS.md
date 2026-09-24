@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-09-24 — Publish the visually compatible 3-stall + 1 ADA subset
+
+At the owner's direction, replace the temporary no-photo state with the seven owner-supplied photos that are visually compatible with the 3-stall + 1 ADA configuration. Include the standard room interiors, larger grab-bar/open-floor room, rear larger entrance, and the exterior showing three standard side entrances. Exclude the eighth exterior because it visibly shows four standard side doors and therefore conflicts with the named configuration. Describe the set as selected owner-supplied photography and require quote-time confirmation of the available unit, ramp, dimensions, accessibility requirements and utility plan. This supersedes the same-day no-gallery decision without treating the folder name alone as proof for the excluded image.
+
 ## 2026-09-24 — Withhold disputed 3-stall + 1 ADA photography
 
 Do not use the folder label as proof that its contents depict the 3-stall + 1 ADA model. Visual comparison found inconsistent exterior door counts, and SHA-256 comparison found four files duplicated exactly in the 8-stall + 1 ADA folder. Remove the disputed gallery and render the existing exact-photography-pending-verification state until the owner supplies or identifies an approved exact-model set. This supersedes the earlier same-day decision to treat all eight folder images as exact-model evidence.

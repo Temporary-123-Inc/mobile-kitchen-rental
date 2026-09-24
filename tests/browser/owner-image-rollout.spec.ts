@@ -71,18 +71,10 @@ test("new named references appear on their matching service pages without changi
   }
 });
 
-test("unverified 3+1 photography is withheld while the generic 8+1 reference remains disclosed", async ({ page }) => {
+test("generic ADA catalogue reference remains disclosed on specific ADA variants", async ({ page }) => {
   await page.goto("/service-areas/alaska/");
   await expect(page.locator('[data-image-review-id="catalog-restroom"]')).toBeVisible();
   await expect(page.locator("[data-carousel-caption]").first()).toContainText("catalogue shows a combined unit");
-
-  await page.goto("/services/shower-restroom-combination-trailers/3-stall-1-ada/");
-  await expect(page.locator("main [data-service-carousel]")).toHaveCount(0);
-  await expect(page.locator(".service-hero-unverified")).toBeVisible();
-  await expect(page.locator(".service-hero-unverified")).toContainText(
-    "Exact equipment photography is pending verification",
-  );
-
   await page.goto("/services/shower-restroom-combination-trailers/8-stall-1-ada/");
   const carousel = page.locator("main [data-service-carousel]").first();
   await expect(carousel).toBeVisible();
@@ -90,4 +82,18 @@ test("unverified 3+1 photography is withheld while the generic 8+1 reference rem
   await expect(carousel.locator("[data-carousel-caption]").first()).toContainText("do not establish");
   await expect(carousel.locator("[data-carousel-caption]").first()).toContainText("eight-stall-plus-one-ADA");
   await expect(carousel.locator('[data-image-review-id="catalog-restroom"]')).toHaveCount(1);
+});
+
+test("selected owner photos appear on the 3-stall plus 1 ADA route", async ({ page }) => {
+  await page.goto("/services/shower-restroom-combination-trailers/3-stall-1-ada/");
+  const carousel = page.locator("main [data-service-carousel]").first();
+  await expect(carousel).toBeVisible();
+  await expect(page.locator(".service-hero-unverified")).toHaveCount(0);
+  await expect(carousel.locator("[data-carousel-slide]")).toHaveCount(7);
+  await expect(carousel.locator('[data-image-review-id="28.08"]')).toHaveCount(0);
+  await expect(carousel.locator("[data-carousel-caption]").first()).toContainText("owner-supplied photography");
+  expect(await carousel.locator("[data-carousel-slide] img").first().evaluate(async (element: HTMLImageElement) => {
+    await element.decode();
+    return element.naturalWidth > 0;
+  })).toBe(true);
 });

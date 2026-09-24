@@ -1,5 +1,15 @@
 # Temporary123 Test Results
 
+## 3-stall + 1 ADA selected production photography — 2026-09-24 (LOCAL PASS; RELEASE PENDING)
+
+- Visual selection: reviewed all eight owner-supplied files at original detail. Retained seven compatible views: four interiors and three exteriors, including the exterior with three standard side entrances and the rear larger entrance. Excluded review ID `28.08`, whose exterior visibly shows four standard side doors.
+- Runtime: restored only the seven selected originals and fourteen responsive WebP derivatives; regenerated the verified manifest and exact-route gallery mapping. The caption identifies selected owner-supplied photography and asks customers to confirm the available unit, ramp, dimensions, accessibility requirements and utility plan with the quote.
+- Preserved scope: the H1, URL, equipment specifications/copy, metadata/indexing, forms and unrelated galleries are unchanged.
+- Unit verification: `npx vitest run tests/serviceHeroImages.test.ts tests/ownerImageRollout.test.tsx tests/locationCarouselImages.test.ts` passed 89/89 assertions, including exact seven-image order, byte integrity, the generic ADA grouping and absence of the excluded image/hash.
+- Build verification: `npm run build` passed TypeScript and Vite and generated 745 static pages plus 404.
+- Browser verification: an initial attempt correctly failed after Playwright reused an unrelated server already occupying port 4173. A fresh isolated preview on port 4174 passed the exact-route test 1/1: HTTP 200, visible carousel, seven slides, no pending-verification panel, no `28.08`, selected-photo caption and a decoded lead image.
+- Release boundary: official-main push, Vercel production deployment and live production verification are pending.
+
 ## 3-stall + 1 ADA disputed-gallery withdrawal — 2026-09-24 (LOCAL PASS; DEPLOYED AND LIVE VERIFIED)
 
 - Root cause: the earlier review treated the source folder name as authoritative. Cross-folder SHA-256 comparison subsequently proved that four of its eight files are exact duplicates of files in the `8 Stalls + 1 ADA` folder, while visual inspection found an exterior with four standard doors plus a larger room.

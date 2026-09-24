@@ -67,15 +67,24 @@ describe("Charles delegated photo selection", () => {
     ])
       expect(resolveLocationGallery(title).images, title).toHaveLength(0);
   });
-  it("uses the client-labelled ADA reference only generically, not for exact variants", () => {
+  it("uses the selected 3+1 owner photos generically while withholding other exact ADA variants", () => {
     const generic = resolveLocationGallery(
       "ADA Shower and Restroom Combination Trailer",
     );
-    expect(generic.groups.map((group) => group.modelId)).toEqual(["client-labelled-ada-reference", "model-10"]);
-    expect(generic.groups[0].images.map((i) => i.reviewId)).toEqual(["catalog-restroom"]);
-    expect(referenceCaptionForModel(generic.modelId)).toContain("not shown");
+    expect(generic.groups.map((group) => group.modelId)).toEqual(["client-supplied-3-stall-1-ada-combination", "model-10"]);
+    expect(generic.groups[0].images.map((i) => i.reviewId)).toEqual([
+      "28.01",
+      "28.03",
+      "28.04",
+      "28.05",
+      "28.02",
+      "28.06",
+      "28.07",
+    ]);
+    expect(referenceCaptionForModel(generic.modelId)).toContain(
+      "Selected owner-supplied photography",
+    );
     for (const title of [
-      "3 Stalls + 1 ADA Combination Trailer",
       "8 Stalls + 1 ADA Combination Trailer",
       "22 ft ADA Combination Trailer",
     ])

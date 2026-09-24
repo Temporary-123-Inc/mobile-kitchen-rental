@@ -50,7 +50,6 @@ describe("exact-title equipment classification", () => {
   });
   it.each([
     "Restroom Trailer Rental",
-    "3-Stall 1-ADA Combination Rental",
     "22 ft 10-Stall Shower Trailer Rental",
     "26 ft Mobile Kitchen Rental",
     "24 ft Laundry Trailer Rental",
@@ -78,7 +77,7 @@ describe("exact-title equipment classification", () => {
     expect(result.groups[0].images.every((image) => image.view === "interior")).toBe(true);
   });
   it("shows separately labelled ADA, combination, sleeper and shower references", () => {
-    expect(resolveLocationGallery("ADA Shower and Restroom Combination Trailer").groups.map((group) => group.modelId)).toEqual(["client-labelled-ada-reference", "model-10"]);
+    expect(resolveLocationGallery("ADA Shower and Restroom Combination Trailer").groups.map((group) => group.modelId)).toEqual(["client-supplied-3-stall-1-ada-combination", "model-10"]);
     expect(resolveLocationGallery("Workforce Housing Sleeper Bunk-Bed Facility Leasing").groups.map((group) => group.modelId)).toEqual(["april-two-stall-sleeper", "sleeper-four-room"]);
     expect(resolveLocationGallery("Emergency Basecamp Shower Trailer Rental").groups.map((group) => group.modelId)).toEqual(["model-21"]);
   });
@@ -91,6 +90,7 @@ describe("exact-title equipment classification", () => {
     ["40 ft Bulk Combination Kitchen Trailer", "model-15"],
     ["22 ft 6-Stall Shower-Restroom Combination Trailer", "model-10"],
     ["13 ft 3-Stall Shower-Restroom Combination Trailer", "model-09"],
+    ["3-Stall 1-ADA Combination Rental", "client-supplied-3-stall-1-ada-combination"],
     ["20 ft 5-Stall Shower Trailer", "model-21"],
     ["20 ft 5-Stall Shower Container", "model-20"],
     ["20 ft Laundry Container", "model-06"],
@@ -168,7 +168,7 @@ describe("exact-title equipment classification", () => {
 
 describe("reviewed image integrity", () => {
   it("records every reviewed source and verifies its exact bytes", () => {
-    expect(manifest.images).toHaveLength(156); // 154 existing uses + 2 newly reviewed original files.
+    expect(manifest.images).toHaveLength(163); // 154 existing uses + 9 delegated additions.
     for (const image of manifest.images) {
       expect(image.reviewedVisually).toBe(true);
       const bytes = fs.readFileSync("public" + image.original);
