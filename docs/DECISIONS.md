@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-09-26 — Portable prepared-answer website guide
+
+Keep deterministic answer engine and isolated widget in packages/website-guide; keep brand-specific content and contact-drawer integration in src/websiteGuide. No AI dependency or Vercel-specific runtime required. Unknown questions receive an honest fallback; pricing and availability require the team. Chat stays in page memory. Release only this feature from the verified production revision; preserve unrelated local work and production SEO configuration. Reuse instructions in package README.
+
 ## 2026-09-24 — Publish the visually compatible 3-stall + 1 ADA subset
 
 At the owner's direction, replace the temporary no-photo state with the seven owner-supplied photos that are visually compatible with the 3-stall + 1 ADA configuration. Include the standard room interiors, larger grab-bar/open-floor room, rear larger entrance, and the exterior showing three standard side entrances. Exclude the eighth exterior because it visibly shows four standard side doors and therefore conflicts with the named configuration. Describe the set as selected owner-supplied photography and require quote-time confirmation of the available unit, ramp, dimensions, accessibility requirements and utility plan. This supersedes the same-day no-gallery decision without treating the folder name alone as proof for the excluded image.

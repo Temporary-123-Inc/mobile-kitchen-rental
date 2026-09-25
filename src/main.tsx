@@ -1,3 +1,4 @@
+import "./websiteGuide/bootstrap";
 import { applyCityRentalView } from "./cityRentalView";
 import { inject } from "@vercel/analytics";
 import calculatorCities from "./calculatorCities.json" with { type: "json" };

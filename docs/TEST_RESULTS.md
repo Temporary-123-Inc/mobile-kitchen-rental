@@ -1,5 +1,9 @@
 # Temporary123 Test Results
 
+## 2026-09-26 — Modular guide release validation
+
+Production baseline aa5dfbb. npm ci from unchanged lockfile. Full npm run build: TypeScript, Vite, 745 pages plus 404 pass; existing Zod annotation warnings only. Package build and 19 engine tests pass. Site suite: initial concurrent build/test run had one 5-second migration timeout; unchanged test passed in full serial rerun (74/74). Six Chromium browser tests pass with production-compiled assets and host CSP: standalone alternate brand, 320/375/768/1440px, pricing, unknown-query fallback, quote drawer visibility, keyboard/focus, safe text rendering, isolation, history and cleanup. Generated sitemap is byte-identical to live sitemap (744 URLs). No inquiry submission, database mutation or email test; existing form is opened only. Deployment verification pending.
+
 ## 3-stall + 1 ADA selected production photography — 2026-09-24 (LIVE PASS)
 
 - Visual selection: reviewed all eight owner-supplied files at original detail. Retained seven compatible views: four interiors and three exteriors, including the exterior with three standard side entrances and the rear larger entrance. Excluded review ID `28.08`, whose exterior visibly shows four standard side doors.
