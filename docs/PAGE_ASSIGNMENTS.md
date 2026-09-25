@@ -1,5 +1,13 @@
 # Page and File Assignments
 
+## 2026-09-26 direct-answer guide release — Active
+
+Current task owns guide package/config and focused release tests in this isolated checkout based on origin/main 3518096. User authorized production deployment. Preserve existing audit/docs changes and all shared-checkout unrelated work.
+
+## 2026-09-26 homepage brand description — Complete; live verified
+
+Supersedes Active reservation below. Runtime commit 3518096; Vercel dpl_6V5jHr614xLHnDNzGytvPQ9wNtam READY on temporary123.com. Two local and two live browser checks passed at 375/1440px. Only homepage paragraph changed; isolated release preserves shared workspace edits.
+
 ## 2026-09-26 homepage brand description — Active
 
 Current task owns only src/Home.tsx hero paragraph, focused regression coverage and additive coordination records in this isolated checkout. Replace specialist referral with approved Temporary123 nationwide rental copy; preserve H1, metadata, URLs, forms and unrelated work. User authorized production deployment.

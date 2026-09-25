@@ -1,4 +1,28 @@
 export type Action = { label: string; href: string };
+/** Public, owner-approved facts only. Omitted facts create no answer. */
+export type BusinessProfile = {
+  name: string;
+  phone?: { display: string; href: string };
+  email?: string;
+  hours?: string;
+  address?: string;
+  serviceArea?: string;
+  about?: string;
+};
+export function businessTopics(profile: BusinessProfile): Topic[] {
+  const topics: Topic[] = [];
+  const add = (id: string, title: string, phrases: string[], answer: string, actions?: Action[]) =>
+    topics.push({ id: `business-${id}`, title, phrases, answer, actions, priority: 120 });
+  if (profile.phone) add("phone", "Phone number", ["phone", "phone number", "telephone", "call", "contact number", "number to call"],
+    `You can call ${profile.name} at ${profile.phone.display}.`, [{ label: `Call ${profile.phone.display}`, href: profile.phone.href }]);
+  if (profile.email) add("email", "Email address", ["email", "e mail", "email address"],
+    `Email ${profile.name} at ${profile.email}.`, [{ label: "Send email", href: `mailto:${profile.email}` }]);
+  if (profile.hours) add("hours", "Opening hours", ["hours", "open", "opening hours", "weekends", "24 7"], profile.hours);
+  if (profile.address) add("address", "Business address", ["address", "office", "headquarters", "where are you located"], profile.address);
+  if (profile.serviceArea) topics.push({ id: "business-areas", title: "Service areas", phrases: ["service areas", "service area", "nationwide", "where do you deliver", "where do you operate"], answer: profile.serviceArea });
+  if (profile.about) topics.push({ id: "business-about", title: `About ${profile.name}`, phrases: ["about", "who are you", "what do you do", profile.name], answer: profile.about });
+  return topics;
+}
 export type Topic = {
   id: string;
   title: string;
@@ -158,7 +182,7 @@ export function createGuide(source: GuideConfig) {
       if (!matches.length) return fallback();
       const top = matches[0];
       const tied = matches.filter(
-        (m) => (m.topic.priority ?? 0) === (top.topic.priority ?? 0),
+        (m) => (m.topic.priority ?? 0) === (top.topic.priority ?? 0) && m.score === top.score,
       );
       if (tied.length > 1)
         return {

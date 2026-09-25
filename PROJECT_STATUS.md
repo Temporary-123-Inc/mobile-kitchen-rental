@@ -1,5 +1,13 @@
 # Temporary123 Project Status
 
+## 2026-09-26 — Direct-answer guide release
+
+Prepared-answer guide now returns phone, hours, equipment options and project guidance directly. Reusable businessTopics profile keeps business facts separate from engine. Isolated release from 3518096; user authorized deployment. 34 engine tests, full build (745 pages + 404), 4 local browser tests and secret scan passed. Production verification pending.
+
+## 2026-09-26 — Homepage brand correction LIVE VERIFIED
+
+Commit 3518096 pushed to Temporary-123-Inc/Temporary-123 main; production deployment dpl_6V5jHr614xLHnDNzGytvPQ9wNtam READY. Homepage paragraph now uses approved Temporary123 nationwide rental copy without the Temporary Kitchens 123 referral. Local build (745 pages + 404), secret scan and 2/2 local plus 2/2 live mobile/desktop Playwright checks passed. H1/canonical preserved, no horizontal overflow or page errors. Sitemap remains 744 URLs and matches build. No backend changes or inquiries submitted. Runtime released from isolated ../temporary123-guide-release; shared-checkout source preserved. This post-release evidence is local.
+
 ## 2026-09-26 — Homepage Temporary123 brand correction
 
 Replaced only the homepage hero description with user-approved Temporary123 nationwide commercial/institutional rental wording, broad equipment coverage, and availability/dispatch confirmation caveat. Removed the specialist-site referral from this paragraph. H1, metadata, URLs, images, forms and infrastructure unchanged. TypeScript/full 745-page + 404 build and secret scan passed. Release/live verification pending.

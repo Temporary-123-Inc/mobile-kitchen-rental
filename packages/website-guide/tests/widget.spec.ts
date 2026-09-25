@@ -7,6 +7,10 @@ test("plain HTML reuse, isolated styles, context, keyboard and safe rendering", 
   await page.goto("/packages/website-guide/demo/index.html");
   await page.getByRole("button", { name: "Studio guide", exact: true }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
+  await page.getByLabel("Ask about this website").fill("phone number");
+  await page.getByRole("button", { name: "Send", exact: true }).click();
+  await expect(page.getByRole("log")).toContainText("You can call Northstar Studio at 555-0100.");
+  await expect(page.getByRole("log")).not.toContainText("Temporary123");
   expect(
     await page
       .getByRole("button", { name: "Send", exact: true })
@@ -51,6 +55,13 @@ for (const width of [320, 375, 768, 1440])
     const box = await dialog.boundingBox();
     expect(box!.x).toBeGreaterThanOrEqual(0);
     expect(box!.x + box!.width).toBeLessThanOrEqual(width);
+    await page.getByLabel("Ask about this website").fill("What is your phone number?");
+    await page.getByRole("button", { name: "Send", exact: true }).click();
+    await expect(page.getByRole("log")).toContainText("You can call Temporary123 at +1 (800) 443 - 5212.");
+    await expect(page.getByRole("log").getByRole("link", { name: "Call +1 (800) 443 - 5212", exact: true })).toHaveAttribute("href", "tel:+18004435212");
+    await page.getByLabel("Ask about this website").fill("Are you open on weekends?");
+    await page.getByRole("button", { name: "Send", exact: true }).click();
+    await expect(page.getByRole("log")).toContainText("rental team is available 24/7");
     await page
       .getByLabel("Ask about this website")
       .fill("How much do showers cost?");

@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-09-26 — Direct business answers remain modular
+
+Use an optional public BusinessProfile to generate portable prepared-answer topics. Temporary123 facts remain in site configuration; other websites supply their own. Prefer direct answers plus optional links. Never invent missing facts, prices, inventory or dispatch commitments. No AI provider or new backend required.
+
 ## 2026-09-26 — Homepage umbrella-brand description
 
 Use Temporary123 in the homepage introduction and describe the broad existing rental range. Remove the Temporary Kitchens 123 referral from this paragraph only. Nationwide describes coverage, not guaranteed inventory or immediate dispatch; retain explicit confirmation wording. User approved this exact copy and production deployment.

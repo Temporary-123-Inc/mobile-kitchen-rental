@@ -39,6 +39,28 @@ The package is not published to npm. Install a local package/tarball or use the 
 
 ## Configuration
 
+### Direct answers for any business
+
+Import `businessTopics` from the universal entry or `./core` and spread its result into your site's `topics`. Only supply approved public facts. Omitted facts produce no topic; never put secrets into this browser-visible configuration.
+
+```js
+const topics = businessTopics({
+  name: 'Example Studio',
+  phone: { display: '555-0100', href: 'tel:5550100' },
+  email: 'hello@example.com',
+  hours: 'Monday–Friday, 9am–5pm.',
+  address: 'Your verified public office address',
+  serviceArea: 'Your confirmed coverage area',
+  about: 'Your approved business description'
+});
+// config.topics = [...topics, ...yourFAQs];
+// config.suggestions = ['business-phone', 'business-hours'];
+```
+
+Generated IDs are `business-phone`, `business-email`, `business-hours`, `business-address`, `business-areas`, and `business-about`. Suggest only IDs for supplied facts. Add site-specific FAQs as ordinary topics with complete answers first and optional links second. Contact/hours/address intents have priority 120. Equal-priority matches use the longest matching phrase; only equal scores ask for clarification. Explicit keyword variants remain necessary: this is not AI, a crawler, or a guarantee of answering every wording. Rebuild when site facts change. Test the new site's phone, email, hours, services, unknown questions and overlapping queries before release.
+
+Temporary123 now answers phone, hours, equipment/options, nationwide coverage, quote requirements, utilities, combined rentals and rental periods directly. Missing public email, final pricing and live inventory are explicitly not fabricated.
+
 - Each topic has a unique `id`, `title`, matching `phrases`, prepared `answer`, optional `actions` and optional `followUp` topic ID. “Yes”/“tell me more” follows the previous topic's follow-up. Suggested buttons select exact topics.
 - `priority` defaults to zero; a higher matching priority wins. Give pricing/availability clear precedence. Phrase matching uses word boundaries and English normalization. Add variants explicitly; synonyms, spelling mistakes and other languages are not automatically understood.
 - `suggestions`: initial/fallback topic IDs. `contact`: optional fallback link.

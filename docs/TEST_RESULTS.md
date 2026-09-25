@@ -1,5 +1,13 @@
 # Temporary123 Test Results
 
+## 2026-09-26 — Direct-answer guide pre-release
+
+34/34 engine/content tests passed. Full TypeScript/Vite/prerender build passed (745 pages + 404). Local built-site Playwright 4/4 passed at 375/1440px: phone text and tel link, weekend hours with dispatch caveat, pricing disclaimer, unknown question fallback, contact drawer, unchanged homepage brand/H1/canonical and zero page errors. Secret scan: 1161 files, no findings. No inquiry submitted; unchanged email/backend excluded.
+
+## 2026-09-26 — Homepage brand correction LIVE VERIFIED
+
+Production commit 3518096 / deployment dpl_6V5jHr614xLHnDNzGytvPQ9wNtam. Full build and secret scan passed. Completed-build local Playwright 2/2 and live temporary123.com Playwright 2/2 passed: visible Temporary123 nationwide introduction, availability/dispatch caveat, no specialist referral or entity text in paragraph, unchanged H1/canonical, no horizontal overflow, zero page errors at 375/1440px. Live sitemap identical to build, 744 URLs. Initial premature preview run failed before prerender finished; completed-build rerun passed. No forms submitted; unchanged backend/email not retested. Post-release record local only.
+
 ## 2026-09-26 — Homepage brand correction pre-release
 
 Completed-build rerun: both Playwright checks passed at 375px and 1440px with zero page errors. Safe to release the scoped paragraph correction.

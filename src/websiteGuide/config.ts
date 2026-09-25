@@ -1,6 +1,7 @@
 import site from "../../site.json" with { type: "json" };
 import { serviceCategories } from "../serviceMenu";
 import type { GuideConfig, Topic } from "../../packages/website-guide/src/core";
+import { businessTopics } from "../../packages/website-guide/src/core";
 const phrases: Record<string, string[]> = {
   "Mobile Kitchens": ["kitchen", "kitchens", "cooking"],
   Dishwashing: ["dishwashing", "dishwasher", "dishwashers"],
@@ -22,7 +23,7 @@ const equipment: Topic[] = serviceCategories.map((category) => ({
   phrases: phrases[category.name] ?? [category.name],
   priority:
     category.name === "Shower and Restroom Combination Trailers" ? 10 : 0,
-  answer: category.description,
+  answer: `${category.description}\n\nListed options: ${category.links.map((link) => link.name).join("; ")}. Confirm the configuration and availability with the rental team.`,
   actions: [{ label: `Explore ${category.name}`, href: category.href }],
   followUp: "quote",
 }));
@@ -33,13 +34,43 @@ export const temporaryGuide: GuideConfig = {
   position: "left",
   bottom: 88,
   greeting:
-    "Welcome to Temporary123. I can help you find rental equipment, service information and the quote process. These are prepared website answers—not live availability or a final quote. What would you like to find?",
+    "Welcome to Temporary123. Ask me about our phone number, 24/7 rental team, equipment options, nationwide service, site preparation or quote process. I answer from prepared website information—not live inventory or final quotes.",
   fallback:
     "I don't have a prepared answer for that question. Choose a topic below or contact the team for project-specific help. Please don't enter sensitive information here.",
   contact: { label: "Contact the rental team", href: "/contact-us/" },
-  suggestions: ["equipment", "pricing", "areas", "quote"],
+  suggestions: ["business-phone", "equipment", "pricing", "areas", "quote"],
   topics: [
+    ...businessTopics({
+      name: site.brand,
+      phone: { display: site.phoneDisplay, href: `tel:${site.phoneE164}` },
+      hours: `The Temporary123 rental team is available 24/7. Call ${site.phoneDisplay}. Equipment availability and dispatch timing require confirmation.`,
+      about: "Temporary123 provides nationwide rental and leasing of temporary facilities for commercial and institutional projects, including kitchens, dishwashing, refrigeration, showers, restrooms, sleeping facilities, laundry and handwashing.",
+    }),
     ...equipment,
+    {
+      id: "utilities", title: "Utilities & site preparation", priority: 40,
+      phrases: ["utilities", "power", "water", "wastewater", "electricity", "site preparation", "site access", "connections"],
+      answer: "Check vehicle access, space for the equipment and available power, water and wastewater connections. Share site restrictions with your specialist. Exact connections and setup depend on the selected equipment and must be confirmed in your proposal.",
+      followUp: "quote",
+    },
+    {
+      id: "combined", title: "Rent several facilities together", priority: 40,
+      phrases: ["several facilities", "multiple facilities", "rent together", "package", "several types", "bundle"],
+      answer: "Yes. Discuss your kitchen, refrigeration, restroom, shower and workforce requirements in one conversation so the facilities can be planned around your operation. The rental team must confirm the equipment combination and availability.",
+      followUp: "quote",
+    },
+    {
+      id: "duration", title: "Rental period", priority: 40,
+      phrases: ["rental period", "how long", "rental duration", "lease", "leasing", "minimum rental"],
+      answer: "Temporary123 offers rental and leasing. Provide your preferred start and end dates and expected rental duration. Minimum periods, extensions and contract terms need confirmation from the rental team for your selected equipment; this guide cannot approve them.",
+      followUp: "quote",
+    },
+    {
+      id: "email", title: "Email contact", priority: 120,
+      phrases: ["email", "e mail", "email address"],
+      answer: `I do not have a verified public email address in this guide. You can send your project details through the inquiry form or call ${site.phoneDisplay}.`,
+      actions: [{ label: "Open inquiry form", href: "/contact-us/" }],
+    },
     {
       id: "equipment",
       title: "Browse equipment",
@@ -86,7 +117,7 @@ export const temporaryGuide: GuideConfig = {
         "nationwide",
       ],
       answer:
-        "Use the service-area directory to explore US locations. The team must confirm delivery arrangements and equipment availability for your project address.",
+        "Temporary123 provides nationwide rental and leasing across the United States. Share your project city, state and site address so the team can confirm delivery access, arrangements and equipment availability. Nationwide service is not a guarantee that every unit is immediately available in every location.",
       actions: [{ label: "Explore service areas", href: "/service-areas/" }],
       followUp: "quote",
     },
@@ -97,14 +128,12 @@ export const temporaryGuide: GuideConfig = {
       phrases: [
         "quote",
         "contact",
-        "call",
-        "phone",
         "book",
         "booking",
         "reserve",
       ],
       answer:
-        "Tell the team what equipment you need, the project location, dates and expected number of users. Use the existing inquiry form or call. This guide does not submit inquiries or reserve equipment.",
+        `To request a quote, call ${site.phoneDisplay} or use the inquiry form. Share the equipment you need, project location, start/end dates, expected rental duration and number of users. For kitchens, include your menu and meal volume. Mention utility connections and delivery restrictions. This guide does not submit inquiries or reserve equipment.`,
       actions: [
         { label: "Open quote form", href: "/contact-us/" },
         { label: `Call ${site.phoneDisplay}`, href: `tel:${site.phoneE164}` },
@@ -116,7 +145,7 @@ export const temporaryGuide: GuideConfig = {
       priority: 50,
       phrases: ["available", "availability", "in stock", "emergency", "urgent"],
       answer:
-        "This guide cannot check live inventory or guarantee delivery times. Contact the team directly to confirm equipment availability and discuss urgent requirements.",
+        `Call ${site.phoneDisplay} for urgent requirements; the rental team is available 24/7. Explain your location, equipment needs and required dates. This guide cannot check live inventory or guarantee delivery times; the team must confirm availability and dispatch.`,
       actions: [
         { label: "Contact the team", href: "/contact-us/" },
         { label: "Call the team", href: `tel:${site.phoneE164}` },

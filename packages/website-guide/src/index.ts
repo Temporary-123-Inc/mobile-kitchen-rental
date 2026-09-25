@@ -6,6 +6,8 @@ import {
   type Reply,
 } from "./core";
 export type { GuideConfig, Topic, Action, Reply } from "./core";
+export { businessTopics } from "./core";
+export type { BusinessProfile } from "./core";
 export type GuideEvent = {
   siteId: string;
   type: "open" | "close" | "answer" | "fallback" | "reset" | "action";
