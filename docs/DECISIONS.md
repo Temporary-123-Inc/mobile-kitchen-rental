@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-09-26 — Homepage umbrella-brand description
+
+Use Temporary123 in the homepage introduction and describe the broad existing rental range. Remove the Temporary Kitchens 123 referral from this paragraph only. Nationwide describes coverage, not guaranteed inventory or immediate dispatch; retain explicit confirmation wording. User approved this exact copy and production deployment.
+
 ## 2026-09-26 — Portable prepared-answer website guide
 
 Keep deterministic answer engine and isolated widget in packages/website-guide; keep brand-specific content and contact-drawer integration in src/websiteGuide. No AI dependency or Vercel-specific runtime required. Unknown questions receive an honest fallback; pricing and availability require the team. Chat stays in page memory. Release only this feature from the verified production revision; preserve unrelated local work and production SEO configuration. Reuse instructions in package README.

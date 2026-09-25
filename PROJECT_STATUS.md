@@ -1,5 +1,13 @@
 # Temporary123 Project Status
 
+## 2026-09-26 — Homepage Temporary123 brand correction
+
+Replaced only the homepage hero description with user-approved Temporary123 nationwide commercial/institutional rental wording, broad equipment coverage, and availability/dispatch confirmation caveat. Removed the specialist-site referral from this paragraph. H1, metadata, URLs, images, forms and infrastructure unchanged. TypeScript/full 745-page + 404 build and secret scan passed. Release/live verification pending.
+
+## 2026-09-26 — Rental guide LIVE VERIFIED
+
+Feature commit 54fc0b6e261e6ee43bdbb158d1c7a443c8bd301e pushed to Temporary-123-Inc/Temporary-123 main. Vercel temporary-124/temporary-123 deployment dpl_28muEh775JKN5CSsjji1kKtTiPss READY and serving https://temporary123.com. Live Chromium checks pass at 320/375/768/1440px: launcher, styled dialog, pricing answer, unknown-query fallback, calculator link and actual quote-drawer/form visibility; zero page errors. Mobile screenshot visually checked. Live sitemap unchanged (744 URLs), homepage canonical preserved, homepage/calculator/robots 200 and unknown route 404. All 13 guide destination paths returned 200. No inquiry was submitted; persistence/email not retested. Unrelated shared-workspace changes excluded. Verification record is local, after the deployed feature commit.
+
 ## 2026-09-26 — Modular non-AI rental guide release
 
 Added framework-independent prepared-answer engine, Shadow DOM widget, optional React wrapper and Temporary123 adapter. One additive main.tsx import; production content, routes, SEO, form backend and security configuration unchanged. No AI keys, messaging backend, chat persistence or automatic inquiries. Isolated from production aa5dfbb, excluding all shared-workspace pending changes. Pre-release: 19 engine tests, 74 site tests (serial), six Chromium checks at 320/375/768/1440px including quote drawer; package build, TypeScript and full 745-page + 404 production build pass. Sitemap exactly matches live 744-URL sitemap. Deployment/live verification pending at this commit.

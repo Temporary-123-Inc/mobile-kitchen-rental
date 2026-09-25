@@ -1,5 +1,13 @@
 # Page and File Assignments
 
+## 2026-09-26 homepage brand description — Active
+
+Current task owns only src/Home.tsx hero paragraph, focused regression coverage and additive coordination records in this isolated checkout. Replace specialist referral with approved Temporary123 nationwide rental copy; preserve H1, metadata, URLs, forms and unrelated work. User authorized production deployment.
+
+## 2026-09-26 modular guide release — Complete; live verified
+
+Isolated release 54fc0b6 from aa5dfbb pushed to main and deployed to temporary123.com. Four live viewport checks pass including quote drawer. No unrelated local content, SEO, backend or configuration changes shipped. Prior active guide-release assignment is closed. Final verification documentation retained locally.
+
 ## 2026-09-26 modular guide release — Active
 
 Codex owns packages/website-guide, src/websiteGuide and one additive main.tsx import in this isolated production-baseline release. User authorized temporary123.com deployment. Preserve existing routing, content, SEO and backend. Verify prepared answers, responsive display and quote drawer on production.

@@ -1,5 +1,15 @@
 # Temporary123 Test Results
 
+## 2026-09-26 — Homepage brand correction pre-release
+
+Completed-build rerun: both Playwright checks passed at 375px and 1440px with zero page errors. Safe to release the scoped paragraph correction.
+
+TypeScript and full production build passed (745 pages + 404); secret scan passed with zero findings. Added mobile/desktop Playwright regression for Temporary123 lead copy, availability caveat, removed referral/entity text, unchanged H1/canonical and horizontal overflow. Initial browser attempt started before prerender finished and preview server failed on missing dist/404.html; rerun against completed build required. Production verification pending. No form submissions; backend unchanged.
+
+## 2026-09-26 — Rental guide production PASS
+
+Deployment dpl_28muEh775JKN5CSsjji1kKtTiPss, commit 54fc0b6, temporary123.com. GUIDE_TEST_URL=https://temporary123.com with packages/website-guide/tests/deployed.config.ts: 4/4 Chromium tests pass (320, 375, 768, 1440px). Pricing and fallback render; native dialog fits; contact action opens visible contact-drawer and quote-island; zero page errors. Mobile screenshot visually checked. Sitemap byte-identical to pre-release production baseline, 744 URLs; homepage canonical https://temporary123.com/; homepage, calculator, robots return 200; nonexistent route 404. All 13 guide action destinations return 200. Local release checks: 19 engine, 74 site and 6 browser tests; full 745-page plus 404 build pass. No form submission or downstream email/persistence verification; feature does not send or store chat. Screenshot: isolated release packages/website-guide/test-results/temporary-375.png.
+
 ## 2026-09-26 — Modular guide release validation
 
 Production baseline aa5dfbb. npm ci from unchanged lockfile. Full npm run build: TypeScript, Vite, 745 pages plus 404 pass; existing Zod annotation warnings only. Package build and 19 engine tests pass. Site suite: initial concurrent build/test run had one 5-second migration timeout; unchanged test passed in full serial rerun (74/74). Six Chromium browser tests pass with production-compiled assets and host CSP: standalone alternate brand, 320/375/768/1440px, pricing, unknown-query fallback, quote drawer visibility, keyboard/focus, safe text rendering, isolation, history and cleanup. Generated sitemap is byte-identical to live sitemap (744 URLs). No inquiry submission, database mutation or email test; existing form is opened only. Deployment verification pending.

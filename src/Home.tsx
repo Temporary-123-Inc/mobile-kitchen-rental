@@ -85,16 +85,15 @@ export function Home() {
               <em>Rent or Lease Nationwide</em>
             </h1>
             <p data-h1-intro>
-              Plan nationwide rental or leasing of temporary facilities around
-              the work your site needs to keep running. Compare commercial
-              kitchen trailers, hygiene facilities, crew accommodation and
-              supporting equipment by product type, then confirm the available
-              configuration, utilities, delivery access and rental period.
-              For dedicated commercial kitchen and dishwashing rentals, visit{" "}
-              <a href="https://temporarykitchens123.com/">
-                Temporary Kitchens 123
-              </a>
-              . Our rental team is available 24/7; dispatch timing requires confirmation.
+              Temporary123 provides nationwide rental and leasing of temporary
+              facilities for commercial and institutional projects. Explore
+              commercial kitchen and dishwashing trailers, restroom and shower
+              facilities, laundry trailers, crew accommodation, refrigeration,
+              and supporting equipment. Our team can help you confirm the right
+              configuration, utility requirements, delivery access, and rental
+              period for your site. Contact our rental team 24/7 to discuss your
+              project; equipment availability and dispatch timing require
+              confirmation.
             </p>
             <div className="rental-hero-actions">
               <a className="button home-primary" href="/contact-us/">
