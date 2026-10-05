@@ -1,10 +1,8 @@
-import { alignedLocationIntro } from "./alignedIntroductions";
 import site from "../site.json" with { type: "json" };
 import { stateGuides } from "./stateGuides";
 import { statePath } from "./statePaths";
 import { regionPages } from "./regionGuides";
 import { serviceCategories } from "./serviceMenu";
-import { stateRentalHeadline } from "./rentalHeadlines";
 import { capitalizeLinkLabel } from "./linkLabels";
 import { citiesForRegion } from "./cityDirectory";
 import { LocationImageCarousel } from "./LocationImageCarousel";
@@ -12,9 +10,43 @@ import { LocationImageCarousel } from "./LocationImageCarousel";
 export const statePageByPath = Object.fromEntries(
   Object.keys(stateGuides).map((name) => [statePath(name), name]),
 );
+
+const stateCopyIndex = (name: string) =>
+  [...name].reduce((total, letter) => total + letter.charCodeAt(0), 0) % 5;
+
+export function stateKitchenHeadline(name: string) {
+  const headlines = [
+    `${name} Emergency Mobile Kitchen Rentals, Dishwashing Trailers, Walk-In Coolers and Freezers`,
+    `${name} Mobile Kitchen and Dishwashing Trailer Rentals with Refrigerated Cold Storage`,
+    `${name} Commercial Mobile Kitchen Rentals, Walk-In Freezers, Coolers and Dishwashing Trailers`,
+    `${name} Temporary Mobile Kitchens, Refrigeration Trailers and Commercial Dishwashing Rentals`,
+    `${name} Mobile Kitchen Rental Services with Coolers, Freezers and Refrigerated Containers`,
+  ];
+  return headlines[stateCopyIndex(name)];
+}
+
+export function stateKitchenIntro(name: string) {
+  const uses = [
+    "renovations, equipment failures, emergency response and planned facility work",
+    "temporary closures, construction projects, disaster response and scheduled upgrades",
+    "kitchen repairs, capacity expansions, urgent outages and planned renovations",
+    "facility transitions, seasonal demand, equipment replacement and emergency operations",
+    "remodeling projects, service interruptions, special programs and urgent recovery work",
+  ];
+  const audiences = [
+    "hospitals, nursing homes, schools, restaurants, hotels, correctional facilities and government teams",
+    "healthcare campuses, education systems, hospitality operators, institutions and public agencies",
+    "restaurants, hotels, hospitals, senior living communities, schools and government operations",
+    "food-service contractors, medical facilities, campuses, correctional institutions and response teams",
+    "commercial kitchens, public agencies, healthcare providers, schools and hospitality organizations",
+  ];
+  const index = stateCopyIndex(name);
+  return `Mobile kitchen rentals, dishwashing trailers, commercial refrigeration trailers, walk-in coolers, freezers, and refrigerated containers help maintain food service across ${name} during ${uses[index]}. These coordinated options support ${audiences[index]}. Short-term and long-term rentals can provide temporary cooking, warewashing and cold-storage capacity while permanent facilities are repaired, expanded or replaced. Our team helps match equipment to production needs, utilities and site access, then coordinates delivery and setup for the project schedule. Contact Mobile Kitchen Rental to request ${name} availability or a tailored quote.`;
+}
+
 export function StateDetail({ name }: { name: string }) {
   const guide = stateGuides[name];
-  const headline = stateRentalHeadline(name);
+  const headline = stateKitchenHeadline(name);
   const regions = regionPages.filter((region) => region.state === name);
   const priority = [
     "Mobile Kitchens",
@@ -46,7 +78,9 @@ export function StateDetail({ name }: { name: string }) {
             </nav>
             <p className="eyebrow">STATE RENTAL GUIDE</p>
             <h1>{headline}</h1>
-            <p className="region-intro" data-h1-intro>{alignedLocationIntro(headline, name)}</p>
+            <p className="region-intro" data-h1-intro>
+              {stateKitchenIntro(name)}
+            </p>
             <p className="region-emergency">Emergency 24/7</p>
             <a className="button" href={`tel:${site.phoneE164}`}>
               Call the rental team {site.phoneDisplay}
