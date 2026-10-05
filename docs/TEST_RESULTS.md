@@ -1,5 +1,15 @@
 # Temporary123 Test Results
 
+## 2026-10-06 — Navigation, media, planner, map, and Project Desk
+
+- Target TypeScript: pass.
+- Focused Vitest suite: 6/6 pass, including all new shared modules and all 64 routes.
+- Production build: pass; 64 public routes plus 404 prerendered.
+- Responsive Chromium regression: 375, 768, 1024, and 1440 px across homepage, six service pages, two state pages, contact, and calculator.
+- All checked routes: HTTP 200, exactly one H1, meaningful content, no horizontal overflow, and no framework overlay.
+- Interaction checks: state gallery opens and closes with Escape; Project Desk opens; capacity planner returns a non-price direction; desktop Services dropdown opens; state map exposes 50 linked state shapes.
+- Expected local-only warning: Vercel Analytics endpoint is absent under the static preview server.
+
 ## 2026-10-05 — Logo-derived color system
 
 - Replaced the teal/orange interface palette with logo-derived navy, red, cool white, and metallic-silver semantic tokens.

@@ -6,16 +6,17 @@ import {
   stateGuides,
   type StateGuide,
 } from "./targetData";
+import {
+  CalculatorPage,
+  KitchenPlanner,
+  ServiceImageGallery,
+  StateMap,
+  StickyProjectDesk,
+} from "./TargetEnhancements";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 function Header({ path }: { path: string }) {
-  const links = [
-    ["Inventory", "/equipment-rental/"],
-    ["States", "/service-areas/"],
-    ["Planning", "/planning/"],
-    ["About", "/about-us/"],
-  ];
   return (
     <>
       <a className="skip-link" href="#main">
@@ -38,15 +39,56 @@ function Header({ path }: { path: string }) {
             />
           </a>
           <nav className="desktop-nav" aria-label="Main navigation">
-            {links.map(([label, href]) => (
-              <a
-                key={href}
-                href={href}
-                aria-current={path === href ? "page" : undefined}
-              >
-                {label}
-              </a>
-            ))}
+            <details className="nav-dropdown nav-services">
+              <summary>
+                Services <span aria-hidden="true">⌄</span>
+              </summary>
+              <div className="nav-panel nav-service-panel">
+                <div className="nav-panel-intro">
+                  <span>Kitchen-family inventory</span>
+                  <strong>
+                    Coordinate cooking, warewashing, and cold storage.
+                  </strong>
+                  <a href="/equipment-rental/">View all equipment ↗</a>
+                </div>
+                <div className="nav-service-links">
+                  {services.map((service) => (
+                    <a
+                      href={`/equipment-rental/${service.slug}/`}
+                      key={service.slug}
+                    >
+                      <span>{service.shortLabel}</span>
+                      <small>{service.planning[0]}</small>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </details>
+            <details className="nav-dropdown">
+              <summary>
+                Pages <span aria-hidden="true">⌄</span>
+              </summary>
+              <div className="nav-panel nav-pages-panel">
+                <a href="/service-areas/">
+                  State service map <span>50 state guides</span>
+                </a>
+                <a href="/rental-calculator/">
+                  Capacity calculator <span>Build a project brief</span>
+                </a>
+                <a href="/planning/">
+                  Planning guide <span>Utilities, access, workflow</span>
+                </a>
+                <a href="/about-us/">
+                  About <span>Focused rental coordination</span>
+                </a>
+              </div>
+            </details>
+            <a
+              href="/service-areas/"
+              aria-current={path === "/service-areas/" ? "page" : undefined}
+            >
+              Service areas
+            </a>
           </nav>
           <a className="button button-small" href="/contact-us/">
             Request availability <Arrow />
@@ -56,11 +98,24 @@ function Header({ path }: { path: string }) {
               Menu <span aria-hidden="true">☰</span>
             </summary>
             <nav aria-label="Mobile navigation">
-              {links.map(([label, href]) => (
-                <a key={href} href={href}>
-                  {label}
-                </a>
-              ))}
+              <details>
+                <summary>Services</summary>
+                {services.map((service) => (
+                  <a
+                    key={service.slug}
+                    href={`/equipment-rental/${service.slug}/`}
+                  >
+                    {service.shortLabel}
+                  </a>
+                ))}
+              </details>
+              <details>
+                <summary>Pages</summary>
+                <a href="/service-areas/">State service map</a>
+                <a href="/rental-calculator/">Capacity calculator</a>
+                <a href="/planning/">Planning guide</a>
+                <a href="/about-us/">About</a>
+              </details>
               <a href="/contact-us/">Request availability</a>
             </nav>
           </details>
@@ -102,6 +157,7 @@ function Footer() {
         <div>
           <strong>Plan</strong>
           <a href="/service-areas/">State service guides</a>
+          <a href="/rental-calculator/">Capacity calculator</a>
           <a href="/planning/">Project planning</a>
           <a href="/about-us/">About</a>
           <a href="/privacy/">Privacy</a>
@@ -260,7 +316,9 @@ function Home() {
           </div>
         </div>
       </section>
+      <StateMap compact />
       <StateDirectory compact />
+      <KitchenPlanner compact />
       <Faq />
     </>
   );
@@ -316,11 +374,11 @@ function StateDirectory({ compact = false }: { compact?: boolean }) {
         <div className="section-heading">
           <div>
             <span className="eyebrow">State rental guides</span>
-            <h2>
-              {compact
-                ? "Plan around the state, site, and schedule."
-                : "Mobile kitchen rental planning in all 50 states."}
-            </h2>
+            {compact ? (
+              <h2>Plan around the state, site, and schedule.</h2>
+            ) : (
+              <h1>Mobile Kitchen Rental Planning in All 50 States</h1>
+            )}
           </div>
           <p>
             Every state guide uses a focused kitchen-cluster scope and unique
@@ -343,6 +401,7 @@ function StateDirectory({ compact = false }: { compact?: boolean }) {
           </a>
         )}
       </div>
+      {!compact && <StateMap />}
     </section>
   );
 }
@@ -408,6 +467,7 @@ function ServicePage({ slug }: { slug: string }) {
           ))}
         </div>
       </section>
+      <ServiceImageGallery service={service} />
       <Faq />
     </>
   );
@@ -694,6 +754,8 @@ export function TargetSite({ path }: { path: string }) {
           <InventoryPage />
         ) : path === "/service-areas/" ? (
           <StateDirectory />
+        ) : path === "/rental-calculator/" ? (
+          <CalculatorPage />
         ) : service ? (
           <ServicePage slug={service.slug} />
         ) : state ? (
@@ -716,6 +778,7 @@ export function TargetSite({ path }: { path: string }) {
           </section>
         )}
       </main>
+      <StickyProjectDesk />
       <Footer />
     </div>
   );

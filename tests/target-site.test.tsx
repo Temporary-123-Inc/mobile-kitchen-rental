@@ -13,7 +13,7 @@ const words = (value: string) =>
 
 describe("focused mobile-kitchen site", () => {
   it("publishes a controlled route set under the authority cap", () => {
-    expect(allRoutes.length).toBe(63);
+    expect(allRoutes.length).toBe(64);
     expect(new Set(allRoutes).size).toBe(allRoutes.length);
     expect(allRoutes.length).toBeLessThanOrEqual(250);
   });
@@ -57,6 +57,27 @@ describe("focused mobile-kitchen site", () => {
     expect(html.match(/<h1/g)).toHaveLength(1);
     for (const service of services) expect(html).toContain(service.label);
     expect(html).toContain(kitchenFamilySentence);
+  });
+
+  it("renders the navigation, calculator, map, galleries, and project desk", () => {
+    const home = renderToStaticMarkup(<TargetSite path="/" />);
+    expect(home).toContain("Services");
+    expect(home).toContain("Pages");
+    expect(home).toContain("data-kitchen-planner");
+    expect(home).toContain("United States mobile kitchen rental guides");
+    expect(home).toContain("data-project-desk");
+    const calculator = renderToStaticMarkup(
+      <TargetSite path="/rental-calculator/" />,
+    );
+    expect(calculator.match(/<h1/g)).toHaveLength(1);
+    expect(calculator).toContain("Non-price planning calculator");
+    for (const service of services) {
+      const html = renderToStaticMarkup(
+        <TargetSite path={`/equipment-rental/${service.slug}/`} />,
+      );
+      expect(html).toContain("Reviewed equipment views");
+      expect(html.match(/<figure/g)?.length).toBeGreaterThanOrEqual(4);
+    }
   });
 
   it("does not publish prohibited selling language", () => {

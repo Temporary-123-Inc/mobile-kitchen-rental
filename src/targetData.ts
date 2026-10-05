@@ -263,6 +263,7 @@ export const coreRoutes = [
   "/equipment-rental/",
   ...services.map((service) => `/equipment-rental/${service.slug}/`),
   "/service-areas/",
+  "/rental-calculator/",
   "/planning/",
   "/about-us/",
   "/contact-us/",
@@ -281,6 +282,8 @@ export const routeTitle = (path: string) => {
     return "Mobile Kitchen, Dishwashing & Refrigeration Rental Inventory";
   if (path === "/service-areas/")
     return "Mobile Kitchen Rental Service Areas by State";
+  if (path === "/rental-calculator/")
+    return "Mobile Kitchen Rental Capacity Calculator";
   if (path === "/planning/") return "Plan a Mobile Kitchen Rental Project";
   if (path === "/about-us/") return "About Mobile Kitchen Rental";
   if (path === "/contact-us/")
@@ -306,5 +309,7 @@ export const routeDescription = (path: string) => {
   if (state) return state.description;
   if (path === "/service-areas/")
     return "Browse all 50 state guides for focused mobile kitchen, dishwashing, and refrigeration rental planning.";
+  if (path === "/rental-calculator/")
+    return "Create a preliminary mobile kitchen capacity and supporting-equipment planning direction before requesting confirmed availability and pricing.";
   return "Plan mobile kitchen, dishwashing, and temporary refrigeration rentals with Temporary 123.";
 };

@@ -1,5 +1,13 @@
 # Rebuild checkpoint
 
+## 2026-10-06 feature-depth continuation
+
+- Reference audit: reviewed current Mobile Kitchen 123 navigation, equipment depth, image use, calculator, state discovery, and contact controls as structural evidence only.
+- Original target implementation: kitchen-family Services and Pages dropdowns, responsive nested mobile navigation, three-image service galleries, an interactive 50-state SVG map, a non-price capacity planner, and a sticky Project Desk.
+- Claims boundary: no reference-site wording, prices, unrelated families, availability promises, or backend-delivery claims were copied. The planner produces requirements guidance only; the Project Desk remains local and explicitly does not transmit data.
+- Route count: 64 public routes plus a real 404, below the Moz DA 10 cap.
+- Verification: target TypeScript, 6/6 focused tests, production build, 64-route prerender, and responsive Chromium checks at 375/768/1024/1440 pass. Local Vercel Analytics 404/MIME warnings remain expected outside Vercel.
+
 - Target: `https://mobile-kitchen-rental.com/`
 - Skill: `temporary123-portfolio-rebuild` v16.9
 - Checkout: `C:\Users\Admin\Documents\Codex\mkr`

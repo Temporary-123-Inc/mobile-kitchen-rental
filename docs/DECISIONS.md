@@ -1,5 +1,14 @@
 # Temporary123 Decision Log
 
+## 2026-10-06 — Add original kitchen-site depth without copying the reference site
+
+- Source: Owner request and a fresh audit of `mobilekitchen123.com` feature coverage.
+- Applicable modules: nested service navigation, supporting Pages menu, reviewed equipment galleries, state map, requirements calculator, and sticky inquiry controls.
+- Calculator boundary: because target-approved pricing inputs do not exist, provide a non-price capacity and requirements planner rather than copying published prices or inventing an estimate.
+- Inquiry boundary: the Project Desk organizes a brief locally and connects to the verified phone number. It does not claim submission, persistence, email delivery, or availability confirmation.
+- Family boundary: retain the approved kitchen cluster only. Do not import the reference site's restroom, shower, laundry, sleeper, housing, or unrelated equipment families.
+- Originality boundary: reuse interaction categories and approved Temporary123 patterns, while writing new labels, layouts, content, and planner logic for this brand.
+
 ## 2026-10-05 — Align the interface palette with the owner-supplied logo
 
 - Source: Owner request to update the color scheme using the supplied logo.

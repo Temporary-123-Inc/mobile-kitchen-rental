@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "include": [
     "src/TargetSite.tsx",
+    "src/TargetEnhancements.tsx",
     "src/targetData.ts",
     "src/main.tsx",
     "src/usStates.json",
