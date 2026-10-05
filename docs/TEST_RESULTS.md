@@ -1,5 +1,14 @@
 # Temporary123 Test Results
 
+## 2026-10-05 — Logo-derived color system
+
+- Replaced the teal/orange interface palette with logo-derived navy, red, cool white, and metallic-silver semantic tokens.
+- Target TypeScript, focused Vitest suite (5/5), production build, and 63-route plus 404 prerender pass.
+- Responsive Chromium regression passes at 375, 768, 1024, and 1440 px across ten key routes; no horizontal overflow or framework overlay.
+- Mobile gallery dialog open and Escape-close checks remain passing.
+- Static color contrast checks pass: white on action red is 5.31:1; primary navy, body slate, link navy, and pale-blue-on-navy pairs range from 7.95:1 to 15.61:1.
+- Local-only Vercel Analytics endpoint warnings remain expected under the static preview server.
+
 ## 2026-10-05 — Mobile Kitchen Rental Vercel release
 
 - GitHub main commit: `909ce2e4cc2417917e592ace4cdcc394f692f6e3`.

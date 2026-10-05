@@ -1,5 +1,11 @@
 # Temporary123 Decision Log
 
+## 2026-10-05 — Align the interface palette with the owner-supplied logo
+
+- Source: Owner request to update the color scheme using the supplied logo.
+- Decision: Replace the earlier teal and safety-orange system with deep flag navy, vivid logo red, cool white, and metallic-silver neutrals. Preserve the existing industrial editorial layout and typography.
+- Accessibility boundary: Use dark navy rather than bright blue for text links on light surfaces, pale blue/silver for supporting copy on navy surfaces, and red primarily for actions, focus, and sequence markers.
+
 ## 2026-10-05 — Use owner-supplied Mobile Kitchen Rental brand artwork
 
 - Source: Owner supplied `Generated image 1.png` and `Generated image 1 (1).png` in this task.
