@@ -6,6 +6,7 @@ import {
   kitchenFamilySentence,
   services,
   stateGuides,
+  super9Sentence,
 } from "../src/targetData";
 
 const words = (value: string) =>
@@ -13,7 +14,7 @@ const words = (value: string) =>
 
 describe("focused mobile-kitchen site", () => {
   it("publishes a controlled route set under the authority cap", () => {
-    expect(allRoutes.length).toBe(64);
+    expect(allRoutes.length).toBe(70);
     expect(new Set(allRoutes).size).toBe(allRoutes.length);
     expect(allRoutes.length).toBeLessThanOrEqual(250);
   });
@@ -52,11 +53,25 @@ describe("focused mobile-kitchen site", () => {
     }
   });
 
-  it("keeps all kitchen-family services visible on the homepage", () => {
+  it("keeps the kitchen family and complete Super 9 visible on the homepage", () => {
     const html = renderToStaticMarkup(<TargetSite path="/" />);
     expect(html.match(/<h1/g)).toHaveLength(1);
     for (const service of services) expect(html).toContain(service.label);
     expect(html).toContain(kitchenFamilySentence);
+    expect(html).toContain(super9Sentence);
+    for (const label of [
+      "Mobile Commercial Kitchen Trailer Rentals",
+      "Portable Commercial Dishwashing Trailer Rentals",
+      "Commercial Refrigeration Trailer Rentals",
+      "Mobile Shower and Restroom Combination Trailer Rentals",
+      "Mobile Commercial Shower Trailer Rentals",
+      "Mobile Commercial Restroom Trailer Rentals",
+      "Mobile Commercial Laundry Facility Rentals",
+      "Containerized Sleeper and Bunkbed Unit Rentals",
+      "Remote Man Camp Basecamp and Workforce Housing Rentals",
+    ]) {
+      expect(html).toContain(label);
+    }
   });
 
   it("renders the navigation, calculator, map, galleries, and project desk", () => {

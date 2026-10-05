@@ -43,6 +43,87 @@ const serviceGallery: Record<string, { src: string; alt: string }[]> = {
       alt: "Refrigerated trailer equipment and access area",
     },
   ],
+  "shower-restroom-combination-rentals": [
+    {
+      src: "/images/catalog-supplied/restroom-trailers/01-960.webp",
+      alt: "Temporary hygiene trailer exterior",
+    },
+    {
+      src: "/images/catalog-supplied/restroom-trailers/02-960.webp",
+      alt: "Restroom facility interior reference view",
+    },
+    {
+      src: "/images/catalog-supplied/restroom-trailers/03-960.webp",
+      alt: "Commercial hygiene trailer entry and service area",
+    },
+  ],
+  "mobile-shower-trailer-rentals": [
+    {
+      src: "/images/catalog/shower-trailer-960.webp",
+      alt: "Mobile shower trailer exterior",
+    },
+    {
+      src: "/images/catalog/temporary-shower-trailers-960.webp",
+      alt: "Temporary commercial shower trailer",
+    },
+    {
+      src: "/images/shower.webp",
+      alt: "Temporary shower facility planning view",
+    },
+  ],
+  "commercial-restroom-trailer-rentals": [
+    {
+      src: "/images/catalog/restroom-trailers-960.webp",
+      alt: "Mobile commercial restroom trailer",
+    },
+    {
+      src: "/images/catalog-supplied/restroom-trailers/02-960.webp",
+      alt: "Temporary restroom facility interior",
+    },
+    {
+      src: "/images/catalog-supplied/restroom-trailers/03-960.webp",
+      alt: "Restroom trailer access and service view",
+    },
+  ],
+  "mobile-laundry-facility-rentals": [
+    {
+      src: "/images/catalog/laundry-trailers-960.webp",
+      alt: "Mobile commercial laundry trailer",
+    },
+    {
+      src: "/images/facility.webp",
+      alt: "Temporary facility exterior for utility planning",
+    },
+    {
+      src: "/images/interior.webp",
+      alt: "Temporary facility interior planning view",
+    },
+  ],
+  "containerized-sleeper-unit-rentals": [
+    {
+      src: "/images/catalog/mobile-sleep-trailers-960.webp",
+      alt: "Mobile sleeper trailer for a temporary workforce",
+    },
+    {
+      src: "/images/catalog/bunkhouse-trailers-960.webp",
+      alt: "Temporary bunkbed accommodation facility",
+    },
+    {
+      src: "/images/housing.webp",
+      alt: "Temporary workforce housing facility",
+    },
+  ],
+  "remote-workforce-housing-rentals": [
+    {
+      src: "/images/catalog/mobile-crew-camps-960.webp",
+      alt: "Mobile crew camp facilities",
+    },
+    { src: "/images/housing.webp", alt: "Remote workforce housing facility" },
+    {
+      src: "/images/catalog/dining-structure-rental-960.webp",
+      alt: "Temporary dining support structure",
+    },
+  ],
 };
 
 const refrigerationFallback =

@@ -1,5 +1,12 @@
 # Rebuild checkpoint
 
+## 2026-10-06 Super 9 scope expansion
+
+- Owner expanded the previously kitchen-only website to the complete canonical Super 9 inventory.
+- Kitchen remains the lead homepage and state-page family; the six supporting families now have focused service pages and sitewide navigation coverage.
+- Existing cooler, freezer, and refrigerated-container URLs remain as detailed refrigeration guides, for 70 public routes total.
+- Reference-site content remains structural research only; target wording, layouts, and claims are original.
+
 ## 2026-10-06 feature-depth continuation
 
 - Reference audit: reviewed current Mobile Kitchen 123 navigation, equipment depth, image use, calculator, state discovery, and contact controls as structural evidence only.

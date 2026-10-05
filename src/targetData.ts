@@ -13,6 +13,9 @@ export const primaryPhrase = "Mobile Commercial Kitchen Trailer Rentals";
 export const kitchenFamilySentence =
   "Mobile kitchen rentals, dishwashing trailers, commercial refrigeration trailers, walk-in coolers, freezers, and refrigerated containers.";
 
+export const super9Sentence =
+  "Mobile kitchen rentals, commercial dishwashing facilities, refrigerated storage, shower and restroom combinations, shower trailers, restroom trailers, laundry facilities, sleeper units, and remote workforce housing.";
+
 export const slugify = (value: string) =>
   value
     .toLowerCase()
@@ -133,6 +136,108 @@ export const services: Service[] = [
     image: "/images/service-heroes/20ft-refrigerated-trailer/04-960.webp",
     imageSmall: "/images/service-heroes/20ft-refrigerated-trailer/04-480.webp",
     alt: "Refrigerated commercial container used for temporary project cold storage",
+  },
+  {
+    slug: "shower-restroom-combination-rentals",
+    label: "Mobile Shower and Restroom Combination Trailer Rentals",
+    shortLabel: "Shower/restroom combinations",
+    h1: "Mobile Shower and Restroom Combination Trailer Rentals for Temporary Sites",
+    description:
+      "Mobile shower and restroom combination trailer rentals bring two essential hygiene functions into one coordinated temporary facility. They can support planned projects, facility interruptions, workforce sites, and emergency operations for short-term or long-term use. Planning should address expected users, privacy, accessibility, water, wastewater, power, servicing, placement, and delivery access. The team confirms the actual configuration, utility responsibilities, rental schedule, delivery plan, and availability before mobilization.",
+    planning: [
+      "Expected users and operating schedule",
+      "Private shower and restroom flow",
+      "Water, wastewater, and electrical service",
+      "Placement, servicing, and delivery access",
+    ],
+    image: "/images/catalog-supplied/restroom-trailers/01-960.webp",
+    imageSmall: "/images/catalog-supplied/restroom-trailers/01-480.webp",
+    alt: "Temporary restroom trailer representative of combined hygiene facility planning",
+  },
+  {
+    slug: "mobile-shower-trailer-rentals",
+    label: "Mobile Commercial Shower Trailer Rentals",
+    shortLabel: "Shower trailers",
+    h1: "Mobile Commercial Shower Trailer Rentals for Workforce and Facility Support",
+    description:
+      "Mobile commercial shower trailer rentals provide temporary bathing capacity for workforce, institutional, renovation, and emergency projects. Short-term and long-term plans begin with the number of users, shift pattern, privacy needs, accessibility, hot-water demand, potable-water supply, wastewater handling, electrical service, cleaning, and site access. Available layouts and stall counts vary, so the selected facility, service schedule, delivery route, setup responsibilities, and operating requirements must be confirmed for each location.",
+    planning: [
+      "User count and shift schedule",
+      "Privacy and accessibility needs",
+      "Hot water, power, and wastewater",
+      "Cleaning, servicing, and placement",
+    ],
+    image: "/images/catalog/shower-trailer-960.webp",
+    imageSmall: "/images/catalog/shower-trailer-480.webp",
+    alt: "Mobile shower trailer for temporary workforce and facility support",
+  },
+  {
+    slug: "commercial-restroom-trailer-rentals",
+    label: "Mobile Commercial Restroom Trailer Rentals",
+    shortLabel: "Restroom trailers",
+    h1: "Mobile Commercial Restroom Trailer Rentals for Temporary Operations",
+    description:
+      "Mobile commercial restroom trailer rentals add temporary sanitation capacity during renovations, planned events, facility outages, workforce projects, and emergency operations. Rental planning considers the number of users, operating hours, accessibility, fixture mix, water and wastewater service, electrical needs, cleaning frequency, placement, and delivery access. Short-term and long-term configurations are matched to the reviewed site, while actual equipment, servicing responsibilities, availability, setup, and delivery timing require confirmation.",
+    planning: [
+      "User count and operating hours",
+      "Accessibility and fixture mix",
+      "Water, waste, power, and cleaning",
+      "Site access and service frequency",
+    ],
+    image: "/images/catalog/restroom-trailers-960.webp",
+    imageSmall: "/images/catalog/restroom-trailers-480.webp",
+    alt: "Commercial restroom trailer positioned for temporary project use",
+  },
+  {
+    slug: "mobile-laundry-facility-rentals",
+    label: "Mobile Commercial Laundry Facility Rentals",
+    shortLabel: "Laundry facilities",
+    h1: "Mobile Commercial Laundry Facility Rentals for Temporary Site Operations",
+    description:
+      "Mobile commercial laundry facility rentals support temporary linen and garment processing for workforce, institutional, hospitality, and recovery operations. A useful plan documents expected loads, daily cycles, washer and dryer capacity, staffing, ventilation, power, fuel, potable water, wastewater, drainage, placement, and access. Short-term and long-term rental configurations vary by project, so the team confirms the selected equipment, utility connections, delivery sequence, setup scope, operating responsibilities, and current availability.",
+    planning: [
+      "Daily loads and cycle volume",
+      "Washer, dryer, and staffing flow",
+      "Power, fuel, water, and drainage",
+      "Ventilation, access, and placement",
+    ],
+    image: "/images/catalog/laundry-trailers-960.webp",
+    imageSmall: "/images/catalog/laundry-trailers-480.webp",
+    alt: "Mobile laundry trailer used for temporary commercial operations",
+  },
+  {
+    slug: "containerized-sleeper-unit-rentals",
+    label: "Containerized Sleeper and Bunkbed Unit Rentals",
+    shortLabel: "Sleeper/bunkbed units",
+    h1: "Containerized Sleeper and Bunkbed Unit Rentals for Temporary Workforces",
+    description:
+      "Containerized sleeper and bunkbed unit rentals provide temporary accommodation capacity for remote crews and extended project operations. Planning starts with occupant count, shift rotation, privacy, climate control, accessibility, power, fire and life-safety coordination, placement, housekeeping, and supporting hygiene facilities. Short-term and long-term arrangements depend on the actual unit and site. Confirm configuration, local requirements, delivery access, setup responsibilities, availability, and occupancy readiness before deployment.",
+    planning: [
+      "Occupants and shift rotation",
+      "Privacy and climate control",
+      "Power and life-safety coordination",
+      "Placement and supporting facilities",
+    ],
+    image: "/images/catalog/mobile-sleep-trailers-960.webp",
+    imageSmall: "/images/catalog/mobile-sleep-trailers-480.webp",
+    alt: "Temporary sleeper facility for workforce accommodation planning",
+  },
+  {
+    slug: "remote-workforce-housing-rentals",
+    label: "Remote Man Camp Basecamp and Workforce Housing Rentals",
+    shortLabel: "Remote workforce housing",
+    h1: "Remote Man Camp Basecamp and Workforce Housing Rentals for Project Sites",
+    description:
+      "Remote man camp basecamp and workforce housing rentals coordinate temporary accommodation and support facilities for extended project sites. Plans should define workforce size, shift schedules, sleeping capacity, dining and kitchen requirements, showers, restrooms, laundry, utilities, waste handling, access, security, and rental duration. Temporary and long-term configurations require site-specific review. The team confirms which facilities are available, how delivery and setup can be sequenced, and what responsibilities remain with the project operator.",
+    planning: [
+      "Workforce size and shift schedule",
+      "Housing, dining, and hygiene mix",
+      "Utilities, waste, and site services",
+      "Delivery sequence and project duration",
+    ],
+    image: "/images/catalog/mobile-crew-camps-960.webp",
+    imageSmall: "/images/catalog/mobile-crew-camps-480.webp",
+    alt: "Temporary remote workforce housing and crew camp facilities",
   },
 ];
 
@@ -279,7 +384,7 @@ export const routeTitle = (path: string) => {
   if (path === "/")
     return "Mobile Commercial Kitchen Trailer Rentals Nationwide";
   if (path === "/equipment-rental/")
-    return "Mobile Kitchen, Dishwashing & Refrigeration Rental Inventory";
+    return "Mobile Kitchen and Super 9 Temporary Facility Rental Inventory";
   if (path === "/service-areas/")
     return "Mobile Kitchen Rental Service Areas by State";
   if (path === "/rental-calculator/")
@@ -300,7 +405,7 @@ export const routeTitle = (path: string) => {
 
 export const routeDescription = (path: string) => {
   if (path === "/")
-    return "Plan mobile commercial kitchen trailer rentals with dishwashing and temporary refrigeration support for commercial and institutional projects.";
+    return "Plan mobile kitchen rentals and the complete Super 9 temporary facility inventory, including hygiene, laundry, sleeper, and workforce housing support.";
   const service = services.find(
     (item) => path === `/equipment-rental/${item.slug}/`,
   );
@@ -311,5 +416,7 @@ export const routeDescription = (path: string) => {
     return "Browse all 50 state guides for focused mobile kitchen, dishwashing, and refrigeration rental planning.";
   if (path === "/rental-calculator/")
     return "Create a preliminary mobile kitchen capacity and supporting-equipment planning direction before requesting confirmed availability and pricing.";
-  return "Plan mobile kitchen, dishwashing, and temporary refrigeration rentals with Temporary 123.";
+  if (path === "/equipment-rental/")
+    return "Browse all nine Temporary 123 rental families, led by mobile kitchens with food-service, hygiene, laundry, sleeper, and workforce housing support.";
+  return "Plan temporary facility rentals and coordinated site support with Temporary 123.";
 };

@@ -4,6 +4,7 @@ import {
   primaryPhrase,
   services,
   stateGuides,
+  super9Sentence,
   type StateGuide,
 } from "./targetData";
 import {
@@ -45,9 +46,9 @@ function Header({ path }: { path: string }) {
               </summary>
               <div className="nav-panel nav-service-panel">
                 <div className="nav-panel-intro">
-                  <span>Kitchen-family inventory</span>
+                  <span>Super 9 rental inventory</span>
                   <strong>
-                    Coordinate cooking, warewashing, and cold storage.
+                    Coordinate kitchens, hygiene, housing, and site support.
                   </strong>
                   <a href="/equipment-rental/">View all equipment ↗</a>
                 </div>
@@ -147,7 +148,7 @@ function Footer() {
           </a>
         </div>
         <div>
-          <strong>Kitchen family</strong>
+          <strong>Super 9 inventory</strong>
           {services.map((service) => (
             <a key={service.slug} href={`/equipment-rental/${service.slug}/`}>
               {service.shortLabel}
@@ -187,19 +188,20 @@ function Hero() {
           <p className="hero-intro" data-h1-intro>
             Mobile commercial kitchen trailer rentals support hospitals,
             schools, restaurants, hotels, correctional facilities, and
-            government operations during planned work or emergencies. Add
-            dishwashing trailers, commercial refrigeration trailers, walk-in
-            coolers, freezers, and refrigerated containers to match the
-            food-service workflow, site, and rental period. Share your location,
-            dates, menu, utilities, and access requirements to request
-            availability, delivery coordination, and a project quote.
+            government operations during planned work or emergencies. The full
+            inventory also covers dishwashing, refrigeration, hygiene, laundry,
+            sleeper units, and remote workforce housing for coordinated site
+            support. Share your location, dates, occupancy, utilities, and
+            access requirements to request availability, delivery coordination,
+            and a project quote.
           </p>
           <div className="hero-actions">
             <a className="button" href="/contact-us/">
               Request availability <Arrow />
             </a>
             <a className="text-link" href="#inventory">
-              Explore the kitchen family <span aria-hidden="true">↓</span>
+              Explore all nine service families{" "}
+              <span aria-hidden="true">↓</span>
             </a>
           </div>
           <dl className="hero-facts">
@@ -262,14 +264,14 @@ function ServiceCards() {
     >
       <div className="section-heading">
         <div>
-          <span className="eyebrow">Focused rental inventory</span>
+          <span className="eyebrow">Complete rental inventory</span>
           <h2 id="inventory-title">
-            One kitchen family. Six coordinated capabilities.
+            The complete Super 9, organized into detailed rental guides.
           </h2>
         </div>
         <p>
-          {kitchenFamilySentence} Each page keeps one clear purpose while
-          showing how the complete kitchen cluster can support a project.
+          {kitchenFamilySentence} Across the full inventory: {super9Sentence}
+          Every family has its own focused planning page.
         </p>
       </div>
       <div className="service-ledger">
@@ -408,6 +410,7 @@ function StateDirectory({ compact = false }: { compact?: boolean }) {
 
 function ServicePage({ slug }: { slug: string }) {
   const service = services.find((item) => item.slug === slug)!;
+  const isKitchenFamily = services.indexOf(service) < 6;
   return (
     <>
       <section className="page-hero">
@@ -420,7 +423,11 @@ function ServicePage({ slug }: { slug: string }) {
               <span>/</span>
               <span>{service.shortLabel}</span>
             </nav>
-            <span className="eyebrow">Kitchen family rental service</span>
+            <span className="eyebrow">
+              {isKitchenFamily
+                ? "Kitchen family rental service"
+                : "Super 9 supporting rental service"}
+            </span>
             <h1>{service.h1}</h1>
             <p data-h1-intro>{service.description}</p>
             <a className="button" href="/contact-us/">
@@ -450,8 +457,9 @@ function ServicePage({ slug }: { slug: string }) {
             <h2>Confirm the details that change the rental plan.</h2>
           </div>
           <p>
-            {kitchenFamilySentence} Related equipment is coordinated only when
-            it supports the actual food-service workflow.
+            {isKitchenFamily ? kitchenFamilySentence : super9Sentence} Related
+            equipment is coordinated only when it supports the actual project
+            scope, site, utilities, and operating plan.
           </p>
         </div>
         <div className="planning-cards">
@@ -620,15 +628,16 @@ function InventoryPage() {
   return (
     <>
       <section className="page-intro shell section">
-        <span className="eyebrow">Focused equipment directory</span>
-        <h1>Mobile Kitchen, Dishwashing & Refrigeration Rental Inventory</h1>
+        <span className="eyebrow">Complete equipment directory</span>
+        <h1>Mobile Kitchen and Super 9 Temporary Facility Rental Inventory</h1>
         <p data-h1-intro>
-          Compare the focused kitchen family: mobile kitchen rentals,
-          dishwashing trailers, commercial refrigeration trailers, walk-in
-          coolers, freezers, and refrigerated containers. Each category explains
-          the operational questions that affect equipment selection, utilities,
-          access, placement, and rental timing. Use the directory to prepare a
-          short-term or long-term project brief, then request current
+          Compare all nine temporary facility families, led by mobile kitchen,
+          dishwashing, and refrigerated storage rentals. Supporting inventory
+          includes shower and restroom combinations, shower trailers, restroom
+          trailers, laundry facilities, sleeper and bunkbed units, and remote
+          workforce housing. Each guide explains the operational questions that
+          affect utilities, access, placement, servicing, and timing. Prepare a
+          short-term or long-term project brief, then request confirmed
           availability and a coordinated quote for the actual site.
         </p>
       </section>

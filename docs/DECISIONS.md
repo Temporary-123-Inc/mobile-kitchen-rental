@@ -1,5 +1,13 @@
 # Temporary123 Decision Log
 
+## 2026-10-06 — Expand to the complete Super 9
+
+- Source: Owner's latest instruction, which supersedes the earlier kitchen-only scope boundary.
+- Decision: represent all nine canonical families on the homepage, inventory directory, desktop/mobile navigation, footer, project desk, and focused service pages.
+- Primary emphasis: mobile kitchens remain the lead offer and the state-location pages retain their approved kitchen-family scope.
+- URL preservation: keep the existing walk-in cooler, freezer, and refrigerated-container pages as detailed refrigeration-family guides, producing twelve equipment guides across nine canonical families.
+- Originality: use the reference for coverage and hierarchy only; do not copy its wording or exact page composition.
+
 ## 2026-10-06 — Add original kitchen-site depth without copying the reference site
 
 - Source: Owner request and a fresh audit of `mobilekitchen123.com` feature coverage.
