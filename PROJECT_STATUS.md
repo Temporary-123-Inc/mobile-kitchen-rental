@@ -229,3 +229,10 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Added physical `.json` API function routes so the global trailing-slash policy cannot redirect form POST requests.
 - Firebase Admin now accepts either a complete PEM private key or its full base64 encoding and rejects missing PEM boundaries with an actionable configuration error.
 - Automated verification passed 54/54 tests and a 745-page-plus-404 production build. Commit `d024a06` deployed from organization `main` as READY production deployment `dpl_sq1yeYPTj8zRwu6Sz7v7vQ1M11Zr`; the custom domain, both form pages, public configuration and non-redirecting contact function were verified live. Prior live acceptance on the same repair confirmed saved Contact Us and calculator quote inquiries and Resend provider acceptance; details and boundaries are recorded in `docs/TEST_RESULTS.md`.
+## 2026-10-06 — State and city kitchen-family galleries
+
+- Implemented a reusable five-image gallery on every rendered state and reviewed city page.
+- Each location receives a deterministic 80/20 mix: four mobile-kitchen images and one related dishwashing or refrigeration image.
+- Location combinations rotate by location name while preserving truthful equipment alt text and a non-location-specific reference caption.
+- TypeScript and the focused 4-test gallery suite passed. The Vite client build passed. Full prerender remains locally blocked by the existing Windows runtime `uv_os_get_passwd ENOMEM` failure; Vercel production build is the deployment gate.
+- Deployment state: pending commit/push at this checkpoint.

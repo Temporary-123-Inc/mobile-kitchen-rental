@@ -451,3 +451,6 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 # 2026-09-22 public indexability release boundary
 
 A verified Git bundle protects the committed public-indexability source and prior production baseline but does not include Firebase data or secrets. The SEO-only release may proceed from the isolated, tested commit because it does not alter inquiry persistence, authentication, authorization, rate limiting or recovery behavior. Indexability may be reported only after live-route, robots, canonical and sitemap verification; it must not be described as guaranteed Google indexing or ranking.
+## 2026-10-06 — Location gallery image distribution
+
+State and reviewed city hero galleries use five images: four verified mobile-kitchen images and one verified supporting kitchen-family image from dishwashing or refrigeration. A stable location-name seed rotates combinations without runtime randomness. Captions identify the photos as representative equipment references and do not claim the units were photographed or are presently available in the named location.

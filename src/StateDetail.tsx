@@ -87,7 +87,7 @@ export function StateDetail({ name }: { name: string }) {
             </a>
           </div>
           <div className="region-hero-visual region-hero-carousel">
-            <LocationImageCarousel headline={headline} />
+            <LocationImageCarousel headline={headline} locationKey={name} />
           </div>
         </div>
       </section>

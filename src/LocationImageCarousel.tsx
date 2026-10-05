@@ -1,6 +1,7 @@
 import { resolveLocationGallery } from "./locationCarouselImages";
 import { useId } from "react";
 import { ServiceHeroCarousel } from "./ServiceHeroCarousel";
+import { serviceHeroImages, type ServiceHeroImage } from "./serviceHeroImages";
 import { panhandleGalleryCopy } from "./panhandleGalleryCopy";
 import { serviceAreaGalleryCaption } from "./serviceAreaGalleryCopy";
 import { olympicPeninsulaGalleryCaption } from "./olympicPeninsulaGalleryCopy";
@@ -12,10 +13,38 @@ import {
 export function LocationImageCarousel({
   headline,
   inert = false,
+  locationKey,
 }: {
   headline: string;
   inert?: boolean;
+  locationKey?: string;
 }) {
+  const locationImages = locationKey
+    ? locationKitchenFamilyImages(locationKey)
+    : [];
+  if (locationKey && locationImages.length) {
+    return (
+      <div
+        className="location-image-gallery location-kitchen-family-gallery"
+        data-location-gallery
+        data-gallery-title={headline}
+        data-gallery-location={locationKey}
+        data-equipment-family="kitchen-family"
+        data-photography-status="verified"
+        data-gallery-presentation="location-kitchen-family-80-20"
+        data-kitchen-image-count="4"
+        data-kitchen-family-image-count="1"
+      >
+        <ServiceHeroCarousel
+          images={locationImages}
+          deferLoading={inert}
+          label={`${locationKey} mobile kitchen and kitchen-family rental equipment`}
+          lightboxLabel={`${locationKey} rental equipment gallery`}
+          caption={`Reviewed equipment references for ${locationKey}: four mobile-kitchen images and one related kitchen-family image. These photos show representative rental configurations and do not claim that a pictured unit is currently located in ${locationKey}.`}
+        />
+      </div>
+    );
+  }
   const gallery = resolveLocationGallery(headline);
   const coverage = photoCoverage(gallery.images);
   const productId = "product-" + useId().replace(/[^a-zA-Z0-9_-]/g, "");
@@ -153,4 +182,59 @@ export function LocationImageCarousel({
       )}
     </div>
   );
+}
+
+const kitchenGalleryPaths = [
+  "/services/mobile-kitchen-trailers/24ft/",
+  "/services/mobile-kitchen-trailers/26ft-bulk/",
+  "/services/mobile-kitchen-trailers/28ft/",
+  "/services/mobile-kitchen-trailers/38ft/",
+  "/services/mobile-kitchen-trailers/40ft/",
+] as const;
+
+const supportingKitchenFamilyPaths = [
+  "/media-library/22-26ft-low-temp-dish/",
+  "/equipment-rental-refrigeration-12ft-refrigerated-trailer/",
+  "/media-library/20ft-refrigerated-container/",
+] as const;
+
+const imagePool = (paths: readonly string[]) =>
+  paths.flatMap((path) => serviceHeroImages[path] ?? []);
+
+const stableLocationIndex = (value: string) =>
+  [...value].reduce(
+    (total, character, index) =>
+      (total + character.charCodeAt(0) * (index + 17)) % 2147483647,
+    0,
+  );
+
+function selectRotatedUnique(
+  pool: readonly ServiceHeroImage[],
+  start: number,
+  count: number,
+) {
+  const selected: ServiceHeroImage[] = [];
+  const hashes = new Set<string>();
+  for (
+    let offset = 0;
+    offset < pool.length && selected.length < count;
+    offset += 1
+  ) {
+    const image = pool[(start + offset) % pool.length];
+    const identity = image.sha256 || image.src;
+    if (hashes.has(identity)) continue;
+    hashes.add(identity);
+    selected.push(image);
+  }
+  return selected;
+}
+
+export function locationKitchenFamilyImages(locationKey: string) {
+  const seed = stableLocationIndex(locationKey);
+  const kitchens = imagePool(kitchenGalleryPaths);
+  const supporting = imagePool(supportingKitchenFamilyPaths);
+  return [
+    ...selectRotatedUnique(kitchens, seed % kitchens.length, 4),
+    ...selectRotatedUnique(supporting, seed % supporting.length, 1),
+  ];
 }

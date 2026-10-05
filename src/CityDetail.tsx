@@ -77,7 +77,9 @@ export function CityDetail({ city }: { city: CityPage }) {
             </nav>
             <span className="eyebrow">CITY RENTAL GUIDE</span>
             <h1>{headline}</h1>
-            <p className="city-lead" data-h1-intro>{alignedLocationIntro(headline, location)}</p>
+            <p className="city-lead" data-h1-intro>
+              {alignedLocationIntro(headline, location)}
+            </p>
             <div className="city-hero-actions">
               <span className="city-emergency">Emergency 24/7</span>
               <a className="button" href={`tel:${site.phoneE164}`}>
@@ -86,7 +88,7 @@ export function CityDetail({ city }: { city: CityPage }) {
             </div>
           </div>
           <div className="city-equipment-photo city-equipment-carousel">
-            <LocationImageCarousel headline={headline} />
+            <LocationImageCarousel headline={headline} locationKey={location} />
           </div>
         </div>
       </section>
