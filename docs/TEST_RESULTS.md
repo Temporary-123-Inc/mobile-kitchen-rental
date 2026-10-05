@@ -1,5 +1,14 @@
 # Temporary123 Test Results
 
+## 2026-10-05 — Mobile Kitchen Rental Vercel release
+
+- GitHub main commit: `909ce2e4cc2417917e592ace4cdcc394f692f6e3`.
+- Vercel deployment `dpl_3qsrG7LmCa97vFTnJVEDY6tFLpcs`: READY and built from the exact main commit.
+- Production Vercel alias: homepage, California guide, mobile-kitchen service page, sitemap, and robots return HTTP 200; unknown route returns HTTP 404.
+- Preview-host `X-Robots-Tag: noindex, follow` is present as designed.
+- `mobile-kitchen-rental.com` and `www.mobile-kitchen-rental.com` are attached and verified in Vercel.
+- Custom-domain live verification is blocked by external DNS: apex resolves to `127.0.0.1`; www resolves to Cloudflare instead of Vercel.
+
 ## 2026-10-05 — Owner-supplied logo and favicon integration
 
 - Exact owner-supplied PNGs copied into `public/brand/` and connected to the header, footer, favicon, Apple touch icon, Open Graph metadata, and organization schema.
