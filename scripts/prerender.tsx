@@ -1,7 +1,11 @@
 import introOverrides from "../content/aligned-page-introductions.json" with { type: "json" };
 import replacedLeads from "../content/aligned-source-original-leads.json" with { type: "json" };
 import { industryGuideByPath } from "../src/IndustryDetail";
-import { statePageByPath } from "../src/StateDetail";
+import {
+  stateKitchenHeadline,
+  stateKitchenIntro,
+  statePageByPath,
+} from "../src/StateDetail";
 import { pageSchema } from "./structured-data";
 import imageDimensions from "../content/image-dimensions.json";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
@@ -41,7 +45,6 @@ import {
   rentalCategoryHeadline,
   rentalHubHeadline,
   rentalProductHeadline,
-  stateRentalHeadline,
 } from "../src/rentalHeadlines";
 import { stateGuides } from "../src/stateGuides";
 import vercel from "../vercel.json" with { type: "json" };
@@ -272,14 +275,8 @@ for (const path of [...allRoutes, "/404/"]) {
                 }
               : stateName
                 ? {
-                    title: `${stateRentalHeadline(stateName)} | Mobile Kitchen Rental`,
-                    description: compact(
-                      alignedLocationIntro(
-                        stateRentalHeadline(stateName),
-                        stateName,
-                      ).split(/(?<!\bSt)\. /)[0] + ".",
-                      155,
-                    ),
+                    title: `${stateKitchenHeadline(stateName)} | Mobile Kitchen Rental`,
+                    description: compact(stateKitchenIntro(stateName), 155),
                   }
                 : hubHeadline
                   ? {
