@@ -44,7 +44,7 @@ const sourceHtml = (path: string) => {
 const renderRoute = (path: string) =>
   load(
     renderSourceContent(sourceHtml(path), {
-      origin: "https://temporary123.com",
+      origin: "https://mobile-kitchen-rental.com",
       routes: new Set<string>(),
       redirects: new Map<string, string>(),
       media: recoveredMedia,

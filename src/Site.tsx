@@ -1,5 +1,5 @@
 import { alignedPageIntro } from "./alignedIntroductions";
-import { ApprovedEquipmentPhotoOptions } from './ApprovedEquipmentPhotoOptions';
+import { ApprovedEquipmentPhotoOptions } from "./ApprovedEquipmentPhotoOptions";
 import { IndustryDetail, industryGuideByPath } from "./IndustryDetail";
 import { rentalCategoryHeadline, rentalHubHeadline } from "./rentalHeadlines";
 import { StateDetail, statePageByPath } from "./StateDetail";
@@ -72,16 +72,16 @@ export function Header({ path }: { path: string }) {
       </a>
       <div className="header-sticky header-refresh">
         <header className="header wrap">
-          <a className="brand" href="/" aria-label="Temporary123 home">
+          <a className="brand" href="/" aria-label="Mobile Kitchen Rental home">
             <img
-              src="/images/temporary123-logo.png"
+              src="/brand/mobile-kitchen-rental-logo.png"
               width="80"
               height="44"
               alt=""
             />
             <span>
-              Temporary<span className="brand-number">123</span>
-              <small>TEMPORARY FACILITIES · PERMANENT COMMITMENT</small>
+              Mobile Kitchen Rental
+              <small>COMMERCIAL KITCHENS · NATIONWIDE RENTALS</small>
             </span>
           </a>
           <nav aria-label="Main navigation">
@@ -322,7 +322,7 @@ export function Header({ path }: { path: string }) {
       <a
         className="contact-rail contact-rail-refresh"
         href="/contact-us/"
-        aria-label="Contact Temporary123 rental support now"
+        aria-label="Contact Mobile Kitchen Rental rental support now"
         aria-controls="contact-drawer"
         aria-expanded="false"
         aria-current={path === "/contact-us/" ? "page" : undefined}
@@ -356,7 +356,7 @@ function ContactDrawer() {
     >
       <div className="contact-drawer-shell">
         <div className="contact-drawer-call">
-          <span>Temporary123 project desk</span>
+          <span>Mobile Kitchen Rental project desk</span>
           <button
             type="button"
             data-close-contact
@@ -423,10 +423,10 @@ export function Footer({ showClosing = true }: { showClosing?: boolean }) {
       <footer className="wrap footer">
         <div>
           <a className="wordmark" href="/">
-            Temporary<span>123</span>
+            Mobile Kitchen <span>Rental</span>
           </a>
           <p>Temporary facilities for the work ahead.</p>
-          <small>© {new Date().getFullYear()} Temporary123</small>
+          <small>© {new Date().getFullYear()} Mobile Kitchen Rental</small>
         </div>
         <div>
           <strong>Explore</strong>
@@ -489,7 +489,12 @@ export function Site({
                 <br />
                 start here.
               </h1>
-              <p data-h1-intro>Start your facility rental request with the equipment you need, project address, rental dates and expected users. Share available utilities and delivery restrictions so the team can review the correct configuration and availability.</p>
+              <p data-h1-intro>
+                Start your facility rental request with the equipment you need,
+                project address, rental dates and expected users. Share
+                available utilities and delivery restrictions so the team can
+                review the correct configuration and availability.
+              </p>
               <a className="phone-link" href={"tel:" + site.phoneE164}>
                 {site.phoneDisplay} ↗
               </a>
@@ -538,7 +543,12 @@ export function Site({
                   </nav>
                   <span className="eyebrow">NATIONWIDE SERVICE AREAS</span>
                   <h1>USA Temporary Facilities Rental Service Areas</h1>
-                  <p data-h1-intro>{alignedPageIntro(path, "USA Temporary Facilities Rental Service Areas")}</p>
+                  <p data-h1-intro>
+                    {alignedPageIntro(
+                      path,
+                      "USA Temporary Facilities Rental Service Areas",
+                    )}
+                  </p>
                   <div className="location-stats" aria-label="Coverage summary">
                     <div>
                       <strong>50</strong>
@@ -651,7 +661,13 @@ export function Site({
                       inquiry so we can confirm the correct destination.
                     </p>
                   )}
-                  <p data-h1-intro>{alignedPageIntro(path, rentalCategoryHeadline(serviceCategory.name), serviceCategory.description)}</p>
+                  <p data-h1-intro>
+                    {alignedPageIntro(
+                      path,
+                      rentalCategoryHeadline(serviceCategory.name),
+                      serviceCategory.description,
+                    )}
+                  </p>
                 </div>
                 <div className="service-category-actions">
                   <Button>Check availability</Button>
@@ -730,7 +746,9 @@ export function Site({
           <section className="wrap section">
             <span className="eyebrow">EQUIPMENT & PROJECT SOLUTIONS</span>
             <h1>{rentalHubHeadline(path)}</h1>
-            <p className="directory-intro" data-h1-intro>{alignedPageIntro(path, rentalHubHeadline(path) || "")}</p>
+            <p className="directory-intro" data-h1-intro>
+              {alignedPageIntro(path, rentalHubHeadline(path) || "")}
+            </p>
             {path === "/industries/" ? (
               <div className="industry-briefs">
                 {[
@@ -799,7 +817,7 @@ export function Site({
                   </h2>
                   <p>
                     Browse specialized temporary facility, workforce, government
-                    and emergency support pages from Temporary123.
+                    and emergency support pages from Mobile Kitchen Rental.
                   </p>
                 </div>
                 <details>
@@ -826,7 +844,11 @@ export function Site({
               <br />
               We’ll take it from there.
             </h1>
-            <p data-h1-intro>Prepare your temporary-facility project brief with the intended use, site address, available utilities, delivery access and rental dates. Review the details below before contacting the rental team.</p>
+            <p data-h1-intro>
+              Prepare your temporary-facility project brief with the intended
+              use, site address, available utilities, delivery access and rental
+              dates. Review the details below before contacting the rental team.
+            </p>
             {[
               [
                 "Your operation",
@@ -858,10 +880,11 @@ export function Site({
                     Temporary facilities built around the work.
                   </h1>
                   <p data-h1-intro>
-                    Temporary123 helps project teams plan temporary facilities
-                    around the operation that must continue. Equipment selection,
-                    site access, utilities and rental timing are reviewed together
-                    for construction, food service, public-service and remote-workforce projects.
+                    Mobile Kitchen Rental helps project teams plan temporary
+                    facilities around the operation that must continue.
+                    Equipment selection, site access, utilities and rental
+                    timing are reviewed together for construction, food service,
+                    public-service and remote-workforce projects.
                   </p>
                   <Button href="/contact-us/">Plan your project</Button>
                   <div className="about-intro-topics" aria-label="Our approach">
@@ -878,7 +901,7 @@ export function Site({
                     sizes="(max-width: 760px) calc(100vw - 40px), 480px"
                     width="850"
                     height="650"
-                    alt="Commercial cooking equipment and preparation space inside a Temporary123 mobile kitchen"
+                    alt="Commercial cooking equipment and preparation space inside a Mobile Kitchen Rental mobile kitchen"
                     fetchPriority="high"
                     decoding="async"
                   />
@@ -961,8 +984,8 @@ export function Site({
                     arrangements are finalized.
                   </p>
                   <p>
-                    Temporary123 is listed as a GSA Schedule contract holder.
-                    Call our team at{" "}
+                    Mobile Kitchen Rental is listed as a GSA Schedule contract
+                    holder. Call our team at{" "}
                     <a href={"tel:" + site.phoneE164}>{site.phoneDisplay}</a> to
                     discuss commercial, government or emergency project needs.
                   </p>
@@ -980,10 +1003,11 @@ export function Site({
                     Field notes for better site planning.
                   </h1>
                   <p data-h1-intro>
-                    Use these planning guides to prepare a facility rental brief.
-                    Each guide covers a specific subject: kitchen workflow,
-                    temporary hygiene access or workforce accommodation, with
-                    the capacity, utility and delivery questions to resolve before booking.
+                    Use these planning guides to prepare a facility rental
+                    brief. Each guide covers a specific subject: kitchen
+                    workflow, temporary hygiene access or workforce
+                    accommodation, with the capacity, utility and delivery
+                    questions to resolve before booking.
                   </p>
                   <a className="secondary-inline-link" href="#planning-guides">
                     Browse planning guides <span aria-hidden="true">↓</span>
@@ -1143,7 +1167,11 @@ export function Site({
                 </a>
               </nav>
               <h1 className="page-title">{page.title}</h1>
-              {alignedPageIntro(path, page.title) && <p className="source-lead" data-h1-intro>{alignedPageIntro(path, page.title)}</p>}
+              {alignedPageIntro(path, page.title) && (
+                <p className="source-lead" data-h1-intro>
+                  {alignedPageIntro(path, page.title)}
+                </p>
+              )}
               {path === "/gsa-schedule/" && (
                 <aside
                   className="procurement-documents"
@@ -1191,10 +1219,10 @@ export function Site({
           <section className="wrap section narrow">
             <h1>Privacy</h1>
             <p data-h1-intro>
-              Review the information on this page about using the Temporary123
-              website and contacting the business. For questions about information
-              you provide during a rental inquiry, contact the team using the
-              published telephone number.
+              Review the information on this page about using the Mobile Kitchen
+              Rental website and contacting the business. For questions about
+              information you provide during a rental inquiry, contact the team
+              using the published telephone number.
             </p>
             <p>
               This version does not load advertising or analytics scripts. To
@@ -1202,8 +1230,8 @@ export function Site({
               team.
             </p>
             <p>
-              For questions about your information, contact Temporary123 at{" "}
-              {site.phoneDisplay}.
+              For questions about your information, contact Mobile Kitchen
+              Rental at {site.phoneDisplay}.
             </p>
           </section>
         ) : (

@@ -85,7 +85,7 @@ export function Home() {
               <em>Rent or Lease Nationwide</em>
             </h1>
             <p data-h1-intro>
-              Temporary123 provides nationwide rental and leasing of temporary
+              Mobile Kitchen Rental provides nationwide rental and leasing of temporary
               facilities for commercial and institutional projects. Explore
               commercial kitchen and dishwashing trailers, restroom and shower
               facilities, laundry trailers, crew accommodation, refrigeration,

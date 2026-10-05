@@ -34,7 +34,7 @@ export const temporaryGuide: GuideConfig = {
   position: "left",
   bottom: 88,
   greeting:
-    "Welcome to Temporary123. Ask me about our phone number, 24/7 rental team, equipment options, nationwide service, site preparation or quote process. I answer from prepared website information—not live inventory or final quotes.",
+    "Welcome to Mobile Kitchen Rental. Ask me about our phone number, 24/7 rental team, equipment options, nationwide service, site preparation or quote process. I answer from prepared website information—not live inventory or final quotes.",
   fallback:
     "I don't have a prepared answer for that question. Choose a topic below or contact the team for project-specific help. Please don't enter sensitive information here.",
   contact: { label: "Contact the rental team", href: "/contact-us/" },
@@ -43,8 +43,8 @@ export const temporaryGuide: GuideConfig = {
     ...businessTopics({
       name: site.brand,
       phone: { display: site.phoneDisplay, href: `tel:${site.phoneE164}` },
-      hours: `The Temporary123 rental team is available 24/7. Call ${site.phoneDisplay}. Equipment availability and dispatch timing require confirmation.`,
-      about: "Temporary123 provides nationwide rental and leasing of temporary facilities for commercial and institutional projects, including kitchens, dishwashing, refrigeration, showers, restrooms, sleeping facilities, laundry and handwashing.",
+      hours: `The Mobile Kitchen Rental rental team is available 24/7. Call ${site.phoneDisplay}. Equipment availability and dispatch timing require confirmation.`,
+      about: "Mobile Kitchen Rental provides nationwide rental and leasing of temporary facilities for commercial and institutional projects, including kitchens, dishwashing, refrigeration, showers, restrooms, sleeping facilities, laundry and handwashing.",
     }),
     ...equipment,
     {
@@ -62,7 +62,7 @@ export const temporaryGuide: GuideConfig = {
     {
       id: "duration", title: "Rental period", priority: 40,
       phrases: ["rental period", "how long", "rental duration", "lease", "leasing", "minimum rental"],
-      answer: "Temporary123 offers rental and leasing. Provide your preferred start and end dates and expected rental duration. Minimum periods, extensions and contract terms need confirmation from the rental team for your selected equipment; this guide cannot approve them.",
+      answer: "Mobile Kitchen Rental offers rental and leasing. Provide your preferred start and end dates and expected rental duration. Minimum periods, extensions and contract terms need confirmation from the rental team for your selected equipment; this guide cannot approve them.",
       followUp: "quote",
     },
     {
@@ -117,7 +117,7 @@ export const temporaryGuide: GuideConfig = {
         "nationwide",
       ],
       answer:
-        "Temporary123 provides nationwide rental and leasing across the United States. Share your project city, state and site address so the team can confirm delivery access, arrangements and equipment availability. Nationwide service is not a guarantee that every unit is immediately available in every location.",
+        "Mobile Kitchen Rental provides nationwide rental and leasing across the United States. Share your project city, state and site address so the team can confirm delivery access, arrangements and equipment availability. Nationwide service is not a guarantee that every unit is immediately available in every location.",
       actions: [{ label: "Explore service areas", href: "/service-areas/" }],
       followUp: "quote",
     },

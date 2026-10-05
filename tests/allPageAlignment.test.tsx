@@ -110,7 +110,7 @@ describe("H1, introduction and equipment consistency", () => {
     const html =
       "<h2>Body details</h2><p>This is a substantive body paragraph that should not be removed because a missing lead was never present.</p>";
     const options = {
-      origin: "https://temporary123.com",
+      origin: "https://mobile-kitchen-rental.com",
       routes: new Set<string>(),
       redirects: new Map<string, string>(),
       media: {},

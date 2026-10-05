@@ -17,7 +17,7 @@ for (const width of [375, 1440]) {
       await page.getByRole('button', { name: 'Send', exact: true }).click();
     };
     await ask('What is your phone number?');
-    await expect(page.getByRole('log')).toContainText('You can call Temporary123 at +1 (800) 443 - 5212.');
+    await expect(page.getByRole('log')).toContainText('You can call Mobile Kitchen Rental at +1 (800) 443 - 5212.');
     await expect(page.getByRole('log').getByRole('link', { name: 'Call +1 (800) 443 - 5212', exact: true })).toHaveAttribute('href', 'tel:+18004435212');
     await ask('Are you open on weekends?');
     await expect(page.getByRole('log')).toContainText('rental team is available 24/7');

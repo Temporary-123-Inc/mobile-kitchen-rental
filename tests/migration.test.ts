@@ -31,7 +31,7 @@ describe("evidence-based city consolidation", () => {
       );
       expect(source.id, row.path).toBe(row.sourceId);
       const html = renderSourceContent(source.html, {
-        origin: "https://temporary123.com",
+        origin: "https://mobile-kitchen-rental.com",
         routes: new Set(),
         redirects: new Map(),
         media: {},
@@ -65,7 +65,7 @@ describe("migration indexing separation", () => {
     expect(productionBuild("draft", "production")).toBe(false);
     expect(canonicalFor("/gsa-schedule/", true, false)).toBeUndefined();
     expect(canonicalFor("/gsa-schedule/", true, true)).toBe(
-      "https://temporary123.com/gsa-schedule/",
+      "https://mobile-kitchen-rental.com/gsa-schedule/",
     );
     expect(canonicalFor("/video/", false, true)).toBeUndefined();
     expect(() => canonicalFor("//evil.example/", true, true)).toThrow();
@@ -94,8 +94,8 @@ describe("migration indexing separation", () => {
     expect(routesForIndexingBatch(routes, 2, 25)).toEqual(routes.slice(0, 50));
     expect(routesForIndexingBatch(routes, 3, 25)).toEqual(routes);
   });
-  it("releases all existing public routes without the old batch or editorial holds", () => {
-    expect(site.indexingScope).toBe("existing-public-pages");
+  it("supports releasing all existing public routes when blanket approval is selected", () => {
+    expect(site.indexingScope).toBe("focused-kitchen-cluster");
     const routes = [
       "/",
       "/contact-us/",
@@ -121,7 +121,7 @@ describe("migration indexing separation", () => {
     expect(plan.activeBatch).toBe(1);
     for (const path of routes)
       expect(canonicalFor(path, true, true)).toBe(
-        `https://temporary123.com${path}`,
+        `https://mobile-kitchen-rental.com${path}`,
       );
     const xml = sitemapXml(
       routes.map((path) => ({ path, indexable: true })),
@@ -182,15 +182,15 @@ describe("migration indexing separation", () => {
     const rule = vercel.headers.find((rule) => "missing" in rule);
     expect(rule).toMatchObject({
       source: "/(.*)",
-      missing: [{ type: "host", value: "temporary123\\.com" }],
+      missing: [{ type: "host", value: "mobile-kitchen-rental\\.com" }],
       headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }],
     });
   });
   it("permanently consolidates www requests onto the canonical host", () => {
     expect(vercel.redirects[0]).toMatchObject({
       source: "/:path*",
-      has: [{ type: "host", value: "www.temporary123.com" }],
-      destination: "https://temporary123.com/:path*",
+      has: [{ type: "host", value: "www.mobile-kitchen-rental.com" }],
+      destination: "https://mobile-kitchen-rental.com/:path*",
       permanent: true,
     });
   });
@@ -216,7 +216,7 @@ describe("migration indexing separation", () => {
 
 describe("preserve source meaning while repairing navigation", () => {
   const options = () => ({
-    origin: "https://temporary123.com",
+    origin: "https://mobile-kitchen-rental.com",
     routes: new Set(["/service-areas/", "/equipment-rental/"]),
     redirects: new Map([["/shop/", "/equipment-rental/"]]),
     media: {},
@@ -238,7 +238,7 @@ describe("preserve source meaning while repairing navigation", () => {
   it("normalizes known destinations, preserves query strings and records unrecovered pages", () => {
     const settings = options();
     const result = renderSourceContent(
-      '<a href="https://www.temporary123.com/shop/?type=long#rent">Equipment</a><a href="/testimonials/">Testimonials</a>',
+      '<a href="https://www.mobile-kitchen-rental.com/shop/?type=long#rent">Equipment</a><a href="/testimonials/">Testimonials</a>',
       settings,
     );
     expect(result).toContain("/equipment-rental/?type=long#rent");

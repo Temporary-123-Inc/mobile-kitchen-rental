@@ -30,7 +30,7 @@ export type AuthorityUrlRecord = {
 const importedRows = [
   [
     1,
-    "https://temporary123.com/",
+    "https://mobile-kitchen-rental.com/",
     "Homepage / nationwide temporary facility rental",
     541,
     695,
@@ -39,7 +39,7 @@ const importedRows = [
   ],
   [
     2,
-    "https://temporary123.com/houston-texas-mobile-kitchen-rental/",
+    "https://mobile-kitchen-rental.com/houston-texas-mobile-kitchen-rental/",
     "Houston mobile kitchen rental",
     8,
     12,
@@ -48,7 +48,7 @@ const importedRows = [
   ],
   [
     3,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-california/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-california/",
     "California portable restroom trailer rental",
     6,
     18,
@@ -57,7 +57,7 @@ const importedRows = [
   ],
   [
     4,
-    "https://temporary123.com/temporary-workforce-housing-facilities/",
+    "https://mobile-kitchen-rental.com/temporary-workforce-housing-facilities/",
     "Temporary workforce housing facilities",
     4,
     23073,
@@ -66,7 +66,7 @@ const importedRows = [
   ],
   [
     5,
-    "https://temporary123.com/equipment-rental/sleeper-trailers/",
+    "https://mobile-kitchen-rental.com/equipment-rental/sleeper-trailers/",
     "Sleeper trailer rental",
     2,
     344,
@@ -75,7 +75,7 @@ const importedRows = [
   ],
   [
     6,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-alabama/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-alabama/",
     "Alabama portable restroom trailer rental",
     2,
     13,
@@ -84,7 +84,7 @@ const importedRows = [
   ],
   [
     7,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-alaska/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-alaska/",
     "Alaska portable restroom trailer rental",
     2,
     13,
@@ -93,7 +93,7 @@ const importedRows = [
   ],
   [
     8,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-alberta-ca/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-alberta-ca/",
     "Alberta Canada portable restroom trailer rental",
     2,
     13,
@@ -102,7 +102,7 @@ const importedRows = [
   ],
   [
     9,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-arizona/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-arizona/",
     "Arizona portable restroom trailer rental",
     2,
     13,
@@ -111,7 +111,7 @@ const importedRows = [
   ],
   [
     10,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-arkansas/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-arkansas/",
     "Arkansas portable restroom trailer rental",
     2,
     13,
@@ -120,7 +120,7 @@ const importedRows = [
   ],
   [
     11,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-colorado/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-colorado/",
     "Colorado portable restroom trailer rental",
     2,
     13,
@@ -129,7 +129,7 @@ const importedRows = [
   ],
   [
     12,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-connecticut/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-connecticut/",
     "Connecticut portable restroom trailer rental",
     2,
     13,
@@ -138,7 +138,7 @@ const importedRows = [
   ],
   [
     13,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-delaware/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-delaware/",
     "Delaware portable restroom trailer rental",
     2,
     13,
@@ -147,7 +147,7 @@ const importedRows = [
   ],
   [
     14,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-district-of-columbia/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-district-of-columbia/",
     "District of Columbia portable restroom trailer rental",
     2,
     13,
@@ -156,7 +156,7 @@ const importedRows = [
   ],
   [
     15,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-florida/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-florida/",
     "Florida portable restroom trailer rental",
     2,
     13,
@@ -165,7 +165,7 @@ const importedRows = [
   ],
   [
     16,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-georgia/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-georgia/",
     "Georgia portable restroom trailer rental",
     2,
     13,
@@ -174,7 +174,7 @@ const importedRows = [
   ],
   [
     17,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-hawaii/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-hawaii/",
     "Hawaii portable restroom trailer rental",
     2,
     13,
@@ -183,7 +183,7 @@ const importedRows = [
   ],
   [
     18,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-idaho/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-idaho/",
     "Idaho portable restroom trailer rental",
     2,
     13,
@@ -192,7 +192,7 @@ const importedRows = [
   ],
   [
     19,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-illinois/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-illinois/",
     "Illinois portable restroom trailer rental",
     2,
     13,
@@ -201,7 +201,7 @@ const importedRows = [
   ],
   [
     20,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-indiana/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-indiana/",
     "Indiana portable restroom trailer rental",
     2,
     13,
@@ -210,7 +210,7 @@ const importedRows = [
   ],
   [
     21,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-iowa/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-iowa/",
     "Iowa portable restroom trailer rental",
     2,
     13,
@@ -219,7 +219,7 @@ const importedRows = [
   ],
   [
     22,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-kansas/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-kansas/",
     "Kansas portable restroom trailer rental",
     2,
     13,
@@ -228,7 +228,7 @@ const importedRows = [
   ],
   [
     23,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-kentucky/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-kentucky/",
     "Kentucky portable restroom trailer rental",
     2,
     13,
@@ -237,7 +237,7 @@ const importedRows = [
   ],
   [
     24,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-louisiana/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-louisiana/",
     "Louisiana portable restroom trailer rental",
     2,
     13,
@@ -246,7 +246,7 @@ const importedRows = [
   ],
   [
     25,
-    "https://temporary123.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-maine/",
+    "https://mobile-kitchen-rental.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-maine/",
     "Maine portable restroom trailer rental",
     2,
     13,

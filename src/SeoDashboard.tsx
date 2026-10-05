@@ -153,7 +153,7 @@ type DiagnosticsEnvelope = {
 
 export const domainAuthoritySites: DomainAuthoritySite[] = [
   {
-    domain: "temporary123.com",
+    domain: "mobile-kitchen-rental.com",
     siteType: "Multi-service temporary facilities",
     inventoryEvidence: "Manual",
     readiness: "Preview blocked from indexing",
@@ -309,7 +309,7 @@ export function SeoDashboard() {
   const authorityRows = [
     {
       key: "ahrefs",
-      domain: "temporary123.com",
+      domain: "mobile-kitchen-rental.com",
       siteType: "Multi-service temporary facilities",
       metric: "Ahrefs DR",
       score: live?.providers?.ahrefs.score ?? null,
@@ -320,7 +320,7 @@ export function SeoDashboard() {
     },
     {
       key: "moz",
-      domain: "temporary123.com",
+      domain: "mobile-kitchen-rental.com",
       siteType: "Multi-service temporary facilities",
       metric: "Moz DA",
       score: live?.providers?.moz.score ?? null,
@@ -331,7 +331,7 @@ export function SeoDashboard() {
     },
     {
       key: "manual",
-      domain: "temporary123.com",
+      domain: "mobile-kitchen-rental.com",
       siteType: "Multi-service temporary facilities",
       metric: "Owner-provided DA baseline",
       score: 32,
@@ -417,7 +417,7 @@ export function SeoDashboard() {
             </span>
             <h1>SEO Migration Dashboard</h1>
             <p data-h1-intro>
-              Review Temporary123 migration evidence, protected URLs and preview
+              Review Mobile Kitchen Rental migration evidence, protected URLs and preview
               crawl checks. Indexing and authority values remain unknown until
               supported by their connected providers; a successful HTTP check is
               not proof of Google indexing.
@@ -915,7 +915,7 @@ export function SeoDashboard() {
           </div>
           <p className="seo-note">
             {searchPerformance?.state === "connected"
-              ? `${searchPerformance.source}. Non-branded totals exclude Temporary123 brand variants from returned query rows and may be lower than the full total because Google can omit anonymized or lower-volume query rows.${searchPerformance.queryRowLimitReached ? " The 25,000-row query limit was reached." : ""}${searchPerformance.pageRowsLimited ? ` The dashboard returns the strongest ${searchPerformance.pageRows.length.toLocaleString()} of ${searchPerformance.pageRowsAvailable?.toLocaleString() ?? "available"} 28-day page rows to keep the response bounded.` : ""}${searchPerformance.prioritizationStartDate && searchPerformance.prioritizationEndDate ? ` Candidate prioritization retains the strongest ${searchPerformance.prioritizationPageRows?.length.toLocaleString() ?? 0} of ${searchPerformance.prioritizationPageRowsAvailable?.toLocaleString() ?? "available"} page rows from ${searchPerformance.prioritizationStartDate} through ${searchPerformance.prioritizationEndDate}.` : ""}`
+              ? `${searchPerformance.source}. Non-branded totals exclude Mobile Kitchen Rental brand variants from returned query rows and may be lower than the full total because Google can omit anonymized or lower-volume query rows.${searchPerformance.queryRowLimitReached ? " The 25,000-row query limit was reached." : ""}${searchPerformance.pageRowsLimited ? ` The dashboard returns the strongest ${searchPerformance.pageRows.length.toLocaleString()} of ${searchPerformance.pageRowsAvailable?.toLocaleString() ?? "available"} 28-day page rows to keep the response bounded.` : ""}${searchPerformance.prioritizationStartDate && searchPerformance.prioritizationEndDate ? ` Candidate prioritization retains the strongest ${searchPerformance.prioritizationPageRows?.length.toLocaleString() ?? 0} of ${searchPerformance.prioritizationPageRowsAvailable?.toLocaleString() ?? "available"} page rows from ${searchPerformance.prioritizationStartDate} through ${searchPerformance.prioritizationEndDate}.` : ""}`
               : searchPerformance?.error || "Search Analytics is not connected yet. URL Inspection can still remain available independently."}
           </p>
           <div className="seo-table-wrap compact-table">
@@ -989,7 +989,7 @@ export function SeoDashboard() {
               <strong>Current baseline</strong>
               <p>
                 <span className="evidence manual">Manual</span> DA 32 for
-                temporary123.com. The owner supplied this value; there is no
+                mobile-kitchen-rental.com. The owner supplied this value; there is no
                 dated Moz report, Ahrefs report, or API response attached.
               </p>
             </div>

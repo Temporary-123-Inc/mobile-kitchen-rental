@@ -872,7 +872,7 @@ const stateLocalDetails: Record<string, { regions: string[]; fact: string }> = {
   },
 };
 
-// One owned Temporary123 photograph per state. These recovered assets came from
+// One owned Mobile Kitchen Rental photograph per state. These recovered assets came from
 // the production media library, so the service-area experience can vary without
 // relying on third-party stock imagery or repeating a photograph.
 const stateVisuals = [
@@ -882,7 +882,7 @@ const stateVisuals = [
   ],
   [
     "/media/41a2ee3cfcd6483b1a9c9939.png",
-    "Tow vehicle transporting a Temporary123 facility trailer",
+    "Tow vehicle transporting a Mobile Kitchen Rental facility trailer",
   ],
   [
     "/media/655fb7048f20d305203873c3.jpg",

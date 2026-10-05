@@ -517,8 +517,7 @@
   place-items: center;
   padding: 1.5rem;
   background:
-    linear-gradient(135deg, rgb(0 128 143 / 12%), transparent 62%),
-    #edf4f3;
+    linear-gradient(135deg, rgb(0 128 143 / 12%), transparent 62%), #edf4f3;
   color: #27535b;
   text-align: center;
 }
@@ -1463,4 +1462,21 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+/* Mobile Kitchen Rental brand palette */
+:root {
+  --ink: #071f3f;
+  --blue: #0b4f91;
+  --blue-hover: #07386a;
+  --muted: #52667c;
+  --line: #d9e1ea;
+  --pale: #f1f5f9;
+  --paper: #ffffff;
+  --accent: #d31220;
+  --phone-emphasis: #d31220;
+  --accent-hover: #a90e18;
+  --support-band: #071f3f;
+  --support-band-hover: #0b4f91;
+  --contact-tab: #d31220;
+  --contact-tab-hover: #a90e18;
 }

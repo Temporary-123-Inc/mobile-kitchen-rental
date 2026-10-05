@@ -155,7 +155,7 @@ const reviewed: Record<
       smallWidth: 480,
       largeWidth: 960,
       source:
-        "https://temporary123.com/wp-content/uploads/2021/11/SLIDER-1.jpg",
+        "https://mobile-kitchen-rental.com/wp-content/uploads/2021/11/SLIDER-1.jpg",
     },
   },
 };

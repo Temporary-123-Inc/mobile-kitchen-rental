@@ -254,7 +254,7 @@ export const serviceOptions = serviceCategories.flatMap((category) =>
       categoryDescription: category.description,
       description:
         modelDetails[link.href as keyof typeof modelDetails]?.intro ||
-        `${link.name} rental planning from Temporary123.`,
+        `${link.name} rental planning from Mobile Kitchen Rental.`,
     })),
 );
 

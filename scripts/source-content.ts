@@ -50,8 +50,16 @@ export function renderSourceContent(html: string, options: Options) {
   const $ = load(html, undefined, false);
   if (options.removeLeadParagraph) {
     // Site renders the aligned H1 lead. Preserve navigation, images and archives.
-    const normalizeLead = (s: string) => s.replace(/\s+/g, ' ').trim();
-    const first = $("p").filter((_, el) => Boolean(options.replacedLead) && normalizeLead($(el).text()) === normalizeLead(options.replacedLead || '') && !$(el).find("img").length).first();
+    const normalizeLead = (s: string) => s.replace(/\s+/g, " ").trim();
+    const first = $("p")
+      .filter(
+        (_, el) =>
+          Boolean(options.replacedLead) &&
+          normalizeLead($(el).text()) ===
+            normalizeLead(options.replacedLead || "") &&
+          !$(el).find("img").length,
+      )
+      .first();
     if (first.length) first.remove();
   }
   // These headings introduce repeated global navigation, not page-specific copy.
@@ -70,7 +78,8 @@ export function renderSourceContent(html: string, options: Options) {
         next.type === "tag" &&
         /^h[2-6]$/.test(next.tagName) &&
         Number(next.tagName.slice(1)) <= level
-      ) break;
+      )
+        break;
       const following = next.nextSibling;
       $(next).remove();
       next = following;
@@ -112,9 +121,10 @@ export function renderSourceContent(html: string, options: Options) {
       return;
     }
     if (
-      ![new URL(options.origin).hostname, "www.temporary123.com"].includes(
-        url.hostname,
-      )
+      ![
+        new URL(options.origin).hostname,
+        "www.mobile-kitchen-rental.com",
+      ].includes(url.hostname)
     )
       return;
     const firstTextNode = a

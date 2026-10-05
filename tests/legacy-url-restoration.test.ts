@@ -138,7 +138,7 @@ describe("legacy backlink URL restoration", () => {
           "/wp-content/uploads/2023/04/2-Food-Service-Design.png",
       ),
     ).toMatchObject({
-      destination: "https://temporary123.com/food-services-2/",
+      destination: "https://mobile-kitchen-rental.com/food-services-2/",
       permanent: true,
     });
   });
@@ -190,7 +190,7 @@ describe("legacy backlink URL restoration", () => {
         .split("\n")
         .slice(1)
         .map((line) => line.split(","))
-        .filter((columns) => columns[1] === "www.temporary123.com")
+        .filter((columns) => columns[1] === "www.mobile-kitchen-rental.com")
         .map((columns) => columns[2])
         .filter((path) => !/\.[^/]+$/.test(path)),
     );
@@ -204,12 +204,12 @@ describe("legacy backlink URL restoration", () => {
             rule.has?.some(
               (condition) =>
                 condition.type === "host" &&
-                condition.value === "www.temporary123.com",
+                condition.value === "www.mobile-kitchen-rental.com",
             ),
         ),
         path,
       ).toMatchObject({
-        destination: `https://temporary123.com${path}`,
+        destination: `https://mobile-kitchen-rental.com${path}`,
         permanent: true,
       });
     }

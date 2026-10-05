@@ -77,7 +77,7 @@ export const industryGuides = [
     intro:
       "Plan public-service continuity with Temporary Facilities for rent or lease. Our rental services start with mobile commercial kitchens, shower and restroom combination trailers, shower trailers, and sleeper or bunkbed trailers. Discuss a coordinated base camp or man camp when multiple facilities are required at one location.",
     answer:
-      "Government facility planning starts with the operating brief and the requirements of the purchasing organization. Temporary123 can discuss equipment options for maintenance, renovation, field operations and emergency support.",
+      "Government facility planning starts with the operating brief and the requirements of the purchasing organization. Mobile Kitchen Rental can discuss equipment options for maintenance, renovation, field operations and emergency support.",
     steps: [
       [
         "Define the requirement",

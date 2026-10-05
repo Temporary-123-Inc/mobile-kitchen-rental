@@ -7,7 +7,10 @@ import imageDimensions from "../content/image-dimensions.json";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { renderToString } from "react-dom/server";
 import { Site, isLocationPagePath, type SourcePage } from "../src/Site";
-import { legacyAuthorityPageByPath, legacyAuthorityPages } from "../src/LegacyAuthorityPage";
+import {
+  legacyAuthorityPageByPath,
+  legacyAuthorityPages,
+} from "../src/LegacyAuthorityPage";
 import { readdir } from "node:fs/promises";
 import { gunzipSync } from "node:zlib";
 import { pageInfo } from "../src/content";
@@ -166,7 +169,7 @@ const sourceDescription = (page: SourcePage) => {
     (inherited.length >= 155 && !/[.!?]$/.test(inherited));
   if (!unusable) return inherited;
   const subject = compact(page.title.split("|")[0], 65);
-  return `Explore ${subject} from Temporary123. Call ${site.phoneDisplay} to discuss site requirements, equipment availability and delivery.`;
+  return `Explore ${subject} from Mobile Kitchen Rental. Call ${site.phoneDisplay} to discuss site requirements, equipment availability and delivery.`;
 };
 const unresolvedSourceLinks = new Set<string>();
 const dimensions: Record<string, { width: number; height: number }> = {};
@@ -223,100 +226,101 @@ for (const path of [...allRoutes, "/404/"]) {
   const hubHeadline = rentalHubHeadline(path);
   const info = legacyAuthorityPage
     ? {
-        title: `${legacyAuthorityPage.title} | Temporary123`,
+        title: `${legacyAuthorityPage.title} | Mobile Kitchen Rental`,
         description: legacyAuthorityPage.description,
       }
     : industry
-    ? {
-        title: `${industry.title}: Temporary Facilities to Rent or Lease | Temporary123`,
-        description: industry.description,
-      }
-    : detail
       ? {
-          title: `${rentalProductHeadline(detail.name)} | Temporary123`,
-          description: detail.intro.split(". ")[0] + ".",
+          title: `${industry.title}: Temporary Facilities to Rent or Lease | Mobile Kitchen Rental`,
+          description: industry.description,
         }
-      : city
+      : detail
         ? {
-            title: `${cityHeadline(city)} | Temporary123`,
-            description: compact(
-              alignedLocationIntro(
-                cityHeadline(city),
-                `${city.name}, ${city.state}`,
-              ).split(/(?<!\bSt)\. /)[0] + ".",
-              155,
-            ),
+            title: `${rentalProductHeadline(detail.name)} | Mobile Kitchen Rental`,
+            description: detail.intro.split(". ")[0] + ".",
           }
-        : directoryRegion
+        : city
           ? {
-              title: `${regionLocationLabel(directoryRegion.region, directoryRegion.state)} Facility Rental Locations | Temporary123`,
-              description: `Browse ${regionLocationLabel(directoryRegion.region, directoryRegion.state)} cities and communities for Temporary Facilities Rental planning. Find reviewed city guides and regional services.`,
+              title: `${cityHeadline(city)} | Mobile Kitchen Rental`,
+              description: compact(
+                alignedLocationIntro(
+                  cityHeadline(city),
+                  `${city.name}, ${city.state}`,
+                ).split(/(?<!\bSt)\. /)[0] + ".",
+                155,
+              ),
             }
-          : region
+          : directoryRegion
             ? {
-                title: `${regionRentalHeadline(region.region, region.state, region.index)} | Temporary123`,
-                description: compact(
-                  alignedLocationIntro(
-                    regionRentalHeadline(
-                      region.region,
-                      region.state,
-                      region.index,
-                    ),
-                    regionLocationLabel(region.region, region.state),
-                  ).split(/(?<!\bSt)\. /)[0] + ".",
-                  155,
-                ),
+                title: `${regionLocationLabel(directoryRegion.region, directoryRegion.state)} Facility Rental Locations | Mobile Kitchen Rental`,
+                description: `Browse ${regionLocationLabel(directoryRegion.region, directoryRegion.state)} cities and communities for Temporary Facilities Rental planning. Find reviewed city guides and regional services.`,
               }
-            : stateName
+            : region
               ? {
-                  title: `${stateRentalHeadline(stateName)} | Temporary123`,
+                  title: `${regionRentalHeadline(region.region, region.state, region.index)} | Mobile Kitchen Rental`,
                   description: compact(
                     alignedLocationIntro(
-                      stateRentalHeadline(stateName),
-                      stateName,
+                      regionRentalHeadline(
+                        region.region,
+                        region.state,
+                        region.index,
+                      ),
+                      regionLocationLabel(region.region, region.state),
                     ).split(/(?<!\bSt)\. /)[0] + ".",
                     155,
                   ),
                 }
-              : hubHeadline
+              : stateName
                 ? {
-                    title: `${hubHeadline} | Temporary123`,
-                    description: pageInfo(path).description,
+                    title: `${stateRentalHeadline(stateName)} | Mobile Kitchen Rental`,
+                    description: compact(
+                      alignedLocationIntro(
+                        stateRentalHeadline(stateName),
+                        stateName,
+                      ).split(/(?<!\bSt)\. /)[0] + ".",
+                      155,
+                    ),
                   }
-                : coreRoutes.includes(path)
-                  ? pageInfo(path)
-                  : page
-                    ? {
-                        title: page.title + " | Temporary123",
-                        description: sourceDescription(page),
-                      }
-                    : path === "/contact-us/"
+                : hubHeadline
+                  ? {
+                      title: `${hubHeadline} | Mobile Kitchen Rental`,
+                      description: pageInfo(path).description,
+                    }
+                  : coreRoutes.includes(path)
+                    ? pageInfo(path)
+                    : page
                       ? {
-                          title: "Contact Temporary123 | Talk to a Specialist",
-                          description: `Call Temporary123 at ${site.phoneDisplay} for mobile kitchens, temporary facilities and project support.`,
+                          title: page.title + " | Mobile Kitchen Rental",
+                          description: sourceDescription(page),
                         }
-                      : path === "/equipment-rental/"
+                      : path === "/contact-us/"
                         ? {
-                            title: "Equipment Rental | Temporary123",
-                            description:
-                              "Explore Temporary123 mobile kitchens, restroom and shower trailers, workforce and site facilities.",
+                            title:
+                              "Contact Mobile Kitchen Rental | Talk to a Specialist",
+                            description: `Call Mobile Kitchen Rental at ${site.phoneDisplay} for mobile kitchens, temporary facilities and project support.`,
                           }
-                        : catalogItem
+                        : path === "/equipment-rental/"
                           ? {
-                              title: `${rentalProductHeadline(catalogItem.name)} | Temporary123`,
-                              description: catalogItem.summary,
+                              title: "Equipment Rental | Mobile Kitchen Rental",
+                              description:
+                                "Explore Mobile Kitchen Rental mobile kitchens, restroom and shower trailers, workforce and site facilities.",
                             }
-                          : serviceOption
+                          : catalogItem
                             ? {
-                                title: `${rentalProductHeadline(serviceOption.name)} | Temporary123`,
-                                description: serviceOption.description,
+                                title: `${rentalProductHeadline(catalogItem.name)} | Mobile Kitchen Rental`,
+                                description: catalogItem.summary,
                               }
-                            : serviceCategory
+                            : serviceOption
                               ? {
-                                  title: `${rentalCategoryHeadline(serviceCategory.name)} | Temporary123`,
-                                  description: serviceCategory.description,
+                                  title: `${rentalProductHeadline(serviceOption.name)} | Mobile Kitchen Rental`,
+                                  description: serviceOption.description,
                                 }
-                              : pageInfo(path);
+                              : serviceCategory
+                                ? {
+                                    title: `${rentalCategoryHeadline(serviceCategory.name)} | Mobile Kitchen Rental`,
+                                    description: serviceCategory.description,
+                                  }
+                                : pageInfo(path);
   const indexableCanonical =
     canonicalFor(path, indexableRoutes.includes(path), release) || "";
   const canonical =
@@ -325,7 +329,7 @@ for (const path of [...allRoutes, "/404/"]) {
       ? new URL(path, site.origin).href
       : "");
   if (!info.description.trim()) {
-    info.description = `Explore ${page?.title || "Temporary123 facilities"}. Call Temporary123 at ${site.phoneDisplay} to discuss your site, rental dates and equipment requirements.`;
+    info.description = `Explore ${page?.title || "Mobile Kitchen Rental facilities"}. Call Mobile Kitchen Rental at ${site.phoneDisplay} to discuss your site, rental dates and equipment requirements.`;
   }
   const head =
     (fontAsset
@@ -455,7 +459,7 @@ for (const path of [...allRoutes, "/404/"]) {
       )
         img.attr(
           "alt",
-          `${h1.text().trim()}: Temporary123 equipment reference`,
+          `${h1.text().trim()}: Mobile Kitchen Rental equipment reference`,
         );
     });
     const crumbs = breadcrumb

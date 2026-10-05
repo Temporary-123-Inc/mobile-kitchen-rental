@@ -390,7 +390,7 @@ export function CoverageMap({
 
               <section
                 className="state-dialog-visual"
-                aria-label="Temporary123 equipment photographs"
+                aria-label="Mobile Kitchen Rental equipment photographs"
               >
                 <div className="state-visual-heading">
                   <div>

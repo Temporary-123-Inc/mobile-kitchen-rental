@@ -300,7 +300,7 @@ export function Cards({
               <EquipmentImage
                 image={e.image}
                 smallImage={e.smallImage}
-                alt={e.imageAlt || `${e.name} equipment from Temporary123`}
+                alt={e.imageAlt || `${e.name} equipment from Mobile Kitchen Rental`}
               />
             ) : (
               <div

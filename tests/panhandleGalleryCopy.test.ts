@@ -13,7 +13,7 @@ describe("Panhandle laundry copy and structured data", () => {
   it("uses the production URL and relevant service type in schema", () => {
     const schema = pageSchema({path: "/service-areas/oklahoma/panhandle/", title: "Oklahoma Panhandle Laundry Rental", description: "Temporary laundry rental", crumbs: [], service: true, serviceType: "Laundry trailer and laundry container rental", area: { name: "Panhandle", state: "Oklahoma" }});
     const service = schema["@graph"].find((item: any) => item["@type"] === "Service") as any;
-    expect(service.url).toBe("https://temporary123.com/service-areas/oklahoma/panhandle/");
+    expect(service.url).toBe("https://mobile-kitchen-rental.com/service-areas/oklahoma/panhandle/");
     expect(service.serviceType).toBe("Laundry trailer and laundry container rental");
     expect(service.areaServed.containedInPlace.name).toBe("Oklahoma");
   });

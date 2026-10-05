@@ -1,4 +1,4 @@
-export const publicOrigin = "https://temporary123.com";
+export const publicOrigin = "https://mobile-kitchen-rental.com";
 
 export type IndexingScope =
   | "full"

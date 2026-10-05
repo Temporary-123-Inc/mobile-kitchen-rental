@@ -21,7 +21,7 @@ export function pageSchema(input: {
       name: site.brand,
       url: `${origin}/`,
       telephone: site.phoneE164,
-      logo: `${origin}/images/temporary123-logo.png`,
+      logo: `${origin}/brand/mobile-kitchen-rental-logo.png`,
       areaServed: { "@type": "Country", name: "United States" },
       contactPoint: {
         "@type": "ContactPoint",
