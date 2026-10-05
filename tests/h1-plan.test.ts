@@ -89,23 +89,29 @@ describe("Boss-approved Mobile Kitchen Rental H1 plan", () => {
       "Nationwide Temporary Facility and Equipment Rental",
     );
     expect(rentalCategoryHeadline("Mobile Kitchens")).toBe(
-      "Kitchen Trailer Rental",
+      "Temporary Commercial Mobile Kitchen Trailer Rental",
     );
     expect(
       rentalCategoryHeadline("Shower and Restroom Combination Trailers"),
-    ).toBe("Shower and Restroom Combination Trailer Rental");
+    ).toBe(
+      "Temporary Commercial Shower and Restroom Combination Trailer Rental",
+    );
     expect(
       rentalProductHeadline(
         "Luxury Shower and Restroom Combination Trailer, 3 Stalls + 1 ADA",
       ),
-    ).toBe("3-Stall + 1 ADA Shower and Restroom Combination Trailer Rental");
+    ).toBe(
+      "Temporary Commercial 3-Stall + 1 ADA Shower and Restroom Combination Trailer Rental",
+    );
     expect(
       rentalProductHeadline(
         "22 ft Luxury Shower and Restroom Combination Trailer, 6 Stalls",
       ),
-    ).toBe("22 ft 6-Stall Shower and Restroom Combination Trailer Rental");
+    ).toBe(
+      "Temporary Commercial 22 ft 6-Stall Shower and Restroom Combination Trailer Rental",
+    );
     expect(rentalProductHeadline("22 ft Shower Trailer, 10 Stalls")).toBe(
-      "22 ft 10-Stall Shower Trailer Rental",
+      "Temporary Commercial 22 ft 10-Stall Shower Trailer Rental",
     );
   });
 });

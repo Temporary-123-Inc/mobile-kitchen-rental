@@ -231,46 +231,50 @@ export const cityRentalHeadline = (location: string, service: string) => {
 };
 
 export const rentalProductHeadline = (name: string) => {
+  let equipmentPhrase: string;
   if (/Combination Trailer/i.test(name)) {
     if (/ADA/i.test(name)) {
       const stalls = name.match(/(\d+) Stalls?/i)?.[1];
       if (stalls)
-        return `${stalls}-Stall + 1 ADA Shower and Restroom Combination Trailer Rental`;
-      return "ADA Shower and Restroom Combination Trailer Rental";
+        equipmentPhrase = `${stalls}-Stall + 1 ADA Shower and Restroom Combination Trailer`;
+      else equipmentPhrase = "ADA Shower and Restroom Combination Trailer";
+    } else {
+      const size = name.match(/^(\d+)\s*ft/i)?.[1];
+      const stalls = name.match(/(\d+) Stalls?/i)?.[1];
+      if (size && stalls)
+        equipmentPhrase = `${size} ft ${stalls}-Stall Shower and Restroom Combination Trailer`;
+      else equipmentPhrase = "Shower and Restroom Combination Trailer";
     }
-    const size = name.match(/^(\d+)\s*ft/i)?.[1];
-    const stalls = name.match(/(\d+) Stalls?/i)?.[1];
-    if (size && stalls)
-      return `${size} ft ${stalls}-Stall Shower and Restroom Combination Trailer Rental`;
-    return "Shower and Restroom Combination Trailer Rental";
-  }
-  if (/^22 ft Shower Trailer, 10 Stalls$/i.test(name))
-    return "22 ft 10-Stall Shower Trailer Rental";
-  if (/^20 ft Shower Container, 5 Stalls$/i.test(name))
-    return "20 ft 5-Stall Shower Container Rental";
-  return /rental|lease/i.test(name) ? name : `${name} Rental`;
+  } else if (/^22 ft Shower Trailer, 10 Stalls$/i.test(name))
+    equipmentPhrase = "22 ft 10-Stall Shower Trailer";
+  else if (/^20 ft Shower Container, 5 Stalls$/i.test(name))
+    equipmentPhrase = "20 ft 5-Stall Shower Container";
+  else equipmentPhrase = name.replace(/\s+(?:Rental|Lease)$/i, "");
+
+  return `Temporary Commercial ${equipmentPhrase} Rental`;
 };
 
 const categoryHeadlines: Record<string, string> = {
-  "Mobile Kitchens": "Kitchen Trailer Rental",
-  Dishwashing: "Dishwashing Trailer Rental",
-  Refrigeration: "Refrigerated Trailer Rental",
-  Shower: "Emergency Shower Trailer Rental",
-  Restroom: "Restroom Trailer Rental",
+  "Mobile Kitchens": "Temporary Commercial Mobile Kitchen Trailer Rental",
+  Dishwashing: "Temporary Commercial Dishwashing Trailer Rental",
+  Refrigeration: "Temporary Commercial Refrigerated Trailer Rental",
+  Shower: "Temporary Commercial Emergency Shower Trailer Rental",
+  Restroom: "Temporary Commercial Restroom Trailer Rental",
   "Shower and Restroom Combination Trailers":
-    "Shower and Restroom Combination Trailer Rental",
-  Sleeper: "Sleeper Bunk-Bed Facility Rental",
-  Laundry: "Laundry Trailer Rental",
-  "Handwashing Trailers": "Portable Handwashing Trailer Rental",
+    "Temporary Commercial Shower and Restroom Combination Trailer Rental",
+  Sleeper: "Temporary Commercial Sleeper Bunk-Bed Facility Rental",
+  Laundry: "Temporary Commercial Laundry Trailer Rental",
+  "Handwashing Trailers":
+    "Temporary Commercial Portable Handwashing Trailer Rental",
 };
 
 export const rentalCategoryHeadline = (name: string) =>
-  categoryHeadlines[name] || `${name} Facility Rental`;
+  categoryHeadlines[name] || `Temporary Commercial ${name} Facility Rental`;
 
 const hubHeadlines: Record<string, string> = {
   "/equipment-rental/": "Nationwide Temporary Facility and Equipment Rental",
   "/industries/": "Commercial and Institutional Temporary Facility Rental",
-  "/services/": "Nationwide Temporary Facility Rental Services",
+  "/services/": "Temporary Commercial Mobile Kitchen Rental Services",
 };
 
 export const rentalHubHeadline = (path: string) => hubHeadlines[path];

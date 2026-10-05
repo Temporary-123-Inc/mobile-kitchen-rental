@@ -110,17 +110,83 @@ export const serviceHeroImages: Readonly<
   "/services/mobile-kitchen-trailers/26ft-bulk/": localSet(
     "26ft-baby-bulk-kitchen",
     [
-      ["interior", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-trailer-interior.webp", 1086, 1448, "Interior of the 26 ft bulk mobile kitchen trailer"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-griddle-cooking-line-a.webp", 1086, 1448, "Griddle cooking line in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-commercial-fryers.webp", 1086, 1448, "Commercial fryers in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-tilting-skillet.webp", 1086, 1448, "Tilting skillet in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-commercial-oven.webp", 1086, 1448, "Commercial oven in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-three-compartment-sink.webp", 1086, 1448, "Three-compartment sink in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-hand-wash-sink.webp", 1085, 1449, "Handwashing sink in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-commercial-refrigerator.webp", 1085, 1449, "Commercial refrigerator in the 26 ft bulk mobile kitchen"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-storage-rack.webp", 1086, 1448, "Storage rack in the 26 ft bulk mobile kitchen"],
-      ["interior", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-trailer-entrance.webp", 1085, 1449, "Entrance to the 26 ft bulk mobile kitchen trailer"],
-      ["detail", "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-griddle-cooking-line-b.webp", 1085, 1449, "Second view of the 26 ft bulk mobile kitchen cooking line"],
+      [
+        "interior",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-trailer-interior.webp",
+        1086,
+        1448,
+        "Interior of the 26 ft bulk mobile kitchen trailer",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-griddle-cooking-line-a.webp",
+        1086,
+        1448,
+        "Griddle cooking line in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-commercial-fryers.webp",
+        1086,
+        1448,
+        "Commercial fryers in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-tilting-skillet.webp",
+        1086,
+        1448,
+        "Tilting skillet in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-commercial-oven.webp",
+        1086,
+        1448,
+        "Commercial oven in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-three-compartment-sink.webp",
+        1086,
+        1448,
+        "Three-compartment sink in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-hand-wash-sink.webp",
+        1085,
+        1449,
+        "Handwashing sink in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-commercial-refrigerator.webp",
+        1085,
+        1449,
+        "Commercial refrigerator in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-storage-rack.webp",
+        1086,
+        1448,
+        "Storage rack in the 26 ft bulk mobile kitchen",
+      ],
+      [
+        "interior",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-trailer-entrance.webp",
+        1085,
+        1449,
+        "Entrance to the 26 ft bulk mobile kitchen trailer",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/mobile-kitchens/26ft-baby-bulk/26ft-baby-bulk-kitchen-griddle-cooking-line-b.webp",
+        1085,
+        1449,
+        "Second view of the 26 ft bulk mobile kitchen cooking line",
+      ],
     ],
   ),
   "/services/mobile-kitchen-trailers/28ft/": verifiedSet(
@@ -254,18 +320,60 @@ export const serviceHeroImages: Readonly<
   "/equipment-rental-refrigeration-12ft-refrigerated-trailer/": localSet(
     "12ft-refrigerated-trailer",
     [
-      ["exterior", "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-exterior.webp", 1317, 1194, "Exterior of the 12 ft refrigerated trailer"],
-      ["interior", "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-stainless-steel-interior.webp", 1086, 1448, "Stainless-steel interior of the 12 ft refrigerated trailer"],
-      ["detail", "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-interior-cooling-system.webp", 1089, 1445, "Interior cooling system in the 12 ft refrigerated trailer"],
-      ["detail", "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-refrigeration-unit.webp", 1086, 1448, "Refrigeration unit on the 12 ft refrigerated trailer"],
+      [
+        "exterior",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-exterior.webp",
+        1317,
+        1194,
+        "Exterior of the 12 ft refrigerated trailer",
+      ],
+      [
+        "interior",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-stainless-steel-interior.webp",
+        1086,
+        1448,
+        "Stainless-steel interior of the 12 ft refrigerated trailer",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-interior-cooling-system.webp",
+        1089,
+        1445,
+        "Interior cooling system in the 12 ft refrigerated trailer",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/12ft-refrigerated-trailer-tier-1-4/12ft-refrigerated-trailer-refrigeration-unit.webp",
+        1086,
+        1448,
+        "Refrigeration unit on the 12 ft refrigerated trailer",
+      ],
     ],
   ),
   "/media-library/20ft-refrigerated-container/": localSet(
     "20ft-refrigerated-container",
     [
-      ["interior", "/media/equipment-drive/refrigerated-trailers-and-containers/20ft-refrigerated-container-tier-1-4/20ft-refrigerated-container-interior.webp", 1086, 1448, "Interior of the 20 ft refrigerated container"],
-      ["detail", "/media/equipment-drive/refrigerated-trailers-and-containers/20ft-refrigerated-container-tier-1-4/20ft-refrigerated-container-interior-cooling-unit.webp", 1086, 1448, "Cooling unit inside the 20 ft refrigerated container"],
-      ["interior", "/media/equipment-drive/refrigerated-trailers-and-containers/20ft-refrigerated-container-tier-1-4/20ft-refrigerated-container-cold-storage-interior.webp", 1086, 1448, "Cold-storage interior of the 20 ft refrigerated container"],
+      [
+        "interior",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/20ft-refrigerated-container-tier-1-4/20ft-refrigerated-container-interior.webp",
+        1086,
+        1448,
+        "Interior of the 20 ft refrigerated container",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/20ft-refrigerated-container-tier-1-4/20ft-refrigerated-container-interior-cooling-unit.webp",
+        1086,
+        1448,
+        "Cooling unit inside the 20 ft refrigerated container",
+      ],
+      [
+        "interior",
+        "/media/equipment-drive/refrigerated-trailers-and-containers/20ft-refrigerated-container-tier-1-4/20ft-refrigerated-container-cold-storage-interior.webp",
+        1086,
+        1448,
+        "Cold-storage interior of the 20 ft refrigerated container",
+      ],
     ],
   ),
   "/media-library/two-stall-sleeper/": resolveLocationGallery(
@@ -351,34 +459,6 @@ export const serviceHeroImages: Readonly<
       ],
     ],
   ),
-  "/services/mobile-sleeper-trailers/20ft-contractor/": localSet(
-    "20ft-contractor-sleeper",
-    [
-      [
-        "interior",
-        "/media/16e1edca80af2743a382280b.png",
-        850,
-        650,
-        "Two-bunk contractor sleeping room inside a mobile sleeper trailer",
-      ],
-      [
-        "interior",
-        "/media/d4284cb63385949087e03ee9.png",
-        850,
-        650,
-        "Compact contractor bunk-bed accommodation inside a mobile sleeper trailer",
-      ],
-    ],
-  ),
-  "/services/mobile-sleeper-trailers/20ft-vip/": localSet("20ft-vip-sleeper", [
-    [
-      "interior",
-      "/media/92093075ae986ac89edb2378.png",
-      850,
-      650,
-      "Private bed and lounge area inside a 20 ft VIP mobile sleeper trailer",
-    ],
-  ]),
   "/remote-containerized-military-berthing-solution-for-rent/": localSet(
     "containerized-sleeper",
     [
@@ -434,27 +514,108 @@ export const serviceHeroImages: Readonly<
   "/services/shower-restroom-combination-trailers/8-stall-1-ada/": localSet(
     "8-stall-1-ada-shower-restroom-combination",
     [
-      ["exterior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-ada-shower-restroom-trailer-exterior.webp", 1448, 1086, "Exterior of the 8-stall plus 1 ADA shower and restroom combination trailer"],
-      ["exterior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/ada-accessible-shower-restroom-trailer.webp", 941, 1672, "ADA-accessible entrance on the 8-stall plus 1 ADA shower and restroom trailer"],
-      ["interior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-ada-shower-restroom-trailer-interior.webp", 1086, 1448, "Interior of the 8-stall plus 1 ADA shower and restroom trailer"],
-      ["interior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/ada-shower-restroom-trailer-interior.webp", 941, 1672, "ADA shower and restroom interior"],
-      ["detail", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-ada-restroom-shower-trailer-entrance.webp", 1448, 1086, "Entrance detail for the 8-stall plus 1 ADA combination trailer"],
-      ["exterior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-shower-restroom-combination-trailer-exterior.webp", 1448, 1086, "Side exterior of the 8-stall plus 1 ADA combination trailer"],
-      ["detail", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-restroom-shower-trailer-sink-area.webp", 1086, 1448, "Sink area in the 8-stall plus 1 ADA combination trailer"],
-      ["detail", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-trailer-shower-stall.webp", 1086, 1448, "Private shower stall in the 8-stall plus 1 ADA combination trailer"],
-      ["interior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-combination-trailer-interior.webp", 1086, 1448, "Luxury interior of the 8-stall plus 1 ADA combination trailer"],
-      ["exterior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-combination-trailer-side-view.webp", 1447, 1087, "Side view of the 8-stall plus 1 ADA combination trailer"],
-      ["exterior", "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-trailer-rear-view.webp", 1448, 1086, "Rear view of the 8-stall plus 1 ADA combination trailer"],
+      [
+        "exterior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-ada-shower-restroom-trailer-exterior.webp",
+        1448,
+        1086,
+        "Exterior of the 8-stall plus 1 ADA shower and restroom combination trailer",
+      ],
+      [
+        "exterior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/ada-accessible-shower-restroom-trailer.webp",
+        941,
+        1672,
+        "ADA-accessible entrance on the 8-stall plus 1 ADA shower and restroom trailer",
+      ],
+      [
+        "interior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-ada-shower-restroom-trailer-interior.webp",
+        1086,
+        1448,
+        "Interior of the 8-stall plus 1 ADA shower and restroom trailer",
+      ],
+      [
+        "interior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/ada-shower-restroom-trailer-interior.webp",
+        941,
+        1672,
+        "ADA shower and restroom interior",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-ada-restroom-shower-trailer-entrance.webp",
+        1448,
+        1086,
+        "Entrance detail for the 8-stall plus 1 ADA combination trailer",
+      ],
+      [
+        "exterior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/8-stall-shower-restroom-combination-trailer-exterior.webp",
+        1448,
+        1086,
+        "Side exterior of the 8-stall plus 1 ADA combination trailer",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-restroom-shower-trailer-sink-area.webp",
+        1086,
+        1448,
+        "Sink area in the 8-stall plus 1 ADA combination trailer",
+      ],
+      [
+        "detail",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-trailer-shower-stall.webp",
+        1086,
+        1448,
+        "Private shower stall in the 8-stall plus 1 ADA combination trailer",
+      ],
+      [
+        "interior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-combination-trailer-interior.webp",
+        1086,
+        1448,
+        "Luxury interior of the 8-stall plus 1 ADA combination trailer",
+      ],
+      [
+        "exterior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-combination-trailer-side-view.webp",
+        1447,
+        1087,
+        "Side view of the 8-stall plus 1 ADA combination trailer",
+      ],
+      [
+        "exterior",
+        "/media/equipment-drive/luxury-shower-restroom-combination-trailers/8-stall-1-ada/luxury-shower-restroom-trailer-rear-view.webp",
+        1448,
+        1086,
+        "Rear view of the 8-stall plus 1 ADA combination trailer",
+      ],
     ],
   ),
-  "/services/laundry-trailers/24ft/": localSet(
-    "24ft-laundry-trailer",
+  "/services/laundry-trailers/24ft/": localSet("24ft-laundry-trailer", [
     [
-      ["interior", "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/24ft-temporary-laundry-trailer-interior.webp", 939, 1675, "Interior of the 24 ft mobile laundry trailer"],
-      ["detail", "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/24ft-commercial-laundry-trailer-washing-machines.webp", 939, 1675, "Commercial washing machines in the 24 ft laundry trailer"],
-      ["interior", "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/24ft-mobile-laundry-trailer-washer-dryer-interior.webp", 939, 1675, "Washer and dryer interior of the 24 ft mobile laundry trailer"],
+      "interior",
+      "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/24ft-temporary-laundry-trailer-interior.webp",
+      939,
+      1675,
+      "Interior of the 24 ft mobile laundry trailer",
     ],
-  ),
+    [
+      "detail",
+      "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/24ft-commercial-laundry-trailer-washing-machines.webp",
+      939,
+      1675,
+      "Commercial washing machines in the 24 ft laundry trailer",
+    ],
+    [
+      "interior",
+      "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/24ft-mobile-laundry-trailer-washer-dryer-interior.webp",
+      939,
+      1675,
+      "Washer and dryer interior of the 24 ft mobile laundry trailer",
+    ],
+  ]),
   "/media-library/26-27ft-laundry-trailer/": verifiedSet(
     "26-27ft-laundry-trailer",
     "26 to 27 ft commercial laundry trailer",
@@ -562,88 +723,90 @@ type ServicePhotoReference = {
  * not available. The visible caption identifies every size or configuration
  * difference so these images are useful without presenting them as exact.
  */
-const servicePhotoReferences: Readonly<Record<string, ServicePhotoReference>> = {
-  "/services/restroom-trailers/12ft/": {
-    sourceCatalogId: "restroom-trailers",
-    caption:
-      "Supplied restroom-only trailer interior photos. They do not establish the separate 12 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
-  },
-  "/services/restroom-trailers/14ft/": {
-    sourceCatalogId: "restroom-trailers",
-    caption:
-      "Supplied restroom-only trailer interior photos. They do not establish the separate 14 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
-  },
-  "/services/restroom-trailers/20ft/": {
-    sourceCatalogId: "restroom-trailers",
-    caption:
-      "Supplied restroom-only trailer interior photos. They do not establish the separate 20 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
-  },
-  "/services/restroom-trailers/30ft/": {
-    sourceCatalogId: "restroom-trailers",
-    caption:
-      "Supplied restroom-only trailer interior photos. They do not establish the separate 30 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
-  },
-  "/equipment-rental-refrigeration-12ft-refrigerated-trailer/": {
-    sourcePath: "/equipment-rental-refrigeration-12ft-refrigerated-trailer/",
-    caption:
-      "Owner-supplied photography for the 12 ft refrigerated trailer, including its exterior, stainless-steel interior and cooling equipment. Confirm the available tier, temperature range and utility requirements with your quote.",
-  },
-  "/services/mobile-kitchen-trailers/26ft-bulk/": {
-    sourcePath: "/services/mobile-kitchen-trailers/26ft-bulk/",
-    caption:
-      "Owner-supplied photography for the 26 ft bulk mobile kitchen, including its cooking line, sinks, refrigeration and storage. Confirm the available unit, final equipment package and utility requirements with your quote.",
-  },
-  "/services/dishwashing-trailers/22ft/": {
-    sourcePath: "/media-library/22-26ft-low-temp-dish/",
-    caption:
-      "Reviewed low-temperature dishwashing-trailer photography from the shared 22–26 ft collection. The photographs are not assigned to one exact length; confirm the 22 ft unit and layout with your quote.",
-  },
-  "/services/dishwashing-trailers/24ft/": {
-    sourcePath: "/media-library/22-26ft-low-temp-dish/",
-    caption:
-      "Reviewed low-temperature dishwashing-trailer photography from the shared 22–26 ft collection. The photographs are not assigned to one exact length; confirm the 24 ft unit and layout with your quote.",
-  },
-  "/services/dishwashing-trailers/26ft/": {
-    sourcePath: "/media-library/22-26ft-low-temp-dish/",
-    caption:
-      "Reviewed low-temperature dishwashing-trailer photography from the shared 22–26 ft collection. The photographs are not assigned to one exact length; confirm the 26 ft unit and layout with your quote.",
-  },
-  "/services/shower-trailers/22ft-10-stall/": {
-    sourceTitle: "20 ft Shower Trailer",
-    caption:
-      "Representative shower-only photography from a 20 ft five-stall trailer with exterior handwashing sinks. It does not depict the separate 22 ft ten-stall option; confirm that unit's floor plan with your quote.",
-  },
-  "/services/shower-restroom-combination-trailers/30ft-8-stall/": {
-    sourcePath:
-      "/services/shower-restroom-combination-trailers/30ft-8-stall/",
-    caption:
-      "Reviewed exterior reference for the 30 ft eight-stall shower and restroom combination trailer. Interior layout and current availability are confirmed with your quote.",
-  },
-  "/services/shower-restroom-combination-trailers/3-stall-1-ada/": {
-    caption:
-      "Selected owner-supplied photography for the 3-stall + 1 ADA shower and restroom combination trailer. Confirm the available unit, ramp, dimensions, accessibility requirements and utility plan with your quote.",
-  },
-  "/services/shower-restroom-combination-trailers/8-stall-1-ada/": {
-    sourcePath: "/services/shower-restroom-combination-trailers/8-stall-1-ada/",
-    caption:
-      "Owner-supplied photography for the 8-stall plus 1 ADA shower and restroom combination trailer. Confirm the available unit, ramp, accessibility requirements and utility plan with your quote.",
-  },
-  "/services/mobile-sleeper-trailers/20ft-shared/": {
-    sourcePath: "/services/mobile-sleeper-trailers/20ft-shared/",
-    caption:
-      "Reviewed interior and exterior references for the 20 ft shared mobile sleeper trailer. Confirm the available bed layout and unit with your quote.",
-  },
-  "/services/laundry-trailers/24ft/": {
-    sourcePath: "/services/laundry-trailers/24ft/",
-    caption:
-      "Owner-supplied photography for the 24 ft mobile laundry trailer and its commercial washer and dryer layout. Confirm the available unit, machine count and utility requirements with your quote.",
-  },
-  "/services/handwashing-trailers/hands-free/": {
-    sourceTitle: "Handwashing Sink Trailer",
-    caption:
-      "Representative handwashing-trailer photography. The visible sinks do not establish hands-free controls; confirm the operating method and available hands-free equipment with your quote.",
-  },
-};
+const servicePhotoReferences: Readonly<Record<string, ServicePhotoReference>> =
+  {
+    "/services/restroom-trailers/12ft/": {
+      sourceCatalogId: "restroom-trailers",
+      caption:
+        "Supplied restroom-only trailer interior photos. They do not establish the separate 12 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
+    },
+    "/services/restroom-trailers/14ft/": {
+      sourceCatalogId: "restroom-trailers",
+      caption:
+        "Supplied restroom-only trailer interior photos. They do not establish the separate 14 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
+    },
+    "/services/restroom-trailers/20ft/": {
+      sourceCatalogId: "restroom-trailers",
+      caption:
+        "Supplied restroom-only trailer interior photos. They do not establish the separate 20 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
+    },
+    "/services/restroom-trailers/30ft/": {
+      sourceCatalogId: "restroom-trailers",
+      caption:
+        "Supplied restroom-only trailer interior photos. They do not establish the separate 30 ft model's stall count or floor plan; confirm dimensions, accessibility, utilities and the available rental or lease configuration with your quote.",
+    },
+    "/equipment-rental-refrigeration-12ft-refrigerated-trailer/": {
+      sourcePath: "/equipment-rental-refrigeration-12ft-refrigerated-trailer/",
+      caption:
+        "Owner-supplied photography for the 12 ft refrigerated trailer, including its exterior, stainless-steel interior and cooling equipment. Confirm the available tier, temperature range and utility requirements with your quote.",
+    },
+    "/services/mobile-kitchen-trailers/26ft-bulk/": {
+      sourcePath: "/services/mobile-kitchen-trailers/26ft-bulk/",
+      caption:
+        "Owner-supplied photography for the 26 ft bulk mobile kitchen, including its cooking line, sinks, refrigeration and storage. Confirm the available unit, final equipment package and utility requirements with your quote.",
+    },
+    "/services/dishwashing-trailers/22ft/": {
+      sourcePath: "/media-library/22-26ft-low-temp-dish/",
+      caption:
+        "Reviewed low-temperature dishwashing-trailer photography from the shared 22–26 ft collection. The photographs are not assigned to one exact length; confirm the 22 ft unit and layout with your quote.",
+    },
+    "/services/dishwashing-trailers/24ft/": {
+      sourcePath: "/media-library/22-26ft-low-temp-dish/",
+      caption:
+        "Reviewed low-temperature dishwashing-trailer photography from the shared 22–26 ft collection. The photographs are not assigned to one exact length; confirm the 24 ft unit and layout with your quote.",
+    },
+    "/services/dishwashing-trailers/26ft/": {
+      sourcePath: "/media-library/22-26ft-low-temp-dish/",
+      caption:
+        "Reviewed low-temperature dishwashing-trailer photography from the shared 22–26 ft collection. The photographs are not assigned to one exact length; confirm the 26 ft unit and layout with your quote.",
+    },
+    "/services/shower-trailers/22ft-10-stall/": {
+      sourceTitle: "20 ft Shower Trailer",
+      caption:
+        "Representative shower-only photography from a 20 ft five-stall trailer with exterior handwashing sinks. It does not depict the separate 22 ft ten-stall option; confirm that unit's floor plan with your quote.",
+    },
+    "/services/shower-restroom-combination-trailers/30ft-8-stall/": {
+      sourcePath:
+        "/services/shower-restroom-combination-trailers/30ft-8-stall/",
+      caption:
+        "Reviewed exterior reference for the 30 ft eight-stall shower and restroom combination trailer. Interior layout and current availability are confirmed with your quote.",
+    },
+    "/services/shower-restroom-combination-trailers/3-stall-1-ada/": {
+      caption:
+        "Selected owner-supplied photography for the 3-stall + 1 ADA shower and restroom combination trailer. Confirm the available unit, ramp, dimensions, accessibility requirements and utility plan with your quote.",
+    },
+    "/services/shower-restroom-combination-trailers/8-stall-1-ada/": {
+      sourcePath:
+        "/services/shower-restroom-combination-trailers/8-stall-1-ada/",
+      caption:
+        "Owner-supplied photography for the 8-stall plus 1 ADA shower and restroom combination trailer. Confirm the available unit, ramp, accessibility requirements and utility plan with your quote.",
+    },
+    "/services/mobile-sleeper-trailers/20ft-shared/": {
+      sourcePath: "/services/mobile-sleeper-trailers/20ft-shared/",
+      caption:
+        "Reviewed interior and exterior references for the 20 ft shared mobile sleeper trailer. Confirm the available bed layout and unit with your quote.",
+    },
+    "/services/laundry-trailers/24ft/": {
+      sourcePath: "/services/laundry-trailers/24ft/",
+      caption:
+        "Owner-supplied photography for the 24 ft mobile laundry trailer and its commercial washer and dryer layout. Confirm the available unit, machine count and utility requirements with your quote.",
+    },
+    "/services/handwashing-trailers/hands-free/": {
+      sourceTitle: "Handwashing Sink Trailer",
+      caption:
+        "Representative handwashing-trailer photography. The visible sinks do not establish hands-free controls; confirm the operating method and available hands-free equipment with your quote.",
+    },
+  };
 
 export function servicePhotoCaption(path: string): string | undefined {
   return servicePhotoReferences[path]?.caption;
@@ -692,4 +855,4 @@ export function imagesForServicePath(
   const images = serviceHeroImages[path];
   return images?.length ? orderedServiceHeroImages(images) : undefined;
 }
-import serviceDetails from '../content/service-details.json' with { type: 'json' };
+import serviceDetails from "../content/service-details.json" with { type: "json" };

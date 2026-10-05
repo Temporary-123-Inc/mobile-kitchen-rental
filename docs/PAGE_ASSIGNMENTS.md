@@ -159,6 +159,8 @@ Every Codex task or developer must claim work here before editing. Use the sideb
 
 ## Status values
 
+| Service-page four-tier H1s and exact Drive hero galleries (`src/rentalHeadlines.ts`, `src/ServiceDetail.tsx`, `src/serviceHeroImages.ts`, focused tests and release notes) | Current task — service H1 and hero image rollout | Complete; deployment pending | 2026-10-06 | 2026-10-06 | Updated product, category and services-hub H1s to four-tier rental phrases; verified every service-detail hero renders a reviewed carousel and restored exact contractor/VIP Drive selections. Focused 18/18 tests, typecheck and Vite client build passed. Preserved routes, specifications, category navigation and location galleries. |
+
 | State and city kitchen-family galleries (`src/LocationImageCarousel.tsx`, state/city gallery bindings, focused tests and release notes) | Current task — location gallery 80/20 image mix | Complete; deployment pending | 2026-10-06 | 2026-10-06 | Added a deterministic five-image gallery to every state and reviewed city page using four mobile-kitchen images and one related kitchen-family image. Focused 4/4 tests, typecheck and Vite client build passed; local prerender is blocked by the recorded Windows runtime ENOMEM error. Preserved H1s, openings, routes, canonicals and unrelated service galleries. |
 
 Deployment lane 2026-09-17: Complete. Current task updated `.vercelignore` exclusions and released to existing `temp123-nine.vercel.app`, deployment `dpl_DE5mTkuYS9bnLzcL3T11L9fNbKqB`. Both live calculator dropdown tests passed; see docs/TEST_RESULTS.md. Other lanes' source changes preserved.

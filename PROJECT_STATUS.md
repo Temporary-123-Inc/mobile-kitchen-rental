@@ -236,3 +236,10 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Location combinations rotate by location name while preserving truthful equipment alt text and a non-location-specific reference caption.
 - TypeScript and the focused 4-test gallery suite passed. The Vite client build passed. Full prerender remains locally blocked by the existing Windows runtime `uv_os_get_passwd ENOMEM` failure; Vercel production build is the deployment gate.
 - Deployment state: pending commit/push at this checkpoint.
+## 2026-10-06 — Service-page four-tier H1s and exact hero galleries
+
+- Updated product, category and `/services/` H1 generators to use natural four-tier phrases containing temporary/commercial context, the equipment or physical facility, and rental intent.
+- Verified every route in `content/service-details.json` renders a hero carousel; no service-detail route falls back to the unverified-photo placeholder.
+- Preserved and prioritized spreadsheet-matched Google Drive collections. Restored the reviewed contractor and VIP sleeper selections instead of route-local generic images.
+- Focused verification passed: 18/18 tests, TypeScript, and Vite client production build.
+- Deployment state: pending commit/push at this checkpoint.

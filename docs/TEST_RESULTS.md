@@ -809,3 +809,11 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - PASS: Vite client production build — 164 modules transformed.
 - KNOWN PRE-EXISTING FAILURE: the broader `tests/seasonal.test.ts` reading-length assertion reports Alabama at 517 words against its 500-word cap. The gallery wrapper is removed before that count and the failure is outside this image-only change.
 - BLOCKED LOCALLY: standalone prerender could not start because the bundled Windows Node runtime returned `uv_os_get_passwd ENOMEM`. This is an environment boundary, not reported as a passing prerender.
+## 2026-10-06 — Service-page four-tier H1 and exact hero verification
+
+- PASS: `tests/serviceFourTierHero.test.tsx`, `tests/h1-plan.test.ts`, and `tests/ownerImageRollout.test.tsx` — 18/18 tests.
+- Verified every `content/service-details.json` route has a five-or-more-word four-tier H1 beginning with `Temporary Commercial` and ending with rental intent.
+- Verified every service-detail hero renders a carousel and zero routes render the unverified-photo placeholder.
+- Verified representative spreadsheet-linked exact collections for mobile kitchens, refrigeration, laundry, ADA shower/restroom combinations, contractor sleeper and VIP sleeper pages.
+- PASS: TypeScript `tsc --noEmit`.
+- PASS: Vite production client build — 164 modules transformed.

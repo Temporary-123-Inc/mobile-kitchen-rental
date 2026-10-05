@@ -454,3 +454,6 @@ A verified Git bundle protects the committed public-indexability source and prio
 ## 2026-10-06 — Location gallery image distribution
 
 State and reviewed city hero galleries use five images: four verified mobile-kitchen images and one verified supporting kitchen-family image from dishwashing or refrigeration. A stable location-name seed rotates combinations without runtime randomness. Captions identify the photos as representative equipment references and do not claim the units were photographed or are presently available in the named location.
+## 2026-10-06 — Four-tier service headings and hero-photo source priority
+
+Service detail and category H1s use `Temporary Commercial + exact equipment/facility phrase + Rental`. Exact model names, lengths, stall counts and accessibility wording remain intact. Service heroes continue to prioritize an exact route mapping, then a reviewed named-model Drive collection. A category image is not substituted when an exact spreadsheet-linked collection exists.

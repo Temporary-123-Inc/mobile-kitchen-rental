@@ -71,7 +71,10 @@ describe("Charles delegated photo selection", () => {
     const generic = resolveLocationGallery(
       "ADA Shower and Restroom Combination Trailer",
     );
-    expect(generic.groups.map((group) => group.modelId)).toEqual(["client-supplied-3-stall-1-ada-combination", "model-10"]);
+    expect(generic.groups.map((group) => group.modelId)).toEqual([
+      "client-supplied-3-stall-1-ada-combination",
+      "model-10",
+    ]);
     expect(generic.groups[0].images.map((i) => i.reviewId)).toEqual([
       "28.01",
       "28.03",
@@ -90,22 +93,24 @@ describe("Charles delegated photo selection", () => {
     ])
       expect(resolveLocationGallery(title).images).toHaveLength(0);
   });
-  it("uses the named laundry interior and discloses the 24ft reference difference", () => {
+  it("uses the named laundry interiors and exact 24ft collection", () => {
     expect(
       imagesForServicePath("/services/laundry-trailers/30ft/")?.map(
         (i) => i.reviewId,
       ),
     ).toEqual(["08.01"]);
-    const reference = imagesForServicePath(
-      "/services/laundry-trailers/24ft/",
-    );
-    expect(reference).toHaveLength(1);
-    expect(reference?.[0].alt).toContain(
-      "26 to 27 ft commercial laundry trailer",
-    );
+    const reference = imagesForServicePath("/services/laundry-trailers/24ft/");
+    expect(reference).toHaveLength(3);
     expect(
-      servicePhotoCaption("/services/laundry-trailers/24ft/"),
-    ).toContain("does not establish the separate 24 ft layout");
+      reference?.every((image) =>
+        image.src.includes(
+          "/media/equipment-drive/laundry-trailers-and-containers/24ft-laundry-trailer/",
+        ),
+      ),
+    ).toBe(true);
+    expect(servicePhotoCaption("/services/laundry-trailers/24ft/")).toContain(
+      "Owner-supplied photography for the 24 ft mobile laundry trailer",
+    );
   });
   it("keeps contractor and VIP interior references separate and does not infer a chassis", () => {
     const contractor = imagesForServicePath(
