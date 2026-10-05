@@ -1,5 +1,9 @@
 # Page and File Assignments
 
+## 2026-10-05 mobile-kitchen-rental rebuild — Locally complete; release pending
+
+Codex owns the isolated `codex/rebrand-mobile-kitchen-rental` checkout at `C:\Users\Admin\Documents\Codex\mkr` for the new `mobile-kitchen-rental.com` build. Scope includes target branding, kitchen-cluster content, 50 state pages, route/prerender configuration, focused tests, release evidence, GitHub publication, and Vercel deployment. This is a target rebrand from source commit `f4c57b65d274f4b679b63def3a215c264dc4edf7`; it must not modify or push to the `template` remote.
+
 ## 2026-09-26 direct-answer guide release — Active
 
 Current task owns guide package/config and focused release tests in this isolated checkout based on origin/main 3518096. User authorized production deployment. Preserve existing audit/docs changes and all shared-checkout unrelated work.

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/TargetSite.tsx",
+    "src/targetData.ts",
+    "src/main.tsx",
+    "src/usStates.json",
+    "scripts/prerender-target.tsx",
+    "tests/target-site.test.tsx",
+    "vite.config.ts"
+  ]
+}

@@ -1,5 +1,14 @@
 # Temporary123 Decision Log
 
+## 2026-10-05 — Focus mobile-kitchen-rental.com on one controlled kitchen cluster
+
+- Source: Owner request, supplied DA 10 classification, and named kitchen family.
+- Decision: Publish only mobile kitchen rentals, dishwashing trailers, commercial refrigeration trailers, walk-in coolers, walk-in freezers, and refrigerated containers in this release.
+- State architecture: one unique page per U.S. state under `/service-areas/`; every H1 begins with its state name and each immediate introduction follows the owner's 70–120-word content contract.
+- Claims boundary: emergency language describes customer needs, not guaranteed stock, timing, delivery, or response. Availability, configuration, delivery, and setup remain subject to confirmation.
+- Contact boundary: use the public Temporary 123 phone number shown on the owner's reference site; do not invent a form backend or submit test inquiries.
+
+
 ## 2026-09-26 — Direct business answers remain modular
 
 Use an optional public BusinessProfile to generate portable prepared-answer topics. Temporary123 facts remain in site configuration; other websites supply their own. Prefer direct answers plus optional links. Never invent missing facts, prices, inventory or dispatch commitments. No AI provider or new backend required.

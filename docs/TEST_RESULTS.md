@@ -1,5 +1,16 @@
 # Temporary123 Test Results
 
+## 2026-10-05 — Mobile Kitchen Rental focused rebuild
+
+- Target TypeScript: pass (`tsc -p tsconfig.target.json --noEmit`).
+- Focused Vitest suite: 5/5 pass.
+- Production build: pass; 63 public routes plus 404 prerendered.
+- Responsive Chromium smoke test: pass at 375, 768, 1024, and 1440 px across the homepage, six service pages, two state samples, and contact page.
+- Browser assertions: HTTP 200, exactly one H1, meaningful content, no horizontal overflow, no framework overlay.
+- State gallery: opens and closes with Escape at mobile width.
+- Local-only note: Vercel Analytics returns 404 under the static local server; this endpoint is supplied by Vercel after deployment.
+
+
 ## 2026-09-26 — Direct-answer guide pre-release
 
 34/34 engine/content tests passed. Full TypeScript/Vite/prerender build passed (745 pages + 404). Local built-site Playwright 4/4 passed at 375/1440px: phone text and tel link, weekend hours with dispatch caveat, pricing disclaimer, unknown question fallback, contact drawer, unchanged homepage brand/H1/canonical and zero page errors. Secret scan: 1161 files, no findings. No inquiry submitted; unchanged email/backend excluded.

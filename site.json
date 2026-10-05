@@ -1,13 +1,13 @@
 {
-  "brand": "Temporary123",
-  "origin": "https://temporary123.com",
-  "phoneDisplay": "+1 (800) 443 - 5212",
-  "phoneE164": "+18004435212",
+  "brand": "Mobile Kitchen Rental",
+  "origin": "https://mobile-kitchen-rental.com",
+  "phoneDisplay": "+1 (888) 563-6507",
+  "phoneE164": "+18885636507",
   "mode": "production",
-  "indexingScope": "existing-public-pages",
-  "indexingBatchSize": 25,
+  "indexingScope": "focused-kitchen-cluster",
+  "indexingBatchSize": 64,
   "activeIndexingBatch": 1,
-  "indexingStartDate": "2026-09-22",
-  "inquiriesEnabled": true,
+  "indexingStartDate": "2026-10-05",
+  "inquiriesEnabled": false,
   "domainRoutingReady": true
 }
