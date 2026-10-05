@@ -30,13 +30,12 @@ function Header({ path }: { path: string }) {
       <header className="site-header">
         <div className="shell header-inner">
           <a className="wordmark" href="/" aria-label={`${brand.name} home`}>
-            <span className="wordmark-mark" aria-hidden="true">
-              MK
-            </span>
-            <span>
-              <strong>Mobile Kitchen</strong>
-              <small>Rental · Temporary 123</small>
-            </span>
+            <img
+              src="/brand/mobile-kitchen-rental-logo.png"
+              width="1774"
+              height="887"
+              alt="Mobile Kitchen Rental"
+            />
           </a>
           <nav className="desktop-nav" aria-label="Main navigation">
             {links.map(([label, href]) => (
@@ -76,9 +75,13 @@ function Footer() {
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div>
-          <span className="wordmark-mark" aria-hidden="true">
-            MK
-          </span>
+          <img
+            className="footer-brand-icon"
+            src="/brand/mobile-kitchen-rental-icon.png"
+            width="1254"
+            height="1254"
+            alt=""
+          />
           <h2>Keep the operation moving.</h2>
           <p>
             Share your location, dates, menu, meal volume, utilities, and access

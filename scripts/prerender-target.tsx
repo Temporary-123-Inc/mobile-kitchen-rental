@@ -49,6 +49,7 @@ const renderHead = (route: string) => {
       name: brand.legalName,
       telephone: brand.phoneE164,
       url: brand.origin,
+      logo: `${brand.origin}/brand/mobile-kitchen-rental-logo.png`,
     },
     ...(state
       ? {
@@ -67,7 +68,7 @@ const renderHead = (route: string) => {
     `<meta property="og:title" content="${esc(title)}" />`,
     `<meta property="og:description" content="${esc(description)}" />`,
     `<meta property="og:url" content="${canonical}" />`,
-    `<meta property="og:image" content="${brand.origin}/images/service-heroes/40ft-mobile-kitchen/03-960.webp" />`,
+    `<meta property="og:image" content="${brand.origin}/brand/mobile-kitchen-rental-logo.png" />`,
     `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`,
   ].join("\n");
 };

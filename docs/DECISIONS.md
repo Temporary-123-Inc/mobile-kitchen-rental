@@ -1,5 +1,11 @@
 # Temporary123 Decision Log
 
+## 2026-10-05 — Use owner-supplied Mobile Kitchen Rental brand artwork
+
+- Source: Owner supplied `Generated image 1.png` and `Generated image 1 (1).png` in this task.
+- Decision: Preserve the wide artwork as the website wordmark and social-sharing image. Preserve the round artwork as the favicon, Apple touch icon, and compact footer brand mark.
+- Asset boundary: Store exact copies under `public/brand/`; do not redraw, recolor, or infer additional brand variants.
+
 ## 2026-10-05 — Focus mobile-kitchen-rental.com on one controlled kitchen cluster
 
 - Source: Owner request, supplied DA 10 classification, and named kitchen family.
@@ -7,7 +13,6 @@
 - State architecture: one unique page per U.S. state under `/service-areas/`; every H1 begins with its state name and each immediate introduction follows the owner's 70–120-word content contract.
 - Claims boundary: emergency language describes customer needs, not guaranteed stock, timing, delivery, or response. Availability, configuration, delivery, and setup remain subject to confirmation.
 - Contact boundary: use the public Temporary 123 phone number shown on the owner's reference site; do not invent a form backend or submit test inquiries.
-
 
 ## 2026-09-26 — Direct business answers remain modular
 
@@ -304,6 +309,7 @@ Record decisions that multiple tasks must follow. Include the date, decision mak
 - Reason: This keeps the gallery useful without overriding user intent, preserves semantic image priority, and prevents unsupported equipment or location claims.
 - Affected areas: Service carousel behavior and controls, route image ordering, homepage Shower/Restroom presentation, alt text, and responsive hero QA
 - Replaces an earlier decision: Yes; it refines the earlier interior/exterior order and supersedes only the homepage Restroom-photo assumption. Exact-model and inventory safeguards remain in force.
+
 ## 2026-09-16 — Prioritize indexing and authority metrics in the SEO dashboard
 
 - Source: Charles's instruction that the boss wants indexing and `Authority metrics by website` on top
@@ -345,17 +351,18 @@ Implemented locally: one usable photo is sufficient; 20ft container interior-onl
 - Decision: Keep the existing `cc-devs/temp123` project connected to `charlessslaranangsss-maker/Temp123` until GitHub organization access for Vercel is explicitly granted and `Temporary-123-Inc/Temporary-123` is visible in the picker. Do not create a second Vercel project or deploy shared uncommitted work as a workaround.
 - Reason: The GitHub namespace picker offered only the personal account. Granting Vercel app access to the organization is a separate security-sensitive permission step, and the combined local release remains under active multi-owner coordination.
 
-
 ## 2026-09-17 Panhandle lease terms — LIVE VERIFIED
 
 The Oklahoma Panhandle 30 ft laundry trailer and 20 ft laundry container captions now include rental or lease and weekly/monthly/yearly rental terms. Live alias temp123-nine.vercel.app verified on dpl_6ykocrDRHboUz1zNH2Em9b164U5Q. Both tabs and all four images decoded at desktop/mobile (eight image displays), zero content/browser/overflow failures. Preservation: 651 H1s/intros and 100 map presentations unchanged. Current tests: 209 targeted + 44 application pass; build 651 pages + 404. Preview noindex preserved. Separate primary staging was not promoted over the already-correct concurrent release. Evidence: work/qa/panhandle-lease-20260917/independent-final/REPORT.md. No further deployment is needed for this request.
 
 ## 2026-09-17 — Service-area caption standard
+
 Use the boss-approved Panhandle format for existing equipment gallery captions, with model-specific benefit and detail, rental/lease inquiry terms, and the verified 24/7 phone-assistance CTA. Preserve the already approved Panhandle and Olympic page-specific captions. This is local review copy only; no deployment authorization inferred.
 
 ## 2026-09-17 — Galleries for previously unpictured service areas
 
 Add verified equipment-option gallery tabs and customer-facing captions to all service-area city directories. For modular-kitchen pages lacking a verified modular-building photo, show verified mobile-kitchen trailers only as explicitly labelled rental alternatives, with visible copy stating that the images do not depict a modular building. Keep image claims truthful and seek a verified modular photo before presenting one as the modular product.
+
 ## 2026-09-17 — Existing photos for four equipment needs
 
 Use the approved 38 ft mobile-kitchen interior before the 24 ft kitchen gallery on modular-kitchen pages, explicitly as trailer alternatives. Pair ADA-labelled catalogue and standard combination photos in separate labelled groups. Pair two-stall sleeper interiors and four-room trailer exterior in separate labelled groups. Identify the existing 20 ft five-stall shower set as the photographed reference on generic shower pages. Do not transfer ADA status, room layout, modular building form, or 22 ft ten-stall specifications across these distinct assets.
@@ -363,7 +370,6 @@ Use the approved 38 ft mobile-kitchen interior before the 24 ft kitchen gallery 
 ## 2026-09-17 — Homepage Restroom photo disclosure
 
 Use the approved toilet-interior photo from a shower and restroom combination trailer for the homepage Restroom preview, with an explicit combination-unit label and alt text. Do not represent it as a restroom-only trailer. No verified restroom-only photo was found in the current local asset inventory; the product distinction remains visible.
-
 
 ## 2026-09-18 — Use disclosed reviewed references instead of production photo placeholders
 
@@ -388,7 +394,6 @@ When exact model photography is unavailable, show the closest reviewed commercia
 ## 2026-09-18 — Reviewed restroom-only images on length-specific restroom pages
 
 The supplied restroom-only interior set may appear on the registered 12 ft, 14 ft, 20 ft and 30 ft restroom detail pages because it truthfully establishes the facility type and installed equipment. Each presentation must visibly disclose that the photos do not establish the separate model's length, stall count or floor plan and must direct the customer to confirm dimensions, accessibility, utilities and the available rental or lease configuration. Decorative carousel thumbnails keep empty alt text; the active image carries truthful equipment-specific alt text. These registered detail URLs remain direct pages rather than redirects to the category page.
-
 
 ## 2026-09-18 — Restore backlink-backed legacy HTML paths before releasing them in controlled batches
 
@@ -419,6 +424,7 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 - Use finalized Search Console data for 28-day performance reporting and 90-day page prioritization. Return aggregate non-branded metrics without exposing raw queries.
 - Rank page evidence by clicks, impressions and position, then bound API output to 500 current-window rows and 1,000 prioritization rows. Always expose the full available counts and whether each set was limited.
 - Reason: this creates measurable qualified-visitor and inquiry baselines without leaking search terms or customer information, and keeps the serverless response safely below Vercel's response-size boundary.
+
 # 2026-09-22 public indexability release boundary
 
 A verified Git bundle protects the committed public-indexability source and prior production baseline but does not include Firebase data or secrets. The SEO-only release may proceed from the isolated, tested commit because it does not alter inquiry persistence, authentication, authorization, rate limiting or recovery behavior. Indexability may be reported only after live-route, robots, canonical and sitemap verification; it must not be described as guaranteed Google indexing or ranking.

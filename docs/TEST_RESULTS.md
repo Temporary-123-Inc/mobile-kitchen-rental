@@ -1,5 +1,13 @@
 # Temporary123 Test Results
 
+## 2026-10-05 — Owner-supplied logo and favicon integration
+
+- Exact owner-supplied PNGs copied into `public/brand/` and connected to the header, footer, favicon, Apple touch icon, Open Graph metadata, and organization schema.
+- Target TypeScript and focused Vitest suite pass (5/5).
+- Production build and 63-route plus 404 prerender pass.
+- Responsive Chromium regression passes at 375, 768, 1024, and 1440 px across ten key routes, with one H1, HTTP 200, meaningful content, no horizontal overflow, and no framework overlay.
+- Mobile state-gallery open/Escape-close behavior remains verified.
+
 ## 2026-10-05 — Mobile Kitchen Rental focused rebuild
 
 - Target TypeScript: pass (`tsc -p tsconfig.target.json --noEmit`).
@@ -9,7 +17,6 @@
 - Browser assertions: HTTP 200, exactly one H1, meaningful content, no horizontal overflow, no framework overlay.
 - State gallery: opens and closes with Escape at mobile width.
 - Local-only note: Vercel Analytics returns 404 under the static local server; this endpoint is supplied by Vercel after deployment.
-
 
 ## 2026-09-26 — Direct-answer guide pre-release
 
@@ -229,6 +236,7 @@ Read-only final Vercel inspection confirms READY dpl_6ykocrDRHboUz1zNH2Em9b164U5
 Initial raw caption assertion failed because the existing prerender normalizes punctuation and telephone formatting. Rendered expectations were corrected; no runtime change was made to satisfy that harness issue. Historical failed assertions and cached-CLI lookup failure are retained. Exact evidence and visual-review limitations: work/qa/panhandle-lease-20260917/cta-final/REPORT.md, audit.json, local-browser.json, live-browser.json, release-reconciliation.json and alias-final.log.
 
 ## Panhandle laundry captions and metadata — local verification
+
 - Build/typecheck passed; generated 651 pages plus 404.
 - Two new focused tests passed. Laundry gallery regression run passed 108 tests (54 current tests plus a 54-test archived copy discovered by Vitest).
 - Local browser: one canonical to https://temporary123.com/service-areas/oklahoma/panhandle/; robots noindex,follow preserved; both revised rental captions present; Service schema uses laundry trailer and laundry container rental, with Panhandle/Oklahoma areaServed.
@@ -542,6 +550,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 - Pass/fail: Implementation and focused carousel/image tests pass; final combined acceptance remains with the boss task for one uncontended build/preview run
 - Remaining unverified boundary: No verified restroom-only source image exists, so the Restroom card deliberately has no photo. Image-derived geographic locations are not claimed. The shared `dist` directory was concurrently replaced during final QA; live Vercel/CDN behavior was not changed or tested.
 - Evidence or artifact: `src/ServiceHeroCarousel.tsx`; `src/serviceHeroImages.ts`; `src/service-hero-carousel.css`; `public/service-hero-carousel.js`; homepage mapping in `src/Equipment.tsx`; `tests/ServiceHeroCarousel.test.tsx`; `tests/serviceHeroImages.test.ts`; `tests/browser/service-hero-carousel.spec.ts`
+
 ### 2026-09-16 — SEO dashboard indexing and authority priority order
 
 - Owner/task: Current task — indexing and authority first
@@ -604,6 +613,7 @@ Implemented locally: one usable photo is sufficient; 20ft container interior-onl
 - Modal result: 16 logical presentations, compact and full-map for each state, with 24 rendered state-guide copies checked. Zero missing/multiple page H1s, missing immediate leads, or equipment-family conflicts were reported. Directory leads correctly describe their navigation purpose.
 - Review-needed shared wording: region labels can repeat state (`Northwest Minnesota, Minnesota`; `Central Mississippi, Mississippi`); generic introduction grammar can be awkward (`Arrange temporary laundry facilities long-term rental`); a generated kitchen H1 can read `Kitchen Emergency Trailer Rental`. Sent to BOSS task for the active shared-template owners. These were not treated as a pass on copy quality.
 - Boundary: This verifies current React SSR output only, not the built static output, responsive browser rendering, or deployed site. No production source edit, build, commit, push, or deployment was performed by Batch D.
+
 ## 2026-09-17 — Batch D service-area alignment (local, shared checkout)
 
 - Scope: Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire and New Jersey; 94 registered routes (8 state guides, 43 regions, 43 city directories, 0 city-detail routes) and 16 logical state-modal presentations (24 rendered guide copies across homepage and `/service-areas/`).
@@ -611,11 +621,9 @@ Implemented locally: one usable photo is sufficient; 20ft container interior-onl
 - Corrected: Mississippi and Nebraska sleeper-modal focus headings; Montana modular-kitchen modal supporting summary. No route, canonical, indexing directive, shared template, commit, push or deployment change.
 - Boundary: This is source-rendered validation, not a fresh integrated build or live desktop/mobile check. Coordinator owns final integrated release verification.
 
-
 ## Description-only H1 audit — 2026-09-17
 
 Completed locally only, no deploy. 651 rendered pages and 100 logical map presentations audited; 651 H1s unchanged; 34 rental-intent description corrections. Browser: 651 page visits, 200 modal viewport checks, 84 responsive page checks, 46 query viewport checks, 4 map clicks, 0 failures/errors. Build/typecheck pass; 216 targeted + 44 application tests pass. Only two production files changed: src/alignedIntroductions.ts and content/aligned-page-introductions.json. Report and exact before/after CSV: work/qa/h1-description-only-20260917/REPORT.md and description-changes.csv. 7,700-query exhaustive re-navigation not claimed. Root dist and previous work preserved.
-
 
 ## 2026-09-17 Panhandle lease terms — LIVE VERIFIED
 
@@ -623,9 +631,11 @@ The Oklahoma Panhandle 30 ft laundry trailer and 20 ft laundry container caption
 
 **All service-area gallery captions — 2026-09-17, local review:** Updated the shared gallery caption composer with verified details for 35 image models. Existing non-Panhandle/non-Olympic galleries now lead with location, commercial use, and actual equipment, discuss weekly/monthly/yearly rental and lease options, add product-specific planning information, and end with the published 24/7 phone-assistance CTA. Approved Panhandle and Olympic captions retain priority. All 548 service-area routes and 100 map presentations passed a source-rendered caption/alt audit (572 group appearances, 1,755 images, zero issues). Fifteen focused tests and typecheck passed. Browser Vite request timed out; build/browser verification is recorded separately below when completed. No commit, push, or deployment. Review remains subject to owner acceptance.
 Build finished: 651 pages + 404 prerendered. Static localhost preview at http://127.0.0.1:4315/service-areas/alabama/; 10 desktop/mobile browser checks across Alabama, Texas, Panhandle, and full/compact map presentations passed with zero image-load, caption-presence, or page-error failures. The earlier Vite dev server timed out, so review should use port 4315 while its local server runs.
+
 ## 2026-09-17 missing service-area galleries — local
 
 `node --import tsx work/qa/service-area-gallery-copy-20260917/audit.mjs`: 548 routes plus 100 map presentations; all 648 contain image groups; 1,434 groups, 5,325 images, zero caption/image/alt/rental/CTA issues. `npm run build`: typecheck, Vite, 651 prerendered pages plus 404 passed. Current-source focused suites: 157 assertions passed; Vitest also discovered an archived QA snapshot under `work/qa` that fails because its copied `QuoteForm.tsx` has no `../server/schema` in the snapshot. Browser on port 4315: Arkansas 2 tabs/2 captions/6 images; Arkansas Ozarks cities 3 tabs/3 captions/13 images; second tab selected successfully on both. No live deployment test.
+
 ## 2026-09-17 four urgent equipment-photo improvements — local
 
 `npx vitest run tests/locationCarouselImages.test.ts tests/ownerImageRollout.test.tsx tests/serviceAreaGalleryCopy.test.ts --exclude 'work/**'`: 87/87 pass. `npm run typecheck` passed. `npm run build` passed with 651 pages + 404 prerendered. Service-area render audit: 548 routes plus 100 map presentations; 648/648 have groups, 1,544 groups, 5,697 image appearances, zero issues. Port 4315 browser: Arkansas kitchen 2 tabs/7 images, Alaska ADA 2 tabs/6 images, Florida sleeper 2 tabs/3 images, Alabama shower 1 group/6 images. Selected second tabs where present; first and second group images decoded and had positive natural width. No deployment verification.
@@ -637,7 +647,6 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - `npx playwright test tests/browser/service-hero-carousel.spec.ts --grep "uses the approved shower photo" --reporter=line`: 1 passed. Checks the homepage shower and Restroom cards, truthful image label, and decoded image width.
 - Local preview at `http://127.0.0.1:4315/` refreshed and showed the Restroom card photo and combination-unit disclosure.
 - Separate targeted Vitest command encountered an archived duplicate test under `work/qa/.../before/` with a missing import; the current homepage browser test passed.
-
 
 ## 2026-09-18 — Equipment-photo placeholder removal (local)
 
@@ -711,7 +720,6 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Final wording follow-up: replaced the remaining 12 ft restroom `pending specification` planning bullet with a direct request to confirm the available unit's equipment list and floor plan. The focused suite passed **109/109**, TypeScript passed, and the production build generated **655 pages plus 404**.
 - Expanded final audits now reject `pending specification` in addition to the existing photo-placeholder phrases. Local static preview passed **60/60** desktop/mobile presentations. Production deployment `dpl_D26jRZbUsCLLp5nDGFjpPSZDG5st` reached READY from commit `0b59eac`; `https://temporary123.com` then passed **60/60**, with **0** placeholder occurrences, **0** pending elements, **0** broken images and **0** console errors at `2026-09-18T12:21:22.909Z`.
 
-
 ## 2026-09-18 — Exact legacy backlink-path restoration, live verified
 
 - Scope: 153 backlink-export rows, 105 unique paths, 104 HTML paths and one legacy image asset path.
@@ -752,6 +760,7 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Production: commit `2c29a33` was pushed without force to official `main`; Git-triggered deployment `dpl_Bg5RKozoqu6SHLkLCGkrPDcexG2D` reached READY and owns `temporary123.com` and `www.temporary123.com`.
 - Live verification: homepage, `/seo-dashboard/` and `/api/seo-live.json` returned HTTP 200. The live API was 286,226 bytes with the same connected metrics and no raw-query test phrase. Chromium rendered the organic visibility heading and the 803-click, 207,857-impression and 53-known-non-brand-click values with zero console or page errors.
 - Boundary: no inquiry was submitted. Unit tests verify post-save event calls, but receipt in Vercel Analytics requires a later real or explicitly authorized QA submission.
+
 # 2026-09-22 source backup checkpoint
 
 `git bundle verify`, isolated `git clone --no-checkout`, and `git fsck --full` passed for candidate f702c63. Restored HEAD matched exactly. Bundle SHA256 and current production deployment recorded in `D:\Temporary123-backups\20260922-indexability\README.md`. `git ls-remote origin refs/heads/main` remained 4d05061. `vercel inspect https://temporary123.com --scope temporary-124` reported existing READY dpl_9FTCs4vGPZCd2nfDRAbabsK1N3oZ. `npm run check:release` failed with unresolved release controls. No Firebase restore, deployment, or live indexability change claimed. C: free space was zero; Cloud SDK logging failed. No cleanup performed.
