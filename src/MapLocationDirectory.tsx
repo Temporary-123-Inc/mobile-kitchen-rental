@@ -18,7 +18,7 @@ export function MapLocationDirectory() {
           .map(([name]) => (
             <div key={name}>
               <a className="map-location-state" href={statePath(name)}>
-                {name}
+                Commercial Mobile Kitchen Rentals in {name}
               </a>
             </div>
           ))}
