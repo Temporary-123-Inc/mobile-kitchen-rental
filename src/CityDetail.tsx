@@ -6,6 +6,7 @@ import { regionCities } from "./regionCities";
 import { cityRentalHeadline } from "./rentalHeadlines";
 import { buildRegionSeasonalDemand } from "./seasonalDemand";
 import { LocationImageCarousel } from "./LocationImageCarousel";
+import locationDescriptions from "./locationDescriptions.json" with { type: "json" };
 
 const serviceLinks = [
   {
@@ -78,7 +79,9 @@ export function CityDetail({ city }: { city: CityPage }) {
             <span className="eyebrow">CITY RENTAL GUIDE</span>
             <h1>{headline}</h1>
             <p className="city-lead" data-h1-intro>
-              {alignedLocationIntro(headline, location)}
+              {locationDescriptions.cities[
+                location as keyof typeof locationDescriptions.cities
+              ] || alignedLocationIntro(headline, location)}
             </p>
             <div className="city-hero-actions">
               <span className="city-emergency">Emergency 24/7</span>

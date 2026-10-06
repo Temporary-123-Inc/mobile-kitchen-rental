@@ -6,6 +6,7 @@ import { serviceCategories } from "./serviceMenu";
 import { capitalizeLinkLabel } from "./linkLabels";
 import { citiesForRegion } from "./cityDirectory";
 import { LocationImageCarousel } from "./LocationImageCarousel";
+import locationDescriptions from "./locationDescriptions.json" with { type: "json" };
 
 export const statePageByPath = Object.fromEntries(
   Object.keys(stateGuides).map((name) => [statePath(name), name]),
@@ -79,7 +80,9 @@ export function StateDetail({ name }: { name: string }) {
             <p className="eyebrow">STATE RENTAL GUIDE</p>
             <h1>{headline}</h1>
             <p className="region-intro" data-h1-intro>
-              {stateKitchenIntro(name)}
+              {locationDescriptions.states[
+                name as keyof typeof locationDescriptions.states
+              ] || stateKitchenIntro(name)}
             </p>
             <p className="region-emergency">Emergency 24/7</p>
             <a className="button" href={`tel:${site.phoneE164}`}>
