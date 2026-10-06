@@ -24,12 +24,212 @@
   --region-accent: #0b4f91;
   --dispatch-red: #d31220;
   --dispatch-amber: #ffffff;
+  --color-canvas: #ffffff;
+  --color-surface: #f1f5f9;
+  --color-surface-raised: #ffffff;
+  --color-ink: #071f3f;
+  --color-ink-muted: #52667c;
+  --color-line: #d9e1ea;
+  --color-line-strong: #71839a;
+  --color-primary: #0b4f91;
+  --color-primary-hover: #07386a;
+  --color-accent: #d31220;
+  --color-accent-hover: #a90e18;
+  --layout-gutter: clamp(1.125rem, 4vw, 3.5rem);
+  --layout-section: clamp(3.25rem, 6vw, 6rem);
+  --layout-hero: clamp(3.5rem, 7vw, 7rem);
+  --layout-card: clamp(1.25rem, 2.4vw, 2rem);
+  --layout-gap: clamp(1.25rem, 2.5vw, 2rem);
+  --radius-sm: 0.35rem;
+  --radius-card: 0.65rem;
+  --radius-large: 1rem;
+  --shadow: 0 14px 38px rgb(7 31 63 / 12%);
   accent-color: var(--accent);
 }
 
 body {
   color: var(--ink);
   background: var(--paper);
+}
+
+/* One container and spacing rhythm shared by every generated page family. */
+.wrap {
+  width: min(1320px, calc(100% - (2 * var(--layout-gutter))));
+}
+
+.section {
+  padding-block: var(--layout-section);
+}
+
+:is(.rental-hero, .calculator-hero, .city-hero, .industry-hero) {
+  padding-block: var(--layout-hero);
+}
+
+:is(.model-hero-section, .location-hero, .region-hero, .about-hero, .blog-hero)
+  > .wrap.section {
+  padding-block: var(--layout-hero);
+}
+
+.service-option-page > .wrap.section {
+  padding-top: var(--layout-hero);
+  padding-bottom: var(--layout-section);
+}
+
+:is(
+  .rental-hero-grid,
+  .model-hero,
+  .location-hero-grid,
+  .region-hero-grid,
+  .city-hero-grid,
+  .industry-hero-grid,
+  .about-hero-grid,
+  .blog-intro-grid,
+  .calculator-hero-grid,
+  .service-category-heading
+) {
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+:is(
+    .rental-hero-copy,
+    .model-hero > div:first-child,
+    .location-hero-copy,
+    .region-hero-copy,
+    .city-hero-copy,
+    .industry-hero-grid > div:first-child,
+    .secondary-intro-copy,
+    .calculator-hero-grid > div:first-child,
+    .service-category-copy
+  )
+  > :is(h1, p, .eyebrow, .breadcrumb, .button, div)
+  + :is(h1, p, .eyebrow, .breadcrumb, .button, div) {
+  margin-top: 1rem;
+}
+
+:is(
+    .rental-hero-copy,
+    .model-hero > div:first-child,
+    .location-hero-copy,
+    .region-hero-copy,
+    .city-hero-copy,
+    .industry-hero-grid > div:first-child,
+    .secondary-intro-copy,
+    .calculator-hero-grid > div:first-child,
+    .service-category-copy
+  )
+  > :is(p, [data-h1-intro]) {
+  max-width: 64ch;
+}
+
+/* Shared card anatomy: consistent interior space, gaps and logo-blue borders. */
+:is(
+  .calculator-form-card,
+  .calculator-result-card,
+  .state-fact-card,
+  .state-demand-card,
+  .region-demand-card,
+  .city-demand-card,
+  .region-answer-card,
+  .about-summary,
+  .planning-detail
+) {
+  padding: var(--layout-card);
+  border-color: var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+}
+
+:is(
+    .calculator-form-card,
+    .calculator-result-card,
+    .state-fact-card,
+    .state-demand-card,
+    .region-demand-card,
+    .city-demand-card,
+    .region-answer-card,
+    .about-summary
+  )
+  > *
+  + * {
+  margin-top: 1rem;
+}
+
+.equipment-card,
+.catalog-card,
+.service-category-cards a,
+.state-guide-region-grid a,
+.industry-services li {
+  border-color: var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+}
+
+:is(.card-copy, .catalog-card-copy) {
+  padding: var(--layout-card);
+}
+
+:is(.equipment-grid, .catalog-grid, .service-category-cards, .planning-cards) {
+  gap: var(--layout-gap);
+}
+
+.card-copy > * + *,
+.catalog-card-copy > * + * {
+  margin-top: 0.85rem;
+}
+
+.calculator-page,
+.secondary-page,
+.region-page,
+.city-page,
+.industry-page,
+.model-page,
+.service-option-page {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.calculator-workspace,
+.calculator-tables,
+.calculator-state-list,
+.industry-services,
+.city-section {
+  padding-block: var(--layout-section);
+}
+
+.calculator-callout {
+  border-color: var(--accent);
+}
+
+.home-calculator-feature,
+.calculator-quote-section,
+.secondary-band,
+.region-intro {
+  border-color: var(--line);
+  background: var(--pale);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --layout-section: 3rem;
+    --layout-hero: 3.25rem;
+    --layout-card: 1.2rem;
+    --layout-gap: 1rem;
+  }
+
+  :is(
+    .rental-hero-grid,
+    .model-hero,
+    .location-hero-grid,
+    .region-hero-grid,
+    .city-hero-grid,
+    .industry-hero-grid,
+    .about-hero-grid,
+    .blog-intro-grid,
+    .calculator-hero-grid,
+    .service-category-heading
+  ) {
+    gap: 2rem;
+  }
 }
 
 ::selection {
