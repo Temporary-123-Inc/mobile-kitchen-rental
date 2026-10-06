@@ -4,8 +4,8 @@ export const brand = {
   name: "Mobile Kitchen Rental",
   legalName: "Temporary 123",
   origin: "https://mobile-kitchen-rental.com",
-  phoneDisplay: "+1 (888) 563-6507",
-  phoneE164: "+18885636507",
+  phoneDisplay: "(833) 634-7811",
+  phoneE164: "+18336347811",
 };
 
 export const primaryPhrase = "Mobile Commercial Kitchen Trailer Rentals";

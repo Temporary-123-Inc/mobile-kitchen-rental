@@ -1,0 +1,130 @@
+/* Sitewide palette derived from the Mobile Kitchen Rental logo. */
+:root {
+  --ink: #071f3f;
+  --blue: #0b4f91;
+  --blue-hover: #07386a;
+  --cyan: #a9c9e8;
+  --muted: #52667c;
+  --line: #d9e1ea;
+  --pale: #f1f5f9;
+  --paper: #ffffff;
+  --accent: #d31220;
+  --accent-hover: #a90e18;
+  --phone-emphasis: #d31220;
+  --support-band: #071f3f;
+  --support-band-hover: #0b4f91;
+  --contact-tab: #d31220;
+  --contact-tab-hover: #a90e18;
+  --border-strong: #71839a;
+  --dark-muted: #c6d4e3;
+  --secondary-ink: #071f3f;
+  --secondary-teal: #0b4f91;
+  --secondary-muted: #52667c;
+  --secondary-line: #d9e1ea;
+  --region-accent: #0b4f91;
+  --dispatch-red: #d31220;
+  --dispatch-amber: #ffffff;
+  accent-color: var(--accent);
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--blue);
+}
+
+.header-contact,
+.mobile-call-refresh,
+.contact-drawer-submit,
+.calculator-hero,
+.price-table-wrap h3 {
+  border-color: var(--brand-blue, var(--blue));
+  background: var(--brand-blue, var(--blue));
+  color: #ffffff;
+}
+
+.header-contact:is(:hover, :focus-visible),
+.mobile-call-refresh:is(:hover, :focus-visible),
+.contact-drawer-submit:is(:hover, :focus-visible) {
+  border-color: var(--brand-blue-deep, var(--blue-hover));
+  background: var(--brand-blue-deep, var(--blue-hover));
+}
+
+.header-phone-icon,
+.mobile-phone-icon {
+  color: #ffffff;
+}
+
+.button,
+.calculator-submit,
+.home-calculator-cta,
+.contact-tab,
+.contact-drawer-trigger {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.button:is(:hover, :focus-visible),
+.calculator-submit:is(:hover, :focus-visible),
+.home-calculator-cta:is(:hover, :focus-visible),
+.contact-tab:is(:hover, :focus-visible),
+.contact-drawer-trigger:is(:hover, :focus-visible) {
+  border-color: var(--accent-hover);
+  background: var(--accent-hover);
+}
+
+.calculator-page,
+.secondary-page,
+.region-page {
+  color: var(--ink);
+  background: #f7f9fc;
+}
+
+.calculator-result-card,
+.home-calculator-feature,
+.secondary-band,
+.region-intro {
+  border-color: #c1ccd8;
+  background: #e7edf3;
+}
+
+.calculator-phone,
+.service-category-link {
+  color: var(--blue);
+}
+
+.calculator-fields input:focus,
+.calculator-fields select:focus,
+.calculator-fields textarea:focus {
+  border-color: var(--blue);
+  outline-color: rgb(11 79 145 / 24%);
+}
+
+.emergency-dispatch-trigger,
+.emergency-dispatch-panel {
+  background: var(--accent);
+}
+
+.emergency-dispatch-call {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.emergency-dispatch-availability {
+  border-color: rgb(255 255 255 / 72%);
+  color: #ffffff;
+}
+
+.scroll-progress {
+  background: var(--blue);
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline-color: var(--accent);
+}

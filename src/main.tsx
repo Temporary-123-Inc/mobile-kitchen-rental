@@ -13,6 +13,7 @@ import "./secondary-refresh.css";
 import "./location-refresh.css";
 import "./location-image-gallery.css";
 import "./seo-dashboard.css";
+import "./logo-theme.css";
 import "@fontsource-variable/manrope";
 import {
   calculateStartingEstimate,
