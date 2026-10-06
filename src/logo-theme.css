@@ -189,7 +189,8 @@ body {
   transform: translateY(-3px);
 }
 
-.contact-rail.contact-rail-refresh:is(:hover, :focus-visible) .contact-rail-icon {
+.contact-rail.contact-rail-refresh:is(:hover, :focus-visible)
+  .contact-rail-icon {
   transform: translateX(3px);
 }
 
@@ -406,5 +407,132 @@ body {
   .emergency-dispatch-call span {
     transition-duration: 0.01ms !important;
     transform: none !important;
+  }
+}
+
+/* Service-family editorial photography, sourced from the supplied inventory. */
+.service-option-page .service-category-heading {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: stretch;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.service-category-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-category-copy .service-category-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.35rem;
+}
+
+.service-category-hero-photo {
+  position: relative;
+  min-height: clamp(360px, 42vw, 570px);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgb(8 45 91 / 18%);
+  border-radius: 0.35rem 2rem 0.35rem 0.35rem;
+  background: #e7edf4;
+  box-shadow: 18px 18px 0 rgb(8 45 91 / 7%);
+}
+
+.service-category-hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(transparent, rgb(5 31 64 / 72%));
+  pointer-events: none;
+}
+
+.service-category-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-category-hero-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 1.2rem;
+  bottom: 1rem;
+  left: 1.2rem;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-category-cards .service-equipment-card {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: 220px auto auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.service-equipment-card-photo {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #e7edf4;
+}
+
+.service-equipment-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.service-equipment-card:is(:hover, :focus-visible)
+  .service-equipment-card-photo
+  img {
+  transform: scale(1.035);
+}
+
+.service-category-cards .service-equipment-card-number {
+  padding: 1.3rem 0 0 1.5rem;
+}
+
+.service-category-cards .service-equipment-card > strong {
+  padding: 1.15rem 0 0;
+}
+
+.service-category-cards .service-equipment-card > p {
+  grid-column: 2 / -1;
+  padding: 0 1.5rem 1.5rem 0;
+}
+
+.service-category-cards .service-equipment-card > b {
+  padding: 1.15rem 1.5rem 0 0;
+}
+
+@media (max-width: 900px) {
+  .service-option-page .service-category-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .service-category-hero-photo {
+    min-height: min(72vw, 500px);
+    border-radius: 0.35rem 1.4rem 0.35rem 0.35rem;
+    box-shadow: 10px 10px 0 rgb(8 45 91 / 7%);
+  }
+}
+
+@media (max-width: 620px) {
+  .service-category-cards .service-equipment-card {
+    grid-template-rows: 190px auto auto;
+  }
+
+  .service-equipment-card-photo {
+    height: 190px;
   }
 }

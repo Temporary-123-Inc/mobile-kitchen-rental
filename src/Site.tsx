@@ -18,6 +18,10 @@ import {
   catalog as equipmentCatalogData,
 } from "./EquipmentCatalog";
 import { serviceCategories } from "./serviceMenu";
+import {
+  serviceCardImage,
+  serviceCategoryHeroImage,
+} from "./serviceCategoryImages";
 import { StateGuideCards } from "./StateGuideCards";
 import consolidatedLocations from "../content/location-consolidation.json" with { type: "json" };
 import { ServiceDetail, modelDetails } from "./ServiceDetail";
@@ -372,7 +376,10 @@ function ContactDrawer() {
             Share the equipment, location, and timing your operation needs. We
             will review the request without promising inventory or arrival time.
           </p>
-          <div className="contact-drawer-checklist" aria-label="Information needed">
+          <div
+            className="contact-drawer-checklist"
+            aria-label="Information needed"
+          >
             <span>1 · Equipment</span>
             <span>2 · Location</span>
             <span>3 · Dates</span>
@@ -653,7 +660,7 @@ export function Site({
               </nav>
               <span className="eyebrow">TEMPORARY FACILITY RENTALS</span>
               <div className="service-category-heading">
-                <div>
+                <div className="service-category-copy">
                   <h1>{rentalCategoryHeadline(serviceCategory.name)}</h1>
                   {path === consolidatedLocations.destination && (
                     <p
@@ -673,27 +680,70 @@ export function Site({
                       serviceCategory.description,
                     )}
                   </p>
+                  <div className="service-category-actions">
+                    <Button>Check availability</Button>
+                    <a className="model-call" href={"tel:" + site.phoneE164}>
+                      {site.phoneDisplay}
+                    </a>
+                  </div>
                 </div>
-                <div className="service-category-actions">
-                  <Button>Check availability</Button>
-                  <a className="model-call" href={"tel:" + site.phoneE164}>
-                    {site.phoneDisplay}
-                  </a>
-                </div>
+                {(() => {
+                  const image = serviceCategoryHeroImage(serviceCategory);
+                  return image ? (
+                    <figure className="service-category-hero-photo">
+                      <img
+                        src={image.src}
+                        srcSet={image.srcSet}
+                        sizes="(max-width: 900px) calc(100vw - 36px), 43vw"
+                        width={image.width}
+                        height={image.height}
+                        alt={image.alt}
+                        loading="eager"
+                        fetchPriority="high"
+                      />
+                      <figcaption>
+                        Owner-supplied {serviceCategory.name.toLowerCase()}{" "}
+                        equipment photography
+                      </figcaption>
+                    </figure>
+                  ) : null;
+                })()}
               </div>
               <ApprovedEquipmentPhotoOptions category={serviceCategory.name} />
               <div className="service-category-cards">
-                {serviceCategory.links.map((link, index) => (
-                  <a href={link.href} key={link.href}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <strong>{link.name}</strong>
-                    <p>
-                      {modelDetails[link.href as keyof typeof modelDetails]
-                        ?.intro ?? link.description}
-                    </p>
-                    <b aria-hidden="true">↗</b>
-                  </a>
-                ))}
+                {serviceCategory.links.map((link, index) => {
+                  const image = serviceCardImage(link.href, serviceCategory);
+                  return (
+                    <a
+                      className="service-equipment-card"
+                      href={link.href}
+                      key={link.href}
+                    >
+                      {image && (
+                        <span className="service-equipment-card-photo">
+                          <img
+                            src={image.src}
+                            srcSet={image.srcSet}
+                            sizes="(max-width: 700px) calc(100vw - 36px), 45vw"
+                            width={image.width}
+                            height={image.height}
+                            alt={image.alt}
+                            loading="lazy"
+                          />
+                        </span>
+                      )}
+                      <span className="service-equipment-card-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <strong>{link.name}</strong>
+                      <p>
+                        {modelDetails[link.href as keyof typeof modelDetails]
+                          ?.intro ?? link.description}
+                      </p>
+                      <b aria-hidden="true">↗</b>
+                    </a>
+                  );
+                })}
               </div>
               {path === consolidatedLocations.destination && (
                 <section
