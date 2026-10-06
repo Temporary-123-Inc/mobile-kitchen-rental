@@ -24,7 +24,7 @@ export const routes = [
   "/privacy/",
 ];
 const titles: Record<string, string> = {
-  "/": "Temporary Facilities Rental: Rent or Lease Nationwide",
+  "/": "Emergency Commercial Mobile Kitchen Rentals: Short-Term or Long-Term Use",
   "/services/": "Temporary Facility Solutions",
   "/equipment-rental/": "Equipment Rental",
   "/industries/": "Industries & Project Solutions",

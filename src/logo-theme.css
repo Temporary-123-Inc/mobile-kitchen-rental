@@ -128,3 +128,282 @@ body {
 :where(a, button, input, select, textarea, summary):focus-visible {
   outline-color: var(--accent);
 }
+
+/* Mobile project command dock: one system for planned and urgent rentals. */
+.contact-rail.contact-rail-refresh,
+.emergency-dispatch {
+  --command-height: 4rem;
+  position: fixed;
+  top: auto;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  transform: none;
+}
+
+.contact-rail.contact-rail-refresh {
+  left: max(1.25rem, env(safe-area-inset-left));
+  width: auto;
+  min-width: 15.5rem;
+  min-height: var(--command-height);
+  padding: 0.55rem 1.1rem 0.55rem 0.6rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 0.35rem 1.1rem 1.1rem 0.35rem;
+  background: var(--ink);
+  box-shadow: 0 16px 44px rgb(7 31 63 / 26%);
+}
+
+.contact-rail-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-basis: 2.8rem;
+  border-radius: 0.2rem 0.8rem 0.8rem 0.2rem;
+  color: #ffffff;
+  background: var(--blue);
+}
+
+.contact-rail-refresh .contact-rail-copy {
+  display: grid;
+  gap: 0.22rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.contact-rail-copy small {
+  color: #a9c9e8;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-rail-copy strong {
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.contact-rail.contact-rail-refresh:is(:hover, :focus-visible) {
+  background: var(--blue-hover);
+  box-shadow: 0 18px 48px rgb(7 31 63 / 32%);
+  transform: translateY(-3px);
+}
+
+.contact-rail.contact-rail-refresh:is(:hover, :focus-visible) .contact-rail-icon {
+  transform: translateX(3px);
+}
+
+.contact-rail-icon,
+.support-arrow,
+.home-primary span,
+.emergency-dispatch-call span {
+  transition: transform 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.home-primary:is(:hover, :focus-visible) span,
+.emergency-dispatch-call:is(:hover, :focus-visible) span {
+  transform: translateX(3px);
+}
+
+.emergency-dispatch {
+  right: max(1.25rem, env(safe-area-inset-right));
+  width: auto;
+}
+
+.emergency-dispatch-trigger {
+  min-width: 12.5rem;
+  min-height: var(--command-height);
+  padding: 0.55rem 1.1rem 0.55rem 0.6rem;
+  border-radius: 1.1rem 0.35rem 0.35rem 1.1rem;
+  box-shadow: 0 16px 44px rgb(120 10 21 / 25%);
+}
+
+.emergency-dispatch-trigger:is(:hover, :focus-visible) {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+.emergency-dispatch-trigger small {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.emergency-dispatch-trigger strong {
+  font-size: 0.83rem;
+}
+
+.emergency-dispatch-signal {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.8rem 0.2rem 0.2rem 0.8rem;
+}
+
+.emergency-dispatch-signal i {
+  background: #ffffff;
+  box-shadow: 0 0 0 5px rgb(255 255 255 / 16%);
+}
+
+.emergency-dispatch-panel {
+  bottom: calc(var(--command-height) + 0.75rem);
+  width: min(390px, calc(100dvw - 2.5rem));
+  border-radius: 1.15rem 0.3rem 1.15rem 1.15rem;
+  background: linear-gradient(145deg, var(--accent), #8c0b15);
+}
+
+.contact-drawer {
+  inset: 0 0 0 auto;
+  width: min(460px, 100%);
+  height: 100dvh;
+  border: 0;
+  border-left: 5px solid var(--accent);
+  border-radius: 0;
+  box-shadow: -24px 0 70px rgb(7 31 63 / 26%);
+}
+
+.contact-drawer-call {
+  min-height: 3.75rem;
+  background: var(--ink);
+}
+
+.contact-drawer-header {
+  padding: 1.8rem 1.7rem 1.35rem;
+  background: linear-gradient(150deg, #ffffff 0%, #f1f5f9 100%);
+}
+
+.contact-drawer-header h2 {
+  color: var(--ink);
+  font-size: clamp(1.8rem, 4vw, 2.35rem);
+}
+
+.contact-drawer-checklist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-top: 1.1rem;
+}
+
+.contact-drawer-checklist span {
+  padding: 0.55rem 0.4rem;
+  border-top: 3px solid var(--blue);
+  color: var(--ink);
+  background: #ffffff;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact-drawer-actions {
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-drawer-scroll {
+  padding: 1.35rem 1.7rem 2rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  .contact-rail.contact-rail-refresh,
+  .emergency-dispatch {
+    bottom: max(0.55rem, env(safe-area-inset-bottom));
+  }
+
+  .contact-rail.contact-rail-refresh {
+    left: 0.55rem;
+    width: calc(58% - 0.82rem);
+    min-width: 0;
+    min-height: 3.65rem;
+    padding: 0.45rem 0.7rem 0.45rem 0.45rem;
+    border-radius: 0.3rem 0.9rem 0.9rem 0.3rem;
+  }
+
+  .contact-rail-icon {
+    width: 2.55rem;
+    height: 2.55rem;
+    flex-basis: 2.55rem;
+  }
+
+  .contact-rail-copy small {
+    display: none;
+  }
+
+  .contact-rail-copy strong {
+    font-size: clamp(0.7rem, 3.2vw, 0.82rem);
+    line-height: 1.15;
+  }
+
+  .emergency-dispatch {
+    right: 0.55rem;
+    width: calc(42% - 0.82rem);
+  }
+
+  .emergency-dispatch-trigger {
+    min-width: 0;
+    min-height: 3.65rem;
+    padding: 0.45rem;
+    border-radius: 0.9rem 0.3rem 0.3rem 0.9rem;
+  }
+
+  .emergency-dispatch-trigger small {
+    display: none;
+  }
+
+  .emergency-dispatch-trigger strong {
+    font-size: clamp(0.68rem, 3.1vw, 0.8rem);
+  }
+
+  .emergency-dispatch-signal {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+
+  .emergency-dispatch-panel {
+    position: fixed;
+    right: 0.55rem;
+    bottom: calc(4.75rem + env(safe-area-inset-bottom));
+    width: calc(100dvw - 1.1rem);
+    max-height: calc(100dvh - 6rem);
+  }
+
+  .contact-drawer {
+    width: 100%;
+    border-left: 0;
+    border-top: 5px solid var(--accent);
+  }
+
+  .contact-drawer-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-rail.contact-rail-refresh {
+    width: calc(56% - 0.82rem);
+  }
+
+  .emergency-dispatch {
+    width: calc(44% - 0.82rem);
+  }
+
+  .contact-rail-icon,
+  .emergency-dispatch-signal {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-rail.contact-rail-refresh,
+  .contact-rail-icon,
+  .emergency-dispatch-trigger,
+  .home-primary span,
+  .emergency-dispatch-call span {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}

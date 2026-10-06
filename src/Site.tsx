@@ -270,8 +270,8 @@ export function Header({ path }: { path: string }) {
             <i />
           </span>
           <span>
-            <small>24/7 support</small>
-            <strong>Call now</strong>
+            <small>Urgent project</small>
+            <strong>24/7 response</strong>
           </span>
         </button>
         <section
@@ -339,8 +339,8 @@ export function Header({ path }: { path: string }) {
           </svg>
         </span>
         <span className="contact-rail-copy">
-          <small>Need a rental?</small>
-          <strong>Contact now</strong>
+          <small>Project desk</small>
+          <strong>Build my rental plan</strong>
         </span>
       </a>
     </>
@@ -366,12 +366,17 @@ function ContactDrawer() {
           </button>
         </div>
         <header className="contact-drawer-header">
-          <span className="contact-drawer-kicker">Project coordination</span>
-          <h2 id="contact-drawer-title">Request availability</h2>
+          <span className="contact-drawer-kicker">Mobile project desk</span>
+          <h2 id="contact-drawer-title">Build your rental plan</h2>
           <p>
             Share the equipment, location, and timing your operation needs. We
             will review the request without promising inventory or arrival time.
           </p>
+          <div className="contact-drawer-checklist" aria-label="Information needed">
+            <span>1 · Equipment</span>
+            <span>2 · Location</span>
+            <span>3 · Dates</span>
+          </div>
           <div
             className="contact-drawer-actions"
             aria-label="Project desk options"

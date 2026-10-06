@@ -80,9 +80,9 @@ export function Home() {
               <span aria-hidden="true" /> Nationwide equipment rentals
             </span>
             <h1 id="rental-title">
-              Temporary Facilities and Trailer Rental
+              Emergency Commercial Mobile Kitchen Rentals
               <br />
-              <em>Rent or Lease Nationwide</em>
+              <em>For Short-Term or Long-Term Use</em>
             </h1>
             <p data-h1-intro>
               Mobile Kitchen Rental provides nationwide rental and leasing of temporary
@@ -97,7 +97,7 @@ export function Home() {
             </p>
             <div className="rental-hero-actions">
               <a className="button home-primary" href="/contact-us/">
-                Contact us <span aria-hidden="true">↗</span>
+                Request availability <span aria-hidden="true">↗</span>
               </a>
               <a className="home-secondary" href="#equipment">
                 Find your rental <span aria-hidden="true">↓</span>
