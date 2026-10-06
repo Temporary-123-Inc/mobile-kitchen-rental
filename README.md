@@ -22,7 +22,7 @@ npm run test:e2e
 npm run check:secrets
 ```
 
-Preview: `http://localhost:4173`. It serves built pages and does not execute live contact APIs. Browser tests run in GitHub Actions. Production indexing remains disabled until migration checks pass.
+Preview: `http://localhost:4173`. It serves built pages and does not execute live contact APIs. Run browser tests locally with `npm run test:e2e`; GitHub Actions workflows have been removed. Production indexing remains disabled until migration checks pass.
 
 ## Source recovery
 

@@ -34,7 +34,7 @@ test("emergency dispatch waits for activity, dismisses for 24 hours, and remains
   await expect(panel).toHaveAttribute("aria-hidden", "false");
   await expect(panel.getByRole("link", { name: /Call/ })).toHaveAttribute(
     "href",
-    "tel:+18882901839",
+    "tel:+18885636507",
   );
 });
 
@@ -153,7 +153,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
     );
     await expect(emergency.locator(".emergency-dispatch-call")).toHaveAttribute(
       "href",
-      "tel:+18882901839",
+      "tel:+18885636507",
     );
     const contactRail = page.locator(".contact-rail");
     await expect(contactRail).toBeVisible();
@@ -181,7 +181,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
         ratio: 1,
       });
     } else {
-      await expect(phone).toHaveAttribute("href", "tel:+18882901839");
+      await expect(phone).toHaveAttribute("href", "tel:+18885636507");
       await expect(phone.locator("strong")).toHaveCSS(
         "color",
         "rgb(255, 255, 255)",
@@ -200,14 +200,14 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
           ),
         ).toBe("header-call-edge-flicker");
       }
-      await expect(phone.locator("strong")).toHaveText("+1 (800) 443 - 5212");
+      await expect(phone.locator("strong")).toHaveText("+1 (888) 563-6507");
       await expect(phone).toBeInViewport({ ratio: 1 });
     }
     const displayedPhoneNumbers = await page
-      .locator('a[href="tel:+18882901839"]')
+      .locator('a[href="tel:+18885636507"]')
       .allTextContents();
     for (const text of displayedPhoneNumbers)
-      expect(text.replace(/\s+/g, " ")).toContain("+1 (800) 443 - 5212");
+      expect(text.replace(/\s+/g, " ")).toContain("+1 (888) 563-6507");
     await page.locator(".faq-section").scrollIntoViewIfNeeded();
     if (width > 900) await expect(phone).toBeInViewport({ ratio: 1 });
     for (const photo of await page.locator(".image-box img").all()) {
@@ -396,7 +396,7 @@ test("mobile Contact Us tab opens the drawer without navigating", async ({
   const drawer = page.getByRole("dialog", { name: "Request availability" });
   await expect(drawer).toBeVisible();
   await expect(drawer.getByRole("link", { name: /Call now/ })).toContainText(
-    "+1 (800) 443 - 5212",
+    "+1 (888) 563-6507",
   );
   expect(
     await drawer.evaluate(
@@ -429,7 +429,7 @@ test("equipment quick view contains focus and restores its trigger", async ({
   ).toBeFocused();
   await expect(
     dialog.getByRole("link", { name: "Call now", exact: false }),
-  ).toHaveAttribute("href", "tel:+18882901839");
+  ).toHaveAttribute("href", "tel:+18885636507");
   await expect(
     dialog.getByRole("list", { name: "Rental benefits" }),
   ).toHaveCount(1);
@@ -662,11 +662,11 @@ test("contact keeps the phone fallback while online intake is disabled", async (
   await expect(
     page
       .getByRole("link", {
-        name: "Call (888) 290-1839",
+        name: "Call +1 (888) 563-6507",
         exact: false,
       })
       .first(),
-  ).toHaveAttribute("href", "tel:+18882901839");
+  ).toHaveAttribute("href", "tel:+18885636507");
   await expect(page.locator("#contact-drawer form")).toHaveCount(1);
   await expect(
     page.locator('#contact-drawer button[type="submit"]'),

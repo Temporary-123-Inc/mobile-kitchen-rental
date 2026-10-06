@@ -87,8 +87,8 @@ test("equipment briefs remain readable and connected on mobile", async ({
           : rentalProductHeadline(item.name),
     );
     await expect(
-      page.locator("main a[href='tel:+18882901839']").first(),
-    ).toHaveAttribute("href", "tel:+18882901839");
+      page.locator("main a[href='tel:+18885636507']").first(),
+    ).toHaveAttribute("href", "tel:+18885636507");
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

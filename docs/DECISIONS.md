@@ -51,6 +51,8 @@
 
 ## 2026-10-07 — Remove all GitHub Actions workflows
 
+Reconfirmed for the owner-named `mobile-kitchen-rental` repository: no workflow files remain in the filesystem or Git index. Current setup documentation must describe browser tests as a local command, without claiming removed GitHub automation runs them. This does not remove useful local checks or change Vercel hosting.
+
 - Source: Owner clarification requesting removal of all workflows because this website is mostly static pages.
 - Decision: Delete both inherited workflow files, `ci.yml` and `release-review.yml`, without introducing a replacement. This supersedes the earlier same-day consolidation decision.
 - Scope: Remove GitHub Actions automation only. Keep the existing local build/test/release/security scripts and Vercel configuration available.
@@ -539,3 +541,7 @@ Use `(888) 290-1839` for customer-facing contact text and `+18882901839` for tel
 ## 2026-10-07 — Inventory dropdown uses a centered decorative SVG
 
 Use a small inline SVG chevron for the desktop Inventory trigger so its alignment and open-state rotation do not depend on a font's Unicode-arrow metrics. Keep its width close to the existing glyph, inherit the approved blue, and exclude it from the accessible name. Preserve the existing menu interactions and mobile plus presentation.
+
+## 2026-10-07 — Restore original kitchen-site contact number
+
+The user's request to restore the original number supersedes the earlier October 7 phone approval. Use the exact kitchen-site baseline from `6b5a192`: `+1 (888) 563-6507` for display and `+18885636507` for calls/schema. History: `3ff4004` replaced it with `(833) 634-7811`; `78c6f49` then used `(888) 290-1839`. Retain centralized phone configuration and bounded historical normalization, including both superseded numbers, so archives render consistently without modifying archived sources. Preserve unrelated Inventory alignment included in the latest phone commit; a wholesale commit revert would also remove that fix. No publication authorized.

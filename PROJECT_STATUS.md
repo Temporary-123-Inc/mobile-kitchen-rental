@@ -1,5 +1,13 @@
 # Temporary123 Project Status
 
+## 2026-10-07 — Original kitchen-site contact number restored locally
+
+Restored `+1 (888) 563-6507` / `+18885636507`, verified in original kitchen-site commit `6b5a192` before phone updates `3ff4004` and `78c6f49`. Configuration now supplies the original number to contact text, metadata, gallery captions, guide actions and schema; historical normalization also handles the latest superseded number. Updated the social SVG/PNG and affected phone expectations while preserving centralized configuration, Inventory chevron and unrelated workflow documentation. TypeScript, 47 focused tests, full production build/prerender (745 routes + 404), all-page phone audit (4,486 call links and 1,490 schema phone properties), 14 responsive browser presentations and two guide tests passed. Routes/indexability/sitemap preserved; canonicals match existing policy. Local generated `dist` refreshed after an initial build used the root output directory; tracked root audit files preserved. No commit, push, deployment, actual call or inquiry. See `docs/TEST_RESULTS.md`.
+
+## 2026-10-07 — Workflow cleanup reconfirmed for mobile-kitchen-rental
+
+User confirmed this repository as the target for the earlier workflow cleanup. Verified zero GitHub Actions workflow files in the filesystem and Git index; both inherited CI/release-review workflows were already removed. Corrected the README's stale claim that browser tests run in GitHub Actions, documenting the existing local command instead. Local build/test/release/security scripts and Vercel configuration match the clean `78c6f49` baseline. Documentation-only update; inventory/preservation assertions and whitespace checks passed. No new workflow deletion, application change, commit, push, deployment or remote Actions verification. See `docs/TEST_RESULTS.md`.
+
 ## 2026-10-07 — Inventory chevron alignment fixed locally
 
 Replaced the desktop Inventory trigger's low-sitting Unicode arrow with a centered, decorative inline SVG. Preserved the existing navy/blue styling, label typography, spacing, trigger width (within 0.04 px), open-state rotation, native details and menu behavior. TypeScript, isolated Vite client build, the existing navigation-order test and 16 responsive browser presentations passed, including JavaScript-disabled navigation. Prior phone changes and unrelated diffs preserved. Local only; no full production prerender, live hosting check, commit, push or deployment. See `docs/TEST_RESULTS.md`.

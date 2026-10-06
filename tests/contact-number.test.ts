@@ -8,12 +8,14 @@ import site from "../site.json" with { type: "json" };
 
 describe("owner-approved contact number", () => {
   it("uses the requested display and international dial target", () => {
-    expect(site.phoneDisplay).toBe("(888) 290-1839");
-    expect(site.phoneE164).toBe("+18882901839");
+    expect(site.phoneDisplay).toBe("+1 (888) 563-6507");
+    expect(site.phoneE164).toBe("+18885636507");
     expect(pageInfo("/contact-us/").description).toContain(site.phoneDisplay);
   });
 
   it.each([
+    "(888) 290-1839",
+    "+18882901839",
     "+1 (800) 443 - 5212",
     "800-443-5212",
     "+18004435212",

@@ -3,6 +3,7 @@ import site from "../site.json" with { type: "json" };
 // These numbers identify the site's own historical sales/contact actions.
 // Keep source archives and unrelated third-party phone references intact.
 const legacyNumbers = [
+  "8882901839",
   "8336347811",
   "8004435212",
   "8002056106",

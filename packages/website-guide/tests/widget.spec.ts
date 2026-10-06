@@ -59,7 +59,7 @@ for (const width of [320, 375, 768, 1440])
     await page.getByLabel("Ask about this website").fill("What is your phone number?");
     await page.getByRole("button", { name: "Send", exact: true }).click();
     await expect(page.getByRole("log")).toContainText(`You can call ${site.brand} at ${site.phoneDisplay}.`);
-    await expect(page.getByRole("log").getByRole("link", { name: "Call (888) 290-1839", exact: true })).toHaveAttribute("href", "tel:+18882901839");
+    await expect(page.getByRole("log").getByRole("link", { name: "Call +1 (888) 563-6507", exact: true })).toHaveAttribute("href", "tel:+18885636507");
     await page.getByLabel("Ask about this website").fill("Are you open on weekends?");
     await page.getByRole("button", { name: "Send", exact: true }).click();
     await expect(page.getByRole("log")).toContainText("rental team is available 24/7");
