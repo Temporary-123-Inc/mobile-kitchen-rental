@@ -61,7 +61,7 @@
   display: block;
   width: 23px;
   height: 23px;
-  color: #3cdaef;
+  color: var(--color-highlight);
 }
 
 .utility-refresh .utility-message {
@@ -103,7 +103,7 @@
 
 .header-sticky.header-refresh {
   background: rgb(255 255 255 / 97%);
-  border-bottom-color: #d9e3e7;
+  border-bottom-color: var(--color-line);
 }
 
 .header-refresh .header {
@@ -116,7 +116,7 @@
 }
 
 .header-refresh .header > nav > a[href="/contact-us/"] {
-  color: #a70805;
+  color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -130,11 +130,11 @@
   min-width: 226px;
   min-height: 62px;
   padding: 11px 16px;
-  border: 1px solid #123f46;
+  border: 1px solid var(--color-line-strong);
   border-radius: 12px;
-  background: #123f46;
+  background: var(--color-ink);
   color: #fff;
-  box-shadow: 0 3px 8px rgb(18 63 70 / 10%);
+  box-shadow: 0 3px 8px color-mix(in srgb, var(--color-ink) 10%, transparent);
   animation: none;
   transition:
     background 180ms ease,
@@ -146,11 +146,11 @@
   content: "";
   position: absolute;
   inset: -4px;
-  border: 2px solid #e33a32;
+  border: 2px solid var(--color-accent);
   border-radius: 16px;
   box-shadow:
-    0 0 0 2px rgb(227 58 50 / 20%),
-    0 0 18px rgb(227 58 50 / 62%);
+    0 0 0 2px color-mix(in srgb, var(--color-accent) 20%, transparent),
+    0 0 18px color-mix(in srgb, var(--color-accent) 62%, transparent);
   opacity: 0;
   pointer-events: none;
 }
@@ -159,7 +159,7 @@
   display: block;
   grid-column: 2;
   grid-row: 1;
-  color: #e1eff0;
+  color: var(--color-on-dark-muted);
   font-size: 0.72rem;
   line-height: 1.35;
   font-weight: 500;
@@ -180,28 +180,28 @@
   grid-column: 1;
   grid-row: 1 / 3;
   align-self: center;
-  color: #9fe8e6;
+  color: var(--color-on-dark-muted);
 }
 
 .header-refresh .header-contact:is(:hover, :focus-visible) {
-  background: #0a3036;
-  border-color: #0a3036;
-  box-shadow: 0 5px 14px rgb(18 63 70 / 18%);
+  background: var(--color-ink);
+  border-color: var(--color-line-strong);
+  box-shadow: 0 5px 14px color-mix(in srgb, var(--color-ink) 18%, transparent);
 }
 
 .header-refresh .header-contact:focus-visible {
-  outline: 3px solid #007b8f;
+  outline: 3px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 .mobile-call.mobile-call-refresh {
-  background: #123f46;
-  border-top-color: #123f46;
+  background: var(--color-ink);
+  border-top-color: var(--color-line-strong);
   color: #fff;
 }
 
 .mobile-call-refresh > span {
-  color: #e1eff0;
+  color: var(--color-on-dark-muted);
 }
 
 .mobile-call-refresh strong {
@@ -212,7 +212,7 @@
   grid-column: 2;
   grid-row: 1 / 3;
   align-self: center;
-  color: #9fe8e6;
+  color: var(--color-on-dark-muted);
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
@@ -273,14 +273,14 @@
   justify-content: center;
   gap: 13px;
   padding: 18px 9px;
-  border: 1px solid #00bfdc;
+  border: 1px solid var(--color-primary);
   border-left: 0;
   border-radius: 0 10px 10px 0;
-  background: #00809a;
+  background: var(--color-primary);
   color: #fff;
   box-shadow:
-    0 0 0 3px rgb(38 212 119 / 32%),
-    0 0 22px rgb(38 212 119 / 24%);
+    0 0 0 3px color-mix(in srgb, var(--color-ink) 32%, transparent),
+    0 0 22px color-mix(in srgb, var(--color-ink) 24%, transparent);
   transform: translateY(-50%);
   transition:
     background 180ms ease,
@@ -307,14 +307,14 @@
 
 .contact-rail.contact-rail-refresh:is(:hover, :focus-visible) {
   padding: 18px 9px;
-  background: #006f85;
+  background: var(--color-primary-hover);
   box-shadow:
-    0 0 0 4px rgb(38 212 119 / 56%),
-    0 0 26px rgb(38 212 119 / 28%);
+    0 0 0 4px color-mix(in srgb, var(--color-ink) 56%, transparent),
+    0 0 26px color-mix(in srgb, var(--color-ink) 28%, transparent);
 }
 
 .contact-rail.contact-rail-refresh:focus-visible {
-  outline: 3px solid #0c3545;
+  outline: 3px solid var(--color-line-strong);
   outline-offset: 6px;
 }
 
@@ -402,13 +402,13 @@
   0%,
   100% {
     box-shadow:
-      0 0 0 5px rgb(53 240 138 / 48%),
-      0 0 16px rgb(53 240 138 / 72%);
+      0 0 0 5px color-mix(in srgb, var(--color-ink) 48%, transparent),
+      0 0 16px color-mix(in srgb, var(--color-ink) 72%, transparent);
   }
   45% {
     box-shadow:
-      0 0 0 7px rgb(53 240 138 / 26%),
-      0 0 25px rgb(79 255 159 / 96%);
+      0 0 0 7px color-mix(in srgb, var(--color-ink) 26%, transparent),
+      0 0 25px color-mix(in srgb, var(--color-ink) 96%, transparent);
   }
 }
 
@@ -416,13 +416,13 @@
   0%,
   100% {
     box-shadow:
-      0 0 0 3px rgb(38 212 119 / 30%),
-      0 0 16px rgb(38 212 119 / 18%);
+      0 0 0 3px color-mix(in srgb, var(--color-ink) 30%, transparent),
+      0 0 16px color-mix(in srgb, var(--color-ink) 18%, transparent);
   }
   50% {
     box-shadow:
-      0 0 0 4px rgb(38 212 119 / 62%),
-      0 0 28px rgb(38 212 119 / 34%);
+      0 0 0 4px color-mix(in srgb, var(--color-ink) 62%, transparent),
+      0 0 28px color-mix(in srgb, var(--color-ink) 34%, transparent);
   }
 }
 
@@ -488,11 +488,11 @@
     flex-direction: row;
     gap: 7px;
     border: 0;
-    border-top: 3px solid #26d477;
+    border-top: 3px solid var(--color-primary);
     border-radius: 0;
     transform: none;
     animation: none;
-    box-shadow: 0 -3px 16px rgb(12 53 69 / 12%);
+    box-shadow: 0 -3px 16px color-mix(in srgb, var(--color-ink) 12%, transparent);
   }
 
   .contact-rail-refresh span {
@@ -510,7 +510,7 @@
 
   .contact-rail.contact-rail-refresh:is(:hover, :focus-visible) {
     padding: 13px 10px calc(13px + env(safe-area-inset-bottom, 0px));
-    box-shadow: 0 -3px 16px rgb(12 53 69 / 12%);
+    box-shadow: 0 -3px 16px color-mix(in srgb, var(--color-ink) 12%, transparent);
   }
 
   .contact-rail.contact-rail-refresh:focus-visible {
@@ -528,15 +528,15 @@
     grid-template-columns: minmax(0, 1fr) auto;
     align-content: center;
     column-gap: 5px;
-    background: #123f46;
-    border-top: 3px solid #123f46;
-    box-shadow: 0 -3px 16px rgb(12 53 69 / 12%);
+    background: var(--color-ink);
+    border-top: 3px solid var(--color-line-strong);
+    box-shadow: 0 -3px 16px color-mix(in srgb, var(--color-ink) 12%, transparent);
   }
 
   .mobile-call-refresh > span {
     font-size: 0.68rem;
     line-height: 1.4;
-    color: #e1eff0;
+    color: var(--color-on-dark-muted);
   }
 
   .mobile-call-refresh strong {
@@ -567,8 +567,8 @@
 
 /* One coordinated project-desk and emergency dispatch system. */
 .emergency-dispatch {
-  --dispatch-red: #981b1f;
-  --dispatch-amber: #ffcf75;
+  --dispatch-red: var(--color-accent);
+  --dispatch-amber: var(--color-canvas);
   position: fixed;
   z-index: 1160;
   right: clamp(16px, 3vw, 44px);
@@ -593,7 +593,7 @@
   border-radius: 999px;
   color: var(--white);
   background: var(--dispatch-red);
-  box-shadow: 0 10px 24px rgb(69 12 14 / 22%);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--color-accent) 22%, transparent);
   cursor: pointer;
   opacity: 1;
   transform: none;
@@ -650,7 +650,7 @@
     var(--radius-large);
   color: var(--white);
   background: var(--dispatch-red);
-  box-shadow: 0 24px 58px rgb(38 7 9 / 30%);
+  box-shadow: 0 24px 58px color-mix(in srgb, var(--color-accent) 30%, transparent);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -732,7 +732,7 @@
 }
 
 .emergency-dispatch-call {
-  color: #381013;
+  color: var(--color-accent);
   background: var(--dispatch-amber);
 }
 
@@ -778,8 +778,8 @@
   border-left: 0;
   border-radius: 0 var(--radius-card) var(--radius-card) 0;
   color: var(--white);
-  background: #0c3940;
-  box-shadow: 0 12px 28px rgb(10 44 51 / 22%);
+  background: var(--color-ink);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--color-ink) 22%, transparent);
   writing-mode: horizontal-tb;
   transform: translateY(-50%);
   animation: none;
@@ -797,8 +797,8 @@
   width: 34px;
   height: 34px;
   border-radius: 0.65rem;
-  color: #07353e;
-  background: #72d7cf;
+  color: var(--color-ink);
+  background: var(--color-highlight);
 }
 
 .contact-rail-refresh .contact-rail-copy {
@@ -820,7 +820,7 @@
 }
 
 .contact-rail-copy small {
-  color: #a8ebe5;
+  color: var(--color-on-dark-muted);
   font-weight: 700;
 }
 
@@ -831,8 +831,8 @@
 
 .contact-rail.contact-rail-refresh:is(:hover, :focus-visible) {
   color: var(--white);
-  background: #125663;
-  box-shadow: 0 14px 32px rgb(10 44 51 / 28%);
+  background: var(--color-primary-hover);
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--color-ink) 28%, transparent);
   transform: translateY(-50%) translateX(2px);
 }
 
@@ -851,11 +851,11 @@ body.contact-drawer-open .emergency-dispatch {
   height: calc(100dvh - 16px);
   border: 1px solid var(--line);
   border-radius: var(--radius-large);
-  box-shadow: -16px 0 48px rgb(16 47 62 / 24%);
+  box-shadow: -16px 0 48px color-mix(in srgb, var(--color-ink) 24%, transparent);
 }
 
 .contact-drawer::backdrop {
-  background: rgb(16 47 62 / 58%);
+  background: color-mix(in srgb, var(--color-ink) 58%, transparent);
   backdrop-filter: none;
 }
 
@@ -1043,7 +1043,7 @@ body.contact-drawer-open .emergency-dispatch {
 
 .contact-grid .phone-link {
   max-width: 100%;
-  color: #075f69;
+  color: var(--color-primary);
   font-size: clamp(1.15rem, 3.2vw, 1.8rem);
   line-height: 1.5;
   white-space: normal;

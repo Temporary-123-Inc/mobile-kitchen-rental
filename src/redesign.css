@@ -1,16 +1,16 @@
 /* Site-wide editorial direction: warm surfaces, architectural spacing,
    authentic equipment imagery and a restrained red action accent. */
 :root {
-  --ink: #162f38;
-  --blue: #185b6c;
-  --blue-hover: #103f4c;
-  --muted: #52666b;
-  --line: #d9dfdc;
-  --pale: #eff2ee;
-  --paper: #f8f8f3;
-  --accent: #b63d2f;
-  --phone-emphasis: #b63d2f;
-  --accent-hover: #923025;
+  --ink: var(--color-ink);
+  --blue: var(--color-primary);
+  --blue-hover: var(--color-primary-hover);
+  --muted: var(--color-ink-muted);
+  --line: var(--color-line);
+  --pale: var(--color-surface);
+  --paper: var(--color-canvas);
+  --accent: var(--color-accent);
+  --phone-emphasis: var(--color-accent);
+  --accent-hover: var(--color-accent-hover);
   --radius-card: 0.35rem;
   --radius-large: 0.5rem;
   --header-h: 5rem;
@@ -109,7 +109,7 @@ summary:focus-visible {
   min-height: 34px;
   padding-block: 0.35rem;
   background: var(--ink);
-  color: #f4f7f5;
+  color: var(--color-on-dark-muted);
 }
 .utility-inner {
   justify-content: flex-end;
@@ -225,7 +225,7 @@ summary:focus-visible {
   padding: 0.65rem 1rem;
   border-radius: 100px;
   background: var(--ink);
-  box-shadow: 0 4px 18px #162f3826;
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--color-ink) 14.9%, transparent);
   animation: none;
 }
 .contact-rail span {
@@ -247,7 +247,7 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-top: 3px solid var(--accent);
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 20px 50px #102f3e20;
+  box-shadow: 0 20px 50px color-mix(in srgb, var(--color-ink) 12.55%, transparent);
 }
 .services-nav[open] .services-panel {
   transform: translate(-50%, 0);
@@ -418,7 +418,7 @@ summary:focus-visible {
   gap: 1rem;
   padding: 1rem 1.5rem;
   color: #fff;
-  background: linear-gradient(transparent, #10272ee0);
+  background: linear-gradient(transparent, color-mix(in srgb, var(--color-ink) 87.84%, transparent));
 }
 .masthead-photo figcaption > span {
   font-size: 1.1rem;
@@ -440,7 +440,7 @@ summary:focus-visible {
   color: #fff;
 }
 .masthead-project > .eyebrow {
-  color: #bad0cf;
+  color: var(--color-on-dark-muted);
 }
 .masthead-project h2 {
   font-size: clamp(2.2rem, 3.25vw, 3.2rem);
@@ -449,11 +449,11 @@ summary:focus-visible {
 }
 .masthead-project h2 em {
   font-style: normal;
-  color: #bcd8cd;
+  color: var(--color-on-dark-muted);
 }
 .masthead-project p {
   font-size: 1rem;
-  color: #d5dfdc;
+  color: var(--color-on-dark-muted);
   margin-bottom: 1.5rem;
 }
 .masthead-project .button {
@@ -464,7 +464,7 @@ summary:focus-visible {
   justify-content: space-between;
 }
 .masthead-project .button:hover {
-  background: #e6efea;
+  background: var(--color-surface-strong);
 }
 .masthead-phone {
   display: block;
@@ -473,7 +473,7 @@ summary:focus-visible {
 }
 .masthead-phone small {
   display: block;
-  color: #b6c9c6;
+  color: var(--color-on-dark-muted);
   font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
@@ -543,18 +543,29 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-radius: 50%;
   width: 44px;
-  min-width: 44px;
-  overflow: hidden;
-  font-size: 0;
+  height: 44px;
+  min-height: 44px;
+  flex: 0 0 44px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  gap: 0;
   padding: 0;
+  line-height: 1;
+  background: transparent;
+  color: var(--ink);
 }
-.quick-view span {
-  font-size: 1.3rem;
+.equipment-grid .card-actions .quick-view > svg {
+  display: block;
+  flex-shrink: 0;
 }
-.quick-view:hover {
+.equipment-grid .card-actions .quick-view:hover {
   background: var(--ink);
   color: #fff;
+}
+.equipment-grid .card-actions .quick-view:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
 }
 .equipment-editorial {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -626,7 +637,7 @@ summary:focus-visible {
 
 /* A horizontal process replaces the previous dark stacked column. */
 .process {
-  background: #e8ede7;
+  background: var(--color-surface-strong);
   color: var(--ink);
 }
 .process-grid {
@@ -681,7 +692,7 @@ summary:focus-visible {
   display: block;
   padding: 1.5rem 0 0;
   border: 0;
-  border-top: 1px solid #aebdb5;
+  border-top: 1px solid var(--color-line);
 }
 .process-steps li:first-child,
 .process-steps li + li {
@@ -748,7 +759,7 @@ summary:focus-visible {
 }
 .industry-links a:hover {
   padding-inline: 1rem;
-  background: #e9eee7;
+  background: var(--color-surface-strong);
 }
 .industry-links h3 {
   font-family: var(--font-ui);
@@ -806,22 +817,22 @@ summary:focus-visible {
   line-height: 1.06;
 }
 .closing .eyebrow {
-  color: #afc4bd;
+  color: var(--color-on-dark-muted);
   margin-bottom: 1rem;
 }
 .closing p {
-  color: #c7d4d0;
+  color: var(--color-on-dark-muted);
 }
 .phone-link {
   padding: 0 0 0.35rem;
   background: transparent;
   color: #fff;
   border-radius: 0;
-  border-bottom: 1px solid #59736c;
+  border-bottom: 1px solid var(--color-line-strong);
   font-size: clamp(1.8rem, 3.3vw, 3.2rem);
 }
 .closing .small {
-  color: #afc4bd;
+  color: var(--color-on-dark-muted);
 }
 .footer {
   padding-block: 3.5rem;
@@ -860,7 +871,7 @@ summary:focus-visible {
 }
 .catalog-media {
   border-radius: 0;
-  background: #edf0ec;
+  background: var(--color-surface-strong);
 }
 .catalog-card-copy {
   padding: 1.5rem;
@@ -875,10 +886,10 @@ summary:focus-visible {
 }
 .catalog-help {
   border-radius: 0;
-  background: #e8ede7;
+  background: var(--color-surface-strong);
 }
 .model-hero-section {
-  background: #edf1ec;
+  background: var(--color-surface-strong);
 }
 .model-hero {
   grid-template-columns: 1.05fr 1fr;
@@ -895,7 +906,7 @@ summary:focus-visible {
   border-radius: 0;
   background: #fff;
   padding: 1.5rem;
-  box-shadow: 16px 16px 0 #dce4dd;
+  box-shadow: 16px 16px 0 var(--color-ink);
 }
 .model-hero figure img {
   border-radius: 0;
@@ -914,7 +925,7 @@ summary:focus-visible {
 .model-planning .eyebrow,
 .model-planning p,
 .model-planning li {
-  color: #d6e0dc;
+  color: var(--color-on-dark-muted);
 }
 .model-planning .button {
   background: #fff;
@@ -923,7 +934,7 @@ summary:focus-visible {
 }
 .model-confirm {
   background: #ffffff0a;
-  border-color: #577067;
+  border-color: var(--color-line-strong);
 }
 .model-features li {
   border-radius: 0;
@@ -1000,7 +1011,7 @@ summary:focus-visible {
 }
 .source-aside {
   padding: 1.75rem;
-  background: #e8ede7;
+  background: var(--color-surface-strong);
   border-radius: 0;
   border-top: 3px solid var(--accent);
 }
@@ -1013,7 +1024,7 @@ summary:focus-visible {
   font-size: 0.8rem;
 }
 .location-hero {
-  background: #e7eee7;
+  background: var(--color-surface-strong);
   color: var(--ink);
 }
 .location-hero::after {
@@ -1033,7 +1044,7 @@ summary:focus-visible {
 }
 .location-stats {
   padding-top: 1.5rem;
-  border-top: 1px solid #bdcbc1;
+  border-top: 1px solid var(--color-line);
 }
 .location-stats strong {
   color: var(--accent);
@@ -1059,7 +1070,7 @@ summary:focus-visible {
   gap: 0 2.5rem;
 }
 .state-planning-grid details[open] {
-  background: #e8ede7;
+  background: var(--color-surface-strong);
   padding-inline: 1rem;
 }
 .state-services-dialog {
@@ -1091,11 +1102,11 @@ summary:focus-visible {
 .equipment-filter input {
   background: #fff;
   border-radius: 3px;
-  border-color: #adbbb3;
+  border-color: var(--color-line);
 }
 .about-hero,
 .blog-hero {
-  background: #e8ede7;
+  background: var(--color-surface-strong);
   color: var(--ink);
 }
 .about-hero p,
@@ -1110,7 +1121,7 @@ summary:focus-visible {
   padding: 2.5rem;
 }
 .about-summary p {
-  color: #c9d8d1;
+  color: var(--color-on-dark-muted);
 }
 .about-service-grid article,
 .blog-grid article {
@@ -1130,7 +1141,7 @@ summary:focus-visible {
   padding: 2.5rem;
 }
 .contact-call p {
-  color: #d1dfd8;
+  color: var(--color-on-dark-muted);
 }
 .contact-drawer {
   border-radius: 0;
@@ -1520,7 +1531,7 @@ summary:focus-visible {
     padding-bottom: 1.5rem;
   }
   .model-hero figure {
-    box-shadow: 8px 8px 0 #dce4dd;
+    box-shadow: 8px 8px 0 var(--color-ink);
   }
   .model-planning {
     padding: 1.5rem;

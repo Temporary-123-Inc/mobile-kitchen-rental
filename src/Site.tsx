@@ -76,7 +76,7 @@ export function Header({ path }: { path: string }) {
       </a>
       <div className="header-sticky header-refresh">
         <header className="header wrap">
-          <a className="brand" href="/" aria-label="Mobile Kitchen Rental home">
+          <a className="brand" href="/">
             <img
               src="/brand/mobile-kitchen-rental-logo.png"
               width="80"
@@ -323,30 +323,31 @@ export function Header({ path }: { path: string }) {
           </small>
         </section>
       </aside>
-      <a
-        className="contact-rail contact-rail-refresh"
-        href="/contact-us/"
-        aria-label="Contact Mobile Kitchen Rental rental support now"
-        aria-controls="contact-drawer"
-        aria-expanded="false"
-        aria-current={path === "/contact-us/" ? "page" : undefined}
-      >
-        <span className="contact-rail-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path
-              d="M5 5h14v11H9l-4 3V5Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-        <span className="contact-rail-copy">
-          <small>Project desk</small>
-          <strong>Build my rental plan</strong>
-        </span>
-      </a>
+      <div role="complementary" aria-label="Project desk">
+        <a
+          className="contact-rail contact-rail-refresh"
+          href="/contact-us/"
+          aria-controls="contact-drawer"
+          aria-expanded="false"
+          aria-current={path === "/contact-us/" ? "page" : undefined}
+        >
+          <span className="contact-rail-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path
+                d="M5 5h14v11H9l-4 3V5Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span className="contact-rail-copy">
+            <small>Project desk</small>
+            <strong>Build my rental plan</strong>
+          </span>
+        </a>
+      </div>
     </>
   );
 }
@@ -410,11 +411,11 @@ export function Footer({ showClosing = true }: { showClosing?: boolean }) {
   return (
     <>
       {showClosing && (
-        <section className="closing">
+        <section className="closing" aria-labelledby="closing-title">
           <div className="wrap closing-grid">
             <div>
               <span className="eyebrow">LET’S GET YOUR PROJECT MOVING</span>
-              <h2>
+              <h2 id="closing-title">
                 One call.
                 <br />A clearer plan.
               </h2>

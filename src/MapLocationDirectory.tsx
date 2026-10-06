@@ -7,7 +7,7 @@ export function MapLocationDirectory() {
       className="map-location-directory"
       aria-label="Browse rental locations"
     >
-      <h3>Browse rental locations</h3>
+      <h3 aria-level={2}>Browse rental locations</h3>
       <p>
         Open a state guide directly. Confirm availability for your exact site
         and dates.

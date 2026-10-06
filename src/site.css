@@ -1,0 +1,15 @@
+/* Load the static page's complete theme before first paint, independently of JS.
+   Preserve the existing cascade: logo-theme.css overrides the legacy styles. */
+@import "./style.css";
+@import "./redesign.css";
+@import "./modern.css";
+@import "./homepage.css";
+@import "./calculator.css";
+@import "./contact-refresh.css";
+@import "./map-refresh.css";
+@import "./secondary-refresh.css";
+@import "./location-refresh.css";
+@import "./location-image-gallery.css";
+@import "./seo-dashboard.css";
+@import "./logo-theme.css";
+@import "@fontsource-variable/manrope";

@@ -2,19 +2,6 @@ import "./websiteGuide/bootstrap";
 import { applyCityRentalView } from "./cityRentalView";
 import { inject } from "@vercel/analytics";
 import calculatorCities from "./calculatorCities.json" with { type: "json" };
-import "./style.css";
-import "./redesign.css";
-import "./modern.css";
-import "./homepage.css";
-import "./calculator.css";
-import "./contact-refresh.css";
-import "./map-refresh.css";
-import "./secondary-refresh.css";
-import "./location-refresh.css";
-import "./location-image-gallery.css";
-import "./seo-dashboard.css";
-import "./logo-theme.css";
-import "@fontsource-variable/manrope";
 import {
   calculateStartingEstimate,
   calculatorDuration,

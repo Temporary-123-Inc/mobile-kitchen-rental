@@ -81,7 +81,7 @@ export function EquipmentCatalog() {
                     href={catalogPhotoCoverage(item).images[0]?.fullSrc || item.path}
                     target="_blank"
                     rel="noopener"
-                    aria-label={"View " + item.name + " reference or equipment details"}
+                    aria-label={`${catalogPhotoCoverage(item).status === "held" ? "View equipment" : catalogPhotoCoverage(item).status === "reviewed-layout" ? "View layout" : "View image"} ↗: ${item.name} (opens in a new tab)`}
                   >
                     <CatalogImage item={item} />
                     <span>

@@ -35,7 +35,7 @@
   padding: clamp(2rem, 7vw, 5rem);
   border: 1px solid var(--line);
   background:
-    linear-gradient(135deg, rgb(0 128 143 / 9%), transparent 55%), #f7faf9;
+    linear-gradient(135deg, color-mix(in srgb, var(--color-ink) 9%, transparent), transparent 55%), var(--color-surface);
   color: var(--ink);
 }
 
@@ -59,7 +59,7 @@
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 0.35rem;
-  background: #dce5e5;
+  background: var(--color-surface-strong);
   touch-action: pan-y;
 }
 
@@ -100,7 +100,7 @@
   max-height: none;
   object-fit: cover;
   object-position: center;
-  background: #dce5e5;
+  background: var(--color-surface-strong);
 }
 
 .service-carousel-zoom-hint {
@@ -111,7 +111,7 @@
   padding: 0.55rem 0.75rem;
   border: 1px solid rgb(255 255 255 / 45%);
   border-radius: 999px;
-  background: rgb(8 28 40 / 82%);
+  background: color-mix(in srgb, var(--color-ink) 82%, transparent);
   color: #fff;
   font: 700 0.68rem/1 var(--font-ui);
   letter-spacing: 0.04em;
@@ -130,7 +130,7 @@
 }
 
 .service-carousel-zoom:focus-visible {
-  outline: 3px solid #f0a23a;
+  outline: 3px solid var(--color-primary);
   outline-offset: -3px;
 }
 
@@ -156,7 +156,7 @@ body.service-lightbox-open {
 .service-image-lightbox__backdrop {
   position: absolute;
   inset: 0;
-  background: rgb(2 12 18 / 94%);
+  background: color-mix(in srgb, var(--color-ink) 94%, transparent);
   backdrop-filter: blur(8px);
 }
 
@@ -175,7 +175,7 @@ body.service-lightbox-open {
   padding: 1rem;
   border: 1px solid rgb(255 255 255 / 18%);
   border-radius: 0.75rem;
-  background: #07151d;
+  background: var(--color-ink);
   box-shadow: 0 24px 80px rgb(0 0 0 / 55%);
 }
 
@@ -207,7 +207,7 @@ body.service-lightbox-open {
   padding: 0;
   border: 1px solid rgb(255 255 255 / 42%);
   border-radius: 999px;
-  background: rgb(8 28 40 / 88%);
+  background: color-mix(in srgb, var(--color-ink) 88%, transparent);
   color: #fff;
   cursor: pointer;
   font: 400 1.75rem/1 sans-serif;
@@ -216,7 +216,7 @@ body.service-lightbox-open {
 .service-image-lightbox__close:hover,
 .service-image-lightbox__close:focus-visible {
   background: var(--blue);
-  outline: 3px solid #f0a23a;
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -234,7 +234,7 @@ body.service-lightbox-open {
   padding: 0.5rem 0.7rem;
   border: 1px solid rgb(255 255 255 / 35%);
   border-radius: 999px;
-  background: rgb(8 28 40 / 78%);
+  background: color-mix(in srgb, var(--color-ink) 78%, transparent);
   color: #fff;
   font: 700 0.68rem/1 var(--font-ui);
   letter-spacing: 0.09em;
@@ -311,7 +311,7 @@ body.service-lightbox-open {
   padding: 0;
   border-color: rgb(255 255 255 / 55%);
   border-radius: 999px;
-  background: rgb(8 28 40 / 78%);
+  background: color-mix(in srgb, var(--color-ink) 78%, transparent);
   color: #fff;
   font: 700 1.1rem/1 var(--font-ui);
   box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
@@ -379,7 +379,7 @@ body.service-lightbox-open {
   position: absolute;
   inset: auto 0 0;
   padding: 0.35rem 0.25rem;
-  background: linear-gradient(transparent, rgb(4 21 31 / 88%));
+  background: linear-gradient(transparent, color-mix(in srgb, var(--color-ink) 88%, transparent));
   color: #fff;
   font-size: 0.57rem;
   letter-spacing: 0.08em;
@@ -415,7 +415,7 @@ dialog.service-image-lightbox[open] {
   justify-content: center;
 }
 dialog.service-image-lightbox::backdrop {
-  background: rgb(3 14 22 / 88%);
+  background: color-mix(in srgb, var(--color-ink) 88%, transparent);
 }
 dialog.service-image-lightbox .service-image-lightbox-backdrop {
   position: absolute;
@@ -432,7 +432,7 @@ dialog.service-image-lightbox .service-image-lightbox-dialog {
   max-height: 100%;
   padding: 3.2rem 1rem 1rem;
   border-radius: 14px;
-  background: #0f2635;
+  background: var(--color-ink);
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -493,15 +493,15 @@ dialog.service-image-lightbox button {
   min-width: 44px;
   min-height: 44px;
   padding: 0.6rem 0.8rem;
-  border: 1px solid #8ba6b6;
+  border: 1px solid var(--color-line);
   border-radius: 8px;
-  background: #15384d;
+  background: var(--color-ink);
   color: #fff;
   font: 700 1rem/1.2 sans-serif;
   cursor: pointer;
 }
 dialog.service-image-lightbox button:focus-visible {
-  outline: 3px solid #f0a23a;
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 dialog.service-image-lightbox button[hidden] {
@@ -529,7 +529,7 @@ dialog.service-image-lightbox button[hidden] {
 .service-carousel-arrow:focus-visible,
 .service-carousel-toggle:focus-visible,
 .service-carousel-thumbnails button:focus-visible {
-  outline: 3px solid #f0a23a;
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
 

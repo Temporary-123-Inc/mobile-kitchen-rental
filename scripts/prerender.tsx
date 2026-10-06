@@ -3,7 +3,6 @@ import replacedLeads from "../content/aligned-source-original-leads.json" with {
 import { industryGuideByPath } from "../src/IndustryDetail";
 import {
   stateKitchenHeadline,
-  stateKitchenIntro,
   statePageByPath,
 } from "../src/StateDetail";
 import { pageSchema } from "./structured-data";
@@ -49,6 +48,7 @@ import {
 import { stateGuides } from "../src/stateGuides";
 import vercel from "../vercel.json" with { type: "json" };
 import { readableFragmentText } from "./prerender-text";
+import { stateRentalDescription } from "../src/seoMetadata";
 // Vercel preview builds must never inherit production indexing settings.
 const domainReady =
   site.domainRoutingReady || process.env.PUBLIC_DOMAIN_READY === "true";
@@ -276,7 +276,7 @@ for (const path of [...allRoutes, "/404/"]) {
               : stateName
                 ? {
                     title: `${stateKitchenHeadline(stateName)} | Mobile Kitchen Rental`,
-                    description: compact(stateKitchenIntro(stateName), 155),
+                    description: stateRentalDescription(stateName),
                   }
                 : hubHeadline
                   ? {
@@ -328,14 +328,20 @@ for (const path of [...allRoutes, "/404/"]) {
   if (!info.description.trim()) {
     info.description = `Explore ${page?.title || "Mobile Kitchen Rental facilities"}. Call Mobile Kitchen Rental at ${site.phoneDisplay} to discuss your site, rental dates and equipment requirements.`;
   }
+  const socialImage = region
+    ? new URL(region.image, site.origin).href
+    : new URL("/social-card.png", site.origin).href;
+  const socialImageAlt = region?.imageAlt || `${site.brand} temporary facility planning`;
   const head =
     (fontAsset
       ? `<link rel="preload" href="/assets/${fontAsset}" as="font" type="font/woff2" crossorigin>`
       : "") +
     `<meta name="description" content="${esc(info.description)}"><meta property="og:title" content="${esc(info.title)}"><meta property="og:description" content="${esc(info.description)}"><meta property="og:type" content="website">` +
     `<meta property="og:site_name" content="${esc(site.brand)}"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(info.title)}"><meta name="twitter:description" content="${esc(info.description)}">` +
+    `<meta property="og:image" content="${esc(socialImage)}"><meta property="og:image:alt" content="${esc(socialImageAlt)}"><meta name="twitter:image" content="${esc(socialImage)}"><meta name="twitter:image:alt" content="${esc(socialImageAlt)}">` +
+    (!region ? '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">' : "") +
     (canonical
-      ? `<link rel="canonical" href="${esc(canonical)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:image" content="${esc(region ? new URL(region.image, site.origin).href : site.origin.replace(/\/$/, "") + "/social-card.png")}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(region?.imageAlt || site.brand + " temporary facility planning")}">`
+      ? `<link rel="canonical" href="${esc(canonical)}"><meta property="og:url" content="${esc(canonical)}">`
       : "");
   const rawHtml = source
     .replace(/<title>.*?<\/title>/, `<title>${esc(info.title)}</title>`)
@@ -418,7 +424,7 @@ for (const path of [...allRoutes, "/404/"]) {
       );
   });
   $(
-    "meta[name='description'], meta[property='og:title'], meta[property='og:description']",
+    "meta[name='description'], meta[property='og:title'], meta[property='og:description'], meta[name='twitter:title'], meta[name='twitter:description'], meta[property='og:image:alt'], meta[name='twitter:image:alt']",
   ).each((_, element) => {
     $(element).attr("content", cleanCopy($(element).attr("content") || ""));
   });

@@ -14,11 +14,11 @@
 .location-product-tabs button {
   flex: 1 1 160px;
   min-height: 56px;
-  border: 1px solid #b9cdd3;
+  border: 1px solid var(--color-line);
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
   background: #fff;
-  color: #183c46;
+  color: var(--color-ink);
   text-align: left;
   cursor: pointer;
   font: inherit;
@@ -34,12 +34,12 @@
   margin-top: 0.3rem;
 }
 .location-product-tabs button[aria-selected="true"] {
-  background: #143e45;
-  border-color: #143e45;
+  background: var(--color-ink);
+  border-color: var(--color-line-strong);
   color: #fff;
 }
 .location-product-tabs button:focus-visible {
-  outline: 3px solid #de902e;
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
 [data-product-tabs-ready="true"] > .location-gallery-options {
@@ -53,7 +53,7 @@
 }
 [data-product-tabs-ready="true"] .service-carousel-slide img {
   object-fit: contain;
-  background: #f0f5f6;
+  background: var(--color-surface);
 }
 [data-product-tabs-ready="true"] .location-gallery-option-title {
   font-size: 1.15rem;
@@ -76,10 +76,10 @@
 }
 .location-gallery-options .location-gallery-option {
   padding: 1rem;
-  border: 1px solid #d2e1e5;
+  border: 1px solid var(--color-line);
   border-radius: 14px;
   background: #fff;
-  color: #183c46;
+  color: var(--color-ink);
 }
 .location-gallery-option-title {
   margin: 0 0 0.85rem;
@@ -126,10 +126,10 @@
   gap: 1rem;
   min-height: 250px;
   padding: 2rem;
-  border: 1px solid #c9d6dd;
+  border: 1px solid var(--color-line);
   border-radius: 18px;
-  background: linear-gradient(145deg, #f3f7f8, #e5edf1);
-  color: #263e50;
+  background: linear-gradient(145deg, var(--color-surface), var(--color-surface-strong));
+  color: var(--color-ink-muted);
   text-align: center;
 }
 .verified-photo-pending strong {
@@ -152,7 +152,7 @@
   display: block;
   margin: 0;
   padding: 0.85rem 0 0;
-  color: #405a63;
+  color: var(--color-ink-muted);
   font-size: 0.82rem;
   line-height: 1.5;
 }

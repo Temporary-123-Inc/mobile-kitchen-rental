@@ -55,6 +55,7 @@ export function ServiceHeroCarousel({
             data-image-view={image.view}
             data-active={index === 0 ? "true" : "false"}
             aria-hidden={index === 0 ? undefined : "true"}
+            hidden={index !== 0}
             key={image.id}
           >
             <button
@@ -148,7 +149,7 @@ export function ServiceHeroCarousel({
             <button
               type="button"
               data-carousel-select={index}
-              aria-label={`Show ${image.alt}`}
+              aria-label={`Show ${viewLabels[image.view]}: ${image.alt}`}
               aria-pressed={index === 0 ? "true" : "false"}
               data-carousel-view={image.view}
               data-carousel-view-label={viewLabels[image.view]}

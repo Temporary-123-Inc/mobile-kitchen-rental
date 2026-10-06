@@ -1,32 +1,11 @@
 /* Sitewide palette derived from the Mobile Kitchen Rental logo. */
 :root {
-  --ink: #071f3f;
-  --blue: #0b4f91;
-  --blue-hover: #07386a;
-  --cyan: #a9c9e8;
-  --muted: #52667c;
-  --line: #d9e1ea;
-  --pale: #f1f5f9;
-  --paper: #ffffff;
-  --accent: #d31220;
-  --accent-hover: #a90e18;
-  --phone-emphasis: #d31220;
-  --support-band: #071f3f;
-  --support-band-hover: #0b4f91;
-  --contact-tab: #d31220;
-  --contact-tab-hover: #a90e18;
-  --border-strong: #71839a;
-  --dark-muted: #c6d4e3;
-  --secondary-ink: #071f3f;
-  --secondary-teal: #0b4f91;
-  --secondary-muted: #52667c;
-  --secondary-line: #d9e1ea;
-  --region-accent: #0b4f91;
-  --dispatch-red: #d31220;
-  --dispatch-amber: #ffffff;
+  /* Canonical colors. Component aliases below always resolve to this palette. */
   --color-canvas: #ffffff;
   --color-surface: #f1f5f9;
-  --color-surface-raised: #ffffff;
+  --color-surface-soft: #f7f9fc;
+  --color-surface-strong: #e3eaf3;
+  --color-surface-raised: var(--color-canvas);
   --color-ink: #071f3f;
   --color-ink-muted: #52667c;
   --color-line: #d9e1ea;
@@ -35,6 +14,34 @@
   --color-primary-hover: #07386a;
   --color-accent: #d31220;
   --color-accent-hover: #a90e18;
+  --color-highlight: #a9c9e8;
+  --color-on-dark-muted: #c6d4e3;
+  --ink: var(--color-ink);
+  --blue: var(--color-primary);
+  --blue-hover: var(--color-primary-hover);
+  --brand-blue: var(--color-primary);
+  --brand-blue-deep: var(--color-primary-hover);
+  --cyan: var(--color-highlight);
+  --muted: var(--color-ink-muted);
+  --line: var(--color-line);
+  --pale: var(--color-surface);
+  --paper: var(--color-canvas);
+  --accent: var(--color-accent);
+  --accent-hover: var(--color-accent-hover);
+  --phone-emphasis: var(--color-accent);
+  --support-band: var(--color-ink);
+  --support-band-hover: var(--color-primary);
+  --contact-tab: var(--color-accent);
+  --contact-tab-hover: var(--color-accent-hover);
+  --border-strong: var(--color-line-strong);
+  --dark-muted: var(--color-on-dark-muted);
+  --secondary-ink: var(--color-ink);
+  --secondary-teal: var(--color-primary);
+  --secondary-muted: var(--color-ink-muted);
+  --secondary-line: var(--color-line);
+  --region-accent: var(--color-primary);
+  --dispatch-red: var(--color-accent);
+  --dispatch-amber: var(--color-canvas);
   --layout-gutter: clamp(1.125rem, 4vw, 3.5rem);
   --layout-section: clamp(3.25rem, 6vw, 6rem);
   --layout-hero: clamp(3rem, 5vw, 5rem);
@@ -53,6 +60,66 @@
 body {
   color: var(--ink);
   background: var(--paper);
+}
+
+/* Give equipment previews one consistent gutter for images and text. */
+.equipment-dialog {
+  --preview-gutter: clamp(1rem, 3vw, 2rem);
+  padding: var(--preview-gutter);
+}
+
+.equipment-dialog .dialog-close {
+  display: block;
+  float: none;
+  top: 0;
+  z-index: 4;
+  margin: 0 0 1rem auto;
+}
+
+.equipment-dialog .dialog-grid {
+  gap: var(--preview-gutter);
+}
+
+.equipment-dialog .dialog-copy {
+  min-width: 0;
+  padding: 0;
+}
+
+.equipment-dialog .service-hero-carousel {
+  min-width: 0;
+}
+
+.equipment-dialog .service-carousel-controls {
+  flex-wrap: wrap;
+}
+
+.equipment-dialog .service-carousel-controls > div:first-child {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.equipment-dialog .dialog-copy .dialog-call-now {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 0.75rem;
+  max-width: 100%;
+  text-align: left;
+}
+
+.equipment-dialog .dialog-call-label {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.equipment-dialog .dialog-call-number {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.equipment-dialog .dialog-call-now > span:last-child {
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
 /* One container and spacing rhythm shared by every generated page family. */
@@ -239,9 +306,9 @@ body {
   color: var(--ink);
   background: linear-gradient(
     115deg,
-    #f7f9fc 0%,
+    var(--color-surface-soft) 0%,
     var(--pale) 58%,
-    #e3eaf3 100%
+    var(--color-surface-strong) 100%
   );
 }
 
@@ -361,6 +428,70 @@ body {
   color: #ffffff;
 }
 
+/* Match the specificity of the original header and secondary-action rules. */
+.header-refresh .header-contact {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.header-refresh .header-contact:is(:hover, :focus-visible) {
+  border-color: var(--blue-hover);
+  background: var(--blue-hover);
+}
+
+.header-refresh .header-phone-icon,
+.header-refresh .header-contact small {
+  color: var(--color-canvas);
+}
+
+.button.secondary,
+.home-secondary {
+  border-color: var(--border-strong);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.button.secondary:is(:hover, :focus-visible),
+.home-secondary:is(:hover, :focus-visible) {
+  border-color: var(--blue);
+  background: var(--pale);
+  color: var(--blue);
+}
+
+/* SVG presentation attributes also contained colors from the earlier theme. */
+.coverage-map .usa-geography stop:first-child {
+  stop-color: var(--pale);
+}
+
+.coverage-map .usa-geography stop:last-child {
+  stop-color: var(--cyan);
+}
+
+.coverage-map .map-land path[role="button"]:focus-visible {
+  fill: var(--cyan);
+  stroke: var(--blue);
+}
+
+/* Custom properties cross the guide's Shadow DOM; normal selectors do not. */
+website-guide {
+  --website-guide-primary: var(--blue);
+  --website-guide-ink: var(--ink);
+  --website-guide-muted: var(--muted);
+  --website-guide-surface: var(--pale);
+  --website-guide-line: var(--line);
+  --website-guide-focus: var(--blue);
+  --website-guide-backdrop: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
+/* Small supporting text stays readable on the shared dark surfaces. */
+.homepage .home-process .eyebrow,
+.calculator-hero .breadcrumb,
+.calculator-hero .breadcrumb :is(a, span),
+.industry-layout-emergency .industry-hero .breadcrumb,
+.industry-layout-emergency .industry-hero .breadcrumb :is(a, span) {
+  color: var(--dark-muted);
+}
+
 .button,
 .calculator-submit,
 .home-calculator-cta,
@@ -384,15 +515,15 @@ body {
 .secondary-page,
 .region-page {
   color: var(--ink);
-  background: #f7f9fc;
+  background: var(--color-surface-soft);
 }
 
 .calculator-result-card,
 .home-calculator-feature,
 .secondary-band,
 .region-intro {
-  border-color: #c1ccd8;
-  background: #e7edf3;
+  border-color: var(--line);
+  background: var(--color-surface-strong);
 }
 
 .calculator-phone,
@@ -474,7 +605,7 @@ body {
 }
 
 .contact-rail-copy small {
-  color: #a9c9e8;
+  color: var(--cyan);
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -573,7 +704,7 @@ body {
 
 .contact-drawer-header {
   padding: 1.8rem 1.7rem 1.35rem;
-  background: linear-gradient(150deg, #ffffff 0%, #f1f5f9 100%);
+  background: linear-gradient(150deg, #ffffff 0%, var(--pale) 100%);
 }
 
 .contact-drawer-header h2 {
@@ -741,7 +872,7 @@ body {
   overflow: hidden;
   border: 1px solid rgb(8 45 91 / 18%);
   border-radius: 0.35rem 2rem 0.35rem 0.35rem;
-  background: #e7edf4;
+  background: var(--color-surface-strong);
   box-shadow: 18px 18px 0 rgb(8 45 91 / 7%);
 }
 
@@ -791,7 +922,7 @@ body {
   width: 100%;
   height: 220px;
   overflow: hidden;
-  background: #e7edf4;
+  background: var(--color-surface-strong);
 }
 
 .service-equipment-card-photo img {

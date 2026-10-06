@@ -2,13 +2,13 @@
 :root {
   --font-ui: "Manrope Variable", "Segoe UI", sans-serif;
   font-family: var(--font-ui);
-  --ink: #112d36;
-  --blue: #087d88;
-  --blue-hover: #075f69;
-  --muted: #4c6871;
-  --line: #d9e6e8;
-  --pale: #eff6f6;
-  --paper: #fff;
+  --ink: var(--color-ink);
+  --blue: var(--color-primary);
+  --blue-hover: var(--color-primary-hover);
+  --muted: var(--color-ink-muted);
+  --line: var(--color-line);
+  --pale: var(--color-surface);
+  --paper: var(--color-canvas);
   --radius-card: 1.1rem;
   --radius-large: 1.5rem;
 }
@@ -74,15 +74,15 @@ p {
 }
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px #123b4514;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-ink) 7.84%, transparent);
 }
 .button.secondary {
   background: #fff;
-  color: #15515c;
-  border: 1px solid #afccd1;
+  color: var(--color-primary);
+  border: 1px solid var(--color-line);
 }
 .button.secondary:hover {
-  background: #edf6f6;
+  background: var(--color-surface);
 }
 .header .brand {
   gap: 0.65rem;
@@ -116,27 +116,27 @@ p {
 }
 .closing {
   padding-block: 3.25rem;
-  background: #102f3b;
-  border-top: 1px solid #35545e;
+  background: var(--color-ink);
+  border-top: 1px solid var(--color-line-strong);
 }
 .closing-grid {
   gap: 3rem;
 }
 .closing .eyebrow {
   font-size: 0.65rem;
-  color: #9fcdd2;
+  color: var(--color-on-dark-muted);
 }
 .closing p {
   font-size: 0.9rem;
   max-width: 31rem;
-  color: #cfdee3;
+  color: var(--color-on-dark-muted);
 }
 .closing .phone-link {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   background: #fff;
-  color: #123f48;
+  color: var(--color-ink);
   border: 1px solid #fff;
   padding: 0.85rem 1.2rem;
   font-family: var(--font-ui);
@@ -146,12 +146,12 @@ p {
   margin-block: 1.1rem 0.75rem;
 }
 .closing .phone-link:hover {
-  background: #dff4f0;
+  background: var(--color-surface-strong);
 }
 .closing .small {
   display: block;
   font-size: 0.75rem;
-  color: #b2cbd3;
+  color: var(--color-on-dark-muted);
 }
 .footer {
   padding-block: 2.5rem;
@@ -186,13 +186,13 @@ p {
   line-height: 1.2;
 }
 .dialog-copy .eyebrow {
-  color: #155965;
+  color: var(--color-primary);
 }
 .map-section {
-  background: #eff6f6;
+  background: var(--color-surface);
 }
 .location-hero {
-  background: #eff6f6;
+  background: var(--color-surface);
 }
 .location-hero .location-hero-copy h1 {
   font-family: var(--font-ui);
@@ -211,13 +211,13 @@ p {
   padding: 1rem;
   min-width: 130px;
   background: #fff;
-  border: 1px solid #d1e3e5;
+  border: 1px solid var(--color-line);
   border-radius: 14px;
 }
 .location-hero .location-stats strong {
   font-family: var(--font-ui);
   font-size: 1.65rem;
-  color: #087b85;
+  color: var(--color-primary);
 }
 .location-hero .location-stats span {
   font-size: 0.62rem;

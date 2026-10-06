@@ -1,5 +1,69 @@
 # Temporary123 Decision Log
 
+## 2026-10-07 — Land Find your rental at the section boundary
+
+- Source: Owner requested that the hero's Find your rental link land fully at the next section instead of leaving the preceding section partially visible. Local measurements showed the equipment section landing around 200 px below the viewport top while the sticky header ended at 69/73/81 px.
+- Decision: Keep the existing native `#equipment` link and cancel the extra cumulative offset between root scroll-padding and the equipment section's scroll-margin. The target now uses the current header's 81/73/69 px height including its border, at the same desktop/tablet/phone breakpoints as the header CSS.
+- Preservation: Scope the change to the homepage rental section. Keep section padding, smooth/reduced-motion behavior, keyboard/native hash navigation, URLs, other anchors, and shared entry-point/component code unchanged. If header sizing changes later, update these scoped offset values with it.
+- Publication boundary: Local verification only; no deployment.
+
+## 2026-10-07 — Add consistent inner gutters to equipment previews
+
+- Source: Owner reported that equipment-preview content sat too close to the sides; the gallery/captions/thumbnails were flush with the dialog edge while body copy had independent padding.
+- Decision: Use one responsive dialog gutter (16–32 px) for gallery and text, remove duplicate copy padding, and retain the existing dialog widths. Use a single-column grid for the homepage preview so gallery and copy have a consistent vertical gap.
+- Controls: Put the close button in normal flow above the image with sticky positioning while scrolling. Allow gallery controls to wrap and arrange phone details within the available content width so added gutters do not cause narrow-screen overflow.
+- Preservation: Scope styles to equipment dialogs. Keep page galleries, image/content data, circular card buttons, accessible names, control logic, routing, and publication state unchanged.
+
+## 2026-10-07 — Preserve the circular plus design and correct alignment
+
+- Source: Owner clarified that the equipment-card buttons should keep their original design; the requested fix was alignment. This supersedes the earlier labeled Quick view interpretation.
+- Decision: Restore 44 px circular plus buttons and their original neutral/navy appearance. Use a centered, decorative SVG plus with explicit flex alignment and zero gap/padding to avoid text-baseline or hidden-label spacing shifts. Keep the equipment-specific accessible name and existing preview behavior.
+- Row alignment: Keep the neighboring homepage rental link at a 44 px minimum height so both controls share a center line; restore its original inner spacing.
+- Preservation: Retain the theme, initial asset-loading repair, all controls, content, links, and pending unrelated work. Local changes only; no publication.
+
+## 2026-10-07 — Load static-page styles before first paint
+
+- Source: Owner reported a split-second asset/style flash on navigation or refresh. Local first-paint evidence showed the prerendered page with the browser's default serif font and an unstyled transparent header; there were no HTML stylesheet links, and JavaScript loaded/injected the CSS afterward.
+- Decision: Put the existing styles/font in `src/site.css` in their original cascade order and link it from the HTML head. Remove only those stylesheet imports from `src/main.tsx`, preserving all enhancement/bootstrap code. The stylesheet becomes independent of JavaScript and blocks unstyled first paint in development; Vite still emits a hashed CSS asset in production.
+- Preservation: Keep existing responsive styles, theme, content, routes, SEO/prerender placeholders, and native/progressive-enhancement controls. Retain image lazy loading and the existing font strategy; this fixes style discovery without promising instantaneous photo/font downloads.
+- Publication boundary: Local verification only; production prerendering and live hosting remain unverified for this task.
+
+## 2026-10-07 — Make equipment preview actions explicit — Superseded by alignment clarification
+
+- Source: Owner requested a fix for the circular plus buttons on rental cards. Browser inspection confirmed that an older selector forced `font-size: 0` and a circular shape, hiding the existing Quick view text while the preview action itself worked.
+- Decision: Show a labeled Quick view button with the same corner radius and 44 px minimum height as the homepage rental link; remove the ambiguous plus glyph. Apply the label/style correction to the shared equipment cards and retain blue hover/keyboard focus states.
+- Preservation: Keep the existing accessible equipment-specific labels, native preview dialogs, close/Escape/focus behavior, ordinary rental links, and JavaScript-disabled fallback. No routing, inquiry, equipment content, or publication changes.
+
+## 2026-10-07 — Consolidate the existing logo palette across page families
+
+- Source: Owner reported inconsistent website themes/colors after the local development repair. The existing 2026-10-05 decision approves the owner-supplied logo's navy/red/white/silver palette.
+- Decision: Define canonical color tokens in `src/logo-theme.css` and make loaded legacy styles use them, including component-local aliases. Use navy for text/dark sections, blue for links and secondary brand controls, red for primary inquiry actions, and cool gray/white for surfaces and borders.
+- Cascade: Match existing selector specificity where necessary; style SVG presentation colors through CSS and pass explicit custom properties into the guide's Shadow DOM. The portable guide retains its configured accent when site variables are absent.
+- Preservation: Keep semantic success/error/warning colors distinct. Limit this task to color styling; preserve selectors, breakpoints, dimensions, typography, page structure/content, route/SEO output, inquiry logic, and the original logo asset.
+- Verification boundary: Local representative browser checks and the client production build only; no publishing or full production prerender/live verification.
+
+## 2026-10-07 — Render static-site markup in the Vite development server
+
+- Source: Owner reported a blank homepage when running `pnpm dev`; browser reproduction confirmed an empty template root with no runtime exception.
+- Decision: Use a Vite plugin restricted to `apply: "serve"` to server-render the current `Site` component before `src/main.tsx` binds progressive enhancements. Load matching compressed source records for archived routes and apply the existing source-content transformation.
+- Preservation: Keep the production static prerender pipeline and client entry point unchanged; do not introduce a second React root or replace existing DOM controls. Retain the development template's noindex directive.
+- Scope: Local development rendering and focused regression coverage only. Publication and full production/live verification are separate.
+
+## 2026-10-07 — Remove all GitHub Actions workflows
+
+- Source: Owner clarification requesting removal of all workflows because this website is mostly static pages.
+- Decision: Delete both inherited workflow files, `ci.yml` and `release-review.yml`, without introducing a replacement. This supersedes the earlier same-day consolidation decision.
+- Scope: Remove GitHub Actions automation only. Keep the existing local build/test/release/security scripts and Vercel configuration available.
+- Publication boundary: Deletions are local; GitHub workflow removal requires publishing them. No commit, push, or deployment is part of this task.
+
+## 2026-10-07 — Consolidate GitHub workflow entry points
+
+- Source: Owner request to remove redundant workflows.
+- Decision: Keep one workflow file with automatic verification on `main` pushes and pull requests, plus manual-only release readiness through `workflow_dispatch`.
+- Preservation: Retain every existing CI and release/security step with its original runtime configuration and read-only permissions. The manual release/security checks provide distinct coverage and remain available after removing the separate workflow file.
+- Duplicate execution: Exclude automatic feature-branch pushes and cancel superseded runs within the same workflow/event/ref. Feature branches receive automatic verification when a pull request is opened or updated.
+- Publication boundary: This task changes local workflow configuration only; GitHub activation requires publishing the changes. Application and dependency configuration are outside this cleanup.
+
 ## 2026-10-06 — Expand to the complete Super 9
 
 - Source: Owner's latest instruction, which supersedes the earlier kitchen-only scope boundary.
@@ -457,3 +521,9 @@ State and reviewed city hero galleries use five images: four verified mobile-kit
 ## 2026-10-06 — Four-tier service headings and hero-photo source priority
 
 Service detail and category H1s use `Temporary Commercial + exact equipment/facility phrase + Rental`. Exact model names, lengths, stall counts and accessibility wording remain intact. Service heroes continue to prioritize an exact route mapping, then a reviewed named-model Drive collection. A category image is not substituted when an exact spreadsheet-linked collection exists.
+
+## 2026-10-07 — Improve technical SEO and accessibility without redesign
+
+Owner explicitly requires the existing design to stay unchanged and clarified DA as Domain Authority. Keep CSS, visible copy, H1s, equipment images, URLs and current indexing policy intact. Use invisible metadata, accessible names, landmark labels and ARIA heading-level corrections while retaining styled markup. Put state names before metadata truncation can remove them; keep visible availability qualifications and schema descriptions truthful. Social sharing metadata does not authorize new canonicals or indexing.
+
+Do not change brand colors to clear a contrast rule under this scope: record the 3.95:1 desktop emergency-label exception instead of claiming full WCAG AA compliance. Record automated/manual Shadow DOM discrepancies without suppressing rules. Treat Moz DA as an external comparative link metric; a numeric increase requires measurement and external evidence. No unsolicited backlink outreach, indexing rollout, publication or invented business facts. Evidence: `docs/SEO_ACCESSIBILITY_REVIEW_2026-10-07.md` and `docs/TEST_RESULTS.md`.

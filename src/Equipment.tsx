@@ -322,7 +322,7 @@ export function Cards({
                 {String(i + 1).padStart(2, "0")}
               </span>
             )}
-            <h3>
+            <h3 aria-level={homepage ? 3 : 2}>
               <a href={e.path}>{e.name}</a>
             </h3>
             <p>{e.text}</p>
@@ -352,7 +352,20 @@ export function Cards({
                 aria-label={`Quick view: ${e.name}`}
                 aria-haspopup="dialog"
               >
-                Quick view <span aria-hidden="true">+</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 5v14M5 12h14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                  />
+                </svg>
               </button>
             </div>
           </div>

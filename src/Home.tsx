@@ -106,7 +106,6 @@ export function Home() {
             <a
               className="hero-support"
               href={`tel:${site.phoneE164}`}
-              aria-label={`24/7. A real conversation. Call ${site.phoneDisplay}`}
             >
               <span className="hero-support-icon">
                 <FacilityIcon kind="phone" />

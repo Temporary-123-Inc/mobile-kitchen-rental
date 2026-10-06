@@ -247,7 +247,7 @@
         toggle.setAttribute(
           "aria-label",
           motion.matches
-            ? "Autoplay disabled for reduced motion"
+            ? "Motion off: autoplay disabled for reduced motion"
             : (userPaused ? "Play" : "Pause") + " equipment slideshow",
         );
       }

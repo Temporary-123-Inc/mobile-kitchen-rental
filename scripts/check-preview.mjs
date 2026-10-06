@@ -57,7 +57,7 @@ const incoming = new Map();
 for (const file of htmlFiles) {
   const $ = load(await readFile(file, "utf8"));
   const route = routeForFile(file);
-  const title = $("title").text().trim();
+  const title = $("head > title").text().trim();
   const description = $("meta[name=description]").attr("content")?.trim();
   const robots = $("meta[name=robots]").attr("content");
   const canonical = $("link[rel=canonical]").attr("href");
@@ -198,12 +198,40 @@ for (const file of htmlFiles) {
     "meta[property='og:type']",
     "meta[property='og:site_name']",
     "meta[property='og:locale']",
+    "meta[property='og:image']",
+    "meta[property='og:image:alt']",
     "meta[name='twitter:card']",
     "meta[name='twitter:title']",
     "meta[name='twitter:description']",
+    "meta[name='twitter:image']",
+    "meta[name='twitter:image:alt']",
   ]) {
     if (!$(selector).attr("content"))
       problems.push({ file, issue: "missing-social-metadata", selector });
+  }
+
+  for (const [selector, expected] of [
+    ["meta[property='og:title']", title],
+    ["meta[name='twitter:title']", title],
+    ["meta[property='og:description']", description],
+    ["meta[name='twitter:description']", description],
+    ["meta[name='twitter:image']", $("meta[property='og:image']").attr("content")],
+    ["meta[name='twitter:image:alt']", $("meta[property='og:image:alt']").attr("content")],
+  ]) {
+    if ($(selector).attr("content") !== expected)
+      problems.push({ file, issue: "inconsistent-social-metadata", selector });
+  }
+  const socialImage = $("meta[property='og:image']").attr("content");
+  if (socialImage) {
+    try {
+      const url = new URL(socialImage);
+      if (url.origin !== site.origin || url.protocol !== "https:")
+        throw new Error("Social image must use the public HTTPS origin");
+      if (!(await stat(resolve(root, `.${decodeURIComponent(url.pathname)}`))).isFile())
+        throw new Error("Social image must be a file");
+    } catch {
+      problems.push({ file, issue: "invalid-social-image", value: socialImage });
+    }
   }
 
   for (const element of $("a[href],img[src]").toArray()) {
