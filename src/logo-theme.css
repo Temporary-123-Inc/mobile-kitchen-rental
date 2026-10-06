@@ -365,9 +365,10 @@ body {
 
   .emergency-dispatch-panel {
     position: fixed;
+    left: 0.55rem;
     right: 0.55rem;
     bottom: calc(4.75rem + env(safe-area-inset-bottom));
-    width: calc(100dvw - 1.1rem);
+    width: auto;
     max-height: calc(100dvh - 6rem);
   }
 
