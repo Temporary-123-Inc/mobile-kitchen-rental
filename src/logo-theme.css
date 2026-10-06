@@ -44,6 +44,9 @@
   --radius-card: 0.65rem;
   --radius-large: 1rem;
   --shadow: 0 14px 38px rgb(7 31 63 / 12%);
+  --home-navy: var(--ink);
+  --home-cyan: var(--blue);
+  --home-line: var(--line);
   accent-color: var(--accent);
 }
 
@@ -206,6 +209,82 @@ body {
 .region-intro {
   border-color: var(--line);
   background: var(--pale);
+}
+
+/* Remove the earlier teal homepage skin in favor of the logo's navy/red system. */
+.rental-hero {
+  color: var(--ink);
+  background: linear-gradient(
+    115deg,
+    #f7f9fc 0%,
+    var(--pale) 58%,
+    #e3eaf3 100%
+  );
+}
+
+.hero-orbit {
+  border-color: rgb(11 79 145 / 12%);
+}
+
+.hero-orbit::after {
+  background: rgb(11 79 145 / 8%);
+}
+
+:is(
+  .hero-kicker,
+  .rental-hero h1 em,
+  .hero-photo-label,
+  .hero-support-copy i,
+  .support-arrow,
+  .hero-service-strip strong,
+  .hero-service-strip b,
+  .home-section-heading .eyebrow,
+  .home-inline-link,
+  .industry-arrow,
+  .home-coverage-mark
+) {
+  color: var(--blue);
+}
+
+.hero-kicker > span,
+.service-shortcut-icon,
+.service-help-icon,
+.industry-icon {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.hero-support:is(:hover, :focus-visible),
+.hero-service-strip a:is(:hover, :focus-visible) {
+  border-color: var(--blue);
+}
+
+.rental-hero-photo figcaption,
+.hero-logistics,
+.home-process,
+.process-contact {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.hero-service-strip a,
+.rental-filters,
+.home-service-help,
+.faq-item {
+  border-color: var(--line);
+  background: var(--paper);
+}
+
+.homepage :is(.home-secondary, .home-services, .home-industries, .home-faq) {
+  color: var(--ink);
+}
+
+.homepage :is(.home-secondary, .home-faq) {
+  background: var(--pale);
+}
+
+.homepage :is(.home-services, .home-industries) {
+  background: var(--paper);
 }
 
 @media (max-width: 760px) {
