@@ -445,6 +445,7 @@ body {
   left: max(1.25rem, env(safe-area-inset-left));
   width: auto;
   min-width: 15.5rem;
+  height: var(--command-height);
   min-height: var(--command-height);
   padding: 0.55rem 1.1rem 0.55rem 0.6rem;
   flex-direction: row;
