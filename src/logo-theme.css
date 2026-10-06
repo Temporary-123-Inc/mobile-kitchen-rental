@@ -37,7 +37,7 @@
   --color-accent-hover: #a90e18;
   --layout-gutter: clamp(1.125rem, 4vw, 3.5rem);
   --layout-section: clamp(3.25rem, 6vw, 6rem);
-  --layout-hero: clamp(3.5rem, 7vw, 7rem);
+  --layout-hero: clamp(3rem, 5vw, 5rem);
   --layout-card: clamp(1.25rem, 2.4vw, 2rem);
   --layout-gap: clamp(1.25rem, 2.5vw, 2rem);
   --radius-sm: 0.35rem;
@@ -76,6 +76,10 @@ body {
 .service-option-page > .wrap.section {
   padding-top: var(--layout-hero);
   padding-bottom: var(--layout-section);
+}
+
+.service-option-page .service-category-copy {
+  justify-content: flex-start;
 }
 
 :is(
@@ -189,6 +193,25 @@ body {
 .service-option-page {
   color: var(--ink);
   background: var(--paper);
+}
+
+.location-hero,
+.city-hero,
+.industry-hero,
+.region-page[class*="region-layout-"] .region-hero {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.region-page[class*="region-layout-"] .region-intro,
+.city-page[class*="city-layout-"] .city-lead {
+  color: var(--muted);
+  background: transparent;
+}
+
+.industry-layout-emergency .industry-hero {
+  color: #ffffff;
+  background: var(--ink);
 }
 
 .calculator-workspace,
