@@ -1,3 +1,4 @@
+import site from "../site.json" with { type: "json" };
 import { describe, expect, it } from "vitest";
 import { olympicPeninsulaGalleryCaption } from "../src/olympicPeninsulaGalleryCopy";
 
@@ -20,7 +21,7 @@ describe("Olympic Peninsula gallery review copy", () => {
         `Olympic Peninsula, Washington ${equipment} Rental or Lease`,
       );
       expect(caption).toMatch(/weekly rental, monthly rental, or yearly rental and lease options/);
-      expect(caption).toContain("Call us now at 800-443-5212 — available 24/7.");
+      expect(caption).toContain(`Call us now at ${site.phoneDisplay} — available 24/7.`);
     }
   });
 

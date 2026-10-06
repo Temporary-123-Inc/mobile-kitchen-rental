@@ -1,3 +1,4 @@
+import site from "../site.json" with { type: "json" };
 import { describe, expect, it } from 'vitest';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -15,7 +16,7 @@ describe('Oklahoma Panhandle rental durations and lease descriptions', () => {
       for (const term of ['weekly rental', 'monthly rental', 'yearly rental', 'lease options']) expect(copy?.caption.toLowerCase()).toContain(term);
       expect(copy?.caption).toMatch(/Discuss weekly rental/i);
       expect(copy?.caption).not.toMatch(/availability|site requirements|confirm|quote/i);
-      expect(copy?.caption.endsWith('Call us now at 800-443-5212 — available 24/7.')).toBe(true);
+      expect(copy?.caption.endsWith(`Call us now at ${site.phoneDisplay} — available 24/7.`)).toBe(true);
       expect(copy?.caption).not.toMatch(/guaranteed|in stock|immediate delivery|shower|kitchen/i);
       expect(copy?.altPrefix).not.toMatch(/weekly|monthly|yearly/i);
       expect(copy?.altPrefix).toBe(product.toLowerCase() + ' rental option — ');

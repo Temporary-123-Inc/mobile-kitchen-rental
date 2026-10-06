@@ -34,7 +34,7 @@ test("emergency dispatch waits for activity, dismisses for 24 hours, and remains
   await expect(panel).toHaveAttribute("aria-hidden", "false");
   await expect(panel.getByRole("link", { name: /Call/ })).toHaveAttribute(
     "href",
-    "tel:+18004435212",
+    "tel:+18882901839",
   );
 });
 
@@ -153,7 +153,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
     );
     await expect(emergency.locator(".emergency-dispatch-call")).toHaveAttribute(
       "href",
-      "tel:+18004435212",
+      "tel:+18882901839",
     );
     const contactRail = page.locator(".contact-rail");
     await expect(contactRail).toBeVisible();
@@ -181,7 +181,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
         ratio: 1,
       });
     } else {
-      await expect(phone).toHaveAttribute("href", "tel:+18004435212");
+      await expect(phone).toHaveAttribute("href", "tel:+18882901839");
       await expect(phone.locator("strong")).toHaveCSS(
         "color",
         "rgb(255, 255, 255)",
@@ -204,7 +204,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
       await expect(phone).toBeInViewport({ ratio: 1 });
     }
     const displayedPhoneNumbers = await page
-      .locator('a[href="tel:+18004435212"]')
+      .locator('a[href="tel:+18882901839"]')
       .allTextContents();
     for (const text of displayedPhoneNumbers)
       expect(text.replace(/\s+/g, " ")).toContain("+1 (800) 443 - 5212");
@@ -359,7 +359,7 @@ test("desktop navigation follows the requested order", async ({ page }) => {
     ),
   ).toHaveText([
     "Home",
-    "Inventory ⌄",
+    "Inventory",
     "Service Areas",
     "Calculator",
     "About Us",
@@ -429,7 +429,7 @@ test("equipment quick view contains focus and restores its trigger", async ({
   ).toBeFocused();
   await expect(
     dialog.getByRole("link", { name: "Call now", exact: false }),
-  ).toHaveAttribute("href", "tel:+18004435212");
+  ).toHaveAttribute("href", "tel:+18882901839");
   await expect(
     dialog.getByRole("list", { name: "Rental benefits" }),
   ).toHaveCount(1);
@@ -662,11 +662,11 @@ test("contact keeps the phone fallback while online intake is disabled", async (
   await expect(
     page
       .getByRole("link", {
-        name: "Call +1 (800) 443 - 5212",
+        name: "Call (888) 290-1839",
         exact: false,
       })
       .first(),
-  ).toHaveAttribute("href", "tel:+18004435212");
+  ).toHaveAttribute("href", "tel:+18882901839");
   await expect(page.locator("#contact-drawer form")).toHaveCount(1);
   await expect(
     page.locator('#contact-drawer button[type="submit"]'),

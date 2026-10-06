@@ -1,3 +1,4 @@
+import site from "../site.json" with { type: "json" };
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { load } from "cheerio";
@@ -31,9 +32,7 @@ describe("dedicated service gallery captions", () => {
     expect(caption).toMatch(/weekly rental/i);
     expect(caption).toMatch(/monthly rental/i);
     expect(caption).toMatch(/yearly rental and lease/i);
-    expect(caption).toMatch(
-      /call us now at \+1 \(800\) 443-5212, available 24\/7/i,
-    );
+    expect(caption).toContain(`Call us now at ${site.phoneDisplay}, available 24/7.`);
     expect(caption).not.toMatch(/reviewed equipment reference images/i);
     expect(caption).not.toMatch(/photos do not establish availability/i);
   });

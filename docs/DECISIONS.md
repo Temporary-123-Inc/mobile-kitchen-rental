@@ -531,3 +531,11 @@ Do not change brand colors to clear a contrast rule under this scope: record the
 ## 2026-10-07 — Keep calculator accordion cards at their own height
 
 Use start alignment for the calculator state-list grid so a closed native details card does not stretch to the expanded neighbor's height. Preserve independently opened items and the existing visual design; avoid adding accordion-closing JavaScript to repair a grid sizing problem. Responsive and JavaScript-disabled evidence: `docs/TEST_RESULTS.md` (calculator accordion neighbor stretching).
+
+## 2026-10-07 — Owner-approved contact number
+
+Use `(888) 290-1839` for customer-facing contact text and `+18882901839` for telephone links and structured data. `site.json` is the source for runtime templates, gallery captions, metadata and rental-guide answers. Normalize only confirmed historical company contact numbers when rendering recovered pages; preserve original archive files and unrelated third-party numbers. Keep the native social-card SVG and its PNG export synchronized with the approved contact number. This phone update does not authorize design changes, route/indexing changes, outreach or deployment.
+
+## 2026-10-07 — Inventory dropdown uses a centered decorative SVG
+
+Use a small inline SVG chevron for the desktop Inventory trigger so its alignment and open-state rotation do not depend on a font's Unicode-arrow metrics. Keep its width close to the existing glyph, inherit the approved blue, and exclude it from the accessible name. Preserve the existing menu interactions and mobile plus presentation.

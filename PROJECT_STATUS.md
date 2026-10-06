@@ -1,5 +1,13 @@
 # Temporary123 Project Status
 
+## 2026-10-07 — Inventory chevron alignment fixed locally
+
+Replaced the desktop Inventory trigger's low-sitting Unicode arrow with a centered, decorative inline SVG. Preserved the existing navy/blue styling, label typography, spacing, trigger width (within 0.04 px), open-state rotation, native details and menu behavior. TypeScript, isolated Vite client build, the existing navigation-order test and 16 responsive browser presentations passed, including JavaScript-disabled navigation. Prior phone changes and unrelated diffs preserved. Local only; no full production prerender, live hosting check, commit, push or deployment. See `docs/TEST_RESULTS.md`.
+
+## 2026-10-07 — Owner contact number updated locally
+
+Updated the published contact number to `(888) 290-1839` and all click-to-call/schema targets to `+18882901839`. Centralized authored metadata, alternate-template data and gallery captions on `site.json`; normalized confirmed historical company numbers in rendered archived content while retaining the source archives. Updated the native social-sharing SVG and regenerated its 1200 × 630 PNG with the same layout, colors and Arial typography. TypeScript, 45 focused tests, isolated production build/prerender (745 routes + 404), and the complete generated-phone audit passed: 13,428 telephone links and 2,982 schema telephone properties, zero issues. Fourteen mobile/desktop browser presentations and both-width preview/guide checks passed. Routes, canonicals, design CSS and the existing 25-route indexing scope were preserved. Twelve pre-existing dedicated-gallery caption test failures were reproduced on the untouched baseline and remain outside this phone-only task. Local only; no calls, inquiries, commit, push, deployment or live-host verification. See `docs/TEST_RESULTS.md`.
+
 ## 2026-10-07 — Calculator accordion neighbor stretching fixed locally
 
 Added `align-items: start` to the existing calculator state-list grid. Reproduced the reported blank neighboring panel: opening Alabama stretched the still-closed Alaska card to 346 px. After the CSS-only correction the closed card remains 58 px, while the expanded card retains its content and original styling. Eight Chromium presentations at 375/768/1024/1440 px, with JavaScript enabled and disabled, passed independent pointer/keyboard opening and closing, all 50 card-state/height/content checks, no horizontal overflow and no page exceptions. Isolated Vite client build passed. Card design, content, native details behavior and other files preserved. Local only; no full prerender, live-host verification, commit, push or deployment. See `docs/TEST_RESULTS.md`.

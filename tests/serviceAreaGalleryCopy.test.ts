@@ -1,3 +1,4 @@
+import site from "../site.json" with { type: "json" };
 import { describe, expect, it } from "vitest";
 import { serviceAreaGalleryCaption } from "../src/serviceAreaGalleryCopy";
 
@@ -52,7 +53,7 @@ describe("service-area gallery captions", () => {
       "model-21",
     );
     expect(caption).toContain("Discuss weekly rental, monthly rental, or yearly rental and lease options");
-    expect(caption).toContain("Call us now at +1 (800) 443-5212, available 24/7.");
+    expect(caption).toContain(`Call us now at ${site.phoneDisplay}, available 24/7.`);
     expect(caption).not.toContain("These equipment reference photos can help plan your site");
   });
 

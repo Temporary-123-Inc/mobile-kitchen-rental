@@ -49,6 +49,7 @@ import { stateGuides } from "../src/stateGuides";
 import vercel from "../vercel.json" with { type: "json" };
 import { readableFragmentText } from "./prerender-text";
 import { stateRentalDescription } from "../src/seoMetadata";
+import { currentContactText } from "../src/contactNumber";
 // Vercel preview builds must never inherit production indexing settings.
 const domainReady =
   site.domainRoutingReady || process.env.PUBLIC_DOMAIN_READY === "true";
@@ -378,13 +379,9 @@ for (const path of [...allRoutes, "/404/"]) {
   // script contents or the archived source records.
   const $ = load(rawHtml);
   const cleanCopy = (value: string) =>
-    value
+    currentContactText(value)
       .replace(/\s*—\s*/g, ", ")
-      .replace(/\*/g, "")
-      .replace(
-        /(?:\+?1[\s.-]*)?\(?800\)?[\s.-]*443[\s.-]*5212/g,
-        site.phoneDisplay,
-      );
+      .replace(/\*/g, "");
   $("body, title")
     .find("*")
     .addBack()

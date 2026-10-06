@@ -1,4 +1,5 @@
 import { load } from "cheerio";
+import { currentContactHref, currentContactText } from "../src/contactNumber";
 
 type Options = {
   origin: string;
@@ -199,6 +200,26 @@ export function renderSourceContent(html: string, options: Options) {
       !figure.text().trim()
     )
       figure.remove();
+  });
+  // Normalize only the retained content after removing archived global lists.
+  // Walking the tree avoids Cheerio flattening a very large contents collection.
+  const nodes = $.root().contents().toArray();
+  while (nodes.length) {
+    const node = nodes.pop()!;
+    if (node.type === "script" || node.type === "style") continue;
+    if (node.type === "text") node.data = currentContactText(node.data);
+    else if ("children" in node)
+      for (const child of node.children) nodes.push(child);
+  }
+  $("[alt], [title], [aria-label]").each((_, element) => {
+    for (const name of ["alt", "title", "aria-label"]) {
+      const value = $(element).attr(name);
+      if (value) $(element).attr(name, currentContactText(value));
+    }
+  });
+  $("a[href]").each((_, element) => {
+    const href = $(element).attr("href")!;
+    $(element).attr("href", currentContactHref(href));
   });
   return $.html();
 }

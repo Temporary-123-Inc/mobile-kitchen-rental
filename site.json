@@ -1,8 +1,8 @@
 {
   "brand": "Mobile Kitchen Rental",
   "origin": "https://mobile-kitchen-rental.com",
-  "phoneDisplay": "(833) 634-7811",
-  "phoneE164": "+18336347811",
+  "phoneDisplay": "(888) 290-1839",
+  "phoneE164": "+18882901839",
   "mode": "production",
   "indexingScope": "focused-kitchen-cluster",
   "indexingBatchSize": 25,

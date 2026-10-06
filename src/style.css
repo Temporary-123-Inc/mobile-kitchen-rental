@@ -273,8 +273,17 @@ p {
   gap: 0.35rem;
 }
 .services-trigger > span {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  line-height: 0;
   color: var(--blue);
   transition: transform var(--micro) var(--ease);
+}
+.services-trigger > span > svg {
+  display: block;
+  width: 0.84em;
+  height: 0.84em;
 }
 .services-panel {
   position: absolute;

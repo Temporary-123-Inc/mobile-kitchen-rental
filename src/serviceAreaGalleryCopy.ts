@@ -1,3 +1,4 @@
+import site from "../site.json" with { type: "json" };
 import { commercialUseCases, locationRentalIntents } from "./rentalHeadlines";
 import { captionDetailBatchA } from "./serviceAreaCaptionBatchA";
 import { captionDetailBatchB } from "./serviceAreaCaptionBatchB";
@@ -35,5 +36,5 @@ export function serviceAreaGalleryCaption(
         .trim()
     : equipmentHeadline;
 
-  return `${location} ${useCase ?? "Commercial Project and Base Camp"} ${equipment} Rental or Lease. Discuss weekly rental, monthly rental, or yearly rental and lease options for ${product.benefit}. ${product.detail} Call us now at +1 (800) 443-5212, available 24/7.`;
+  return `${location} ${useCase ?? "Commercial Project and Base Camp"} ${equipment} Rental or Lease. Discuss weekly rental, monthly rental, or yearly rental and lease options for ${product.benefit}. ${product.detail} Call us now at ${site.phoneDisplay}, available 24/7.`;
 }

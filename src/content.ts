@@ -59,7 +59,7 @@ const descriptions: Record<string, string> = {
   "/blog/":
     "Read practical guides for mobile kitchen trailer rentals, restroom and shower facilities, temporary base camps, utilities, delivery and site planning.",
   "/contact-us/":
-    "Call Mobile Kitchen Rental at +1 (800) 443 - 5212, available 24/7. Discuss equipment availability, your project location, rental dates and delivery requirements.",
+    `Call Mobile Kitchen Rental at ${site.phoneDisplay}, available 24/7. Discuss equipment availability, your project location, rental dates and delivery requirements.`,
   "/privacy/":
     "Read how this Mobile Kitchen Rental website handles visitor information and contact the team with questions about your information.",
 };
@@ -68,6 +68,6 @@ export function pageInfo(path: string) {
     title: `${titles[path] || "Page not found"} | ${site.brand}`,
     description:
       descriptions[path] ||
-      "Find the right facility for your project. Explore Mobile Kitchen Rental equipment or call +1 (800) 443 - 5212 for help.",
+      `Find the right facility for your project. Explore Mobile Kitchen Rental equipment or call ${site.phoneDisplay} for help.`,
   };
 }

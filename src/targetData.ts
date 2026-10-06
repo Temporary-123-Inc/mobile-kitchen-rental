@@ -1,11 +1,12 @@
 import usStates from "./usStates.json" with { type: "json" };
+import site from "../site.json" with { type: "json" };
 
 export const brand = {
   name: "Mobile Kitchen Rental",
   legalName: "Temporary 123",
   origin: "https://mobile-kitchen-rental.com",
-  phoneDisplay: "(833) 634-7811",
-  phoneE164: "+18336347811",
+  phoneDisplay: site.phoneDisplay,
+  phoneE164: site.phoneE164,
 };
 
 export const primaryPhrase = "Mobile Commercial Kitchen Trailer Rentals";

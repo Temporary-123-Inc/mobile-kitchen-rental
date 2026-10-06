@@ -101,7 +101,19 @@ export function Header({ path }: { path: string }) {
                   path.startsWith("/equipment-rental/") ? "page" : undefined
                 }
               >
-                Inventory <span aria-hidden="true">⌄</span>
+                Inventory{" "}
+                <span aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" focusable="false">
+                    <path
+                      d="m2 4 4 4 4-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
               </summary>
               <div
                 id="services-panel"
