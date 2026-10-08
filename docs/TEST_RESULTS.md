@@ -2,6 +2,7 @@
 
 ## 2026-10-09 — Dedicated Glide Contact Us release candidate
 
+- First production smoke test found `FUNCTION_INVOCATION_FAILED`: the standalone handler still imported `server/store.ts`, which pulled the inherited Firebase Admin delivery graph into the function bundle. Moved Glide payload/authentication into dependency-isolated `server/glide.ts`; the Contact Us function no longer imports Firebase code. Post-fix TypeScript and the 27 focused tests passed before the corrective release.
 - `pnpm exec tsc --noEmit`: PASS.
 - Focused Vitest (`glide`, `contact`, `routes`): PASS, 27/27. Covered exact payload/authentication, webhook failure, operation without Firebase settings, calculator rejection and inherited endpoint guards.
 - `pnpm run build`: PASS; 745 routes plus 404 generated.

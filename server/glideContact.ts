@@ -3,7 +3,7 @@ import { z } from "zod";
 import site from "../site.json" with { type: "json" };
 import { HttpError } from "./contact.js";
 import { leadSchema } from "./schema.js";
-import { createGlidePayload, sendToGlide } from "./store.js";
+import { createGlidePayload, sendToGlide } from "./glide.js";
 
 const attempts = new Map<string, { count: number; expiresAt: number }>();
 const allowedOrigins = new Set([

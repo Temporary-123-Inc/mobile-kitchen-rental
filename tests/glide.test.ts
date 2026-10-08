@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { createGlidePayload, sendToGlide } from "../server/store";
+import { createGlidePayload, sendToGlide } from "../server/glide";
 import { submitGlideContact } from "../server/glideContact";
 
 const lead = {

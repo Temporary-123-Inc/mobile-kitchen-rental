@@ -2,7 +2,7 @@
 
 ## 2026-10-09 — Contact Us Glide endpoint made deployment-independent
 
-Added a dedicated `/api/glide-contact.json` boundary for Contact Us so production delivery no longer depends on the absent Firebase/App Check environment configuration. It retains strict schema validation, same-origin enforcement for apex/www, body limits, honeypot validation, Vercel IP validation, request IDs, a five-attempt/15-minute per-instance abuse limit, server-only Glide credentials and explicit calculator rejection. The calculator continues using its separate existing Firebase endpoint and is not sent to Glide. TypeScript, 27 focused tests, production build/prerender (745 routes + 404), secret scan and whitespace checks passed. Release and live verification recorded separately after deployment.
+Added a dedicated `/api/glide-contact.json` boundary for Contact Us so production delivery no longer depends on the absent Firebase/App Check environment configuration. It retains strict schema validation, same-origin enforcement for apex/www, body limits, honeypot validation, Vercel IP validation, request IDs, a five-attempt/15-minute per-instance abuse limit, server-only Glide credentials and explicit calculator rejection. The calculator continues using its separate existing Firebase endpoint and is not sent to Glide. The first live function smoke test exposed an inherited Firebase module graph still entering the new bundle; Glide payload/authentication were then isolated in `server/glide.ts`, removing that dependency. TypeScript and 27 focused tests passed after the correction; build/prerender and secret scan passed before it. Final live verification follows the corrective deployment.
 
 ## 2026-10-07 — Adopted kitchen-site standards applied locally
 

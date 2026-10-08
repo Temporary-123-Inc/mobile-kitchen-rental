@@ -2,9 +2,9 @@ import { createHmac } from "node:crypto";
 import type { Database } from "firebase-admin/database";
 import { firebase, required, requiredSecret } from "./firebase.js";
 import { processDelivery } from "./delivery.js";
-import site from "../site.json" with { type: "json" };
 import { HttpError } from "./contact.js";
 import type { Lead } from "./schema.js";
+import { createGlidePayload, sendToGlide } from "./glide.js";
 export const digest = (text: string) =>
   createHmac("sha256", requiredSecret("RATE_LIMIT_SECRET"))
     .update(text)
@@ -62,37 +62,6 @@ export async function saveLead(db: Database, key: string, data: Lead) {
       "This request identifier was already used. Refresh the form.",
     );
   return id;
-}
-export function createGlidePayload(data: Lead) {
-  return {
-    data: {
-      url: new URL("/contact-us/", site.origin).toString(),
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      message: data.message,
-      service: data.service,
-      duration: data.duration,
-      industry: data.industry,
-      location: data.location,
-      startDate: data.startDate,
-      consent: data.consent,
-    },
-  };
-}
-export async function sendToGlide(payload: Record<string, unknown>, key: string) {
-  const response = await fetch(required("GLIDE_WEBHOOK_URL"), {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${requiredSecret("GLIDE_WEBHOOK_TOKEN")}`,
-      "Content-Type": "application/json",
-      "Idempotency-Key": key,
-    },
-    body: JSON.stringify(payload),
-    signal: AbortSignal.timeout(20_000),
-  });
-  if (!response.ok) throw Error(`Glide webhook failed (${response.status})`);
-  return response.headers.get("x-request-id") || "accepted";
 }
 export async function deliverLead(id: string) {
   const { db } = firebase();
