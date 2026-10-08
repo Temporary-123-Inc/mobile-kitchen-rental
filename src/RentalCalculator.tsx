@@ -25,10 +25,10 @@ export function RentalCalculator() {
               <a href="/">Home</a><span>/</span><span aria-current="page">Rental calculator</span>
             </nav>
             <span className="eyebrow">NATIONWIDE PROJECT PLANNING</span>
-            <h1>Nationwide Temporary Facility Rental and Delivery Calculator</h1>
+            <h1>Commercial Kitchen Trailer Rental and Delivery Calculator</h1>
             <p data-h1-intro>
               Calculate a preliminary equipment and delivery starting estimate
-              for your selected temporary facility and trailer length. Enter the
+              for your selected kitchen trailer and trailer length. Enter the
               project state, city and dates for planning; final rental-period
               pricing, transport charges and availability require a separate quote.
             </p>
@@ -56,7 +56,7 @@ export function RentalCalculator() {
               <h3>Facility and equipment</h3>
               <table>
                 <thead><tr><th>Equipment</th><th>Starting price</th></tr></thead>
-                <tbody>{equipmentPrices.map((item) => (
+                <tbody>{equipmentPrices.filter((item) => item.id === "mobile-kitchen").map((item) => (
                   <tr key={item.id}><td><strong>{item.name}</strong><small>{item.details}</small></td><td>{money(item.startingPrice)}{"perPerson" in item ? " per person" : ""}</td></tr>
                 ))}</tbody>
               </table>
@@ -81,7 +81,7 @@ export function RentalCalculator() {
 
       <section className="wrap section calculator-locations" aria-labelledby="calculator-locations-title">
         <div className="home-section-heading">
-          <div><span className="eyebrow">READABLE NATIONAL COVERAGE</span><h2 id="calculator-locations-title">Temporary facility rental by state and city.</h2></div>
+          <div><span className="eyebrow">READABLE NATIONAL COVERAGE</span><h2 id="calculator-locations-title">Kitchen trailer rental by state and city.</h2></div>
           <p>Browse the city and state names served by the calculator. These are planning references, not automatically generated city landing pages.</p>
         </div>
         <div className="calculator-state-list">
@@ -89,7 +89,7 @@ export function RentalCalculator() {
             <details key={state}>
               <summary>{state}<span>{cities.length.toLocaleString("en-US")} locations</span></summary>
               <p>
-                Temporary facility rental, trailer leasing and delivery planning in {state}:{" "}
+                Kitchen trailer rental, leasing and delivery planning in {state}:{" "}
                 {cities.map((city, index) => (
                   <span key={city}>{index ? ", " : ""}{city}</span>
                 ))}.
@@ -113,7 +113,7 @@ export function CalculatorWorkspace({ homepage = false }: { homepage?: boolean }
           <span className="eyebrow">STARTING ESTIMATE</span>
           <h2 id={titleId}>
             {homepage
-              ? "Nationwide temporary facility rental calculator."
+              ? "Nationwide kitchen trailer rental calculator."
               : "Tell us what your site needs."}
           </h2>
           {homepage && (
@@ -161,7 +161,7 @@ export function CalculatorWorkspace({ homepage = false }: { homepage?: boolean }
                 Equipment type
                 <select name="equipment" required defaultValue="">
                   <option value="" disabled>Choose equipment</option>
-                  {equipmentPrices.map((item) => (
+                  {equipmentPrices.filter((item) => item.id === "mobile-kitchen").map((item) => (
                     <option value={item.id} key={item.id}>{item.name}</option>
                   ))}
                 </select>

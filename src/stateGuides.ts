@@ -1,3 +1,4 @@
+import { serviceHeroImages } from "./serviceHeroImages";
 import { equipmentSet } from "./equipmentPhotos";
 import { buildStateSeasonalDemand } from "./seasonalDemand";
 import { stateRentalOption } from "./rentalHeadlines";
@@ -1197,8 +1198,13 @@ const rentalContexts = [
     `Temporary facility rental planning in ${name}, USA supports customers who need to rent equipment for a short-term project or arrange a longer lease.`,
 ];
 
-const buildStateGallery = (index: number, state: string) =>
-  equipmentSet(index + 246);
+const buildStateGallery = (index: number, state: string) => {
+  const images = serviceHeroImages["/services/mobile-kitchen-trailers/24ft/"];
+  return [0, 1, 2].map((offset) => {
+    const image = images[(index + offset) % images.length];
+    return { image: image.src, imageAlt: image.alt };
+  });
+};
 
 export const stateGuides = Object.fromEntries(
   Object.entries(stateGuideDetails).map(([name, guide], index) => {
@@ -1211,16 +1217,14 @@ export const stateGuides = Object.fromEntries(
       name,
       {
         ...guide,
-        intro: `For ${name} projects, ${brief.purpose.charAt(0).toLowerCase()}${brief.purpose.slice(1)}${equipmentWords.test(siteNote) ? "" : ` ${siteNote}`}`,
-        question: brief.question,
+        intro: guide.intro,
+        question: guide.question,
         image: gallery[0].image,
         imageAlt: gallery[0].imageAlt,
         gallery,
         regions: local.regions,
         fact: local.fact,
-        serviceSummary:
-          focusedServiceSummaries[stateRentalOption(name).equipmentFamily] ||
-          serviceSummaries[index % serviceSummaries.length],
+        serviceSummary: "Compare mobile kitchen trailer layouts for temporary cooking and preparation. Confirm the menu, meal volume, utilities, delivery access and available model before booking.",
         abbreviation: stateCodes[index],
         layout: String(index % 5),
         motion: String((index + Math.floor(index / 5) * 2) % 10),

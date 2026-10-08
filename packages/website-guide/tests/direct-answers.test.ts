@@ -18,7 +18,7 @@ describe("direct website answers", () => {
     ["how much do kitchens cost", "pricing", "not a final quote"],
     ["urgent kitchen availability", "availability", site.phoneDisplay],
     ["minimum rental duration", "duration", "confirmation"],
-    ["can I rent several types together", "combined", "Yes"],
+    ["can I rent several types together", "combined", "available kitchen model"],
     ["email address", "email", "do not have a verified"],
   ])("answers %s", (query, id, text) => {
     const reply = createGuide(temporaryGuide).respond(query);

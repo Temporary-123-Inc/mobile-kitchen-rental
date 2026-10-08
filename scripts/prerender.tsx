@@ -1,3 +1,4 @@
+import { kitchenLocationHeadline, kitchenLocationDescription } from "../src/kitchenRentalStandards";
 import introOverrides from "../content/aligned-page-introductions.json" with { type: "json" };
 import replacedLeads from "../content/aligned-source-original-leads.json" with { type: "json" };
 import { industryGuideByPath } from "../src/IndustryDetail";
@@ -61,6 +62,9 @@ if (release && indexingScope === "full") {
   if (errors.length) throw new Error(errors.join("; "));
 }
 const source = await readFile("dist/index.html", "utf8");
+if (!source.includes("<!--app-html-->") || !source.includes("<!--page-head-->")) {
+  throw new Error("Run the Vite build before prerendering: the HTML template placeholders are missing.");
+}
 const fontAsset = (await readdir("dist/assets")).find((name) =>
   /^manrope-latin-wght-normal-.*\.woff2$/.test(name),
 );
@@ -246,33 +250,17 @@ for (const path of [...allRoutes, "/404/"]) {
         : city
           ? {
               title: `${cityHeadline(city)} | Mobile Kitchen Rental`,
-              description: compact(
-                alignedLocationIntro(
-                  cityHeadline(city),
-                  `${city.name}, ${city.state}`,
-                ).split(/(?<!\bSt)\. /)[0] + ".",
-                155,
-              ),
+              description: kitchenLocationDescription(`${city.name}, ${city.state}`),
             }
           : directoryRegion
             ? {
-                title: `${regionLocationLabel(directoryRegion.region, directoryRegion.state)} Facility Rental Locations | Mobile Kitchen Rental`,
-                description: `Browse ${regionLocationLabel(directoryRegion.region, directoryRegion.state)} cities and communities for Temporary Facilities Rental planning. Find reviewed city guides and regional services.`,
+                title: `${regionLocationLabel(directoryRegion.region, directoryRegion.state)} Kitchen Trailer Rental Locations | Mobile Kitchen Rental`,
+                description: `Browse ${regionLocationLabel(directoryRegion.region, directoryRegion.state)} cities and communities for kitchen trailer rental planning. Find reviewed city guides and regional kitchen services.`,
               }
             : region
               ? {
-                  title: `${regionRentalHeadline(region.region, region.state, region.index)} | Mobile Kitchen Rental`,
-                  description: compact(
-                    alignedLocationIntro(
-                      regionRentalHeadline(
-                        region.region,
-                        region.state,
-                        region.index,
-                      ),
-                      regionLocationLabel(region.region, region.state),
-                    ).split(/(?<!\bSt)\. /)[0] + ".",
-                    155,
-                  ),
+                  title: `${kitchenLocationHeadline(region.state, region.region)} | Mobile Kitchen Rental`,
+                  description: kitchenLocationDescription(`${region.region}, ${region.state}`),
                 }
               : stateName
                 ? {
@@ -330,9 +318,9 @@ for (const path of [...allRoutes, "/404/"]) {
     info.description = `Explore ${page?.title || "Mobile Kitchen Rental facilities"}. Call Mobile Kitchen Rental at ${site.phoneDisplay} to discuss your site, rental dates and equipment requirements.`;
   }
   const socialImage = region
-    ? new URL(region.image, site.origin).href
+    ? new URL("/images/catalog/mobile-kitchen-trailers-960.webp", site.origin).href
     : new URL("/social-card.png", site.origin).href;
-  const socialImageAlt = region?.imageAlt || `${site.brand} temporary facility planning`;
+  const socialImageAlt = region ? "Commercial mobile kitchen interior" : `${site.brand} temporary facility planning`;
   const head =
     (fontAsset
       ? `<link rel="preload" href="/assets/${fontAsset}" as="font" type="font/woff2" crossorigin>`
@@ -478,8 +466,8 @@ for (const path of [...allRoutes, "/404/"]) {
       title: h1.text().trim(),
       description: cleanCopy(info.description),
       serviceType:
-        path === "/service-areas/oklahoma/panhandle/"
-          ? "Laundry trailer and laundry container rental"
+        stateName || region || city
+          ? "Commercial mobile kitchen trailer rental"
           : undefined,
       crumbs,
       service: Boolean(

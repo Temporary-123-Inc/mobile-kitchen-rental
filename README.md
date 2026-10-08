@@ -1,5 +1,7 @@
 # Temporary 123 website upgrade
 
+Shared team guidelines and acceptance criteria are copied into [docs/guidelines/](docs/guidelines/README.md) from `Temporary-123-Inc/skills.temporary123`. Follow the site's kitchen-trailer-only scope when applying the shared standards. See `PROJECT_STATUS.md` for current project evidence.
+
 Upgrade of **temporary123.com**, preserving the business and source URLs. The April concept has been replaced with Temporary 123 branding and original equipment photography.
 
 **In progress:** 625 of the source API's 98,253 public pages have been recovered. Public WordPress export requests subsequently returned HTTP 500 responses. Completing the migration requires a reliable WordPress export or hosting backup. Do not move the live domain until recovery is complete.

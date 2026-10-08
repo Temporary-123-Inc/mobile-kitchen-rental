@@ -1,3 +1,4 @@
+import { kitchenLocationIntro } from "./kitchenRentalStandards";
 import site from "../site.json" with { type: "json" };
 import { Cards, EquipmentImage } from "./Equipment";
 import { FacilityIcon } from "./FacilityIcon";
@@ -5,30 +6,10 @@ import { CoverageMap } from "./CoverageMap";
 import { CalculatorWorkspace } from "./RentalCalculator";
 
 const rentalGroups = [
-  [
-    "kitchen",
-    "Mobile Commercial Kitchen",
-    "Commercial kitchen rentals.",
-    "/equipment-rental/mobile-kitchen-trailers/",
-  ],
-  [
-    "shower",
-    "Shower Trailer",
-    "Mobile shower trailer rentals.",
-    "/equipment-rental/shower-trailer/",
-  ],
-  [
-    "shower",
-    "Shower & Restroom Combination Facilities",
-    "Private hygiene facilities.",
-    "/services/shower-restroom-combination-trailers/",
-  ],
-  [
-    "living",
-    "Sleeper/Bunkbed Trailers",
-    "Crew support facilities.",
-    "/equipment-rental/mobile-sleep-trailers/",
-  ],
+  ["kitchen", "Mobile Kitchen Trailers", "Temporary commercial cooking space.", "/equipment-rental/mobile-kitchen-trailers/"],
+  ["kitchen", "Bulk Kitchen Layouts", "Discuss larger meal-production needs.", "/services/mobile-kitchen-trailers/26ft-bulk/"],
+  ["pin", "Kitchen Site Planning", "Plan access, utilities and placement.", "/planning/"],
+  ["truck", "Rental Estimates", "Review starting equipment and delivery costs.", "/rental-calculator/"],
 ];
 const steps = [
   [
@@ -56,8 +37,8 @@ const faqs = [
     "Your project location, preferred dates, expected rental duration and the number of people using the facilities are a good start. For a kitchen, include your menu and meal volume.",
   ],
   [
-    "Can I rent several types of facility together?",
-    "Yes. Discuss your kitchen, refrigeration, restroom, shower and workforce requirements in one conversation so the facilities can be planned around your operation.",
+    "How do I choose a kitchen trailer layout?",
+    "Share your menu, meal volume and service schedule. Compare cooking and preparation layouts, then confirm the actual available model and utility requirements with the rental team.",
   ],
   [
     "What utilities and site access should I check?",
@@ -84,17 +65,7 @@ export function Home() {
               <br />
               <em>For Short-Term or Long-Term Use</em>
             </h1>
-            <p data-h1-intro>
-              Mobile Kitchen Rental provides nationwide rental and leasing of temporary
-              facilities for commercial and institutional projects. Explore
-              commercial kitchen and dishwashing trailers, restroom and shower
-              facilities, laundry trailers, crew accommodation, refrigeration,
-              and supporting equipment. Our team can help you confirm the right
-              configuration, utility requirements, delivery access, and rental
-              period for your site. Contact our rental team 24/7 to discuss your
-              project; equipment availability and dispatch timing require
-              confirmation.
-            </p>
+            <p data-h1-intro>{kitchenLocationIntro("the United States")}</p>
             <div className="rental-hero-actions">
               <a className="button home-primary" href="/contact-us/">
                 Request availability <span aria-hidden="true">↗</span>
@@ -208,15 +179,13 @@ export function Home() {
               Big plans,
               <br />
               <em>
-                Emergency trailer rentals, shower, kitchen, shower and bathroom
-                combination, sleeper bunk bed, and laundry.
+                Commercial kitchen trailers for planned and emergency food service.
               </em>
             </h2>
           </div>
           <p>
             From one trailer to a complete temporary setup. Explore the
-            facilities that keep your people comfortable and your operation
-            working.
+            kitchen layouts that keep meal production and service connected.
           </p>
         </div>
         <div
@@ -226,10 +195,8 @@ export function Home() {
           hidden
         >
           {[
-            ["all", "All facilities", "9"],
-            ["kitchen", "Kitchens & cold storage", "3"],
-            ["sanitation", "Restrooms & hygiene", "4"],
-            ["workforce", "Workforce living", "2"],
+            ["all", "All kitchen trailers", "5"],
+            ["kitchen", "Commercial kitchens", "5"],
           ].map(([value, label, count]) => (
             <button
               type="button"
@@ -249,9 +216,9 @@ export function Home() {
           role="status"
           aria-live="polite"
         >
-          Showing all 9 facilities
+          Showing all 5 kitchen trailers
         </p>
-        <Cards homepage />
+        <Cards homepage kitchenOnly />
         <div className="home-service-help">
           <span className="service-help-icon">
             <FacilityIcon kind="phone" />
@@ -329,9 +296,9 @@ export function Home() {
             <em>your operation.</em>
           </h2>
           <p>
-            Rent or lease Temporary Facilities for construction, hospitality,
-            public services and emergency base camps. Start with kitchens,
-            combination trailers, showers and sleeper accommodation.
+            Rent commercial kitchen trailers for healthcare, education,
+            correctional, military, industrial and hotel food-service operations.
+            Discuss planned renovations or emergency cooking requirements.
           </p>
           <a className="home-inline-link" href="/service-areas/">
             Explore service areas <span aria-hidden="true">↗</span>
@@ -349,26 +316,26 @@ export function Home() {
             [
               "living",
               "Construction & workforce",
-              "Rent kitchens, shower and restroom combinations, showers and sleeper trailers for base camps and man camps.",
-              "/man-camps-for-rent/",
+              "Plan temporary meal production for industrial crews during construction or scheduled plant work.",
+              "/planning/",
             ],
             [
               "kitchen",
               "Food service & hospitality",
-              "Kitchen rental and supporting hygiene and accommodation facilities for renovations, events and service interruptions.",
-              "/food-services-2/",
+              "Plan commercial kitchen trailer layouts for hotels, institutions and food-service renovations.",
+              "/equipment-rental/mobile-kitchen-trailers/",
             ],
             [
               "pin",
               "Government & public services",
-              "Lease temporary kitchens, combination facilities, showers and sleeper trailers for public-service operations.",
-              "/government/",
+              "Discuss temporary cooking and meal preparation for correctional facilities, military sites and public institutions.",
+              "/services/mobile-kitchen-trailers/26ft-bulk/",
             ],
             [
               "truck",
               "Emergency & disaster response",
-              "Emergency 24/7: rent kitchens, hygiene facilities and sleeper trailers for response teams and base camps.",
-              "/disaster-relief-man-camp-workforce-rentals/",
+              "Call the team 24/7 to discuss emergency kitchen availability, site access and the actual delivery schedule.",
+              "/contact-us/",
             ],
           ].map(([icon, title, description, href]) => (
             <a href={href} key={href}>

@@ -1,6 +1,8 @@
+import { kitchenLocationHeadline, kitchenLocationIntro } from "./kitchenRentalStandards";
+import { KitchenRentalPlanning } from "./KitchenRentalPlanning";
 import { alignedLocationIntro } from "./alignedIntroductions";
 import site from "../site.json" with { type: "json" };
-import { nearbyCities, type CityPage } from "./cityDirectory";
+import { nearbyCities, citiesForRegion, type CityPage } from "./cityDirectory";
 import { cityEditorial } from "./cityEditorial";
 import { regionCities } from "./regionCities";
 import { cityRentalHeadline } from "./rentalHeadlines";
@@ -27,31 +29,14 @@ const serviceLinks = [
   },
 ] as const;
 
-const approvedCityHeadlines: Record<string, string> = {
-  "5355365":
-    "Port Angeles, Washington Industrial Basecamp Commercial Kitchen Trailer Rental",
-  "5370000":
-    "Tacoma, Washington Workforce Housing Sleeper Bunk-Bed Facility Leasing",
-  "5351300":
-    "Olympia, Washington Institutional Facility Shower and Restroom Combination Trailer For Rent",
-  "5363000":
-    "Seattle, Washington Construction Project Kitchen Emergency Trailer Rental",
-  "5363385":
-    "Sequim, Washington Remote Operations Man Camp Temporary Facilities Rental",
-};
-
 export const cityHeadline = (city: CityPage): string =>
-  approvedCityHeadlines[city.geoid] ||
-  cityRentalHeadline(
-    `${city.name}, ${city.state}`,
-    cityEditorial[city.geoid]?.heading || "Temporary Facilities",
-  );
+  kitchenLocationHeadline(city.state, city.name);
 
 export function CityDetail({ city }: { city: CityPage }) {
   const editorial = cityEditorial[city.geoid];
   if (!editorial)
     throw new Error(`City guide lacks reviewed local content: ${city.path}`);
-  const nearby = nearbyCities(city, 4);
+  const nearby = nearbyCities(city, 8);
   const seasonal = buildRegionSeasonalDemand(
     city.state,
     city.region,
@@ -79,9 +64,7 @@ export function CityDetail({ city }: { city: CityPage }) {
             <span className="eyebrow">CITY RENTAL GUIDE</span>
             <h1>{headline}</h1>
             <p className="city-lead" data-h1-intro>
-              {locationDescriptions.cities[
-                location as keyof typeof locationDescriptions.cities
-              ] || alignedLocationIntro(headline, location)}
+              {kitchenLocationIntro(location)}
             </p>
             <div className="city-hero-actions">
               <span className="city-emergency">Emergency 24/7</span>
@@ -102,11 +85,11 @@ export function CityDetail({ city }: { city: CityPage }) {
         <div>
           <span className="eyebrow">QUICK ANSWER</span>
           <h2 id="city-answer-title">What can you rent in {city.name}?</h2>
-          <p>{editorial.answer}</p>
+          <p>Rent a mobile kitchen trailer for temporary commercial cooking and meal preparation. Discuss your menu, service volume, rental dates and available utilities before confirming the appropriate model.</p>
         </div>
         <div>
           <ul className="city-service-list">
-            {serviceLinks.map((service) => (
+            {serviceLinks.filter((service) => service.href.includes("mobile-kitchen")).map((service) => (
               <li key={service.href}>
                 <a href={service.href}>
                   {city.geoid === "5355365" &&
@@ -118,8 +101,8 @@ export function CityDetail({ city }: { city: CityPage }) {
             ))}
           </ul>
           <p className="city-supporting">
-            Supporting rentals include refrigeration, dishwashing, laundry,
-            restrooms and handwashing trailers.
+            Compare commercial kitchen layouts and confirm the available model
+            with the rental team.
           </p>
         </div>
       </section>
@@ -133,7 +116,9 @@ export function CityDetail({ city }: { city: CityPage }) {
             Rental Planning Conditions in {city.name}
           </h2>
           <p>{editorial.local}</p>
-          <p>{editorial.seasonal}</p>
+          <p>{seasonal.summary[0]}</p>
+          <p>{seasonal.summary[1]}</p>
+          <KitchenRentalPlanning localContext={`Review statewide routes such as ${seasonal.corridors[0]}; confirm the actual final delivery approach and site restrictions.`} cities={Array.from(new Set([...nearby.map((other) => other.name), ...citiesForRegion(city.regionPath).filter((other) => other.geoid !== city.geoid).map((other) => other.name)])).slice(0, 10)} />
           <p className="city-planning-question">
             <strong>Ask before you rent:</strong> {editorial.question}
           </p>

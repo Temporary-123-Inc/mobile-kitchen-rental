@@ -1,3 +1,5 @@
+import { kitchenLocationHeadline, kitchenLocationIntro } from "./kitchenRentalStandards";
+import { KitchenRentalPlanning } from "./KitchenRentalPlanning";
 import { alignedLocationIntro, locationRentalPlanningAnswer } from "./alignedIntroductions";
 import { equipmentSet } from "./equipmentPhotos";
 import { statePath } from "./statePaths";
@@ -32,35 +34,19 @@ type ContextualLink = {
 const priorityServices = [
   {
     href: "/equipment-rental/mobile-kitchen-trailers/",
-    labels: [
-      "mobile commercial kitchen rentals",
-      "temporary kitchen facilities for rent",
-      "mobile kitchen trailer leasing",
-    ],
+    labels: ["mobile commercial kitchen rentals", "temporary kitchen trailers for rent", "mobile kitchen trailer leasing"],
   },
   {
-    href: "/services/shower-restroom-combination-trailers/",
-    labels: [
-      "shower and restroom combination trailer rentals",
-      "temporary shower and restroom facilities",
-      "combination hygiene trailers for lease",
-    ],
+    href: "/services/mobile-kitchen-trailers/24ft/",
+    labels: ["24 ft kitchen trailer rentals", "24 ft commercial kitchen layouts", "24 ft temporary kitchen trailers"],
   },
   {
-    href: "/services/shower-trailers/22ft-10-stall/",
-    labels: [
-      "22 ft 10-stall shower trailer rentals",
-      "10-stall shower trailers for rent",
-      "temporary 22 ft shower facilities",
-    ],
+    href: "/services/mobile-kitchen-trailers/26ft-bulk/",
+    labels: ["26 ft bulk kitchen rentals", "bulk mobile kitchen layouts", "commercial bulk kitchen trailers"],
   },
   {
-    href: "/equipment-rental/mobile-sleep-trailers/",
-    labels: [
-      "sleeper and bunkbed trailer rentals",
-      "temporary crew accommodation for lease",
-      "mobile sleeper trailers for rent",
-    ],
+    href: "/services/mobile-kitchen-trailers/38ft/",
+    labels: ["38 ft kitchen trailer rentals", "38 ft mobile kitchen layouts", "temporary commercial cooking space"],
   },
 ] as const;
 
@@ -91,7 +77,7 @@ const buildCityLinks = (
   path: string,
 ): ContextualLink[] =>
   cities.map((city, cityIndex) => {
-    const service = priorityServices[(globalIndex + cityIndex) % 4];
+    const service = priorityServices[0];
     const label =
       service.labels[(globalIndex + cityIndex * 2) % service.labels.length];
     const cityGuide = citiesForRegion(path).find(
@@ -119,9 +105,9 @@ const buildServiceLinks = (globalIndex: number): ContextualLink[] =>
     ),
     context: [
       "for temporary meal production.",
-      "for coordinated daily hygiene.",
-      "for dedicated shower capacity.",
-      "for base camps and man camps.",
+      "for cooking and preparation.",
+      "for larger meal-production requirements.",
+      "for commercial and institutional food service.",
     ][serviceIndex],
   }));
 
@@ -278,7 +264,7 @@ export const relatedRegionPages = (guide: RegionGuide): RegionGuide[] => {
 
 export function RegionDetail({ guide }: { guide: RegionGuide }) {
   const nearby = relatedRegionPages(guide);
-  const headline = regionRentalHeadline(guide.region, guide.state, guide.index);
+  const headline = kitchenLocationHeadline(guide.state, guide.region);
   const location = regionLocationLabel(guide.region, guide.state);
   const query = encodeURIComponent(
     `${guide.cities[0]}, ${guide.state}, United States`,
@@ -299,14 +285,14 @@ export function RegionDetail({ guide }: { guide: RegionGuide }) {
             </nav>
             <p className="eyebrow">REGIONAL RENTAL GUIDE</p>
             <h1>{headline}</h1>
-            <p className="region-intro" data-h1-intro>{alignedLocationIntro(headline, location, guide.cities)}</p>
+            <p className="region-intro" data-h1-intro>{kitchenLocationIntro(location)}</p>
             <p className="region-emergency">Emergency 24/7</p>
             <a className="button" href={`tel:${site.phoneE164}`}>
               Call now {site.phoneDisplay}
             </a>
           </div>
           <div className="region-hero-visual region-hero-carousel">
-            <LocationImageCarousel headline={headline} />
+            <LocationImageCarousel headline={headline} locationKey={location} />
           </div>
         </div>
       </section>
@@ -316,23 +302,20 @@ export function RegionDetail({ guide }: { guide: RegionGuide }) {
             <span className="eyebrow">QUICK ANSWER</span>
             <h2 id="region-faq-title">What can you rent in {guide.region}?</h2>
             <p data-rental-planning>
-              {locationRentalPlanningAnswer(headline) ||
-                "Rent or lease Temporary Facilities for construction, man camps, renovations and emergency base camps. Confirm availability, occupancy and utilities with our rental team."}
+              Kitchen trailers provide temporary cooking and preparation space for commercial and institutional food service. Confirm menu requirements, meal volume, utilities and site access with the rental team.
             </p>
           </div>
           <div className="region-answer-body">
             {locationRentalPlanningAnswer(headline) && <p>Related rental options:</p>}
             <ul className="region-service-links">
-              {guide.serviceLinks.map((service) => (
+              {guide.serviceLinks.filter((service) => service.href.includes("mobile-kitchen")).map((service) => (
                 <li key={service.href}>
                   <a href={service.href}>{service.label}</a>
                 </li>
               ))}
             </ul>
             <p className="supporting-rentals">
-              {/\blaundry\b/i.test(headline)
-                ? "Other supporting rentals: dishwashing, refrigeration, restrooms and handwashing trailers."
-                : "Supporting rentals: dishwashing, refrigeration, restrooms, laundry and handwashing trailers."}
+              Compare kitchen layouts, cooking capacity and delivery requirements for the actual available unit.
             </p>
           </div>
         </div>
@@ -374,12 +357,12 @@ export function RegionDetail({ guide }: { guide: RegionGuide }) {
         <div className="region-seasonal-copy">
           <p>{stateGuides[guide.state].seasonal.summary[0]}</p>
           <p>{guide.seasonal.summary[1]}</p>
-          <p>
-            Plan Temporary Facilities for construction seasons, camps, cleanup,
-            kitchen fires, Health Department closures, equipment failures and
-            renovations. Rental kitchens, hygiene units and crew accommodation
-            support the site while permanent facilities are unavailable.
+                    <p>
+            Plan temporary kitchen trailers for construction projects, industrial
+            food service, kitchen repairs, equipment failures and renovations.
+            Keep cooking and preparation connected to the existing serving area.
           </p>
+          <KitchenRentalPlanning localContext={`Review statewide routes such as ${stateGuides[guide.state].seasonal.corridors[0]}; confirm the actual final delivery approach and site restrictions.`} cities={Array.from(new Set([...guide.cities, ...citiesForRegion(guide.path).map((city) => city.name)])).slice(0, 10)} />
         </div>
         <aside className="region-demand-card">
           <span>Estimated seasonal facility demand</span>

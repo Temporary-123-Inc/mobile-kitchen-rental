@@ -218,17 +218,17 @@ export function QuoteForm() {
           </label>
         </div>
         <label>
-          <FieldLabel>What facilities do you need?</FieldLabel>
+          <FieldLabel>What kitchen rental do you need?</FieldLabel>
           <select name="service" required defaultValue="" {...attrs("service")}>
             <option value="" disabled>
               Select a service
             </option>
-            {services.map((s) => (
+            {services.filter((s) => s.slug === "mobile-kitchens").map((s) => (
               <option key={s.slug} value={s.slug}>
                 {contactServiceLabels[s.slug] ?? s.name}
               </option>
             ))}
-            <option value="multiple">Several facilities / help deciding</option>
+            <option value="multiple">Help choosing a kitchen layout</option>
           </select>
           {error("service")}
         </label>

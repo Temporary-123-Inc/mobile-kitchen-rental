@@ -1,5 +1,9 @@
 # Temporary123 Decision Log
 
+## 2026-10-07 — Adopt the shared skills repository as guideline source
+
+Keep the complete pinned upstream repository in `docs/guidelines/skills.temporary123/`, retaining its files and relative symlinks byte-for-byte and recording provenance outside the snapshot. Existing root project instructions remain the collaboration entry point and link the shared site standards and relevant workflow skills. Keep project-specific interpretations in `docs/guidelines/README.md`: kitchen trailer rentals only, verified business facts, and existing page/URL/indexing coordination. Copying the library does not execute its deployment/scripts, activate hooks, create issues/workflows or change the website. Update the snapshot deliberately with source revision and integrity evidence rather than mixing manual edits into third-party files.
+
 ## 2026-10-07 — Land Find your rental at the section boundary
 
 - Source: Owner requested that the hero's Find your rental link land fully at the next section instead of leaving the preceding section partially visible. Local measurements showed the equipment section landing around 200 px below the viewport top while the sticky header ended at 69/73/81 px.
@@ -545,3 +549,13 @@ Use a small inline SVG chevron for the desktop Inventory trigger so its alignmen
 ## 2026-10-07 — Restore original kitchen-site contact number
 
 The user's request to restore the original number supersedes the earlier October 7 phone approval. Use the exact kitchen-site baseline from `6b5a192`: `+1 (888) 563-6507` for display and `+18885636507` for calls/schema. History: `3ff4004` replaced it with `(833) 634-7811`; `78c6f49` then used `(888) 290-1839`. Retain centralized phone configuration and bounded historical normalization, including both superseded numbers, so archives render consistently without modifying archived sources. Preserve unrelated Inventory alignment included in the latest phone commit; a wholesale commit revert would also remove that fix. No publication authorized.
+
+## 2026-10-07 — Apply adopted standards within the commercial kitchen trailer scope
+
+The owner requested using the imported criteria. Active location pages, menus and customer choices use kitchen trailer rentals only, overriding the shared mixed-family examples. Preserve protected legacy routes/source meaning for compatibility and keep the existing 25-route indexing cohort. State-first deterministic H1s and 70–120-word leads are checked in source rendering and generated HTML. The original kitchen-only request also supersedes inherited requirements that every brief promote showers, sleepers and other facilities.
+
+National calculator figures remain qualified planning estimates; the shared sample prices, GPS promises and setup times are not verified local business facts. The 250-page example and approximate local-content ratio do not authorize URL deletion or expansion of indexing. Keep those release/business decisions separate from passing technical checks. Preserve the existing design CSS and record residual contrast limits. Archive verification and the new rendered-page suite run sequentially to prevent the existing five-second archive test timeout under CPU contention. Reject prerender inputs missing fresh Vite template placeholders. See the adoption report and tests for evidence.
+
+## 2026-10-09 — Exempt /sitemap.xml from the site-wide Content-Security-Policy
+
+Chrome's built-in XML viewer needs inline styles/scripts, which the strict site-wide CSP blocks, so `/sitemap.xml` opened as an unstyled raw-text dump plus a tree with stray `...` markers. Crawlers read the raw XML and were unaffected. The site-wide header rule now excludes `sitemap.xml` through a negative lookahead and a separate `/sitemap.xml` rule keeps `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`. The sitemap body, the 25-URL controlled rollout, canonicals and robots are unchanged. `scripts/serve.mjs` now matches header rules by source pattern instead of the literal `/(.*)`.

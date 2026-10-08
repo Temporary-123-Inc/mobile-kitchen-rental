@@ -1,0 +1,2312 @@
+{
+  "sourceRepository": "https://github.com/Temporary-123-Inc/skills.temporary123",
+  "sourceCheckout": "/home/marki/projects/work/t123inc/skills.temporary123",
+  "commit": "c6fbaef5a0f0b8eb316559d4222438a988e221c2",
+  "capturedAt": "2026-10-07T22:30:23.124931+08:00",
+  "entryCount": 460,
+  "symlinks": 48,
+  "skillCount": 48,
+  "verification": "Every entry matches its source Git blob and mode; all symlinks resolve within the snapshot. Git metadata excluded.",
+  "entries": [
+    {
+      "path": ".agents/skills/ask-matt/PHASE-BOUNDARIES.md",
+      "gitMode": "100644",
+      "gitBlob": "fb58ef9febcfd558cdb4517e370f19034869ba26"
+    },
+    {
+      "path": ".agents/skills/ask-matt/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "4bfeeb61dae548b8b7754c4fba7bd40ab3926099"
+    },
+    {
+      "path": ".agents/skills/ask-matt/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "5c60d51b5b1248d7210bff8c6b42a5a06524b8a4"
+    },
+    {
+      "path": ".agents/skills/chief-of-staff/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "97da622d09acaaacebbb4482663c907e241f4594"
+    },
+    {
+      "path": ".agents/skills/chief-of-staff/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "080598b44ad9c843dc3457b6e0e32368aaeec84d"
+    },
+    {
+      "path": ".agents/skills/claude-handoff/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "77f82fc59c89c3a83ed5a92521dc2869f0533724"
+    },
+    {
+      "path": ".agents/skills/claude-handoff/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "0a7aa5da50d0e73248fc17fb8fe82409ec071eaf"
+    },
+    {
+      "path": ".agents/skills/code-review/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "373a4f26e6cfa3617778397945bb069d9cb184bc"
+    },
+    {
+      "path": ".agents/skills/code-review/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "9076774ba327f49068db9273feceda03bfe940fa"
+    },
+    {
+      "path": ".agents/skills/codebase-design/DEEPENING.md",
+      "gitMode": "100644",
+      "gitBlob": "cd94075cfd754d147555c5d747a16431ed4c7dd8"
+    },
+    {
+      "path": ".agents/skills/codebase-design/DESIGN-IT-TWICE.md",
+      "gitMode": "100644",
+      "gitBlob": "d0990138c35c800bd821289a73115e52680c1620"
+    },
+    {
+      "path": ".agents/skills/codebase-design/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "3f63c8146dd2604b419c929e9876b90c30d410e9"
+    },
+    {
+      "path": ".agents/skills/codebase-design/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "3180715edb37f6e96bec42f92f00169faa8886ef"
+    },
+    {
+      "path": ".agents/skills/deploy-to-vercel/Archive.zip",
+      "gitMode": "100644",
+      "gitBlob": "2945baff93ab08448289fb377b453806281323f9"
+    },
+    {
+      "path": ".agents/skills/deploy-to-vercel/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "a0251ce89a7636230be9c5b989a81e1a54a52a96"
+    },
+    {
+      "path": ".agents/skills/deploy-to-vercel/resources/deploy-codex.sh",
+      "gitMode": "100755",
+      "gitBlob": "af07d0fd77bc52fae1f1d97a2565f9b8f7b74283"
+    },
+    {
+      "path": ".agents/skills/deploy-to-vercel/resources/deploy.sh",
+      "gitMode": "100755",
+      "gitBlob": "a458da6316678e6163a3a007a2ea9df20133982b"
+    },
+    {
+      "path": ".agents/skills/diagnosing-bugs/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "d039541ddd1c46e6ddbd662fe99d49b686fc5e12"
+    },
+    {
+      "path": ".agents/skills/diagnosing-bugs/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "a13a755a77634ce61a649a3a0d905a66d3865b35"
+    },
+    {
+      "path": ".agents/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "gitMode": "100644",
+      "gitBlob": "243198464a8401a7ba1d63b3708fa43c3d067665"
+    },
+    {
+      "path": ".agents/skills/domain-modeling/ADR-FORMAT.md",
+      "gitMode": "100644",
+      "gitBlob": "d7e61f30a9fd8ca70d9ee68f019c2a9ebf2d13f7"
+    },
+    {
+      "path": ".agents/skills/domain-modeling/GLOSSARY-FORMAT.md",
+      "gitMode": "100644",
+      "gitBlob": "9c0b4c7a2e8507c23cbb5e0baa66d81699321cc6"
+    },
+    {
+      "path": ".agents/skills/domain-modeling/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "a4438c6879c517d1a08e2b5fbca049b632688dfe"
+    },
+    {
+      "path": ".agents/skills/domain-modeling/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "7f1522d2f11506ee205275ab7c282aa52366ecf6"
+    },
+    {
+      "path": ".agents/skills/git-guardrails-claude-code/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "58bcdd875b164093b95f436fa32a65c6cb5eb572"
+    },
+    {
+      "path": ".agents/skills/git-guardrails-claude-code/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "3f5d756f1b9b97d94cef1473fb480ccda5fdfbc1"
+    },
+    {
+      "path": ".agents/skills/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "gitMode": "100755",
+      "gitBlob": "c40b59cb47880fc9da8fe4179bd742f51f09d17d"
+    },
+    {
+      "path": ".agents/skills/grill-me/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "3947ff9c4ad980d14fc07fccbf659d47c114e81d"
+    },
+    {
+      "path": ".agents/skills/grill-me/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b"
+    },
+    {
+      "path": ".agents/skills/grill-with-docs/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "62b9efb6f991d1b229adee7506962f13ced0c499"
+    },
+    {
+      "path": ".agents/skills/grill-with-docs/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "5dbe2780a51be3e9b118bd7758a73e54a9384e11"
+    },
+    {
+      "path": ".agents/skills/grilling/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "df69d9936880cd3314c28858c6c52f48db23b856"
+    },
+    {
+      "path": ".agents/skills/grilling/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39"
+    },
+    {
+      "path": ".agents/skills/handoff/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "a224edc643a20ddb989f9bca1547440169159810"
+    },
+    {
+      "path": ".agents/skills/handoff/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "6e1d8da121beceddc2f9ec7fa8714c1d914dd11a"
+    },
+    {
+      "path": ".agents/skills/implement-spec/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "183923797ab58f1b3ef09e03bc1f1f203c309f37"
+    },
+    {
+      "path": ".agents/skills/implement-spec/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "f5e91af21e38eb1a167ea5aa93dfc7da3c4637b4"
+    },
+    {
+      "path": ".agents/skills/implement/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "bd49e472984c7b99aac40286fdae749bb955a842"
+    },
+    {
+      "path": ".agents/skills/implement/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "f8794dc153b409052a9167baf10858cf01b36175"
+    },
+    {
+      "path": ".agents/skills/improve-codebase-architecture/HTML-REPORT.md",
+      "gitMode": "100644",
+      "gitBlob": "e39e8255b8797cf8257d014fb6658fb533f3a399"
+    },
+    {
+      "path": ".agents/skills/improve-codebase-architecture/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "44cc7d3136c44534d68ac523fa6cd37e759d2846"
+    },
+    {
+      "path": ".agents/skills/improve-codebase-architecture/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "706fdca096da5937fe57875a9154017d50668c42"
+    },
+    {
+      "path": ".agents/skills/loop-me/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "e58a474ca80feffdeb28842bc3bdee37da6510e7"
+    },
+    {
+      "path": ".agents/skills/loop-me/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "1a4f4111192ff75b4771e8a248c603994d5eafdc"
+    },
+    {
+      "path": ".agents/skills/migrate-to-shoehorn/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "ae4f965e204fc93cedbc4e2c306e92829d93f800"
+    },
+    {
+      "path": ".agents/skills/migrate-to-shoehorn/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "3bd79ee2b502075c6d1fe40e6fe98f4fe3f3c5f5"
+    },
+    {
+      "path": ".agents/skills/pr/CREDITS.md",
+      "gitMode": "100644",
+      "gitBlob": "5314bda2fa6005e264c9b5c1de7c425e719dc91f"
+    },
+    {
+      "path": ".agents/skills/pr/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "84dd4fb2f068e9f6282690235d20dd505b418119"
+    },
+    {
+      "path": ".agents/skills/pr/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "48286f48f53b937cc19c0e39899b5f956271a98d"
+    },
+    {
+      "path": ".agents/skills/prototype/LOGIC.md",
+      "gitMode": "100644",
+      "gitBlob": "32be86a0a5d9928db84b3988e55f9debe476ab40"
+    },
+    {
+      "path": ".agents/skills/prototype/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "a0044501fe0d385b4d8575b610188ede9b236ccf"
+    },
+    {
+      "path": ".agents/skills/prototype/UI.md",
+      "gitMode": "100644",
+      "gitBlob": "3977951663490882c2632b40695d9f59a2fe2408"
+    },
+    {
+      "path": ".agents/skills/prototype/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "1618b147965bc729b7bf3e8da5f130132067aadc"
+    },
+    {
+      "path": ".agents/skills/research/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "fecee97e9457ba039678d2fcf1b1bc9fca78307d"
+    },
+    {
+      "path": ".agents/skills/research/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "e18b96ca0ccc1003889d5d6991386207c2454bc2"
+    },
+    {
+      "path": ".agents/skills/retro/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "12149acf2dd23b4514dec57b04a6293eaa1352fa"
+    },
+    {
+      "path": ".agents/skills/retro/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "a2f0bac3f9cebf29beee2e79960cb876e0adc65d"
+    },
+    {
+      "path": ".agents/skills/scaffold-exercises/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "d87df28e7d8abb4e57ecc6e47d71c274d16054c7"
+    },
+    {
+      "path": ".agents/skills/scaffold-exercises/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "963723a58973effa256cbfe0f23a7bcc03a374b8"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "293c25b75590119794af03b037ba4288054a32b3"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "65a0da8128c98051183235e490767a8065310868"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/domain.md",
+      "gitMode": "100644",
+      "gitBlob": "4032de016c1e91119d33d477633e2b8f265f4195"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/issue-tracker-github.md",
+      "gitMode": "100644",
+      "gitBlob": "a63510f74038300d8da354553f9d31d1bd954d94"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "gitMode": "100644",
+      "gitBlob": "81499dca459e8097d560b641f8ba7c2e1c7c9da4"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/issue-tracker-local.md",
+      "gitMode": "100644",
+      "gitBlob": "0209a19af92c9c485cf3acc3d9e253171517ea17"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/triage-labels.md",
+      "gitMode": "100644",
+      "gitBlob": "5276464244857a3cc29890ff4a978a197b21f3fc"
+    },
+    {
+      "path": ".agents/skills/setup-pre-commit/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "1b9708168263067adb4684d06ebb8f4ccfe9682c"
+    },
+    {
+      "path": ".agents/skills/setup-pre-commit/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "e5a1c63df9e0703893cdad799bd5e2a6b5e6939d"
+    },
+    {
+      "path": ".agents/skills/setup-ts-deep-modules/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "7e30047eaeda175de5d93886596a37baf365bb90"
+    },
+    {
+      "path": ".agents/skills/setup-ts-deep-modules/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "5d0581bdd4f9337cfb1e13feb7e1e18f43ea9db1"
+    },
+    {
+      "path": ".agents/skills/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+      "gitMode": "100644",
+      "gitBlob": "54030ede7d36b7f72fc0f645fa414efa9b6f63ed"
+    },
+    {
+      "path": ".agents/skills/site-rebuild-standards/KEYWORDS.md",
+      "gitMode": "100644",
+      "gitBlob": "a9574ca5546aaa571212739304f7b86a838805d2"
+    },
+    {
+      "path": ".agents/skills/site-rebuild-standards/PAGE-DATA.md",
+      "gitMode": "100644",
+      "gitBlob": "722628427ac38be52eefae1a3416676e99ce67ed"
+    },
+    {
+      "path": ".agents/skills/site-rebuild-standards/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "b119f1bf11c66276b43195ab5f389401b2ca00b8"
+    },
+    {
+      "path": ".agents/skills/tdd/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "01eadaa34e7c9a63a67d6dc3cce1cc81b0e49985"
+    },
+    {
+      "path": ".agents/skills/tdd/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "651b838a7663e027b1b8884491e867f26bb9a021"
+    },
+    {
+      "path": ".agents/skills/tdd/mocking.md",
+      "gitMode": "100644",
+      "gitBlob": "71cbfee674d93244ce81d1830b930ca9a69200bd"
+    },
+    {
+      "path": ".agents/skills/tdd/tests.md",
+      "gitMode": "100644",
+      "gitBlob": "7ab86479f925a1f9e8ba680af33cb3b12e015381"
+    },
+    {
+      "path": ".agents/skills/teach/GLOSSARY-FORMAT.md",
+      "gitMode": "100644",
+      "gitBlob": "fdd7e366ad9760588b28981e42b3d3b561e56aca"
+    },
+    {
+      "path": ".agents/skills/teach/LEARNING-RECORD-FORMAT.md",
+      "gitMode": "100644",
+      "gitBlob": "953c61422776b47612c3c945920358ad7b5daee7"
+    },
+    {
+      "path": ".agents/skills/teach/MISSION-FORMAT.md",
+      "gitMode": "100644",
+      "gitBlob": "45250bb1bad70988bf381625931df64645e10246"
+    },
+    {
+      "path": ".agents/skills/teach/RESOURCES-FORMAT.md",
+      "gitMode": "100644",
+      "gitBlob": "18b588c8b6f96a50ae2352f264928c643d2782e4"
+    },
+    {
+      "path": ".agents/skills/teach/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "493fa3bae0dada971c4dfb965790e56920b1dced"
+    },
+    {
+      "path": ".agents/skills/teach/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "3452a850e3b0c1f0a3d41b2bfd45164d2d38d7f6"
+    },
+    {
+      "path": ".agents/skills/to-questionnaire/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "dadd0c00d6a350acaa15bb9ca1b96b20ead684ca"
+    },
+    {
+      "path": ".agents/skills/to-questionnaire/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "a58d14765beb4acb4c9708b516310558e1308a22"
+    },
+    {
+      "path": ".agents/skills/to-spec/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "3f52599ae2a4347aee5a07432c2707518e691a7f"
+    },
+    {
+      "path": ".agents/skills/to-spec/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "549e6f76f020a1b9ba65f52ccda336566ee6222a"
+    },
+    {
+      "path": ".agents/skills/to-tickets/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "9b77a01db9460c99c22d03c910c349f890f12c0e"
+    },
+    {
+      "path": ".agents/skills/to-tickets/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "24605a5db64e4fc750b999aa94aea126bee814ee"
+    },
+    {
+      "path": ".agents/skills/triage/AGENT-BRIEF.md",
+      "gitMode": "100644",
+      "gitBlob": "1462fcd9e8cc21921158c296149dc05d9be39d20"
+    },
+    {
+      "path": ".agents/skills/triage/OUT-OF-SCOPE.md",
+      "gitMode": "100644",
+      "gitBlob": "c9fba2f77ee0619975ec8488c0d4861a0c7e3151"
+    },
+    {
+      "path": ".agents/skills/triage/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "3fd5617e906cf9b71a6b17424791adb905fc248b"
+    },
+    {
+      "path": ".agents/skills/triage/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "acb366cf0f2527e8925ff1223b77610ac0b1be4c"
+    },
+    {
+      "path": ".agents/skills/vercel-cli-with-tokens/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "814423d0c40f56853e0f4f2f64d03a02266dadf4"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/AGENTS.md",
+      "gitMode": "100644",
+      "gitBlob": "558bf9aa1e36db2161f1633c9bfae14a819f0508"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/README.md",
+      "gitMode": "100644",
+      "gitBlob": "01f359b0e79ce544d1463057be54946e50d62bcd"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "d07025bf943345bc1cf15eb923594f889ff881f0"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/_sections.md",
+      "gitMode": "100644",
+      "gitBlob": "f921dd41b53e4d847f25a6b3eca25a4e8857db44"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/_template.md",
+      "gitMode": "100644",
+      "gitBlob": "119a30167f162c439f05e73c63044c590dff645c"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/architecture-avoid-boolean-props.md",
+      "gitMode": "100644",
+      "gitBlob": "ccee19ce495b9d7fdf08867db3c6b6282006312e"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/architecture-compound-components.md",
+      "gitMode": "100644",
+      "gitBlob": "e5e3043cb5a81b83dce0389848b828455f00854f"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/patterns-children-over-render-props.md",
+      "gitMode": "100644",
+      "gitBlob": "d4345ee30aea5f1b11815251edca7ebd0aefe2e2"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/patterns-explicit-variants.md",
+      "gitMode": "100644",
+      "gitBlob": "56e32e8bee5e5768f747db4e9718a6c2b54bfce5"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/react19-no-forwardref.md",
+      "gitMode": "100644",
+      "gitBlob": "e0d8f8a76f14888f2fafc8cccd3d9395e4711d0d"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/state-context-interface.md",
+      "gitMode": "100644",
+      "gitBlob": "d961bede0c6c6e318f6ba3aca9b5dfcdb768d8f9"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/state-decouple-implementation.md",
+      "gitMode": "100644",
+      "gitBlob": "71a5afaa7d7078c262c92d32c3b97723de62f99f"
+    },
+    {
+      "path": ".agents/skills/vercel-composition-patterns/rules/state-lift-state.md",
+      "gitMode": "100644",
+      "gitBlob": "d7fe27b54933135f9050365b6c2001c101029d51"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/AGENTS.md",
+      "gitMode": "100644",
+      "gitBlob": "224505b4ac6d0e2bc0c8a38d2a7ea39dbe5e9852"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/CONTRIBUTING.md",
+      "gitMode": "100644",
+      "gitBlob": "361b5bc5d526f2b0f553fe0ffdbd3075a62ce9fb"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/README.md",
+      "gitMode": "100644",
+      "gitBlob": "75d7327b416aaaef4b17ec3358b3b8376d40c7a0"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "c8a6d6d7075b2cc3f7921da89de86e6926f78985"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/auth-route.mjs",
+      "gitMode": "100644",
+      "gitBlob": "96fd45767c26524cfcdb320257db7ec40cf4fb3b"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/budget-summary.mjs",
+      "gitMode": "100644",
+      "gitBlob": "fcb1aaadaf157f845f419e1c19e47ed69a055564"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/citations.mjs",
+      "gitMode": "100644",
+      "gitBlob": "4d6f362a69141ac0d8faa2a0e1f04d7887962af6"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/cost-coverage.mjs",
+      "gitMode": "100644",
+      "gitBlob": "09a8b1986db5f963bf8cca2b43ae96cc9811c7b5"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/dedup-recs.mjs",
+      "gitMode": "100644",
+      "gitBlob": "c5e30c2cb6787ddcccadbf17f99190aa385d0894"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/deep-dive.mjs",
+      "gitMode": "100644",
+      "gitBlob": "3d1c02ea0b2221cbf119b0f474ed462432d235d5"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/display-labels.mjs",
+      "gitMode": "100644",
+      "gitBlob": "e8f90f86b0f69c44d173c4c6f2bc4e624da3bc69"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/extract-claims.mjs",
+      "gitMode": "100644",
+      "gitBlob": "6ddecfd7eead23f6ba4f4c71649d81dec30bc630"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/framework-support.mjs",
+      "gitMode": "100644",
+      "gitBlob": "79fe0a123f07ef8267796e5ca982cd2d906f7dab"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/build-minutes-fanout.mjs",
+      "gitMode": "100644",
+      "gitBlob": "060d3c4d07e5d6edc2d54d508c24e5dc78b592a5"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/cold-start.mjs",
+      "gitMode": "100644",
+      "gitBlob": "f048151a9d9c35746935b2db390a03a2ce0bee5a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/contract.mjs",
+      "gitMode": "100644",
+      "gitBlob": "6044dc8bae0d036f24cb0c5f49fe581db495b10a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/cwv-poor.mjs",
+      "gitMode": "100644",
+      "gitBlob": "8eadd8dacd700c5acef49b2315ada6e3617e7a60"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/external-api-slow.mjs",
+      "gitMode": "100644",
+      "gitBlob": "b47ba5bf1f5e3367db27fa664f79d937b9dd432a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/hard-gates.mjs",
+      "gitMode": "100644",
+      "gitBlob": "6d08dedbdcc6f3920a9ae19d69318674addfe724"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/index.mjs",
+      "gitMode": "100644",
+      "gitBlob": "345c1e777b18d003d37d83aaafdc70ce2197f80a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/isr-overrevalidation.mjs",
+      "gitMode": "100644",
+      "gitBlob": "86769a9c0b6af1b863073a089298403f591db2cb"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/middleware-heavy.mjs",
+      "gitMode": "100644",
+      "gitBlob": "416605cd2b55cfbb47de42fa054d018c0a7ada2c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/observability-events-attribution.mjs",
+      "gitMode": "100644",
+      "gitBlob": "85a1f94a2f51b4cf924a0e2b5d67037bb8a85f12"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/platform-bot-protection.mjs",
+      "gitMode": "100644",
+      "gitBlob": "035f06353e9d132c6b6458c4cc789166c1f430de"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/platform-fluid-compute.mjs",
+      "gitMode": "100644",
+      "gitBlob": "6985698bf79a5f77186625693763317130cf5ca2"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/region-misconfig.mjs",
+      "gitMode": "100644",
+      "gitBlob": "354b99c683d21ec907110fcf8ae0295cd5ffb657"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/route-errors.mjs",
+      "gitMode": "100644",
+      "gitBlob": "98b819aa79314b527c2d4f8de8b12a57d492ba7b"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/scanner-driven.mjs",
+      "gitMode": "100644",
+      "gitBlob": "a698f18e103cb86e05e825ff5db5850c74f3b026"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/select-candidates.mjs",
+      "gitMode": "100644",
+      "gitBlob": "b52a9eb17038e068aa3082166d1a0436fddaf775"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/slow-route.mjs",
+      "gitMode": "100644",
+      "gitBlob": "262e5b5ae9f893d49750fd7e75b781c7172c685a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/types.d.ts",
+      "gitMode": "100644",
+      "gitBlob": "ac454dc5bf334263c318764c5c0432c6acdf3047"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/uncached-route.mjs",
+      "gitMode": "100644",
+      "gitBlob": "3898f59890a52955c5eefcf7c82f9b70ad6d1ad2"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/gates/usage-spike-triage.mjs",
+      "gitMode": "100644",
+      "gitBlob": "feff90c59aa41d8b4830bd5d19e9f43563c25455"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/grade-recommendation.mjs",
+      "gitMode": "100644",
+      "gitBlob": "ca577e9354d0bc88a5036a77c7da3f4dc1d5bf63"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/impact-label.mjs",
+      "gitMode": "100644",
+      "gitBlob": "b9bb61e62b2dfee152eb9b7d189ebc225cf02877"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/impact-magnitude.mjs",
+      "gitMode": "100644",
+      "gitBlob": "e81c0ead2d09ad21f79dce9462ec1da603965a04"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/investigation-brief.mjs",
+      "gitMode": "100644",
+      "gitBlob": "d5267236a3ca2785d16e5bb355e6a8a9ce4293b2"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/observation-safety.mjs",
+      "gitMode": "100644",
+      "gitBlob": "1a628cd0dad19b74de37e3eadc1636ac744d428c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/project-facts.mjs",
+      "gitMode": "100644",
+      "gitBlob": "279635a87829060e6f6e537056d6544eadce2c0a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/queries.mjs",
+      "gitMode": "100644",
+      "gitBlob": "77503b013b9613d529f04878a11bdc1860fbda52"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/reconcile-candidates.mjs",
+      "gitMode": "100644",
+      "gitBlob": "472b089bc33b2f1b6d53042eb3a8e59d4c12f90d"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/render-report.mjs",
+      "gitMode": "100644",
+      "gitBlob": "864fd0bfbb8c80fc64725bc39023734c28b2b907"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/repo-root.mjs",
+      "gitMode": "100644",
+      "gitBlob": "696f9cb3654f30d77b246c21f167ce965556065f"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/route-normalize.mjs",
+      "gitMode": "100644",
+      "gitBlob": "2116252d8b1aaaa82f7dd73ff60c8744deba89b3"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/bot-protection-certainty.mjs",
+      "gitMode": "100644",
+      "gitBlob": "5de9a711b0c3468e5c89f10c8c219e15b7c7287f"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/cache-tag-invalidation-certainty.mjs",
+      "gitMode": "100644",
+      "gitBlob": "b635a57c51cc36752b56b7d4707436b27a2c1329"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/count-correct.mjs",
+      "gitMode": "100644",
+      "gitBlob": "b28e17bf649e3bb411fe6ee14aaca71fec64d1d1"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/function-duration-invocations.mjs",
+      "gitMode": "100644",
+      "gitBlob": "69bd0b1d414e7df2d5d213f3a8763e144dd74d61"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/index.mjs",
+      "gitMode": "100644",
+      "gitBlob": "93f0a1fa0d3dc34bb99192930ffb303c871345d3"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/middleware-conflict.mjs",
+      "gitMode": "100644",
+      "gitBlob": "83abb4a8f6c863c8ba904295b887afa978263074"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/missing-citation.mjs",
+      "gitMode": "100644",
+      "gitBlob": "2442d846002ac9582256fd2c7a19f8b70bf91ca3"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/pre-release.mjs",
+      "gitMode": "100644",
+      "gitBlob": "c401da6c8f9ccc856d16791b6234a263a398195d"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/rate-limit.mjs",
+      "gitMode": "100644",
+      "gitBlob": "9809a649eecdfb23732fd7cbae851df1e16129a8"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/rendering-mode-mislabel.mjs",
+      "gitMode": "100644",
+      "gitBlob": "27e5c372f72ae3a311e6c8fd65031406b9e0ac51"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/undeclared-dep.mjs",
+      "gitMode": "100644",
+      "gitBlob": "5dee0feb5eb77ee093ca5836ec44c9affbe6ea26"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/vercel-directive-strip.mjs",
+      "gitMode": "100644",
+      "gitBlob": "604f8afed8154b7fa180a4b04b1d250e57dbeff1"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/sanitizers/window-units.mjs",
+      "gitMode": "100644",
+      "gitBlob": "f03bed6ab4cba26be657a8ee2ffdf3cccef5f921"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/cache-components-suspense-dedupe.mjs",
+      "gitMode": "100644",
+      "gitBlob": "c28b202ea3aab848b2b1478420175c7f04c33fb4"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/edge-heavy-import.mjs",
+      "gitMode": "100644",
+      "gitBlob": "f42273dd0342b168e1656bca881ff68659e3d350"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/force-dynamic.mjs",
+      "gitMode": "100644",
+      "gitBlob": "746cafd8b2436de95c74b4680b20b9183947fd4e"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/headers-in-page.mjs",
+      "gitMode": "100644",
+      "gitBlob": "cc91d06bf3432ffaf944558671a82739bd62090f"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/index.mjs",
+      "gitMode": "100644",
+      "gitBlob": "9a35bf0e29dea3e43a85600baa8f5056eff65b49"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/large-static-asset.mjs",
+      "gitMode": "100644",
+      "gitBlob": "62b2d272f3484796b03e909bd0b683b4401644b7"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/max-age-without-s-maxage.mjs",
+      "gitMode": "100644",
+      "gitBlob": "91ee2959ca052a4ecd14d3ce88c4ab78caba99e9"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/middleware-broad-matcher.mjs",
+      "gitMode": "100644",
+      "gitBlob": "1ab1beec6aba51d11edd44794b28fdad53eae181"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/missing-cache-headers.mjs",
+      "gitMode": "100644",
+      "gitBlob": "1ea3c63d72cd8b6cb98872a5e414a4d5a5082b70"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/prisma-include-tree.mjs",
+      "gitMode": "100644",
+      "gitBlob": "1b3a2edbaaa327be2f6dac76f28c5dbe6d25592c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/region-pin-in-config.mjs",
+      "gitMode": "100644",
+      "gitBlob": "6ac6c0665875de39dd6e0e1d543f9ba80a6cf4ad"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/source-maps-production.mjs",
+      "gitMode": "100644",
+      "gitBlob": "e3c50ed0ba69c9b23257cec0aa381447d339f7d7"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/sveltekit-prerender-missing.mjs",
+      "gitMode": "100644",
+      "gitBlob": "e61a62360e33fa0e9dcf2c21cfd0bc324574dce9"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/turbo-force-bypass.mjs",
+      "gitMode": "100644",
+      "gitBlob": "62de072cb6e71675e2e931bdbcab6886d726ab48"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/unoptimized-image.mjs",
+      "gitMode": "100644",
+      "gitBlob": "1f5824d6ee5ae4b74bffc6132260751883b9f236"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/scanners/use-cache-date-stamp.mjs",
+      "gitMode": "100644",
+      "gitBlob": "69d46aa6ac290a5014fdd180a6f907cf13982dc1"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/support-topics.mjs",
+      "gitMode": "100644",
+      "gitBlob": "781bee5a3528eca77218cf0bb2c0e0d51bb861d2"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/throttle.mjs",
+      "gitMode": "100644",
+      "gitBlob": "9e8d5195790afa708f7baa0bf9856b86b7f51193"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/util.mjs",
+      "gitMode": "100644",
+      "gitBlob": "c7031d3ab43a4273b0cb9925b4a9d717d69c4566"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/vercel.mjs",
+      "gitMode": "100644",
+      "gitBlob": "0810c70927c6b1b40f4fb3ba29ae1eb08143cfaf"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/verify-claim.mjs",
+      "gitMode": "100644",
+      "gitBlob": "b8e68a91a30e7f8054cba0384edb046c70dbecd3"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/lib/workspace-resolver.mjs",
+      "gitMode": "100644",
+      "gitBlob": "4d5b7677afff8876f09e2fecdd623ada1692fb9e"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/candidates.md",
+      "gitMode": "100644",
+      "gitBlob": "9bcc87fe4fe69df8cf3a73f8f658c139a3700405"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/data-collection.md",
+      "gitMode": "100644",
+      "gitBlob": "140c7872b4c68ab91cf6b52f71a1e180a9fd60a1"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/docs-library.json",
+      "gitMode": "100644",
+      "gitBlob": "ad4e3306e1ffb0a1052f8a184c16bec9d0266698"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/doctrine.md",
+      "gitMode": "100644",
+      "gitBlob": "91428a3a8cbcecfd162d97b32a7cd51bc5a53a62"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/observability-plus.md",
+      "gitMode": "100644",
+      "gitBlob": "908ca8c7a429c73d9e5f5987f7ff773bd14814f8"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/README.md",
+      "gitMode": "100644",
+      "gitBlob": "35e7d99984fa0a223846a3dfecf26026695d5156"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/ai-application.md",
+      "gitMode": "100644",
+      "gitBlob": "038bf091c1e66f005407c6ae2d1c861a082a60b6"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/api-service.md",
+      "gitMode": "100644",
+      "gitBlob": "7cac1101e7de20050a1d0a6da167e69a1b0b57d8"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/content-site.md",
+      "gitMode": "100644",
+      "gitBlob": "d4c1f68b99fc34f4c1a1311514bbdcccaa8897f9"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/ecommerce.md",
+      "gitMode": "100644",
+      "gitBlob": "0942a9718ff1ac3bce97c7d06c3bd9976cbc6efc"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/marketing.md",
+      "gitMode": "100644",
+      "gitBlob": "b9f8b6d71866905ed79bd98efb9c88b1b632125a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/saas.md",
+      "gitMode": "100644",
+      "gitBlob": "633737704b25f4c07f5f8527e9e4272271714bae"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/playbooks/sveltekit.md",
+      "gitMode": "100644",
+      "gitBlob": "e7ea0ad2818c70799175ad4dd064306df57f872e"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/recommendations.md",
+      "gitMode": "100644",
+      "gitBlob": "cd1ae07976cc42c0c8abebddec4e5043ae233e2c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/scanner-patterns.md",
+      "gitMode": "100644",
+      "gitBlob": "26ae4d1c3f956f991f9cd6760beeabe6098e7c0c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/scoring.md",
+      "gitMode": "100644",
+      "gitBlob": "a988493bde00db568dd25b2e0e3651af39c10961"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/README.md",
+      "gitMode": "100644",
+      "gitBlob": "cfa8eeb465d59bb82980a1a321926d3e661fb46d"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/astro-edge-middleware-scope.md",
+      "gitMode": "100644",
+      "gitBlob": "967ca82acdd310d809c0c597375f9dde8428f84b"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/astro-output-mode-and-isr.md",
+      "gitMode": "100644",
+      "gitBlob": "b9d0e36e5a1293d51beb50c41825b489b8290ebd"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/auth-preserving-parallelization.md",
+      "gitMode": "100644",
+      "gitBlob": "f6ea6d5f3c6c74cc0634d723938ac749f220219d"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/bot-protection-product-guardrails.md",
+      "gitMode": "100644",
+      "gitBlob": "658f2ec9f33c155d3ee4bf46d4afa81951bec98a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/build-minutes-monorepo-fanout.md",
+      "gitMode": "100644",
+      "gitBlob": "56f1ce274d4f4047d846a856f0161a89553a11e5"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/cache-components-static-shell-boundaries.md",
+      "gitMode": "100644",
+      "gitBlob": "aee0a9addc6ebaf3b672360510e8bc3ebc1a373a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/cache-components-suspense-dedupe-pitfall.md",
+      "gitMode": "100644",
+      "gitBlob": "5aacb91aae50b1ecc48e4748f8a851d5f2e8959b"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/cdn-cache-auth-safety.md",
+      "gitMode": "100644",
+      "gitBlob": "7ee59d1381fe674c872524fe470208f21e78aa52"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/cold-start-initialization-bundle.md",
+      "gitMode": "100644",
+      "gitBlob": "c99c495946243d3476c43e9a9170d486e86e8d27"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/core-web-vitals-client-bottlenecks.md",
+      "gitMode": "100644",
+      "gitBlob": "470e313ffb602205732e8b3f42dee88714b3c94c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/database-egress-pooling-region.md",
+      "gitMode": "100644",
+      "gitBlob": "431f3a1dd6a021a55319b5ef5cad65cf454e5f86"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/dynamic-rendering-traps.md",
+      "gitMode": "100644",
+      "gitBlob": "cd9d62daa181c427faa2cbb72cc6398fe3106692"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/external-api-critical-path-platform.md",
+      "gitMode": "100644",
+      "gitBlob": "6f0d93de909e8b9c746b404838b602c0e1e9f67b"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/external-api-critical-path.md",
+      "gitMode": "100644",
+      "gitBlob": "d7303f4d67d56864ffe811f50f3a30fe6e6e8522"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/fast-data-transfer-payloads.md",
+      "gitMode": "100644",
+      "gitBlob": "8a5e49bcef1d12bc32aa525dc1e6fa3b71be4e96"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/fluid-compute-caveats.md",
+      "gitMode": "100644",
+      "gitBlob": "952b947d101a92ecaa8d1cb3229528a91df9b3c4"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/function-duration-io-and-after.md",
+      "gitMode": "100644",
+      "gitBlob": "3e835dc296a2bd6b31157e55c147fbaa333e11a0"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/function-invocation-reduction.md",
+      "gitMode": "100644",
+      "gitBlob": "6e9f4da3c8201056dea9bca3fcfe2b3a6c240815"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/function-region-misconfiguration-ttfb.md",
+      "gitMode": "100644",
+      "gitBlob": "127fde4297abb0ffde83d2e96f9f0169fae80331"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/image-optimization-cost-control.md",
+      "gitMode": "100644",
+      "gitBlob": "e2a683c73a8f553fcaa0a56f7578a02c4efd7d8a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/isr-revalidation-static-generation.md",
+      "gitMode": "100644",
+      "gitBlob": "e0938c87f45c32dc4b2a460007fc280cc553130b"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/middleware-proxy-edge-cost.md",
+      "gitMode": "100644",
+      "gitBlob": "7cd2b3b19425b1ec31f88255961a3c6ef1803663"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/next-fetch-revalidate-floor.md",
+      "gitMode": "100644",
+      "gitBlob": "352d54812635e7559f8268457dd73792254503a4"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/next-font-cls-self-hosting.md",
+      "gitMode": "100644",
+      "gitBlob": "59e4fe28cdb8bc2e3656ef76b930ae3364d3ae70"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/next-heavy-ui-lazy-load-boundaries.md",
+      "gitMode": "100644",
+      "gitBlob": "470b0106551f5283cf27f96495a712691ad4ad7c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/next-image-lcp-preload-sizes.md",
+      "gitMode": "100644",
+      "gitBlob": "7471ee62cb43dc440018960b311f441993d6cb16"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/next-route-handler-get-cache-defaults.md",
+      "gitMode": "100644",
+      "gitBlob": "9d0f97c35a6aeed70f8a5edf9c721fbab13b7c31"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/next-script-third-party-strategy.md",
+      "gitMode": "100644",
+      "gitBlob": "75ac81ac0140445b92d73504a259b5c431709389"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/nextjs-version-cache-semantics.md",
+      "gitMode": "100644",
+      "gitBlob": "7f9297575ef8f25dcce6b4bf5dcbac2d96f83a67"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/not-found-catchall-request-waste.md",
+      "gitMode": "100644",
+      "gitBlob": "babbae9d2e60663d2614317ccf9a70c6ea760ff4"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/nuxt-route-rules-cache-isr.md",
+      "gitMode": "100644",
+      "gitBlob": "822537d3daadb4366eb94c6ff085a6ac08d047af"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/observability-events-cost-attribution.md",
+      "gitMode": "100644",
+      "gitBlob": "758c639f075b5e01e477abd2dc176be33fd2d3c0"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/post-response-work-waituntil.md",
+      "gitMode": "100644",
+      "gitBlob": "87609926c91adf4fb1145c76bdee29a9ed8bf2bb"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/route-error-durable-offload.md",
+      "gitMode": "100644",
+      "gitBlob": "1bb93957cb4781a7567b828d29e11f6c27444d80"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/route-error-runtime-limits.md",
+      "gitMode": "100644",
+      "gitBlob": "69b25447f7a75babc7de35e1b4b06bc26f67462a"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/runtime-cache-reusable-data.md",
+      "gitMode": "100644",
+      "gitBlob": "fa54468a6ff44c7fa50d4589deceab748f830a80"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/sveltekit-isr-prerender-safety.md",
+      "gitMode": "100644",
+      "gitBlob": "787c44777eddc2a1b5c6079dec573e4bb132e3cd"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/sveltekit-split-cold-start-tradeoff.md",
+      "gitMode": "100644",
+      "gitBlob": "ff5c685a0acd9d855e735be221fc754f4eca8922"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/usage-spike-triage.md",
+      "gitMode": "100644",
+      "gitBlob": "b1b7a3f86f14830425c417e48867ec4167eeb1a9"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/use-cache-date-stamp-isr-write-amplifier.md",
+      "gitMode": "100644",
+      "gitBlob": "3cd709d5a538c464d643e5c2afc92bbe2caffa65"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/use-cache-remote-shared-origin-data.md",
+      "gitMode": "100644",
+      "gitBlob": "b4037ee2f5d241b082e2bc880fd9a2ed8ae982ee"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/support-topics/workflow-resumable-stream-routes.md",
+      "gitMode": "100644",
+      "gitBlob": "efb2993cc02187a5187854f7f81c1e959b2f8a76"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/verification.md",
+      "gitMode": "100644",
+      "gitBlob": "fbb502487ead6c6cb87bc9f87d9820a6b46a81ec"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/references/voice.md",
+      "gitMode": "100644",
+      "gitBlob": "aa927f04a6d8e823c6b63dd7997fb9f921ed7722"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/budget-summary.mjs",
+      "gitMode": "100644",
+      "gitBlob": "9837e22d0505f54765b3eacd13996c80bfa1f51d"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/build-docs.mjs",
+      "gitMode": "100755",
+      "gitBlob": "22c81c49730ff47422938ffecffc75ba89804ccc"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/check-citations.mjs",
+      "gitMode": "100644",
+      "gitBlob": "2305d5cb0c4970109c7a3853815df0e809027142"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/check-docs-fresh.mjs",
+      "gitMode": "100755",
+      "gitBlob": "baf5720102eafe0cb2d5e6cf6a864830dc9500fe"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/collect-signals.mjs",
+      "gitMode": "100755",
+      "gitBlob": "2831fb9412453d6b789adcf565c930ddc529022e"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/collect-sub-agent-outputs.mjs",
+      "gitMode": "100644",
+      "gitBlob": "86998745bf84bc2d9472e19711062b015557c9d9"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/deep-dive.mjs",
+      "gitMode": "100755",
+      "gitBlob": "497d32aee28113355c234e2ec4ca17b8c8f98ae4"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/gate-investigations.mjs",
+      "gitMode": "100755",
+      "gitBlob": "936060e1e29b87e458af78d473f5c0b036bc61f8"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/merge-signals.mjs",
+      "gitMode": "100644",
+      "gitBlob": "06e305cb5fd8a7045ffc57d8f53ea9bb4f4801de"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/prepare-investigation-brief.mjs",
+      "gitMode": "100644",
+      "gitBlob": "3e49476ccc50157b362b3186bfbcd392143642a3"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/reconcile-candidates.mjs",
+      "gitMode": "100644",
+      "gitBlob": "1f80104b798fa8958484965c789397cce10cc2fc"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/render-report.mjs",
+      "gitMode": "100644",
+      "gitBlob": "542a99216276a059cdc4664baf642581073c7f1c"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/scan-codebase.mjs",
+      "gitMode": "100755",
+      "gitBlob": "9d416b54b0170f50c9a210d77e261683b61ea212"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/verify-and-regen.mjs",
+      "gitMode": "100644",
+      "gitBlob": "45973c3fa195f58f75dc5638695dd3575a8f8ce0"
+    },
+    {
+      "path": ".agents/skills/vercel-optimize/scripts/verify-finding.mjs",
+      "gitMode": "100755",
+      "gitBlob": "4e7fedc78c5fa8cdb6793ba670983d94dd346ca0"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/AGENTS.md",
+      "gitMode": "100644",
+      "gitBlob": "4e340a50684a8e7811d5bfa4df48bd9989d0fd87"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/README.md",
+      "gitMode": "100644",
+      "gitBlob": "f283e1c0c21c5b13c848452528c3949ff544846c"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "237988de4a66dd8a71d30a2c24ebe1a86b58d04e"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/_sections.md",
+      "gitMode": "100644",
+      "gitBlob": "4d20c144bc3b9265fc5976c704a8dd60ed3a806a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/_template.md",
+      "gitMode": "100644",
+      "gitBlob": "1e9e70703485021e0b969f5731f38c8b9f8694db"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/advanced-effect-event-deps.md",
+      "gitMode": "100644",
+      "gitBlob": "24d901b62be66f6088eb1de5b262e67f5c337d57"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/advanced-event-handler-refs.md",
+      "gitMode": "100644",
+      "gitBlob": "97e7ade243aa6dae50d6faa5111dea0d04778ead"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/advanced-init-once.md",
+      "gitMode": "100644",
+      "gitBlob": "73ee38e5e74c0afa28cb730afe3275479432092a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/advanced-use-latest.md",
+      "gitMode": "100644",
+      "gitBlob": "9c7cb501693d4a9521697f13dbd5906dd99f0257"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/async-api-routes.md",
+      "gitMode": "100644",
+      "gitBlob": "6feda1ef0ac06b57b33c7b5bd6a19ca88d6c8a34"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/async-cheap-condition-before-await.md",
+      "gitMode": "100644",
+      "gitBlob": "5799d7f6ee6e9d70422048ab0cae06ca021d22b2"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/async-defer-await.md",
+      "gitMode": "100644",
+      "gitBlob": "460b5e16baf9c66f85e4169eb9d43e4d07f2ce94"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/async-dependencies.md",
+      "gitMode": "100644",
+      "gitBlob": "0484ebab993f3db78277e8731872473d02475e6d"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/async-parallel.md",
+      "gitMode": "100644",
+      "gitBlob": "64133f6c31fec81eaaabd712586337d20122e09f"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/async-suspense-boundaries.md",
+      "gitMode": "100644",
+      "gitBlob": "1fbc05b04ed2474637b12014a77688750e78f931"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/bundle-analyzable-paths.md",
+      "gitMode": "100644",
+      "gitBlob": "8276f156cf1aa8a611bd5bc3cadcb362e16ccd13"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/bundle-barrel-imports.md",
+      "gitMode": "100644",
+      "gitBlob": "22d1050196671b7bc9f9aaf88cc665ba6fa8deb0"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/bundle-conditional.md",
+      "gitMode": "100644",
+      "gitBlob": "99d6fc90e31d683d2b6b71353b92d620b484b644"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/bundle-defer-third-party.md",
+      "gitMode": "100644",
+      "gitBlob": "db041d1510e51defeade05926ba4e6bbad1068b5"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/bundle-dynamic-imports.md",
+      "gitMode": "100644",
+      "gitBlob": "60b62695e7a080e2020ff2242d8d841c5e3ecbc4"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/bundle-preload.md",
+      "gitMode": "100644",
+      "gitBlob": "7000504065472628ae614786a3faadd23b0435a7"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/client-event-listeners.md",
+      "gitMode": "100644",
+      "gitBlob": "aad4ae91605d715aad8e92b76bd7fb85c91d7cdf"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/client-localstorage-schema.md",
+      "gitMode": "100644",
+      "gitBlob": "d30a1a7d4f85b0d50a0808eaa1b382c6deb595f4"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/client-passive-event-listeners.md",
+      "gitMode": "100644",
+      "gitBlob": "ce39a889efb4452ec4c044555ff818301dcf7ece"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/client-swr-dedup.md",
+      "gitMode": "100644",
+      "gitBlob": "2a430f27fd6abdc1b1b2f809b7a60114ff506790"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-batch-dom-css.md",
+      "gitMode": "100644",
+      "gitBlob": "a62d84ed8149b6d4f173debc7043af03f8f8dd06"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-cache-function-results.md",
+      "gitMode": "100644",
+      "gitBlob": "180f8ac8fffd7e6ee320242d59d06565d40a12f8"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-cache-property-access.md",
+      "gitMode": "100644",
+      "gitBlob": "39eec9061b4ca820150cc8183fb73f9e0c91ce85"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-cache-storage.md",
+      "gitMode": "100644",
+      "gitBlob": "aa4a30c08176aabd27b41fa44d5c1981457b675f"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-combine-iterations.md",
+      "gitMode": "100644",
+      "gitBlob": "044d017ec3b24b53e46d638acd1d936a22ac6323"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-early-exit.md",
+      "gitMode": "100644",
+      "gitBlob": "f46cb89c6cbe06e481aba0136848e3b17263ba96"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-flatmap-filter.md",
+      "gitMode": "100644",
+      "gitBlob": "ee0edf0da256eb8b62c5a998c768c51eb520e8cd"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-hoist-regexp.md",
+      "gitMode": "100644",
+      "gitBlob": "dae3fefdc0a1db66badcd4875489715edcdb038b"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-index-maps.md",
+      "gitMode": "100644",
+      "gitBlob": "9d357a00b15ac67cdd638886f5197a13173a637d"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-length-check-first.md",
+      "gitMode": "100644",
+      "gitBlob": "8b89573630fdc3aa10564273f390ecc7e2b1cd3e"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-min-max-loop.md",
+      "gitMode": "100644",
+      "gitBlob": "4b6656e96aecf3ae6ade52974090ae8b3e3f2bb5"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-request-idle-callback.md",
+      "gitMode": "100644",
+      "gitBlob": "d81927e5f0ddb9fa4eece79197728bfc4382cbfe"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-set-map-lookups.md",
+      "gitMode": "100644",
+      "gitBlob": "680a4892ee291c432bf8e769a44d0f1eb102b74b"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/js-tosorted-immutable.md",
+      "gitMode": "100644",
+      "gitBlob": "eae8b3f8aed2c7a893ceaae4cab55fa1c444b309"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-activity.md",
+      "gitMode": "100644",
+      "gitBlob": "c957a490b7c2688542766150741e85e066539251"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-animate-svg-wrapper.md",
+      "gitMode": "100644",
+      "gitBlob": "646744cbe53b213c6fa5ead54ef107510e5be89d"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-conditional-render.md",
+      "gitMode": "100644",
+      "gitBlob": "7e866f5852dac80e0822e7f7c33476f5c9fc22f1"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-content-visibility.md",
+      "gitMode": "100644",
+      "gitBlob": "aa6656362b2c0dad9ffea788b5850843d6c0629e"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-hoist-jsx.md",
+      "gitMode": "100644",
+      "gitBlob": "32d2f3fcea53dadcf847231ee20c60fa2c5c3049"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-hydration-no-flicker.md",
+      "gitMode": "100644",
+      "gitBlob": "5cf0e79b69afd7564b965c09435a2c7ee79eb2bd"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-hydration-suppress-warning.md",
+      "gitMode": "100644",
+      "gitBlob": "24ba2513a29f5259b3184695d2d4da25e03e42ac"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-resource-hints.md",
+      "gitMode": "100644",
+      "gitBlob": "1290bef06baf459f85dc5856ffc4486951224a48"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-script-defer-async.md",
+      "gitMode": "100644",
+      "gitBlob": "ee275ed1c06da8f1ae70e744e47965799eaebf02"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-svg-precision.md",
+      "gitMode": "100644",
+      "gitBlob": "6d7712860365294936a1b736d29d3eb970b91da7"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rendering-usetransition-loading.md",
+      "gitMode": "100644",
+      "gitBlob": "0c1b0b98e884d2c77bdec66df754693bd48c7777"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-defer-reads.md",
+      "gitMode": "100644",
+      "gitBlob": "e867c95f02fe6ed6ac2f91fdf1c0922304e0423a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-dependencies.md",
+      "gitMode": "100644",
+      "gitBlob": "47a4d92685702e3a3b07073c62a61800fa0a6d7d"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-derived-state-no-effect.md",
+      "gitMode": "100644",
+      "gitBlob": "3d9fe4050794ea6655add6bee50cfbc104e5dc31"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-derived-state.md",
+      "gitMode": "100644",
+      "gitBlob": "e5c899f6c073338bbd1b73c0275bc3e5e7d9ae7b"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-functional-setstate.md",
+      "gitMode": "100644",
+      "gitBlob": "b004ef45e347503947fee397b6c3d163b0a317fb"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-lazy-state-init.md",
+      "gitMode": "100644",
+      "gitBlob": "4ecb350fbadff3db805b72429276e672d42736dc"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-memo-with-default-value.md",
+      "gitMode": "100644",
+      "gitBlob": "63570491848cb42c2bc7073bceb754893a6a4cfa"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-memo.md",
+      "gitMode": "100644",
+      "gitBlob": "f8982ab612105a3b7faee1292b797338e7fb5271"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-move-effect-to-event.md",
+      "gitMode": "100644",
+      "gitBlob": "dd58a1af091b3cf5cb271d25904af4feb836d1aa"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-no-inline-components.md",
+      "gitMode": "100644",
+      "gitBlob": "d97592acefced05bc4a8538c77d226fa24c08534"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-simple-expression-in-memo.md",
+      "gitMode": "100644",
+      "gitBlob": "59dfab0f3b048097627e0ca6e4c8da36629a5268"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-split-combined-hooks.md",
+      "gitMode": "100644",
+      "gitBlob": "89d805644dbffe3877bc1356bdf8ad416a5c715b"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-transitions.md",
+      "gitMode": "100644",
+      "gitBlob": "d99f43f764232e994a49a1df89ec9d624552f439"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-use-deferred-value.md",
+      "gitMode": "100644",
+      "gitBlob": "619c04b0142bf5a5b7d0f69532a56b797a78f664"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/rerender-use-ref-transient-values.md",
+      "gitMode": "100644",
+      "gitBlob": "cf04b81f8a531eacd07a32e8917fb3ed3c1bbecb"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-after-nonblocking.md",
+      "gitMode": "100644",
+      "gitBlob": "e8f5b260f5fc6d58141bc61e0a091569adb81e7e"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-auth-actions.md",
+      "gitMode": "100644",
+      "gitBlob": "ee82c0442bc69ffae7bf20c07709d57893da1123"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-cache-lru.md",
+      "gitMode": "100644",
+      "gitBlob": "ef6938aa53c55dc3c0035bd6c66838810d870260"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-cache-react.md",
+      "gitMode": "100644",
+      "gitBlob": "87c9ca33168a321a59fbaaa84843e2f48c99751a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-dedup-props.md",
+      "gitMode": "100644",
+      "gitBlob": "fb24a2562c73fadbb9a11a79897c2cf93ea3c69a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-hoist-static-io.md",
+      "gitMode": "100644",
+      "gitBlob": "25205c2fc42d0dd684d6423acde642774329a8cc"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-no-shared-module-state.md",
+      "gitMode": "100644",
+      "gitBlob": "ff7d9f29c6e0e42ec1471acec8a3c7f394c8358d"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-parallel-fetching.md",
+      "gitMode": "100644",
+      "gitBlob": "1affc835a601a894fd02de08e6c9cdfd76d34b64"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-parallel-nested-fetching.md",
+      "gitMode": "100644",
+      "gitBlob": "be1dc25075e40e6bda46cb24dc5a6f42b916b0e8"
+    },
+    {
+      "path": ".agents/skills/vercel-react-best-practices/rules/server-serialization.md",
+      "gitMode": "100644",
+      "gitBlob": "39c5c4164c31be7f171ea2f4b3b32fe47709a651"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/AGENTS.md",
+      "gitMode": "100644",
+      "gitBlob": "d263eb9c111002248ec8b1539dbcd7ba7b6fddde"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/README.md",
+      "gitMode": "100644",
+      "gitBlob": "854db9f525c3427060b4ecefd266f00beca94eac"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "73401865dd7440a43c5243b107a3763e0d2f4aae"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/_sections.md",
+      "gitMode": "100644",
+      "gitBlob": "0519cf2325eec35f2f56611204d9ee35aa2a9782"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/_template.md",
+      "gitMode": "100644",
+      "gitBlob": "1e9e70703485021e0b969f5731f38c8b9f8694db"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/animation-derived-value.md",
+      "gitMode": "100644",
+      "gitBlob": "310928a957b841fc5af335e984a4df6c1a6b3f3a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/animation-gesture-detector-press.md",
+      "gitMode": "100644",
+      "gitBlob": "87c67827054bbb0a41d7e4ad78adf3612accb6bf"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/animation-gpu-properties.md",
+      "gitMode": "100644",
+      "gitBlob": "5fda09558e89b2d6021bbbe5a2731fd26d16b1f3"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/design-system-compound-components.md",
+      "gitMode": "100644",
+      "gitBlob": "d8239ee1fbb95d52b5b57a1d699199b1f4758e8c"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/fonts-config-plugin.md",
+      "gitMode": "100644",
+      "gitBlob": "39aa01477af69b372e7e6251831430da1c3203f9"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/imports-design-system-folder.md",
+      "gitMode": "100644",
+      "gitBlob": "8466dcb2544dad65639d29e5921a6be00ea1ac2c"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/js-hoist-intl.md",
+      "gitMode": "100644",
+      "gitBlob": "9af1c354c3e5e8836883c1a79a533fa5e72d4958"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-callbacks.md",
+      "gitMode": "100644",
+      "gitBlob": "a0b3913ff3b88e92bd0a91b555f8c96732b2b953"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-function-references.md",
+      "gitMode": "100644",
+      "gitBlob": "9721929b28b8115e8fa24ff8a6f82a6b1ec94d6e"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-images.md",
+      "gitMode": "100644",
+      "gitBlob": "75a3bafc83f65e0e14af3b7cc5786ea40b0d34b4"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-inline-objects.md",
+      "gitMode": "100644",
+      "gitBlob": "d5b6514a6658917468399803b16cb61b17459af7"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-item-expensive.md",
+      "gitMode": "100644",
+      "gitBlob": "f617a76d4e525cde99b937a8e0e163dfe0ef52b0"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-item-memo.md",
+      "gitMode": "100644",
+      "gitBlob": "634935e8ed0e6bd10014450c91b8a97187cbeda1"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-item-types.md",
+      "gitMode": "100644",
+      "gitBlob": "1027e4e6cd982476271d12507c329653ec793484"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/list-performance-virtualize.md",
+      "gitMode": "100644",
+      "gitBlob": "8a393ba1eef972f72a00a67c6b0a23c09c688639"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/monorepo-native-deps-in-app.md",
+      "gitMode": "100644",
+      "gitBlob": "ff85d76735d89e4cdfa89afd75759020780c5d5f"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/monorepo-single-dependency-versions.md",
+      "gitMode": "100644",
+      "gitBlob": "1087dfa511e9837f14b71f49d1c3d2018d6cfdc1"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/navigation-native-navigators.md",
+      "gitMode": "100644",
+      "gitBlob": "035c5fd37ce16afc0613405bd1f0b8ad0cc8b1ce"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/react-compiler-destructure-functions.md",
+      "gitMode": "100644",
+      "gitBlob": "f76c25ac6f8c48c8436f0ccee1359a649a33b48f"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/react-compiler-reanimated-shared-values.md",
+      "gitMode": "100644",
+      "gitBlob": "0dcbaf47a6abeb72da8673f99b45d2e8b609412b"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/react-state-dispatcher.md",
+      "gitMode": "100644",
+      "gitBlob": "93e8b6db6112936ad57e6506f56eeef0725336c1"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/react-state-fallback.md",
+      "gitMode": "100644",
+      "gitBlob": "204f34665f206a734cb2d0de17a7179f3793dc89"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/react-state-minimize.md",
+      "gitMode": "100644",
+      "gitBlob": "64605b6c382e407f244d2db8b72bb3105ebae87b"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/rendering-no-falsy-and.md",
+      "gitMode": "100644",
+      "gitBlob": "30f05d3f8bea95379273799a21f0a1990a6e6511"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/rendering-text-in-text-component.md",
+      "gitMode": "100644",
+      "gitBlob": "fd1b9f407014c783f3e59a5f3e5bf72979d62547"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/scroll-position-no-state.md",
+      "gitMode": "100644",
+      "gitBlob": "a5760cd2892a9985aeeed93abf719be5dc4efa88"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/state-ground-truth.md",
+      "gitMode": "100644",
+      "gitBlob": "c3c4bd9e497bcec63c303ec1cf2d0ff34e5a39cb"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-expo-image.md",
+      "gitMode": "100644",
+      "gitBlob": "72d768f1bf89d998e93611724e3608f48eb6b3a1"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-image-gallery.md",
+      "gitMode": "100644",
+      "gitBlob": "ef26d962f376c8c3fe052d578e143932fdd96a58"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-measure-views.md",
+      "gitMode": "100644",
+      "gitBlob": "8b783fee314ec7a4152cf49e0febcbdd78411e2c"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-menus.md",
+      "gitMode": "100644",
+      "gitBlob": "5168bc2037ca1fd1e1312abd4a2b77fec8eb5264"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-native-modals.md",
+      "gitMode": "100644",
+      "gitBlob": "f560e11e12e703a46517ff87d371a43e56230a81"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-pressable.md",
+      "gitMode": "100644",
+      "gitBlob": "31c3d204274292e244466bae9f425064263ae80a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-safe-area-scroll.md",
+      "gitMode": "100644",
+      "gitBlob": "79812bc9ce35eaad4c965103d0d87b7230084ca8"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-scrollview-content-inset.md",
+      "gitMode": "100644",
+      "gitBlob": "bbebc3b81c22ded13447efe5876c8c3408b4eb02"
+    },
+    {
+      "path": ".agents/skills/vercel-react-native-skills/rules/ui-styling.md",
+      "gitMode": "100644",
+      "gitBlob": "3908de3c4bbd03ce2f024917a2d82f9c03517100"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/AGENTS.md",
+      "gitMode": "100644",
+      "gitBlob": "ad47782cac25ac649fc1c34b70db8b690f5a2609"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/README.md",
+      "gitMode": "100644",
+      "gitBlob": "672482c95cb2b2f71455ec88e5cdfde36e66396a"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "eea9e89fbe6432801ef7102a095a714f3b33d449"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/references/css-recipes.md",
+      "gitMode": "100644",
+      "gitBlob": "28a2b2848627f0fbe3b3824188edbe633a84d450"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/references/implementation.md",
+      "gitMode": "100644",
+      "gitBlob": "2e5f7cb936a17318f8aab897f269a05e3c2475d6"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/references/nextjs.md",
+      "gitMode": "100644",
+      "gitBlob": "473750a3736bcf6324be6b5deec05f057f4dd696"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/references/patterns.md",
+      "gitMode": "100644",
+      "gitBlob": "6509efa4b110b05d755948672faf36278a89bd68"
+    },
+    {
+      "path": ".agents/skills/vercel-react-view-transitions/references/troubleshooting.md",
+      "gitMode": "100644",
+      "gitBlob": "2d6a46ebc2f26261e6771bcc5aeef0494960d297"
+    },
+    {
+      "path": ".agents/skills/wait-what/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "9b15cd1a7dda0854ca093e29e3e0de57e241b2ac"
+    },
+    {
+      "path": ".agents/skills/wait-what/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "6f7a9c33f99ec4ba70d986d6fc0de06c8b811bc3"
+    },
+    {
+      "path": ".agents/skills/wayfinder/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "e28cf3018906d6d60fc5b25390b4eeea035dd290"
+    },
+    {
+      "path": ".agents/skills/wayfinder/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "b37544751e0570f9df8de6c02aef238de8c3e1e0"
+    },
+    {
+      "path": ".agents/skills/web-design-guidelines/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "ceae92ab319216a68274168fba9b63b998b65997"
+    },
+    {
+      "path": ".agents/skills/wizard/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "c4294ad8298b9b95fc727496b1b802b1f7363fba"
+    },
+    {
+      "path": ".agents/skills/wizard/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "b601bdf3a321e7d32d5714681540b811287d3988"
+    },
+    {
+      "path": ".agents/skills/wizard/template.sh",
+      "gitMode": "100644",
+      "gitBlob": "2d0de38e641662269c8bec5a40eed9bf1e993edc"
+    },
+    {
+      "path": ".agents/skills/writing-beats/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "3d3b25b605491adc5c62ae5423127717a94b9632"
+    },
+    {
+      "path": ".agents/skills/writing-beats/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "e8eaa188d4c70b582eed2d1775fe4c4ea3562b25"
+    },
+    {
+      "path": ".agents/skills/writing-for-agents/SKILL-MECHANICS.md",
+      "gitMode": "100644",
+      "gitBlob": "9cdbdb22aadc438755392216e75ad9a14cc9832e"
+    },
+    {
+      "path": ".agents/skills/writing-for-agents/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "a37608daf6e835e767deecfb498facecaaba82ba"
+    },
+    {
+      "path": ".agents/skills/writing-for-agents/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "079c933b75743dec18b5d0c01006def20b6aad26"
+    },
+    {
+      "path": ".agents/skills/writing-fragments/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "c7c889b880cf9c8d289119dea5ff240641b615ca"
+    },
+    {
+      "path": ".agents/skills/writing-fragments/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "be3713e91e3ddc6c71e04e6b512b6ad6502d7cc8"
+    },
+    {
+      "path": ".agents/skills/writing-guidelines/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "63facf310252a990d154bed12b3dcdd295ba771a"
+    },
+    {
+      "path": ".agents/skills/writing-shape/SKILL.md",
+      "gitMode": "100644",
+      "gitBlob": "02f2866d13e72504e010f2ad3458eb9b36b876db"
+    },
+    {
+      "path": ".agents/skills/writing-shape/agents/openai.yaml",
+      "gitMode": "100644",
+      "gitBlob": "87e0c736be148002f9db275258cd2f405643ad7b"
+    },
+    {
+      "path": ".claude/skills/ask-matt",
+      "gitMode": "120000",
+      "gitBlob": "414cf8ddc6e28732a400aee3e6acc2bf2e567932"
+    },
+    {
+      "path": ".claude/skills/chief-of-staff",
+      "gitMode": "120000",
+      "gitBlob": "4d716a615174765e6a1a2e6c748cdf10903f5afb"
+    },
+    {
+      "path": ".claude/skills/claude-handoff",
+      "gitMode": "120000",
+      "gitBlob": "2499f58948fd5184db14b3857dfff30229ae31fd"
+    },
+    {
+      "path": ".claude/skills/code-review",
+      "gitMode": "120000",
+      "gitBlob": "2d88efdf94fc028b9b012dffeb83c6434251f566"
+    },
+    {
+      "path": ".claude/skills/codebase-design",
+      "gitMode": "120000",
+      "gitBlob": "08b466ebb0afda554fe528bbb12407fb68dde7e2"
+    },
+    {
+      "path": ".claude/skills/deploy-to-vercel",
+      "gitMode": "120000",
+      "gitBlob": "c5046c443354b8b822d26dae7abfa4c7d3076262"
+    },
+    {
+      "path": ".claude/skills/diagnosing-bugs",
+      "gitMode": "120000",
+      "gitBlob": "b2134fff28483f7bdc94064710845c2fa343cb4b"
+    },
+    {
+      "path": ".claude/skills/domain-modeling",
+      "gitMode": "120000",
+      "gitBlob": "e672a60cf16df768cf47ae2ea98e57a4ac7c603f"
+    },
+    {
+      "path": ".claude/skills/git-guardrails-claude-code",
+      "gitMode": "120000",
+      "gitBlob": "769e70131950e3eee2535651d02f0c186559754c"
+    },
+    {
+      "path": ".claude/skills/grill-me",
+      "gitMode": "120000",
+      "gitBlob": "eea91a865206ec2e589da697af9cd18c70fea1c2"
+    },
+    {
+      "path": ".claude/skills/grill-with-docs",
+      "gitMode": "120000",
+      "gitBlob": "f6cbb9cd47cd7f33e3c1103a50c31ea93af35916"
+    },
+    {
+      "path": ".claude/skills/grilling",
+      "gitMode": "120000",
+      "gitBlob": "e7124527152f42544972806d5c1e9d8cd4af9e90"
+    },
+    {
+      "path": ".claude/skills/handoff",
+      "gitMode": "120000",
+      "gitBlob": "a34a6b239d0d6b765806d6858d311eb73ee047d8"
+    },
+    {
+      "path": ".claude/skills/implement",
+      "gitMode": "120000",
+      "gitBlob": "e429be8a9f9e2c7c15b27c4f74ed9d390f501000"
+    },
+    {
+      "path": ".claude/skills/implement-spec",
+      "gitMode": "120000",
+      "gitBlob": "b470ecf620b0ff78f17da84fc852517528eb923d"
+    },
+    {
+      "path": ".claude/skills/improve-codebase-architecture",
+      "gitMode": "120000",
+      "gitBlob": "be3dac9e943f96628463f279336a034a15141cd7"
+    },
+    {
+      "path": ".claude/skills/loop-me",
+      "gitMode": "120000",
+      "gitBlob": "3cea1878037468394f6eceb4fbc32985e094254f"
+    },
+    {
+      "path": ".claude/skills/migrate-to-shoehorn",
+      "gitMode": "120000",
+      "gitBlob": "a2c8459b9fe12170fd9861a925ac4b77aff6c0d6"
+    },
+    {
+      "path": ".claude/skills/pr",
+      "gitMode": "120000",
+      "gitBlob": "8ea58ab6a858ea79073c9b41c635c41336b1260a"
+    },
+    {
+      "path": ".claude/skills/prototype",
+      "gitMode": "120000",
+      "gitBlob": "bc911ddbf132b894ba1cdd0bfc87010e528b0c9c"
+    },
+    {
+      "path": ".claude/skills/research",
+      "gitMode": "120000",
+      "gitBlob": "7a555b656c1ca70ae2791aaa5926f3ced5fd3463"
+    },
+    {
+      "path": ".claude/skills/retro",
+      "gitMode": "120000",
+      "gitBlob": "b1723279add97f6f12b8966e733f82272799172b"
+    },
+    {
+      "path": ".claude/skills/scaffold-exercises",
+      "gitMode": "120000",
+      "gitBlob": "b4a63734ffd663266ce9bb32d0204cffb9160990"
+    },
+    {
+      "path": ".claude/skills/setup-matt-pocock-skills",
+      "gitMode": "120000",
+      "gitBlob": "e8cf28437bd06e43235a44487558571145aca17f"
+    },
+    {
+      "path": ".claude/skills/setup-pre-commit",
+      "gitMode": "120000",
+      "gitBlob": "340f6b1d91746994cbdc8cf0cd834751f849c78e"
+    },
+    {
+      "path": ".claude/skills/setup-ts-deep-modules",
+      "gitMode": "120000",
+      "gitBlob": "ea2167a3d7744a2977f7ae26810986fe4def47df"
+    },
+    {
+      "path": ".claude/skills/site-rebuild-standards",
+      "gitMode": "120000",
+      "gitBlob": "05bad178636395d0f8988e0a50631f19019b54db"
+    },
+    {
+      "path": ".claude/skills/tdd",
+      "gitMode": "120000",
+      "gitBlob": "2178bb8a86cc48623eadafb61bfa0a948b5c6ea6"
+    },
+    {
+      "path": ".claude/skills/teach",
+      "gitMode": "120000",
+      "gitBlob": "83977359c97a7a880f62e1d52aaada79affdb710"
+    },
+    {
+      "path": ".claude/skills/to-questionnaire",
+      "gitMode": "120000",
+      "gitBlob": "ace7bf6c320508a3ce8819a1f2beb7ce736fe139"
+    },
+    {
+      "path": ".claude/skills/to-spec",
+      "gitMode": "120000",
+      "gitBlob": "1fa4ba2a796a18f305f203e0b5a027f12ef344ed"
+    },
+    {
+      "path": ".claude/skills/to-tickets",
+      "gitMode": "120000",
+      "gitBlob": "2cd91dd7f2d625561c3765812603945a1a0f318d"
+    },
+    {
+      "path": ".claude/skills/triage",
+      "gitMode": "120000",
+      "gitBlob": "9e4e13fd0e08b4b18e005f98c5657242d5cced45"
+    },
+    {
+      "path": ".claude/skills/vercel-cli-with-tokens",
+      "gitMode": "120000",
+      "gitBlob": "63fd0b21901a25a2d922372e4ad96a4b13aa353a"
+    },
+    {
+      "path": ".claude/skills/vercel-composition-patterns",
+      "gitMode": "120000",
+      "gitBlob": "55a19e8f46a606774a2fbae884dc44ea6c379815"
+    },
+    {
+      "path": ".claude/skills/vercel-optimize",
+      "gitMode": "120000",
+      "gitBlob": "7d1212769486c853be930ccdf9acc1ba47df87a2"
+    },
+    {
+      "path": ".claude/skills/vercel-react-best-practices",
+      "gitMode": "120000",
+      "gitBlob": "e567923b32769ad33f87fd86424684c61a49e617"
+    },
+    {
+      "path": ".claude/skills/vercel-react-native-skills",
+      "gitMode": "120000",
+      "gitBlob": "8c988434fc4af4f8bf6cee448efcb5c799f8e057"
+    },
+    {
+      "path": ".claude/skills/vercel-react-view-transitions",
+      "gitMode": "120000",
+      "gitBlob": "78a32226bd190853ae8313384b825a6361d6ab44"
+    },
+    {
+      "path": ".claude/skills/wait-what",
+      "gitMode": "120000",
+      "gitBlob": "a959f0c7bd17ce9f5ba0ecb749ba0e95585e677e"
+    },
+    {
+      "path": ".claude/skills/wayfinder",
+      "gitMode": "120000",
+      "gitBlob": "05ec1ca607bbfbf148fbca774e1e3607029dab73"
+    },
+    {
+      "path": ".claude/skills/web-design-guidelines",
+      "gitMode": "120000",
+      "gitBlob": "886b26ded731f755c1c1670dd094a3e2ab8bf449"
+    },
+    {
+      "path": ".claude/skills/wizard",
+      "gitMode": "120000",
+      "gitBlob": "d4bc4d1146351d03184a6e14d90b5e9ad0add1cd"
+    },
+    {
+      "path": ".claude/skills/writing-beats",
+      "gitMode": "120000",
+      "gitBlob": "60657fb606a7ed19e5fde4e5ab216730d98b013d"
+    },
+    {
+      "path": ".claude/skills/writing-for-agents",
+      "gitMode": "120000",
+      "gitBlob": "90df1558abd6127a9b276de1f134349fea915e4c"
+    },
+    {
+      "path": ".claude/skills/writing-fragments",
+      "gitMode": "120000",
+      "gitBlob": "761f7dc859e388b64bf4410fe80d512feea69e0d"
+    },
+    {
+      "path": ".claude/skills/writing-guidelines",
+      "gitMode": "120000",
+      "gitBlob": "af8c37807c18c309bc437e8ee9cf897e73a668ab"
+    },
+    {
+      "path": ".claude/skills/writing-shape",
+      "gitMode": "120000",
+      "gitBlob": "1695b7cebba5ac79033012e7de7d8baa22d6cc62"
+    },
+    {
+      "path": "AGENTS.md",
+      "gitMode": "100644",
+      "gitBlob": "4f648025d4a277f983162db928ef97fad7a6d692"
+    },
+    {
+      "path": "CLAUDE.md",
+      "gitMode": "100644",
+      "gitBlob": "43c994c2d3617f947bcb5adf1933e21dabe46bb5"
+    },
+    {
+      "path": "README.md",
+      "gitMode": "100644",
+      "gitBlob": "ef4d54e0d0b1e6fa4be9da5cf55f48c295c2db02"
+    },
+    {
+      "path": "docs/agents/domain.md",
+      "gitMode": "100644",
+      "gitBlob": "4032de016c1e91119d33d477633e2b8f265f4195"
+    },
+    {
+      "path": "docs/agents/issue-tracker.md",
+      "gitMode": "100644",
+      "gitBlob": "a63510f74038300d8da354553f9d31d1bd954d94"
+    },
+    {
+      "path": "docs/agents/triage-labels.md",
+      "gitMode": "100644",
+      "gitBlob": "7bfafcadfcd9cbafa5453f089696458471589752"
+    },
+    {
+      "path": "skills-lock.json",
+      "gitMode": "100644",
+      "gitBlob": "38f46ea0cfc9a083a3e82c4155068933ae1c363f"
+    }
+  ]
+}

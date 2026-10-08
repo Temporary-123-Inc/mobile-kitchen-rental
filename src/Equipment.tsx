@@ -1,3 +1,6 @@
+import { kitchenModelPaths } from "./kitchenRentalStandards";
+import { serviceHeroImages } from "./serviceHeroImages";
+import modelDetails from "../content/service-details.json";
 import { resolveLocationGallery } from "./locationCarouselImages";
 import { ServiceHeroCarousel } from "./ServiceHeroCarousel";
 import { referenceCaptionForModel } from "./equipmentPhotoPolicy";
@@ -150,6 +153,8 @@ function cardGallery(name: string) {
   return resolveLocationGallery(cardTitles[name] || name);
 }
 export function equipmentGalleryForPath(path: string) {
+  const modelImages = serviceHeroImages[path];
+  if (modelImages?.length) return { images: modelImages, modelId: null, groups: [{ headline: modelDetails[path as keyof typeof modelDetails]?.name || "Mobile kitchen trailer" }] };
   const item = equipment.find((entry) => entry.path === path);
   return cardGallery(item?.name || "Unknown equipment");
 }
@@ -263,26 +268,38 @@ const homepageEquipment: EquipmentCard[] = equipment.map((item, index) => ({
       : item.imageAlt,
 }));
 
+const kitchenEquipment: EquipmentCard[] = kitchenModelPaths.map((path) => {
+  const model = modelDetails[path];
+  const photo = serviceHeroImages[path][0];
+  return {
+    name: model.name, path, image: photo.src, smallImage: photo.thumbnail,
+    imageAlt: photo.alt, category: "Commercial kitchens", text: model.intro,
+    detail: model.use, tags: ["Meal production", "Commercial kitchens", "24/7 support"],
+  };
+});
+
 export function Cards({
   editorial = false,
   homepage = false,
+  kitchenOnly = false,
 }: {
   editorial?: boolean;
   homepage?: boolean;
+  kitchenOnly?: boolean;
 }) {
   return (
     <div
       id={homepage ? "home-rental-grid" : undefined}
       className={`equipment-grid${editorial ? " equipment-editorial" : ""}${homepage ? " home-equipment" : ""}`}
     >
-      {(homepage ? homepageEquipment : equipment).map((e, i) => (
+      {(kitchenOnly ? kitchenEquipment : homepage ? homepageEquipment : equipment).map((e, i) => (
         <article
           className="equipment-card"
           key={e.path}
           data-card
           data-rental-group={
             homepage
-              ? i < 3
+              ? kitchenOnly ? "kitchen" : i < 3
                 ? "kitchen"
                 : i === 6 || i === 7
                   ? "workforce"

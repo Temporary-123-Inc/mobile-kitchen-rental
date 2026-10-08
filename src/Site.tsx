@@ -123,14 +123,14 @@ export function Header({ path }: { path: string }) {
               >
                 <div className="services-panel-heading">
                   <div>
-                    <span>Temporary facility rentals</span>
-                    <strong>Equipment for every stage of your project</strong>
+                    <span>Kitchen trailer rentals</span>
+                    <strong>Kitchen layouts for your project</strong>
                   </div>
                   <a href="/equipment-rental/">View All Equipment ↗</a>
                 </div>
                 <div className="services-panel-body">
                   <div className="service-category-list">
-                    {serviceCategories.map((category, index) => (
+                    {serviceCategories.filter((category) => category.name === "Mobile Kitchens").map((category, index) => (
                       <details
                         className="service-category"
                         name="service-category"
@@ -213,7 +213,7 @@ export function Header({ path }: { path: string }) {
                 </summary>
                 <div>
                   <a href="/equipment-rental/">View All Equipment</a>
-                  {serviceCategories.map((category) => (
+                  {serviceCategories.filter((category) => category.name === "Mobile Kitchens").map((category) => (
                     <details
                       className="mobile-service-category"
                       key={category.name}
@@ -450,7 +450,7 @@ export function Footer({ showClosing = true }: { showClosing?: boolean }) {
           <a className="wordmark" href="/">
             Mobile Kitchen <span>Rental</span>
           </a>
-          <p>Temporary facilities for the work ahead.</p>
+          <p>Commercial kitchen trailers for the work ahead.</p>
           <small>© {new Date().getFullYear()} Mobile Kitchen Rental</small>
         </div>
         <div>
@@ -567,11 +567,11 @@ export function Site({
                     <span aria-current="page">Service Areas</span>
                   </nav>
                   <span className="eyebrow">NATIONWIDE SERVICE AREAS</span>
-                  <h1>USA Temporary Facilities Rental Service Areas</h1>
+                  <h1>USA Commercial Kitchen Trailer Rental Service Areas</h1>
                   <p data-h1-intro>
                     {alignedPageIntro(
                       path,
-                      "USA Temporary Facilities Rental Service Areas",
+                      "USA Commercial Kitchen Trailer Rental Service Areas",
                     )}
                   </p>
                   <div className="location-stats" aria-label="Coverage summary">
@@ -773,8 +773,7 @@ export function Site({
                       <p>
                         Describe the menu, meals per service and busiest
                         operating period. Identify which functions need
-                        temporary space: preparation, cooking, refrigeration,
-                        dishwashing or the full kitchen.
+                        temporary space: preparation, cooking and meal production.
                       </p>
                     </article>
                     <article>
@@ -823,13 +822,13 @@ export function Site({
                   [
                     "Construction & workforce",
                     "Plan around the busiest shift",
-                    "Share crew numbers, shift changes and whether workers stay on site. Meal production, washing and sleeping requirements should follow the actual working day.",
+                    "Share crew numbers, shift changes and whether workers stay on site. Kitchen capacity and service schedules should follow the actual working day.",
                     "/man-camps-for-rent/",
                   ],
                   [
                     "Food service & hospitality",
                     "Keep preparation and service connected",
-                    "Identify the functions affected by the renovation: cooking, cold storage, dishwashing or the full kitchen. Map the route between temporary preparation and the existing serving area.",
+                    "Identify the functions affected by the renovation: preparation, cooking and the full kitchen workflow. Map the route between temporary preparation and the existing serving area.",
                     "/food-services-2/",
                   ],
                   [
@@ -859,18 +858,9 @@ export function Site({
                 ))}
               </div>
             ) : (
-              <Cards />
+              <Cards kitchenOnly />
             )}
-            {path === "/equipment-rental/" ? (
-              <EquipmentCatalog />
-            ) : (
-              page && (
-                <article
-                  className="source-content"
-                  dangerouslySetInnerHTML={{ __html: page.html }}
-                />
-              )
-            )}
+            {path === "/equipment-rental/" && <EquipmentCatalog kitchenOnly />}
             {path === "/services/" && serviceCatalog.length > 0 && (
               <section
                 className="service-library"
@@ -890,11 +880,11 @@ export function Site({
                 </div>
                 <details>
                   <summary>
-                    Browse {serviceCatalog.length} additional services and
+                    Browse {serviceCatalog.filter((item) => /kitchen/i.test(item.title)).length} additional kitchen guides and
                     resources <span aria-hidden="true">+</span>
                   </summary>
                   <div className="service-library-links">
-                    {serviceCatalog.map((item) => (
+                    {serviceCatalog.filter((item) => /kitchen/i.test(item.title)).map((item) => (
                       <a href={item.path} key={item.path}>
                         {item.title} <span aria-hidden="true">↗</span>
                       </a>
@@ -943,9 +933,9 @@ export function Site({
             <section className="about-hero" aria-labelledby="about-title">
               <div className="wrap section about-hero-grid">
                 <div className="secondary-intro-copy">
-                  <span className="eyebrow">ABOUT TEMPORARY123</span>
+                  <span className="eyebrow">ABOUT MOBILE KITCHEN RENTAL</span>
                   <h1 id="about-title">
-                    Temporary facilities built around the work.
+                    Kitchen trailer rentals built around your operation.
                   </h1>
                   <p data-h1-intro>
                     Mobile Kitchen Rental helps project teams plan temporary
@@ -1004,23 +994,23 @@ export function Site({
                 {[
                   [
                     "Mobile kitchen and food service",
-                    "Mobile kitchen trailer rentals, refrigeration trailers and temporary dining structures for planned or urgent food service operations.",
+                    "Mobile kitchen trailer rentals for planned renovations and emergency commercial food service.",
                     "/equipment-rental/mobile-kitchen-trailers/",
                   ],
                   [
-                    "Restroom, shower and laundry facilities",
-                    "Portable restroom trailers, shower trailers, handwashing stations and mobile laundry facilities for crews and guests.",
-                    "/equipment-rental/restroom-trailers/",
+                    "Menu and meal-production planning",
+                    "Match cooking and preparation space to your menu, meal volume and service schedule.",
+                    "/services/mobile-kitchen-trailers/24ft/",
                   ],
                   [
-                    "Workforce housing and base camps",
-                    "Sleeper trailers, bunkhouses, mobile offices, breakrooms and crew camp facilities for remote and extended projects.",
-                    "/man-camps-for-rent/",
+                    "Bulk kitchen layouts",
+                    "Discuss meal production, staffing and the available commercial cooking configuration.",
+                    "/services/mobile-kitchen-trailers/26ft-bulk/",
                   ],
                   [
-                    "Site infrastructure and operations",
-                    "Temporary power, tents, modular buildings, command centers, water storage and site access equipment.",
-                    "/equipment-rental/",
+                    "Kitchen utilities and delivery access",
+                    "Prepare power, water, drainage, vehicle access and placement details before confirming your rental.",
+                    "/planning/",
                   ],
                 ].map(([title, description, href], index) => (
                   <article key={title}>
@@ -1073,8 +1063,7 @@ export function Site({
                   <p data-h1-intro>
                     Use these planning guides to prepare a facility rental
                     brief. Each guide covers a specific subject: kitchen
-                    workflow, temporary hygiene access or workforce
-                    accommodation, with the capacity, utility and delivery
+                    workflow, kitchen utilities or delivery access, with the capacity, utility and delivery
                     questions to resolve before booking.
                   </p>
                   <a className="secondary-inline-link" href="#planning-guides">
@@ -1088,8 +1077,8 @@ export function Site({
                   <span>In this collection</span>
                   {[
                     ["01", "Mobile kitchens", "#kitchen-guide"],
-                    ["02", "Hygiene facilities", "#hygiene-guide"],
-                    ["03", "Remote workforce support", "#workforce-guide"],
+                    ["02", "Kitchen utility planning", "#hygiene-guide"],
+                    ["03", "Kitchen delivery access", "#workforce-guide"],
                   ].map(([number, label, href]) => (
                     <a key={href} href={href}>
                       <small>{number}</small>
@@ -1142,47 +1131,45 @@ export function Site({
                 <article id="hygiene-guide">
                   <img
                     className="article-guide-photo"
-                    src="/media/ce44e887e6e1812d2195e955.webp"
+                    src="/images/kitchen.webp"
                     width="850"
                     height="650"
-                    alt="Restroom trailer interior with a toilet and yellow grab rails"
+                    alt="Commercial cooking and preparation equipment inside a mobile kitchen trailer"
                     loading="lazy"
                     decoding="async"
                   />
-                  <span>Hygiene facilities</span>
-                  <h3>Choosing restroom and shower trailers for a job site</h3>
+                  <span>Kitchen utility planning</span>
+                  <h3>Planning utility connections for a kitchen trailer</h3>
                   <p>
-                    Start with occupancy, shift schedules and accessibility
-                    needs. Servicing frequency, water connections, wastewater
-                    storage and placement affect the right restroom or shower
-                    configuration.
+                    Confirm the selected kitchen model before reviewing power,
+                    water and drainage connections. Share the available services,
+                    connection points and operating schedule with the team.
                   </p>
-                  <a href="/equipment-rental/restroom-trailers/">
-                    Compare restroom trailers ↗
+                  <a href="/planning/">
+                    Review kitchen site planning ↗
                   </a>
                 </article>
                 <article id="workforce-guide">
                   <img
                     className="article-guide-photo"
-                    src="/images/catalog/mobile-sleep-trailers-960.webp"
-                    srcSet="/images/catalog/mobile-sleep-trailers-480.webp 480w, /images/catalog/mobile-sleep-trailers-960.webp 960w"
+                    src="/images/catalog/mobile-kitchen-trailers-960.webp"
+                    srcSet="/images/catalog/mobile-kitchen-trailers-480.webp 480w, /images/catalog/mobile-kitchen-trailers-960.webp 960w"
                     sizes="(max-width: 760px) calc(100vw - 40px), 380px"
                     width="850"
                     height="650"
-                    alt="White sleeper trailer with separate entrances and access steps"
+                    alt="Commercial cooking line inside a mobile kitchen trailer"
                     loading="lazy"
                     decoding="async"
                   />
-                  <span>Remote workforce support</span>
-                  <h3>What a temporary base camp needs to operate well</h3>
+                  <span>Kitchen delivery access</span>
+                  <h3>Preparing access for a mobile kitchen trailer</h3>
                   <p>
-                    Sleeping, dining, hygiene, office and recreation facilities
-                    should follow crew size, shift patterns and site conditions.
-                    A coordinated layout also improves access and daily
-                    servicing.
+                    Provide the delivery address, gate widths, turns and proposed
+                    trailer position. Keep emergency routes and meal-service
+                    paths clear, and confirm placement with the delivery team.
                   </p>
-                  <a href="/man-camps-for-rent/">
-                    Explore base camp services ↗
+                  <a href="/service-areas/">
+                    Explore kitchen rental service areas ↗
                   </a>
                 </article>
               </div>

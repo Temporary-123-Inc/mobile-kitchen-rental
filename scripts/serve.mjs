@@ -20,7 +20,10 @@ function matchesHost(rule, host) {
 http
   .createServer(async (req, res) => {
     const host = (req.headers.host || "").split(":")[0];
-    for (const rule of headers.filter((rule) => rule.source === "/(.*)")) {
+    const headerPath = (req.url || "/").split(/[?#]/)[0];
+    for (const rule of headers.filter((rule) =>
+      new RegExp(`^${rule.source}$`).test(headerPath),
+    )) {
       if (!matchesHost(rule, host)) continue;
       for (const header of rule.headers)
         res.setHeader(header.key, header.value);

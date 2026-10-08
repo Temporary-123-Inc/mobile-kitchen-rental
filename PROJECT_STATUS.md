@@ -1,5 +1,18 @@
 # Temporary123 Project Status
 
+## 2026-10-07 — Adopted kitchen-site standards applied locally
+
+Applied the copied Temporary123 criteria within the owner's kitchen-trailer-only scope: all 301 state/regional/reviewed-city H1s and 70–120-word leads now focus on kitchen rentals; galleries use five kitchen images; local planning includes qualified cost/term/delivery/setup/GPS information and 5–10 locations. Shared menus, homepage cards, guide, inquiry choices, calculator and metadata now match that focus. Added `pnpm check:standards`, included rendered-page regression coverage in the local suite, aligned existing headline/city checks and guarded prerender against missing template placeholders. All 745 registered URLs, robots/canonicals, the byte-identical 25-URL sitemap, contact/hosting settings and source CSS are preserved. Historical unrelated-service paths remain compatibility pages, separate from the promoted kitchen inventory.
+
+Verified TypeScript, 77 application tests, 39 focused tests, isolated production build (745 + 404), all 301 location standards, 746-page SEO/link/image audit, 548 heading/directory presentations, all 19,702 Census entries/246 directories and eight browser tests. Twelve sampled computed-style comparisons match; inherited color-contrast findings remain. Root `dist` refreshed from the verified candidate; tracked historical audit files preserved. Exact local prices, delivery deadlines, GPS/setup facts, substantive local-content ratio, full WCAG compliance, measured DA and live outcomes remain unverified; no additional indexing, inquiry, commit, push or deployment. See `docs/KITCHEN_GUIDELINE_ADOPTION_2026-10-07.md`, `docs/TEST_RESULTS.md` and the 303-URL mapping.
+
+
+## 2026-10-07 — Shared guidelines repository copied locally
+
+Copied the complete tracked `Temporary-123-Inc/skills.temporary123` repository at verified GitHub HEAD `c6fbaef5a0f0b8eb316559d4222438a988e221c2` into `docs/guidelines/skills.temporary123/`: 460 entries, 48 skills and 48 Claude symlinks, with Git metadata excluded. Every copied entry matches its source Git blob/mode and every symlink resolves within the snapshot. Added a provenance manifest and navigation/application guide; root `AGENTS.md` and README now point to the shared criteria while preserving existing collaboration rules and the owner's kitchen-trailer-only scope.
+
+Documentation import only. Source checkout, application/configuration, website design/content, prices, routes/indexing, root build output and existing instructions are preserved. No bundled script/hook/workflow executed or installed; no GitHub issue/label operation, commit, push or deployment. Import integrity, pointer/preservation and whitespace verification passed; no application tests required for this copy. Details: `docs/guidelines/README.md` and `skills.temporary123.provenance.json`.
+
 ## 2026-10-07 — Original kitchen-site contact number restored locally
 
 Restored `+1 (888) 563-6507` / `+18885636507`, verified in original kitchen-site commit `6b5a192` before phone updates `3ff4004` and `78c6f49`. Configuration now supplies the original number to contact text, metadata, gallery captions, guide actions and schema; historical normalization also handles the latest superseded number. Updated the social SVG/PNG and affected phone expectations while preserving centralized configuration, Inventory chevron and unrelated workflow documentation. TypeScript, 47 focused tests, full production build/prerender (745 routes + 404), all-page phone audit (4,486 call links and 1,490 schema phone properties), 14 responsive browser presentations and two guide tests passed. Routes/indexability/sitemap preserved; canonicals match existing policy. Local generated `dist` refreshed after an initial build used the root output directory; tracked root audit files preserved. No commit, push, deployment, actual call or inquiry. See `docs/TEST_RESULTS.md`.
@@ -303,3 +316,5 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Preserved and prioritized spreadsheet-matched Google Drive collections. Restored the reviewed contractor and VIP sleeper selections instead of route-local generic images.
 - Focused verification passed: 18/18 tests, TypeScript, and Vite client production build.
 - Deployment state: pending commit/push at this checkpoint.
+
+**2026-10-09 sitemap.xml viewer fix — local, not deployed:** `/sitemap.xml` rendered as unstyled text in Chrome because the site-wide CSP blocked the browser's XML viewer. `vercel.json` now excludes it from the CSP rule (other security headers kept) and `scripts/serve.mjs` matches header rules by pattern. Local header check and 20 related tests passed. Sitemap content (25 URLs) is unchanged. Remaining: deploy, then confirm in Chrome and with `curl -I` that the live response has no CSP. Whether to widen the 25-URL rollout is a separate open owner decision.

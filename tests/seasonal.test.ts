@@ -54,8 +54,8 @@ describe("state and regional planning content", () => {
         renderToStaticMarkup(createElement(StateDetail, { name: state })),
       );
       // The editorial reading-length limit must not count image navigation UI,
-      // repeated view labels or the required photography-pending message.
-      $("[data-location-gallery], [data-service-carousel]").remove();
+      // repeated navigation labels or the required photography-pending message.
+      $("[data-location-gallery], [data-service-carousel], nav").remove();
       const visibleCopy = ($("body").html() || "").replace(/<[^>]*>/g, " ");
       expect(words(visibleCopy), state).toBeGreaterThanOrEqual(250);
       expect(words(visibleCopy), state).toBeLessThanOrEqual(500);
@@ -65,11 +65,8 @@ describe("state and regional planning content", () => {
         "not an official government risk rating",
       );
 
-      expect(copy, state).toMatch(/base camp|man camp/i);
-      expect(copy, state).toMatch(/mobile commercial kitchens/i);
-      expect(copy, state).toMatch(/shower and restroom combination/i);
-      expect(copy, state).toMatch(/22 ft shower trailers with 10 stalls/i);
-      expect(copy, state).toMatch(/sleeper and bunkbed/i);
+      expect(copy, state).toMatch(/commercial kitchen trailers/i);
+      expect(copy, state).not.toMatch(/(?:shower|sleeper|laundry|dishwashing|refrigeration) (?:trailers|rentals|facilities)/i);
       expect(copy, state).not.toMatch(/[—*]/);
     }
   });
@@ -98,7 +95,7 @@ describe("state and regional planning content", () => {
         "not an official government risk rating",
       );
 
-      expect(copy, guide.path).toMatch(/base camp|man camp/i);
+      expect(copy, guide.path).toMatch(/commercial kitchen trailers/i);
       expect(copy, guide.path).toMatch(/rental|rentals/i);
       expect(copy, guide.path).toMatch(/for rent/i);
       expect(copy, guide.path).toMatch(/lease|leasing/i);

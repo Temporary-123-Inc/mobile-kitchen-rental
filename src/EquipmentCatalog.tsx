@@ -12,7 +12,9 @@ function CatalogImage({ item }: { item: CatalogItem }) {
   return <img src={image.src} srcSet={image.srcSet} sizes="(max-width: 700px) calc(100vw - 40px), 480px" width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" />;
 }
 
-export function EquipmentCatalog() {
+export function EquipmentCatalog({ kitchenOnly = false }: { kitchenOnly?: boolean }) {
+  const items = kitchenOnly ? catalog.items.filter((item) => /kitchen/i.test(item.name)) : catalog.items;
+  const groups = kitchenOnly ? catalog.groups.filter((group) => items.some((item) => item.group === group.id)).map((group) => ({ ...group, name: "Commercial kitchens", description: "Mobile kitchen trailer layouts for temporary commercial food service." })) : catalog.groups;
   return (
     <section
       className="catalog-section"
@@ -29,7 +31,7 @@ export function EquipmentCatalog() {
           </h2>
         </div>
         <p>
-          Browse all 25 equipment entries. Open a layout for a closer look, or
+          Browse {items.length} equipment {items.length === 1 ? "entry" : "entries"}. Open a layout for a closer look, or
           view the equipment page to plan your next step.
         </p>
       </div>
@@ -38,23 +40,23 @@ export function EquipmentCatalog() {
         <input
           id="equipment-search"
           type="search"
-          placeholder="Try laundry, power or accommodation"
+          placeholder="Find a kitchen trailer"
         />
         <p id="equipment-search-status" role="status">
-          25 equipment entries
+          {items.length} equipment entries
         </p>
       </div>
       <nav className="catalog-groups" aria-label="Browse equipment groups">
-        {catalog.groups.map((group) => (
+        {groups.map((group) => (
           <a href={`#group-${group.id}`} key={group.id} data-catalog-jump>
             {group.name}
             <span>
-              {catalog.items.filter((i) => i.group === group.id).length}
+              {items.filter((i) => i.group === group.id).length}
             </span>
           </a>
         ))}
       </nav>
-      {catalog.groups.map((group) => (
+      {groups.map((group) => (
         <section
           className="catalog-group"
           id={`group-${group.id}`}
@@ -67,7 +69,7 @@ export function EquipmentCatalog() {
             <p>{group.description}</p>
           </div>
           <div className="catalog-grid">
-            {catalog.items
+            {items
               .filter((item) => item.group === group.id)
               .map((item) => (
                 <article

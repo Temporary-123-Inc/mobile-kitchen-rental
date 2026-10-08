@@ -1,3 +1,4 @@
+import { kitchenLocationHeadline, kitchenLocationIntro } from "./kitchenRentalStandards";
 import { alignedLocationIntro } from "./alignedIntroductions";
 import { stateGuides, stateAnchor } from "./stateGuides";
 import { statePath } from "./statePaths";
@@ -11,7 +12,7 @@ export function StateGuideCards() {
         <details
           id={stateAnchor(name)}
           data-state-guide={name}
-          data-state-headline={stateRentalHeadline(name)}
+          data-state-headline={kitchenLocationHeadline(name)}
           data-state-image={guide.image}
           data-state-image-alt={guide.imageAlt}
           data-state-image-two={guide.gallery[1].image}
@@ -32,7 +33,7 @@ export function StateGuideCards() {
           <div>
             <h3 data-guide-focus>{guide.focus}</h3>
             <a href={statePath(name)}>View {name} rental guide</a>
-            <p data-guide-intro>{alignedLocationIntro(stateRentalHeadline(name), name)}</p>
+            <p data-guide-intro>{kitchenLocationIntro(name)}</p>
             <div className="state-planning-regions" data-guide-regions>
               <strong>Travel regions</strong>
               <ul>

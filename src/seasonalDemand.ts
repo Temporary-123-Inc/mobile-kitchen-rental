@@ -578,7 +578,7 @@ const federalSources = (climate: string) => [
 const regionalModifiers = [
   "Access around the corridor and landmark should be confirmed before equipment is dispatched.",
   "Project planners should allow for crew changes, utility connections and the route used by service vehicles.",
-  "Remote or constrained sites benefit from a single base camp plan for food, hygiene, lodging and cold storage.",
+  "Remote or constrained kitchen sites need a clear plan for meal production, utility connections and supply access.",
   "Renovations, equipment failures and temporary Health Department closures can also create short notice facility needs.",
   "Construction camps and environmental cleanup sites may need phased capacity as the workforce changes.",
   "Emergency staging plans should account for safe access, dependable utilities and regular waste servicing.",
@@ -597,7 +597,7 @@ export function buildStateSeasonalDemand(
     summary: [
       `${profile.season} Work near ${profile.corridors[0]} and ${profile.landmarks[0]} commonly includes ${profile.work}.`,
       `Normal planning conditions include ${profile.risks}; these are regional patterns rather than a claim that an emergency is active.`,
-      `Temporary mobile commercial kitchens, shower and restroom combinations, 22 ft shower trailers with 10 stalls, sleeper and bunkbed trailers, laundry, refrigeration, dishwashing, restrooms and handwashing units can support construction, man camps, renovations, commercial kitchen fires, Health Department closures, equipment failures, cleanup and emergency base camps.`,
+      `Temporary commercial kitchen trailers support meal production during planned renovations, equipment failures and emergency food-service interruptions. Confirm the actual available cooking layout, utility requirements and delivery arrangements.`,
       regionalModifiers[index % regionalModifiers.length],
     ],
     basis: `Estimated Seasonal Facility Demand Code ${code}, ${demandLabels[code]}. This estimate applies to the ${state} statewide service area because seasonal work patterns, travel conditions and regional hazards can affect temporary facility planning. It is an estimate for project planning and is not an official government risk rating.`,
@@ -636,7 +636,7 @@ export function buildRegionSeasonalDemand(
     summary: [
       variants[regionIndex % variants.length],
       `Relevant planning risks include ${profile.risks}; this describes normal regional patterns and does not state that an emergency is happening now.`,
-      `Temporary mobile commercial kitchens, shower and restroom combination trailers, 22 ft shower trailers with 10 stalls, sleeper and bunkbed trailer rentals, laundry, refrigeration, dishwashing, restrooms and handwashing units can support construction projects, man camps, renovations, commercial kitchen fires, Health Department closures, cleanup work, equipment failures and emergency base camps.`,
+      `Temporary commercial kitchen trailers support meal production during planned renovations, equipment failures and emergency food-service interruptions. Confirm the actual available cooking layout, utility requirements and delivery arrangements.`,
       regionalModifiers[
         (regionIndex + state.length) % regionalModifiers.length
       ],

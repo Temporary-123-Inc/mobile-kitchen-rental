@@ -1,5 +1,10 @@
 # Boss Requirements — Temporary123
 
+## October 7, 2026 — Kitchen-site scope and adopted standards
+
+The owner adopted `docs/guidelines/skills.temporary123/` and explicitly limits this website to **commercial kitchen trailer rentals**. Apply its H1/lead/local-data criteria within this one service subject. Broader Temporary123 service families and flagship shower instructions below are inherited reference material for other websites; they do not expand this site's active kitchen promotions. Preserve historical URLs and the current 25-URL indexing cohort. Use verified site facts; shared sample pricing, delivery, GPS and installation numbers require confirmation. See `docs/KITCHEN_GUIDELINE_ADOPTION_2026-10-07.md` for the applied criteria, evidence and remaining business inputs.
+
+
 This file consolidates current instructions so all tasks work from the same interpretation. Add dated clarifications rather than silently replacing earlier requirements.
 
 ## 2026-09-22 clarification — Index the existing public website

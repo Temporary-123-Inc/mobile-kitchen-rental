@@ -31,16 +31,16 @@ export function LocationImageCarousel({
         data-gallery-location={locationKey}
         data-equipment-family="kitchen-family"
         data-photography-status="verified"
-        data-gallery-presentation="location-kitchen-family-80-20"
-        data-kitchen-image-count="4"
-        data-kitchen-family-image-count="1"
+        data-gallery-presentation="location-kitchen-trailers"
+        data-kitchen-image-count="5"
+        data-kitchen-family-image-count="0"
       >
         <ServiceHeroCarousel
           images={locationImages}
           deferLoading={inert}
-          label={`${locationKey} mobile kitchen and kitchen-family rental equipment`}
+          label={`${locationKey} mobile kitchen trailer rental equipment`}
           lightboxLabel={`${locationKey} rental equipment gallery`}
-          caption={`Reviewed equipment references for ${locationKey}: four mobile-kitchen images and one related kitchen-family image. These photos show representative rental configurations and do not claim that a pictured unit is currently located in ${locationKey}.`}
+          caption={`Reviewed equipment references for ${locationKey}: five mobile-kitchen images. These photos show representative rental configurations and do not claim that a pictured unit is currently located in ${locationKey}.`}
         />
       </div>
     );
@@ -192,12 +192,6 @@ const kitchenGalleryPaths = [
   "/services/mobile-kitchen-trailers/40ft/",
 ] as const;
 
-const supportingKitchenFamilyPaths = [
-  "/media-library/22-26ft-low-temp-dish/",
-  "/equipment-rental-refrigeration-12ft-refrigerated-trailer/",
-  "/media-library/20ft-refrigerated-container/",
-] as const;
-
 const imagePool = (paths: readonly string[]) =>
   paths.flatMap((path) => serviceHeroImages[path] ?? []);
 
@@ -232,9 +226,7 @@ function selectRotatedUnique(
 export function locationKitchenFamilyImages(locationKey: string) {
   const seed = stableLocationIndex(locationKey);
   const kitchens = imagePool(kitchenGalleryPaths);
-  const supporting = imagePool(supportingKitchenFamilyPaths);
   return [
-    ...selectRotatedUnique(kitchens, seed % kitchens.length, 4),
-    ...selectRotatedUnique(supporting, seed % supporting.length, 1),
+    ...selectRotatedUnique(kitchens, seed % kitchens.length, 5),
   ];
 }

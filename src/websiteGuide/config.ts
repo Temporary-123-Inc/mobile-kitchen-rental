@@ -17,7 +17,7 @@ const phrases: Record<string, string[]> = {
   Laundry: ["laundry", "washing machines"],
   "Handwashing Trailers": ["handwashing", "hand washing"],
 };
-const equipment: Topic[] = serviceCategories.map((category) => ({
+const equipment: Topic[] = serviceCategories.filter((category) => category.name === "Mobile Kitchens").map((category) => ({
   id: `equipment-${category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
   title: category.name,
   phrases: phrases[category.name] ?? [category.name],
@@ -44,7 +44,7 @@ export const temporaryGuide: GuideConfig = {
       name: site.brand,
       phone: { display: site.phoneDisplay, href: `tel:${site.phoneE164}` },
       hours: `The Mobile Kitchen Rental rental team is available 24/7. Call ${site.phoneDisplay}. Equipment availability and dispatch timing require confirmation.`,
-      about: "Mobile Kitchen Rental provides nationwide rental and leasing of temporary facilities for commercial and institutional projects, including kitchens, dishwashing, refrigeration, showers, restrooms, sleeping facilities, laundry and handwashing.",
+      about: "Mobile Kitchen Rental provides nationwide commercial kitchen trailer rental and leasing for hospitals, schools, correctional facilities, military sites, industrial operations and hotels.",
     }),
     ...equipment,
     {
@@ -54,9 +54,9 @@ export const temporaryGuide: GuideConfig = {
       followUp: "quote",
     },
     {
-      id: "combined", title: "Rent several facilities together", priority: 40,
+      id: "combined", title: "Choose a kitchen trailer layout", priority: 40,
       phrases: ["several facilities", "multiple facilities", "rent together", "package", "several types", "bundle"],
-      answer: "Yes. Discuss your kitchen, refrigeration, restroom, shower and workforce requirements in one conversation so the facilities can be planned around your operation. The rental team must confirm the equipment combination and availability.",
+      answer: "Share your menu, meal volume and service schedule so the rental team can review cooking and preparation layouts. Confirm the actual available kitchen model, utility requirements and delivery access.",
       followUp: "quote",
     },
     {
@@ -68,7 +68,7 @@ export const temporaryGuide: GuideConfig = {
     {
       id: "email", title: "Email contact", priority: 120,
       phrases: ["email", "e mail", "email address"],
-      answer: `I do not have a verified public email address in this guide. You can send your project details through the inquiry form or call ${site.phoneDisplay}.`,
+      answer: `I do not have a verified public email address in this guide. Call ${site.phoneDisplay}.`,
       actions: [{ label: "Open inquiry form", href: "/contact-us/" }],
     },
     {
@@ -76,7 +76,7 @@ export const temporaryGuide: GuideConfig = {
       title: "Browse equipment",
       phrases: ["equipment", "services", "what do you rent", "rental options"],
       answer:
-        "Explore commercial and institutional rental equipment, including kitchens, dishwashing, refrigeration, showers, restrooms, sleeping facilities, laundry and handwashing.",
+        "Explore mobile kitchen trailer configurations for commercial and institutional cooking and meal preparation.",
       actions: [{ label: "All rental equipment", href: "/equipment-rental/" }],
       followUp: "quote",
     },

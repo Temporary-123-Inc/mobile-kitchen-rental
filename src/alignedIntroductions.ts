@@ -1,3 +1,4 @@
+import { kitchenLocationIntro } from "./kitchenRentalStandards";
 import { detectEquipmentFamily } from "./locationCarouselImages";
 import overrides from "../content/aligned-page-introductions.json" with { type: "json" };
 
@@ -7,6 +8,9 @@ export function alignedPageIntro(
   headline: string,
   fallback = "",
 ): string {
+  if (["/services/", "/equipment-rental/", "/service-areas/", "/industries/", "/equipment-rental/mobile-kitchen-trailers/"].includes(path)) {
+    return kitchenLocationIntro("the United States");
+  }
   const exact = overrides[path as keyof typeof overrides];
   if (exact) return exact;
   const family = detectEquipmentFamily(headline);

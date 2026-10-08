@@ -45,3 +45,9 @@ The following files affect many pages and require coordination before editing:
 - `package.json`
 
 Separate Codex chats do not share conversation history. The files above and the coordination documents in this repository are the shared source of truth.
+
+## Shared guidelines and criteria
+
+- For site rebuilds, page content, SEO, headings, keywords or pricing/setup data, read [site-rebuild-standards](docs/guidelines/skills.temporary123/.agents/skills/site-rebuild-standards/SKILL.md) and its relevant linked references before editing. Apply these criteria to rendered output.
+- This website's service scope is kitchen trailer rentals only. Apply shared templates using verified project facts and the owner's scope; the source's broader service-family examples belong to other websites.
+- For agent instructions or skill documentation, read [writing-for-agents](docs/guidelines/skills.temporary123/.agents/skills/writing-for-agents/SKILL.md). For other workflows, consult the [shared guideline library](docs/guidelines/README.md) and load the relevant skill when needed.

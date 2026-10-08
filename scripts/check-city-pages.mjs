@@ -52,14 +52,26 @@ for (const route of ["/", "/service-areas/"]) {
       if (href) mapCityLinks.set(href, (mapCityLinks.get(href) || 0) + 1);
     },
   );
-  for (const path of reviewedPaths) {
-    if (mapCityLinks.get(path) !== 1)
-      issues.push(`Map must link reviewed city exactly once: ${path}`);
+  // This site's map intentionally opens state guides. Verify the complete
+  // state -> region -> city-directory -> reviewed-city path instead of
+  // requiring cities to be duplicated beside the 50 state links.
+  for (const state of Object.keys(stateGuides)) {
+    const statePath = `/service-areas/${slug(state)}/`;
+    if (serviceAreas(`.map-location-state[href='${statePath}']`).length !== 1)
+      issues.push(`Map must link state guide exactly once: ${statePath}`);
   }
-  if (mapCityLinks.size !== reviewedPaths.size)
-    issues.push(
-      `Map exposes ${mapCityLinks.size} city links, expected ${reviewedPaths.size}`,
-    );
+  for (const cityPath of reviewedPaths) {
+    const segments = cityPath.split("/").filter(Boolean);
+    const statePath = `/${segments.slice(0, 2).join("/")}/`;
+    const regionPath = `/${segments.slice(0, 3).join("/")}/`;
+    const state = load(await readFile(fileFor(statePath), "utf8"));
+    const region = load(await readFile(fileFor(regionPath), "utf8"));
+    const directory = load(await readFile(fileFor(`${regionPath}cities/`), "utf8"));
+    if (!state(`a[href='${regionPath}']`).length ||
+        !region(`a[href='${regionPath}cities/']`).length ||
+        directory(`.city-directory-grid a[href='${cityPath}']`).length !== 1)
+      issues.push(`Reviewed city lacks its navigable parent chain: ${cityPath}`);
+  }
 }
 
 for (const [regionPath, expected] of expectedByRegion) {
@@ -90,7 +102,7 @@ for (const row of inventory.records) {
   }
   const html = await readFile(fileFor(cityPath), "utf8");
   const $ = load(html);
-  const title = $("title").text().trim();
+  const title = $("head > title").text().trim();
   const h1 = $("main h1").first().text().trim();
   // Count the city editorial presentation, not carousel captions or duplicated
   // responsive slides. The carousel is validated independently below.
@@ -115,7 +127,7 @@ for (const row of inventory.records) {
   titles.add(title);
   if (
     !h1.includes(row[1]) ||
-    !/(?:Rental|For Rent|Leasing|Short-Term Rental|Long-Term Rental)/.test(h1)
+    !/(?:Rental|For Rent|Leasing|Short-Term Rental|Long-Term Rental)/i.test(h1)
   )
     issues.push(`Weak city H1: ${cityPath}`);
   if (words < 250 || words > 500)

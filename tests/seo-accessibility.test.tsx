@@ -64,6 +64,6 @@ describe("design-preserving SEO and accessibility", () => {
     const $ = load(renderToStaticMarkup(<Cards />));
     expect($(".card-copy > h3[aria-level='2']").length).toBe(9);
     const homepage = load(renderToStaticMarkup(<Site path="/" />));
-    expect(homepage(".card-copy > h3[aria-level='3']").length).toBe(9);
+    expect(homepage(".card-copy > h3[aria-level='3']").length).toBe(5);
   });
 });
