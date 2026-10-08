@@ -3,6 +3,9 @@
 ## 2026-10-09 — Dedicated Glide Contact Us release candidate
 
 - First production smoke test found `FUNCTION_INVOCATION_FAILED`: the standalone handler still imported `server/store.ts`, which pulled the inherited Firebase Admin delivery graph into the function bundle. Moved Glide payload/authentication into dependency-isolated `server/glide.ts`; the Contact Us function no longer imports Firebase code. Post-fix TypeScript and the 27 focused tests passed before the corrective release.
+- Corrective production deployment `dpl_5kjgrHtUJyDrqQHJCYDpoy5vGxkx`: READY from exact commit `454df750172f167e55aad022fa0b1fbe49065512`, aliased to apex/www.
+- Live HTTP: `/contact-us/` returned 200. GET `/api/glide-contact.json` returned the expected 405 with `Allow: POST`; a safe invalid JSON-object POST from the production origin returned the expected schema 400. These checks prove function invocation and validation without triggering Glide.
+- Live browser: PASS, 2/2. Phone fallback, enabled Contact Us form, Project Desk opening and the approved kitchen-only selector passed. Updated the stale fixture to Mobile Kitchen Trailers plus layout help; no product options changed in this release.
 - `pnpm exec tsc --noEmit`: PASS.
 - Focused Vitest (`glide`, `contact`, `routes`): PASS, 27/27. Covered exact payload/authentication, webhook failure, operation without Firebase settings, calculator rejection and inherited endpoint guards.
 - `pnpm run build`: PASS; 745 routes plus 404 generated.
