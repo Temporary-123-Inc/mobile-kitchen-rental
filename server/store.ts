@@ -1,6 +1,5 @@
 import { createHmac } from "node:crypto";
 import type { Database } from "firebase-admin/database";
-import { Resend } from "resend";
 import { firebase, required, requiredSecret } from "./firebase.js";
 import { processDelivery } from "./delivery.js";
 import site from "../site.json" with { type: "json" };
@@ -54,7 +53,7 @@ export async function saveLead(db: Database, key: string, data: Lead) {
         payloadHash,
         createdAt: now,
         expiresAt: now + 90 * 86400000,
-        status: "queued",
+        status: data.page === "/contact/" ? "queued" : "saved",
       },
   );
   if (result.snapshot.val()?.payloadHash !== payloadHash)
@@ -64,41 +63,43 @@ export async function saveLead(db: Database, key: string, data: Lead) {
     );
   return id;
 }
+export function createGlidePayload(data: Lead) {
+  return {
+    data: {
+      url: new URL("/contact-us/", site.origin).toString(),
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      service: data.service,
+      duration: data.duration,
+      industry: data.industry,
+      location: data.location,
+      startDate: data.startDate,
+      consent: data.consent,
+    },
+  };
+}
+export async function sendToGlide(payload: Record<string, unknown>, key: string) {
+  const response = await fetch(required("GLIDE_WEBHOOK_URL"), {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${requiredSecret("GLIDE_WEBHOOK_TOKEN")}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": key,
+    },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!response.ok) throw Error(`Glide webhook failed (${response.status})`);
+  return response.headers.get("x-request-id") || "accepted";
+}
 export async function deliverLead(id: string) {
   const { db } = firebase();
   return processDelivery(id, {
     db,
-    createMessage: (record, id) => {
-      const data = record.data as Lead;
-      return {
-        from: required("RESEND_FROM"),
-        to: [required("LEADS_TO_EMAIL")],
-        replyTo: data.email,
-        subject: `${site.brand} project inquiry`,
-        text: [
-          `New ${site.brand} project inquiry`,
-          `Reference: ${id}`,
-          `Name: ${data.name}`,
-          `Email: ${data.email}`,
-          `Phone: ${data.phone || "Not provided"}`,
-          `Rental date: ${data.startDate}`,
-          `Location: ${data.location}`,
-          `Service: ${data.service}`,
-          `Rental duration: ${data.duration}`,
-          `Industry: ${data.industry}`,
-          "",
-          data.message,
-        ].join("\n"),
-      };
-    },
-    send: async (message, key) => {
-      const result = await new Resend(required("RESEND_API_KEY")).emails.send(
-        message,
-        { idempotencyKey: key },
-      );
-      if (result.error || !result.data) throw Error("Provider send failed");
-      return result.data.id;
-    },
+    createMessage: (record) => createGlidePayload(record.data as Lead),
+    send: sendToGlide,
   });
 }
 export function dependencies() {

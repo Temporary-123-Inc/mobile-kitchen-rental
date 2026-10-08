@@ -12,6 +12,10 @@ Owner: current user explicitly requests copying `Temporary-123-Inc/skills.tempor
 
 Completion: all 460 source entries copied and verified against GitHub HEAD `c6fbaef`; 48 skills and 48 symlinks preserved. Added provenance/navigation docs and root instruction pointers with kitchen-only application rules. Import integrity, existing-file preservation, pointer and whitespace checks passed. Local only; no runtime changes or publication.
 
+## 2026-10-09 Glide contact delivery — Complete locally
+
+Replaced Resend with authenticated server-side Glide webhook delivery for Contact Us submissions only. Preserved the calculator's secure Firebase persistence while excluding calculator records from Glide. The payload uses the configured production origin for `https://mobile-kitchen-rental.com/contact-us/`; the Glide URL and token remain server-only environment settings. Removed the Resend dependency and current configuration/operations references, enabled the Contact Us form, and added focused mapping/authentication/failure tests. After rebasing over the concurrent kitchen-standards update, all 80 application tests, the secret scan, build/prerender and two browser checks passed. No real inquiry or deployment was performed.
+
 ## 2026-10-07 Find-your-rental section landing — Complete locally
 
 Current task changed only `.home-services` anchor-offset rules in `src/homepage.css` and additive coordination notes. Cancelled the cumulative root/target offset so the existing `#equipment` link lands at the rental-section boundary below the sticky header, matching its existing breakpoints. Isolated Vite client build and 16 responsive pointer/keyboard/hash-refresh presentations passed at eight widths with both motion preferences; JavaScript-disabled phone navigation passed. Native links/history, section spacing, other anchors/styles, shared components/entry point, prior repairs, and unrelated pending work were preserved. No full production prerender, live verification, inquiry, commit, push, or deployment. See `docs/TEST_RESULTS.md` (2026-10-07 Find your rental section landing).

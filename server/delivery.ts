@@ -1,11 +1,13 @@
 import { randomUUID } from "node:crypto";
 import type { Database } from "firebase-admin/database";
-import type { Resend } from "resend";
-export type Mail = Parameters<Resend["emails"]["send"]>[0];
+export type DeliveryPayload = Record<string, unknown>;
 export type DeliveryDeps = {
   db: Database;
-  send: (message: Mail, key: string) => Promise<string>;
-  createMessage: (data: Record<string, unknown>, id: string) => Mail;
+  send: (message: DeliveryPayload, key: string) => Promise<string>;
+  createMessage: (
+    data: Record<string, unknown>,
+    id: string,
+  ) => DeliveryPayload;
   now?: () => number;
 };
 export async function processDelivery(
@@ -36,12 +38,12 @@ export async function processDelivery(
   )
     return false;
   try {
-    const emailId = await send(value.message, `temporary123/${id}`);
+    const deliveryId = await send(value.message, `mobile-kitchen-rental/${id}`);
     await ref.transaction((current) =>
       !current
         ? null
         : current.leaseId === leaseId
-          ? { ...current, status: "sent", emailId }
+          ? { ...current, status: "sent", deliveryId }
           : undefined,
     );
     return true;

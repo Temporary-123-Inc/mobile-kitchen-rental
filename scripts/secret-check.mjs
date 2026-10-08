@@ -16,7 +16,7 @@ const patterns = [
   /(?:ghp_|github_pat_)[A-Za-z0-9_]{30,}/,
   /(?:AKIA|ASIA)[A-Z0-9]{16}/,
   /\b(?:sk_live_|sk-proj-)[A-Za-z0-9_-]{24,}/,
-  /\bRESEND_API_KEY\s*=\s*re_[A-Za-z0-9]{20,}/,
+  /\bGLIDE_WEBHOOK_TOKEN\s*=\s*[0-9a-f]{8}-[0-9a-f-]{27,}/i,
 ];
 let scanned = 0;
 const findings = [];

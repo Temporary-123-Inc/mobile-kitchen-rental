@@ -65,11 +65,13 @@ export async function submit(
   }
   await deps.limit(ip);
   const id = await deps.save(key!, data.data);
-  // The saved outbox is authoritative. Email failure must not lose the inquiry.
-  try {
-    await deps.deliver(id);
-  } catch {
-    console.error(JSON.stringify({ event: "delivery_pending", id }));
+  if (data.data.page === "/contact/") {
+    // The saved outbox is authoritative. Delivery failure must not lose the inquiry.
+    try {
+      await deps.deliver(id);
+    } catch {
+      console.error(JSON.stringify({ event: "delivery_pending", id }));
+    }
   }
   return { status: 201, body: { ok: true } };
 }

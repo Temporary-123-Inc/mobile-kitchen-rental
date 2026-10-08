@@ -1022,7 +1022,6 @@ Artifact paths: `/tmp/mkr-seo-accessibility/{baseline-axe.json,candidate-axe.jso
 - PASS: SVG regenerated with its existing Arial fonts and Chromium; final PNG 1200 × 630, zero changed pixels above footer y=540 versus starting PNG. Visually inspected restored phone footer; layout, colors and other copy preserved. Evidence: `/tmp/mkr-original-phone/social-card.mjs` and `social-card.json`.
 - PASS: reserved-file-scope assertions and `git -c core.whitespace=trailing-space,space-before-tab,cr-at-eol diff --check`. Shared components, CSS, routes, hosting configuration, source archives and unrelated README work preserved. Completion notes are additive.
 - Boundaries: focused verification only; no full unrelated test-suite claim, real call, submitted inquiry, commit, push, deployment or live-host verification. Ephemeral evidence/builds under `/tmp/mkr-original-phone/`.
-
 ## 2026-10-07 — Apply shared kitchen-site standards
 
 - Scope/coordination: reviewed status, requirements, assignment history and adopted skill references; reserved active shared-content/location/gallery/guide work before edits. Prior guideline-import changes preserved. Applied kitchen-trailer-only owner instructions to 301 existing location pages and shared inventory/customer choices. Archived service URLs/content retained; no new route/indexing batch. Exact before/after mapping: `docs/guidelines/kitchen-page-mapping-2026-10-07.csv` (303 rows including two hubs).
@@ -1043,3 +1042,14 @@ Artifact paths: `/tmp/mkr-seo-accessibility/{baseline-axe.json,candidate-axe.jso
 - Local preview server (`scripts/serve.mjs`): `/sitemap.xml` returns 200 `application/xml` with nosniff, referrer and permissions headers and no `Content-Security-Policy`; `/` and `/robots.txt` still send the full CSP.
 - `vercel.json` parses; `tests/migration.test.ts` and `tests/legacy-url-restoration.test.ts` passed (20/20).
 - Not verified: Chrome rendering of the XML after deployment, Vercel's handling of the lookahead source, and the live headers. No commit, push or deployment.
+
+## 2026-10-09 — Glide Contact Us delivery
+
+- `pnpm exec tsc --noEmit`: PASS.
+- Focused Vitest (`contact`, `glide`, `routes`, `public-config`): PASS, 30/30. Verified exact Glide payload including `https://mobile-kitchen-rental.com/contact-us/`, server-only bearer header, failure rejection for retry, origin/App Check/rate/idempotency boundaries, and calculator non-delivery.
+- `pnpm run check:secrets`: PASS after rebase, 1,579 scanned files and zero findings. The supplied Glide token is not committed.
+- `pnpm run build`: PASS. Vite production build completed and prerender generated 745 routes plus 404.
+- Configured `pnpm test` after rebasing onto the concurrent kitchen-standards update: PASS, 80/80 across 14 files with serial file execution.
+- Playwright Chromium, production preview: PASS, 2/2. Contact Us retained the phone fallback, exposed one enabled project-inquiry form, opened the Project Desk, and retained every requested facility option.
+- `git diff --check`: PASS.
+- Boundary: No real customer inquiry or Glide webhook was triggered. No deployment or hosted environment configuration was performed; production requires server-only `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` plus the existing Firebase/App Check/contact settings.

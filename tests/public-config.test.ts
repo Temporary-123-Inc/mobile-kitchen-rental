@@ -9,7 +9,7 @@ describe("public client configuration", () => {
       FIREBASE_APP_ID: "1:test:web:test",
       RECAPTCHA_ENTERPRISE_SITE_KEY: "public-site-key",
       FIREBASE_PRIVATE_KEY: "must-not-leak",
-      RESEND_API_KEY: "must-not-leak",
+      GLIDE_WEBHOOK_TOKEN: "must-not-leak",
     });
     expect(config).toEqual({
       firebase: {

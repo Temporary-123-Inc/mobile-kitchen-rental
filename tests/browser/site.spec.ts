@@ -655,7 +655,7 @@ test("Services keeps recovered service resources organized and reachable", async
   await expect(library.locator(".service-library-links a")).toHaveCount(44);
   await expect(library).toContainText("Base Camps for Rent");
 });
-test("contact keeps the phone fallback while online intake is disabled", async ({
+test("contact keeps the phone fallback while online intake is enabled", async ({
   page,
 }) => {
   await page.goto("/contact-us/");
@@ -670,7 +670,7 @@ test("contact keeps the phone fallback while online intake is disabled", async (
   await expect(page.locator("#contact-drawer form")).toHaveCount(1);
   await expect(
     page.locator('#contact-drawer button[type="submit"]'),
-  ).toBeDisabled();
+  ).toBeEnabled();
   await expect(page.locator("#contact-drawer")).not.toBeVisible();
 });
 test("initial HTML and unknown-route status work without JavaScript", async ({

@@ -16,8 +16,9 @@ const requestedFacilities = [
 test("Contact Us offers every requested facility", async ({ page }) => {
   await page.goto("/contact-us/");
   await page.locator(".contact-rail").click();
-  const drawer = page.getByRole("dialog", { name: "Request availability" });
+  const drawer = page.locator("#contact-drawer");
   await expect(drawer).toBeVisible();
+  await expect(drawer.locator('button[type="submit"]')).toBeEnabled();
   const select = drawer.locator('select[name="service"]');
 
   for (const [value, label] of requestedFacilities) {

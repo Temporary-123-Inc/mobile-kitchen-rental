@@ -4,6 +4,15 @@
 
 Keep the complete pinned upstream repository in `docs/guidelines/skills.temporary123/`, retaining its files and relative symlinks byte-for-byte and recording provenance outside the snapshot. Existing root project instructions remain the collaboration entry point and link the shared site standards and relevant workflow skills. Keep project-specific interpretations in `docs/guidelines/README.md`: kitchen trailer rentals only, verified business facts, and existing page/URL/indexing coordination. Copying the library does not execute its deployment/scripts, activate hooks, create issues/workflows or change the website. Update the snapshot deliberately with source revision and integrity evidence rather than mixing manual edits into third-party files.
 
+## 2026-10-09 — Deliver Contact Us inquiries to Glide, not Resend
+
+- Source: Owner supplied a Glide webhook trigger and token, requested removal of all Resend functionality, and explicitly excluded the calculator from Glide delivery.
+- Decision: Keep the existing validated, App Check-protected, rate-limited Firebase intake boundary. Contact Us records use the durable queued delivery path to call Glide with `Authorization: Bearer` from server-only configuration. The Glide body is `{ data: ... }` and reports `https://mobile-kitchen-rental.com/contact-us/` from the canonical site origin. Resend code, configuration and dependency are removed.
+- Calculator boundary: Calculator quote requests remain securely persisted in Firebase with status `saved`; they do not enter the Glide delivery queue and do not call the webhook.
+- Security: Store `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` only in server environment settings. Never place the token in `site.json`, browser code, a `VITE_` variable, tests, or committed documentation.
+- Reliability: A failed immediate Glide request leaves the Contact Us record queued for the authenticated `/api/deliver` retry worker. Records older than 23 hours move to manual review as before.
+- Publication boundary: Repository implementation and local verification only until deployment is separately authorized and the two Glide environment settings are configured on the target.
+
 ## 2026-10-07 — Land Find your rental at the section boundary
 
 - Source: Owner requested that the hero's Find your rental link land fully at the next section instead of leaving the preceding section partially visible. Local measurements showed the equipment section landing around 200 px below the viewport top while the sticky header ended at 69/73/81 px.

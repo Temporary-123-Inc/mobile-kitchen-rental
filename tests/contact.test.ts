@@ -34,7 +34,7 @@ const deps = (): Deps => ({
   deliver: vi.fn(async () => {}),
 });
 describe("contact application boundary", () => {
-  it("saves before email and returns a persisted success", async () => {
+  it("saves before Glide delivery and returns a persisted success", async () => {
     const d = deps();
     expect((await submit(req(), d)).status).toBe(201);
     expect(d.save).toHaveBeenCalledOnce();
@@ -48,6 +48,7 @@ describe("contact application boundary", () => {
       request.body = JSON.stringify({ ...lead, page });
       expect((await submit(request, d)).status).toBe(201);
       expect(d.save).toHaveBeenCalledOnce();
+      expect(d.deliver).not.toHaveBeenCalled();
     },
   );
   it.each([
@@ -123,7 +124,7 @@ describe("contact application boundary", () => {
     await expect(submit(req(), d)).rejects.toThrow();
     expect(d.save).not.toHaveBeenCalled();
   });
-  it("preserves stored success when email fails", async () => {
+  it("preserves stored success when Glide delivery fails", async () => {
     const d = deps();
     d.deliver = vi.fn(async () => {
       throw Error();
