@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import site from "../site.json" with { type: "json" };
 import { services } from "./content";
 import { leadSchema } from "../server/schema";
-import { appCheckToken } from "./appCheck";
 import { trackSavedConversion } from "./conversionAnalytics";
 
 const contactServiceLabels: Partial<
@@ -99,12 +98,10 @@ export function QuoteForm() {
         setState("loading");
         setMessage("");
         try {
-          const token = await appCheckToken();
-          const res = await fetch("/api/contact.json", {
+          const res = await fetch("/api/glide-contact.json", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-Firebase-AppCheck": token,
               "Idempotency-Key": key.current,
             },
             body: payload,

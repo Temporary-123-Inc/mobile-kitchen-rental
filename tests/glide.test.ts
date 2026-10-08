@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createGlidePayload, sendToGlide } from "../server/store";
+import { submitGlideContact } from "../server/glideContact";
 
 const lead = {
   name: "Visitor name",
@@ -77,5 +78,40 @@ describe("Glide contact delivery", () => {
     await expect(sendToGlide(createGlidePayload(lead), "key")).rejects.toThrow(
       "Glide webhook failed (401)",
     );
+  });
+
+  it("accepts Contact Us without Firebase configuration", async () => {
+    process.env.GLIDE_WEBHOOK_URL = "https://glide.test/webhook";
+    process.env.GLIDE_WEBHOOK_TOKEN =
+      "synthetic-glide-token-for-tests-only";
+    const fetchMock = vi.fn(async () => new Response(null, { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+    const result = await submitGlideContact({
+      method: "POST",
+      headers: {
+        origin: "https://mobile-kitchen-rental.com",
+        "content-type": "application/json",
+        "idempotency-key": "8116e91d-8881-4475-8f1b-1e177f47ca01",
+        "x-vercel-forwarded-for": "192.0.2.40",
+      },
+      body: JSON.stringify(lead),
+    });
+    expect(result).toEqual({ status: 201, body: { ok: true } });
+    expect(fetchMock).toHaveBeenCalledOnce();
+  });
+
+  it("rejects calculator submissions", async () => {
+    await expect(
+      submitGlideContact({
+        method: "POST",
+        headers: {
+          origin: "https://mobile-kitchen-rental.com",
+          "content-type": "application/json",
+          "idempotency-key": "8116e91d-8881-4475-8f1b-1e177f47ca02",
+          "x-vercel-forwarded-for": "192.0.2.41",
+        },
+        body: JSON.stringify({ ...lead, page: "/rental-calculator/" }),
+      }),
+    ).rejects.toMatchObject({ status: 400 });
   });
 });

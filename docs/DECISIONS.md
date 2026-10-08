@@ -1,5 +1,12 @@
 # Temporary123 Decision Log
 
+## 2026-10-09 — Separate Contact Us delivery from calculator persistence
+
+- Source: The target Vercel project has the supplied Glide settings but none of the Firebase/App Check settings required by the inherited shared endpoint.
+- Decision: Route Contact Us through `/api/glide-contact.json`, a dedicated trusted boundary that validates the same lead schema and sends directly to Glide. Keep the calculator on the inherited Firebase endpoint and reject calculator payloads at the Glide boundary.
+- Security: Accept only apex/www production origins, Vercel-verified IP input, valid UUID request IDs, JSON under 8 KiB, the strict lead schema and empty honeypot. Apply five attempts per IP per 15-minute warm-instance window. Keep Glide values in sensitive Production environment settings.
+- Limitation: The in-memory limiter is per warm function instance, not a global distributed quota. Platform-level rate limiting remains a future hardening option.
+
 ## 2026-10-07 — Adopt the shared skills repository as guideline source
 
 Keep the complete pinned upstream repository in `docs/guidelines/skills.temporary123/`, retaining its files and relative symlinks byte-for-byte and recording provenance outside the snapshot. Existing root project instructions remain the collaboration entry point and link the shared site standards and relevant workflow skills. Keep project-specific interpretations in `docs/guidelines/README.md`: kitchen trailer rentals only, verified business facts, and existing page/URL/indexing coordination. Copying the library does not execute its deployment/scripts, activate hooks, create issues/workflows or change the website. Update the snapshot deliberately with source revision and integrity evidence rather than mixing manual edits into third-party files.

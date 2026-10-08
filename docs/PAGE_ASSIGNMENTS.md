@@ -1,5 +1,9 @@
 # Page and File Assignments
 
+## 2026-10-09 Dedicated Glide Contact Us endpoint — Complete locally
+
+Follow-up owns the new Contact Us-only server/API boundary, the narrow `QuoteForm` endpoint switch, focused tests and additive evidence. Removed Contact Us dependency on missing Firebase/App Check settings while retaining validation, origin/network checks, honeypot, request ID and basic abuse limiting. Calculator routing and behavior remain separate and are explicitly rejected by the Glide boundary. TypeScript, 27 focused tests, build/prerender, secret scan and whitespace checks passed. Production release authorized by the owner; live evidence follows deployment.
+
 ## 2026-10-07 — Apply adopted kitchen-site standards — Complete locally
 
 Owner: current user asks to follow the imported guidelines, retaining the earlier kitchen-trailer-only scope. Reserve shared homepage/navigation/form/guide content, state and regional lead/headline/gallery bindings, location acceptance helpers and generated checks, focused tests and additive coordination records. Historical H1/guide reservations are confined to the inherited source project; this task changes only this kitchen checkout and preserves archives, legacy route handling, calculator math, contact configuration, styles and the current 25-URL indexing selection. No publication or external operations. Verify rendered output in an isolated candidate; document unsupported pricing, GPS, setup and delivery facts rather than inserting upstream sample figures.

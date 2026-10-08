@@ -1,5 +1,9 @@
 # Temporary123 Project Status
 
+## 2026-10-09 — Contact Us Glide endpoint made deployment-independent
+
+Added a dedicated `/api/glide-contact.json` boundary for Contact Us so production delivery no longer depends on the absent Firebase/App Check environment configuration. It retains strict schema validation, same-origin enforcement for apex/www, body limits, honeypot validation, Vercel IP validation, request IDs, a five-attempt/15-minute per-instance abuse limit, server-only Glide credentials and explicit calculator rejection. The calculator continues using its separate existing Firebase endpoint and is not sent to Glide. TypeScript, 27 focused tests, production build/prerender (745 routes + 404), secret scan and whitespace checks passed. Release and live verification recorded separately after deployment.
+
 ## 2026-10-07 — Adopted kitchen-site standards applied locally
 
 Applied the copied Temporary123 criteria within the owner's kitchen-trailer-only scope: all 301 state/regional/reviewed-city H1s and 70–120-word leads now focus on kitchen rentals; galleries use five kitchen images; local planning includes qualified cost/term/delivery/setup/GPS information and 5–10 locations. Shared menus, homepage cards, guide, inquiry choices, calculator and metadata now match that focus. Added `pnpm check:standards`, included rendered-page regression coverage in the local suite, aligned existing headline/city checks and guarded prerender against missing template placeholders. All 745 registered URLs, robots/canonicals, the byte-identical 25-URL sitemap, contact/hosting settings and source CSS are preserved. Historical unrelated-service paths remain compatibility pages, separate from the promoted kitchen inventory.
