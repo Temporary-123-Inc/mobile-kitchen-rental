@@ -1,5 +1,9 @@
 # Boss Requirements — Temporary123
 
+## 2026-10-13 clarification — Resolve current Search Console exclusions
+
+The current owner explicitly selected **all existing public pages, including historical pages for other equipment** when asked which noindex holds to remove. This supersedes the October 7 instruction to preserve the 25-URL indexing cohort and the October 9 open rollout decision for this kitchen-site checkout. Use the existing `existing-public-pages` policy: registered public production pages receive `index,follow`, exact HTTPS apex self-canonicals and sitemap membership. Preserve all routes and content; this approves indexing eligibility of existing compatibility pages, not additional equipment promotions, new drafts or mass page creation. Keep operational/private/error pages and preview hosts excluded. Permanent HTTP/www canonicalization remains expected. Resolve the exact legacy pricing URL with a relevant permanent redirect, and investigate its Vercel firewall denial separately. Google indexing and Search Console validation require direct subsequent evidence.
+
 ## October 7, 2026 — Kitchen-site scope and adopted standards
 
 The owner adopted `docs/guidelines/skills.temporary123/` and explicitly limits this website to **commercial kitchen trailer rentals**. Apply its H1/lead/local-data criteria within this one service subject. Broader Temporary123 service families and flagship shower instructions below are inherited reference material for other websites; they do not expand this site's active kitchen promotions. Preserve historical URLs and the current 25-URL indexing cohort. Use verified site facts; shared sample pricing, delivery, GPS and installation numbers require confirmation. See `docs/KITCHEN_GUIDELINE_ADOPTION_2026-10-07.md` for the applied criteria, evidence and remaining business inputs.

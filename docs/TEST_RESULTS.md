@@ -1066,3 +1066,16 @@ Artifact paths: `/tmp/mkr-seo-accessibility/{baseline-axe.json,candidate-axe.jso
 - Playwright Chromium, production preview: PASS, 2/2. Contact Us retained the phone fallback, exposed one enabled project-inquiry form, opened the Project Desk, and retained every requested facility option.
 - `git diff --check`: PASS.
 - Boundary: No real customer inquiry or Glide webhook was triggered. No deployment or hosted environment configuration was performed; production requires server-only `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` plus the existing Firebase/App Check/contact settings.
+
+
+## 2026-10-13 — Existing public-page indexing and legacy PHP pricing remediation
+
+Scope and detailed live URL chains: `docs/INDEXING_REMEDIATION_2026-10-13.md`. Isolated candidate `/tmp/mkr-indexing-20261013/candidate` was refreshed from concurrent Contact Us baseline `a92b507`, with this task's changes applied. Shared repository URLs, enabled inquiries and contact runtime are preserved; no root build/audit output overwritten.
+
+Final evidence: TypeScript/full build generated 745 routes plus 404; 744 public indexable routes and exact 744-entry canonical sitemap. Configured unit suite passed 83/83 across 14 files using `pnpm test --testTimeout=20000`; default timeout previously failed the inherited exhaustive archive test at ~5.4 seconds, and no test assertions or repository timeout were changed. SEO audit passed all 746 generated HTML pages, 42,322 links, 8,427 images and 746 unique titles/descriptions with zero problems. Initial expanded-indexing audit found 30 orphan pages; the historical planning directory resolves all 30. All 301 kitchen location standards passed.
+
+Playwright public-indexability suite passed 4/4 with every public route returning direct local 200, `index,follow` and exact self-canonical; 390/1440 px metadata after enhancement, dashboard noindex and missing-path 404 passed. Additional planning-page browser checks passed at 390/1440 px: 30 correct labels/hrefs, no horizontal overflow or page exceptions. Exact PHP path and slash variant each return local 308 to `/rental-calculator/?utm_source=legacy`, destination 200. Nonproduction hosts retain noindex response headers; curl with production Host confirms sitemap 200 without X-Robots-Tag or CSP.
+
+Live pre/post rechecks: HTTPS www homepage → 308 → apex 200; HTTP www homepage → two 308s → apex 200; HTTP apex homepage → 308 → HTTPS 200. PHP pricing URL → apex 403 with `x-vercel-mitigated: deny`. Live sitemap contains 25 canonical URLs; all 25 audited destinations return direct 200 without noindex headers. Live pricing destination and sampled held historical page still emit noindex at this audit point. Supplied 838 noindex URL examples were not exported, so exact historical reconciliation is unverified. Test logs: `build-integrated.log`, `tests-final.log`, `seo-final.log`, `standards-final.log`, `browser-final.log`, plus raw HTTP evidence under `/tmp/mkr-indexing-20261013/`.
+
+No task commit/push/deployment/firewall change or Search Console submission. Owner declined connecting Vercel. Source fixes are local; live PHP access, expanded sitemap, Search Console validation and Google indexing remain outstanding. Whitespace and source/route preservation checks passed.

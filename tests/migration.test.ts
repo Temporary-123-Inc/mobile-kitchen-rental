@@ -95,7 +95,7 @@ describe("migration indexing separation", () => {
     expect(routesForIndexingBatch(routes, 3, 25)).toEqual(routes);
   });
   it("supports releasing all existing public routes when blanket approval is selected", () => {
-    expect(site.indexingScope).toBe("focused-kitchen-cluster");
+    expect(site.indexingScope).toBe("existing-public-pages");
     const routes = [
       "/",
       "/contact-us/",
@@ -193,6 +193,15 @@ describe("migration indexing separation", () => {
       destination: "https://mobile-kitchen-rental.com/:path*",
       permanent: true,
     });
+  });
+  it("preserves pricing intent for the legacy PHP URL and its slash variant", () => {
+    for (const source of ["/our-prices.php", "/our-prices.php/"])
+      expect(
+        vercel.redirects.find((rule) => rule.source === source),
+      ).toMatchObject({
+        destination: "/rental-calculator/",
+        permanent: true,
+      });
   });
   it("only emits canonical indexable production URLs and truthful modification dates", () => {
     const pages = [

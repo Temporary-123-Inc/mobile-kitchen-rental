@@ -575,3 +575,10 @@ National calculator figures remain qualified planning estimates; the shared samp
 ## 2026-10-09 — Exempt /sitemap.xml from the site-wide Content-Security-Policy
 
 Chrome's built-in XML viewer needs inline styles/scripts, which the strict site-wide CSP blocks, so `/sitemap.xml` opened as an unstyled raw-text dump plus a tree with stray `...` markers. Crawlers read the raw XML and were unaffected. The site-wide header rule now excludes `sitemap.xml` through a negative lookahead and a separate `/sitemap.xml` rule keeps `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`. The sitemap body, the 25-URL controlled rollout, canonicals and robots are unchanged. `scripts/serve.mjs` now matches header rules by source pattern instead of the literal `/(.*)`.
+
+
+## 2026-10-13 — Existing inventory indexability and exact legacy pricing intent
+
+The current owner's explicit approval for all existing public pages, including historical equipment pages, supersedes the October 7/9 25-URL hold for this checkout. Use the already implemented `existing-public-pages` policy for all 744 registered public routes; retain operational/private/error/preview exclusions and do not publish new drafts. Keep active kitchen rental promotions within their existing scope. Link historical orphan pages from a clearly labeled reference directory on the existing planning page so expanded eligibility has crawlable internal paths.
+
+Preserve HTTP/HTTPS and www/apex permanent canonicalization. Redirect the exact legacy `/our-prices.php` and its slash variant to the existing rental calculator, preserving query parameters and pricing intent. Do not manufacture old pricing or redirect unrelated legacy URLs to the homepage. The observed Vercel firewall denial precedes application redirects and needs a narrow provider-side exception verified through firewall logs, with other protections retained. Owner declined connecting Vercel and asked to use existing access; record this as a live boundary, not a completed access fix. Search Console validation and actual Google indexing require separate evidence. See `docs/INDEXING_REMEDIATION_2026-10-13.md`.

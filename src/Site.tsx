@@ -30,6 +30,7 @@ import { RentalCalculator } from "./RentalCalculator";
 import { SeoDashboard } from "./SeoDashboard";
 import {
   LegacyAuthorityDirectory,
+  LegacyReferenceDirectory,
   LegacyAuthorityPage,
   legacyAuthorityPageByPath,
 } from "./LegacyAuthorityPage";
@@ -1304,6 +1305,7 @@ export function Site({
             <Button href="/equipment-rental/">Explore equipment</Button>
           </section>
         )}
+        {path === "/planning/" && <LegacyReferenceDirectory />}
         <LegacyAuthorityDirectory path={path} />
       </main>
       <Footer

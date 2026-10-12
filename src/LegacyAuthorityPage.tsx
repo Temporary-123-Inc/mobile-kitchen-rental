@@ -1,4 +1,5 @@
 import legacyAuthorityData from "../content/legacy-authority-pages.json" with { type: "json" };
+import legacyReferenceLinks from "../content/legacy-reference-links.json" with { type: "json" };
 
 export type LegacyAuthorityPageRecord = {
   path: string;
@@ -117,6 +118,23 @@ export function LegacyAuthorityDirectory({ path }: { path: string }) {
       <p>Use these pages to prepare the site details needed for an availability and delivery review.</p>
       <ul>
         {pages.map((page) => <li key={page.path}><a href={page.path}>{page.title}</a></li>)}
+      </ul>
+    </section>
+  );
+}
+
+export function LegacyReferenceDirectory() {
+  return (
+    <section className="wrap section legacy-authority-directory" aria-labelledby="historical-reference-pages">
+      <h2 id="historical-reference-pages">Historical facility reference pages</h2>
+      <p>
+        These existing reference pages describe earlier facility topics. For current
+        commercial kitchen trailer rental options, review our <a href="/services/">kitchen rental services</a>.
+      </p>
+      <ul>
+        {legacyReferenceLinks.map((page) => (
+          <li key={page.path}><a href={page.path}>{page.title}</a></li>
+        ))}
       </ul>
     </section>
   );

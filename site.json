@@ -4,7 +4,7 @@
   "phoneDisplay": "+1 (888) 563-6507",
   "phoneE164": "+18885636507",
   "mode": "production",
-  "indexingScope": "focused-kitchen-cluster",
+  "indexingScope": "existing-public-pages",
   "indexingBatchSize": 25,
   "activeIndexingBatch": 1,
   "indexingStartDate": "2026-10-05",

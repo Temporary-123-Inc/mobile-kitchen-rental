@@ -77,6 +77,16 @@
       "permanent": true
     },
     {
+      "source": "/our-prices.php",
+      "destination": "/rental-calculator/",
+      "permanent": true
+    },
+    {
+      "source": "/our-prices.php/",
+      "destination": "/rental-calculator/",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
